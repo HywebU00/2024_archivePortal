@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"path": "../2024_archivePortal"
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5501,
+		"liveSassCompile.settings.formats": [
+			{
+				"format": "compressed",
+				"extensionName": ".css",
+				"savePath": "/css"
+			}
+		],
+		"liveSassCompile.settings.includeItems": [
+			"/scss/style.scss"
+		],
+		"liveSassCompile.settings.showOutputWindowOn": "Warning"
+	}
+}
