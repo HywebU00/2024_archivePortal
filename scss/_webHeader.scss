@@ -2,18 +2,16 @@
 // --------------------------------------------------------------- //
 .webHeader {
   position: relative; z-index: 810; 
-  height: 60px; 
-  margin: 0 auto;
+  height: 60px; margin: 0 auto;
   background-color: $white;
   h1{ 
     margin: 0 60px; padding: 5px 0; text-align: center;
-    font-size: 1.6em; line-height: 50px;
-    &::before{
-      content: attr(aria-label); display: block; margin:0 auto;
-    }
+    font-size: 1.5em; line-height: 50px;
     a{
-      text-decoration: none; display: block;
-      &:focus{ outline: 1px solid $fontColor;}
+      text-decoration: none; display: block; height: 50px;
+      background: url(../images/h1_mobile.png) no-repeat center center;
+      background-size: contain;
+      &:focus{ outline: 1px solid $primaryColor;}
     }
     img{ display: none;}
   }
