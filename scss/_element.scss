@@ -1,0 +1,393 @@
+// 無障礙定位點
+// --------------------------------------------------------------- //
+.accesskey{
+  position: absolute; display: none;
+  @media screen and (min-width: $wwNormal){
+    display: block; top: 0; z-index: 199;
+    line-height: 1; padding: 2px;
+    text-decoration: none; color: $fontColorLight;
+    &:focus, &:hover{outline: 1px solid $linkColor;}
+  }
+}
+@media screen and (min-width: $wwNormal){
+  .webHeader .accesskey,
+  .main .accesskey,
+  .webFooter .accesskey {left: 1px; }
+  .main .accesskey{color: rgb(255 255 0 / .4);
+    &:focus, &:hover{outline-color: #fff;}
+  }
+}
+@media screen and (min-width: calc($wwMaximum + 2em)){
+  .webHeader .accesskey,
+  .main .accesskey, 
+  .webFooter .accesskey { left: calc(50% - $wwMaximum*.5 - 1em);}
+  .main .accesskey{
+    color: $fontColorLight;
+    &:focus, &:hover{outline-color: $linkColor;}
+  }
+
+}
+
+
+
+// 時間、日期格式
+// --------------------------------------------------------------- //
+time {
+  display: inline-block;
+}
+// --------------------------------------------------------------- //
+
+
+
+// 跳至內容區 
+// --------------------------------------------------------------- //
+.goCenter{
+  --bg:#555;
+  --color:#fff;
+
+  display: none;
+  @media screen and (min-width: $wwNormal) {
+    display: block; z-index: 880;
+    position: fixed; top: -2em; right: 60%; 
+    padding: 0 .5em; border-radius: 0 0 4px 4px;
+    overflow: hidden;
+    height: 1.8em; line-height: 1.9;
+    text-decoration: none; outline: none; cursor: pointer;
+    background-color: var(--bg); color: var(--color);
+    transition:top .3s; 
+    &:focus{ --bg: #000; top: 0;}
+  }
+  @media screen and (min-width: $wwMaximum) {
+    // left: calc( 50vw  - #{$wwMaximum}*.5 );
+    right: calc(50% + #{$wwMaximum}*.1);
+  }
+}
+// --------------------------------------------------------------- //
+
+
+
+// 回頁面最上方 
+// --------------------------------------------------------------- //
+.goTop{
+  --tinge: #{$primaryColor};
+  --bg: #{$assistant1};
+  --size: 72px;
+  --arrowSize : 18px;
+
+  position: fixed;right: 16px; bottom: -80px; z-index: 90; 
+  width: var(--size); height: var(--size);
+  text-indent: -15em;overflow: hidden;
+  padding:0;margin: 0;
+  border: none; border-radius: 50%; 
+  background-color: var(--bg);
+  box-shadow: rgb(0 0 0 / .3) 0 3px 9px;
+  transition: all .2s, bottom 1s;
+  &::before{
+    content: ''; position: absolute;
+    box-sizing: border-box;
+    width: var(--arrowSize); height: var(--arrowSize);
+    left: calc( ( var(--size) - var(--arrowSize) )/2 ); top: calc( var(--size)/2 - var(--arrowSize)/3 );
+    border: 3px solid var(--tinge); 
+    border-bottom: none; border-right: none;
+    transform: rotate(45deg);
+  }
+
+  &:hover, &:focus {
+    --tinge: #{$assistant1};
+    --bg: #{$primaryColor};
+    box-shadow: var(--tinge) 0 0 0 3px;
+  }
+
+  &.show{ bottom: 16px;}
+
+  @media screen and ( min-width: calc($wwMaximum + 152px) ){
+    right: calc(50% - $wwMaximum*.5 - var(--size));
+  }
+
+}
+// --------------------------------------------------------------- //
+
+
+
+// 放大鏡圖示
+// --------------------------------------------------------------- //
+%searchIcon {
+  --tinge : #000;
+  
+  position: relative;
+  text-indent: -10em; overflow: hidden;
+  
+  &::before, &::after{
+    content: ''; position: absolute;
+  }
+  &::before{
+    left: calc(50% - 13px); top: calc(50% - 13px);
+    width: 16px; height: 16px; 
+    border: 2px solid var(--tinge); border-radius: 50%;
+  }
+  &::after{
+    width: 12px; height: 2px; 
+    top: calc(50% + 7px); left: calc(50% + 2px);
+    border-radius: 1px;
+    transform: rotate(45deg);
+    background-color: var(--tinge);
+  }
+}
+// --------------------------------------------------------------- //
+
+
+
+// 查詢圖示 ｜ 行動版側欄開關 
+// --------------------------------------------------------------- //
+.sidebarCtrl, .searchCtrl {
+  position: absolute;
+  width: 50px; height: 50px; 
+  margin: 0; padding: 0; border-radius: 0;
+  border: none; box-shadow: none; outline: none;
+  text-indent: -20em; overflow: hidden;
+  cursor: pointer;
+}
+
+// 行動版側欄開關 （漢堡）
+// --------------------------------------------------------------- //
+.sidebarCtrl{
+  --tinge : #{$primaryColor};
+  --bg: #{$white};
+  
+  background-color: var(--bg);
+  transition: .4s;
+
+  &::before, &::after{
+    content: ''; width: 28px; height: 3px;
+    position: absolute; top: calc(50% - 1px); left: calc(50% - 14px);
+    background: var(--tinge); 
+    transition: .2s;
+  }
+  &::before{
+    box-shadow: var(--tinge) 0 -9px 0, var(--tinge) 0 9px 0;
+  }
+  &::after {opacity: 0;}
+
+  &.closeIt{
+    --bg: #{$assistant1};
+
+    box-shadow: var(--bg) 0 0 0 4px;
+    &::before, &::after{
+      width: 32px;left: calc(50% - 16px);
+      background-color: var(--tinge); 
+    }
+    &::before{ 
+      transform: rotate(45deg);
+      box-shadow: none;
+    }
+    &:after{
+      opacity: 1;
+      transform: rotate(-45deg);
+    }
+  }
+  
+  &:hover {
+    --bg: #{$primaryColor};
+    --tinge : #{$white};
+    box-shadow: none;
+  }
+  &:focus{
+    --tinge : #{$white};
+    --bg: #{$primaryColor};
+    box-shadow: var(--bg) 0 0 0 4px;
+  }
+
+}
+// --------------------------------------------------------------- //
+
+// 查詢區開關圖示 
+// --------------------------------------------------------------- //
+.searchCtrl{
+  margin: 0; padding: 0; border: none;
+
+  &::before , &::after{ content: ''; }
+
+  &::before{
+    display: block; margin: 0 auto;
+    width: 42px; height: 42px;
+    background: url(../images/icon_search.svg) no-repeat 0 0;
+    background-size: 100%;
+  }
+
+  &.closeIt{}
+  
+  &:hover { background-clip: $secondaryColor;}
+  &:focus{ box-shadow: var(--bg) 0 0 0 4px; }
+
+  @media screen and (min-width: $wwNormal){
+  }
+}
+// --------------------------------------------------------------- //
+
+
+
+
+
+// 側欄遮罩 
+// --------------------------------------------------------------- //
+.sidebarMask {
+  display: none;z-index: 800;
+  position: fixed;left: 0;right: 0;top: 0;bottom: 0;
+  background-color: rgba(100,100,100,.75);
+}
+// --------------------------------------------------------------- //
+
+
+
+// MORE
+// --------------------------------------------------------------- //
+.more{
+  margin: 10px 0; padding: 10px;
+  text-align: center;
+  a{
+    display: inline-block; position: relative;
+    text-decoration: none; outline: none;
+    height: 2.8em; line-height: 2.8; padding: 0 32px;
+    color: $primaryColor;
+    box-shadow: $primaryColor 0 0 0 1px inset;
+    transition: .2s;
+    &:hover, &:focus{
+      box-shadow: $primaryColor 0 0 0 1px inset,  $primaryColor 0 0 0 1px;
+    }
+    &:focus{background-color: $primaryColor; color: $white;}
+  }
+
+}
+// --------------------------------------------------------------- //
+
+
+
+// slick 套件用元件樣式
+// --------------------------------------------------------------- //
+.slick-slider {
+  position: relative;
+  // width: 70vw; height: 40vh;
+
+  button {
+    border: none;outline: none;box-shadow: none;
+    padding: 0; margin: 0;width: auto;
+  }
+
+  // 點點或數字
+  .slick-dots { 
+    --tinge: #e2e2e2;
+
+    list-style: none; margin:15px 6% 10px 0;padding: 0;
+    font-size: 1rem; line-height: 1; text-align: right;
+    li { 
+      display: inline-block; 
+      margin: 0 2px; padding: 4px;
+      button { 
+        width: 10px; height: 10px; border-radius: 5px;
+        overflow: hidden; box-shadow: none;
+        background: var(--tinge);
+        &:hover, &:focus{--tinge: #{$primaryColor};}
+        // &:focus{ box-shadow:$primaryColor 0 0 0 2px;}
+      }
+
+      &.slick-active{
+        --tinge: #{$primaryColor};
+        button{ 
+          width: 46px;
+          &:focus{ box-shadow:$white 0 0 0 1px, $primaryColor 0 0 0 3px;}
+         
+        }
+      }
+
+    }
+  }
+
+  // 左右箭頭
+  button.slick-arrow {
+ 
+    position: absolute; z-index: 9; 
+
+    height: 16px;width: 60px; padding:8px 12px;
+    box-sizing: content-box;
+    text-indent: -12em; overflow: hidden;
+    border-radius: 0;box-shadow: none;background:none;
+
+    &::before{
+      content: ''; display: block; margin: 0 auto;
+      width: 60px; height: 16px;
+      background: url(../images/slickArrow.svg) no-repeat 0 center;
+    }
+
+    &.slick-next {
+      &::before{
+        transform: scaleX((-100%));
+      }
+    }
+
+    &:hover, &:focus{
+      background-color: $assistant1;
+    }
+  }
+}
+// --------------------------------------------------------------- //
+
+
+
+// --------------------------------------------------------------- //
+// 內頁附圖 flow 點點、箭頭樣式
+// .flow {
+
+//   // 點點
+//   .slick-dots {
+//     --tinge: #bbb;
+
+//     list-style: none; margin: 0 auto; padding: 8px;
+//     li{
+//       button {
+//         border: none; box-shadow: none;
+//         background-color: var(--color);
+//       }
+//       &.slick-active {
+//         --tinge: #f60;
+//         box-shadow: var(--tinge) 0 0 0 3px;
+//       }
+//     }
+//   }
+
+//   // 箭頭
+//   .slick-arrow {
+//       --bg : #000;
+//       --front : #fff;
+
+//       background-color: var(--bg);
+
+//     &::before {
+//       content: '';
+//       position: absolute;  top: calc(50% - 6px); 
+//       width: 10px; height: 10px; transform: rotate(45deg);
+//       border: 2px solid var(--front); 
+//     }
+//     &.slick-prev {
+//       &::before { border-top: none;border-right: none;left: calc(50% - 4px);}
+//     }
+//     &.slick-next {
+//       &::before { border-bottom: none;border-left: none;right: calc(50% - 4px);}
+//     }
+
+//     &:hover{ transform: scale(1.2);}
+//   }
+// } 
+// --------------------------------------------------------------- //
+
+
+
+// 跳離燈箱、行動版側欄元件
+// --------------------------------------------------------------- //
+button.skip{
+  position: absolute; right: 0; bottom: 0; 
+  padding: 0; margin: 0; width: 1px !important; height: 1px !important;
+  background: none; box-shadow: none; 
+  outline: none; border: none;
+  text-indent: -20em; overflow: hidden;
+}
+// --------------------------------------------------------------- //

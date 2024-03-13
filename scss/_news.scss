@@ -1,0 +1,64 @@
+.news {
+  @extend %primSecWidth;
+  .tabSet{ padding: 40px 0 30px;}
+  .tabItems{
+    display: flex; flex-flow: row nowrap; justify-content: center;
+    button{
+      flex: 1 1 auto;height: auto; 
+      font-size: 1.33em;line-height: 1.3;word-break: break-all;
+      padding: .9em .5em .7em; margin:2px;
+      border: none; box-shadow: none; font-weight: bold;
+      background-color: $white; color: $primaryColor;
+      &:hover, &:focus{
+        box-shadow: $primaryColor 0 0 0 1px inset;
+      }
+      &.active{
+        background-color: $assistant1;
+      }
+    }
+  }
+  .tabContent{display: none;}
+
+
+  // 訊息條列
+  .newsList{
+    list-style: none; margin:60px 0 0; padding: 0;
+    line-height: 1.5; font-size: 1.33em;
+    &>li{
+      margin: 0 0 24px;
+      a {
+        display: block; text-decoration: none;
+        padding: 20px;
+        color: $primaryColor;
+        background: linear-gradient(180deg, #F6F6F6 0%, #F9F9F9 9.38%, #FFFFFF 100%);
+        box-shadow: 2px 6px 15px 4px rgba(0, 0, 0, 0.1);
+        transition: .2s;
+        &:hover, &:focus {
+          color: $white;
+          background: $primaryColor;
+        }
+      }
+
+      p{ margin: .5em 0 0;}
+      time{ display: inline-block; white-space: nowrap;}
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    .tabItems{ width: 90%; margin: 0 auto;}
+
+    .newsList {
+      &>li{
+        a{ 
+          padding: 42px;
+          display: flex;
+        }
+
+        p{ margin-top: 0;}
+        time{ flex: 0 0 5em; margin-right: 1em;}
+      }
+    }
+  }
+
+
+}

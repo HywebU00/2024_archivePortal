@@ -1,0 +1,324 @@
+// 頁尾
+
+// webFooter 內的元件、模組
+// --------------------------------------------------------------- //
+// 開關
+.fatFootCtrl{
+  --ting: #fff;
+  --bg: #{$primaryColor};
+  --size: 56px;
+  --arrowSize: 12px;
+
+  position: absolute; z-index: 9; 
+  left: calc(50% - var(--size)/2); 
+  top: -1px; 
+  width: var(--size); height: 52px; 
+  padding: 0; margin:0;
+  text-indent: -10em; overflow: hidden;
+  border: none; box-shadow: none;
+  background-color: var(--bg);
+  border-radius: 0 0 4px 4px;
+
+  &::before {
+    content: ''; position: absolute; 
+    width: var(--arrowSize);height: var(--arrowSize);
+    left: calc( var(--size)/2 - var(--arrowSize)/2 - 1px); 
+    top: calc( var(--size)/2 - var(--arrowSize)/2);
+    transform: rotate(45deg);
+    border: 2px solid var(--ting);
+    border-right: none; border-bottom: none;
+    transition: .3s;
+  }
+
+  &:hover, &:focus {
+    --bg:#{$assistant1};
+    box-shadow: none; 
+    &::before{ border-color: $primaryColor;}
+  }
+
+
+  &.closed{
+    &::before{
+      top: calc( var(--size)/2 - var(--arrowSize) - 2px );
+      // border-color: var(--ting);
+      transform: rotate(225deg);
+    }
+  }
+}
+
+// fat footer
+// --------------------------------------------------------------- //
+// 可開合區
+.fatFooter {
+  position: relative; padding: 100px 0 40px;
+  background-color: $white;
+}
+
+// 頁腳選單
+.siteTree{
+  margin: 0 auto; width: $mobileWidth;
+  ul{ list-style: none; margin: 0 auto; padding: 0; line-height: 1.3; }
+  li{ 
+    margin: 0;padding: 0;
+    a{display: block; color: $primaryColor; text-decoration: none;}
+  }
+
+  &>ul{
+    margin: 0 -10px;
+    display: flex; flex-flow: row wrap;
+
+    &>li{
+      flex: 0 0 calc(50% - 20px);
+      margin: 0 10px 1em; padding: 0;
+      &>a{
+        position: relative; 
+        padding: 0 0 3px;
+        font-weight: bold; font-size: 1.22em;
+        &::after{
+          content: ''; position: absolute; left: 0; right: 0; bottom: 0;
+          height: 0; background-color: $primaryColor;
+          transition: .2s;
+        }
+        &:hover, &:focus{
+          &::after { height: 3px;}
+          &+ul{border-top-color: $primaryColor;}
+        }
+      }
+
+      &>ul{
+        display: none;
+        margin-bottom: 3em; padding-top: .5em;
+        font-weight: normal;
+        
+        &>li{
+          margin: .4em 0;
+          &>a{
+            position: relative;
+            padding: .5em 12px .1em 0;
+            border-bottom: 1px solid transparent;
+            transition: .2s;
+            &::before {
+              content: ''; position: absolute; top: 1.05em; left: 1px;
+              width: 0; height: 4px;
+              background-color: $primaryColor;
+              transition: .2s;
+            }
+            &:hover, &:focus{
+              padding-left: 12px; padding-right: 0;
+              &::before{ width: 8px;}
+            }
+            &:focus{border-bottom-color: $primaryColor;}
+          }
+        }
+
+        // 只顯示到第二層
+        ul{display: none;}
+      }
+    }
+  }
+
+  @media screen and (min-width: calc($wwSlim + 100px)){
+    &>ul{
+      &>li{
+        flex-basis: calc(33.33% - 20px);
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwMedium){
+    &>ul{
+      &>li{
+        flex-basis: calc(25% - 20px);
+      }
+    }
+  }
+ 
+  @media screen and (min-width: $wwNormal){
+    &>ul{
+      &>li{
+        flex-basis: calc(20% - 20px);
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwMaximum){
+    width: $maximumWidth;
+    &>ul{
+      &>li{
+        flex-basis: calc(16.66% - 20px);
+      }
+    }
+  }
+
+}
+
+
+// --------------------------------------------------------------- //
+
+
+
+
+// --------------------------------------------------------------- //
+.webFooter {
+  position: relative;
+  border-top: 1px solid $secondaryColor;
+  background: #005e8d url(../images/footerBg.png) no-repeat center bottom;
+  background-size: 100% auto;
+  color: $white;
+
+  .middle, .base {
+    width: 90%; margin: 0 auto;padding: 24px 0; 
+  }
+
+  .middle{
+    display: flex; flex-wrap: wrap;
+    padding-top: 56px;
+    a {display: block; color: $white;text-decoration: none; }
+    ul{ list-style: none; margin: 0; padding: 0; line-height: 1; }
+    
+    .logo {
+      flex: 0 0 100%; width: 100%; margin:0 0 22px;
+      img{ height: 100px;}
+    }
+
+    .iconLinks {
+      flex: 0 1 88px;
+      li{
+        margin: 2px 0 10px; padding: 0;
+        a{ 
+          padding: 5px; width: 36px; height: 36px; margin: 0 auto;
+          box-sizing: content-box;
+          transition: .2s;
+          &:hover, &:focus { box-shadow: $white 0 0 0 2px; }
+        }
+        img{ display: block;width: 100%; height: 100%;  object-fit: contain;}
+      }
+    }
+    .textLinks {
+      flex: 1 1 auto; width: calc(90% - 90px);
+      padding-left: 18px; line-height: 1.4;
+      border-left: 1px solid rgb(255 255 255 / .4);
+      li{
+        margin: 10px 0 18px;
+        a{
+          position: relative; display: inline-block; padding: 0 0 3px;
+          &::before{
+            content: ''; 
+            position: absolute; left: 0;right: 0; bottom: 0;
+            height: 0;
+            transition: .1s;
+          }
+          &:hover, &:focus { 
+            &::before{ height: 2px;background-color: $white;}
+          }
+        }
+      }
+    }
+  }
+
+
+  .base {
+    padding-bottom: 64px;
+    line-height: 1.4;
+    a {
+      display: block; text-decoration: none;
+      color: $white;
+    }
+
+    ul{
+      list-style: none; margin:2.5em 0 0; padding: 0;line-height: 1.4; 
+      li{
+        display: inline-block; margin: 0 0 .4em;padding: 0;
+      }
+    }
+    .contact{
+      li{ 
+        margin-right: 1em;
+        &:first-child{ width: 100%; margin-right: 0;}
+        &:last-child{margin-right: 0;}
+      }
+    }
+    .update {
+      li {
+        margin-right: 1em;
+        &:last-child {margin-right: 0; }
+      }
+    }
+    .pics {
+      li{ margin-left: 15px;
+        &:first-child {margin-left: 0;}
+        img{ display: block; height: 74px; transition: .15s;}
+        a{
+          display: block; 
+          &:hover, &:focus {
+            img{
+              box-shadow: $white 0 0 0 2px;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+ 
+  @media screen and (min-width: $wwNormal){
+    .middle{
+      justify-content: space-between; flex-wrap: nowrap;
+      // &>*{ outline: 1px solid #fff1;}
+    
+      .logo {flex: 0 0 auto; width: 340px; margin:0 20px 0 0;}
+      .iconLinks {
+        flex: 1 1 16%; min-width: 130px; text-align: right; white-space: nowrap;
+        li{
+          display: inline-block; margin: 0 0 0 10px; padding: 0;
+          a{ margin: 0;}
+        }
+      }
+      .textLinks {
+        flex: 0 1 60%;
+        display: flex; flex-flow: row nowrap;
+        align-items: flex-start; justify-content: flex-end;
+        margin:5px 0 0 30px; padding: 0;
+        border: none; line-height: 1.2;
+        li{
+          position: relative;
+          margin: 10px 0 10px .95em; padding: 0 0 0 1em;
+          &::before {
+            content: ''; position: absolute;left: 0; top: 0; bottom: 0;
+            width: 1px; background-color: $white;
+          }
+    
+          &:first-child {
+            margin-left: 0; padding-left: 0;
+            &::before{ display: none;}
+          }
+        }
+      }
+    }
+  
+    .base{
+      padding-right: 360px;
+      position: relative;
+
+      .contact{
+        li:first-child { width: auto; margin-right: 1em;}
+        
+      }
+      .update { margin-top: .74em;}
+      .pics {
+        position: absolute; right: 0; top: 30px; 
+        li{ display: inline-block; vertical-align: top; margin:0 0 0 16px;
+          &.badge{ img{height: 50px;} }
+          // &.qrcode{ img{} height: 74px;}
+          
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwMaximum){
+
+  }
+
+}
+// --------------------------------------------------------------- //

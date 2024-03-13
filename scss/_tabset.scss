@@ -1,0 +1,37 @@
+// 頁籤組
+// --------------------------------------------------------------- //
+.tabset{
+  --tabBg: #3c3;
+  --tabContentBg: #fff;
+  --tabBtnBg: #fff;
+  --color: #000;
+
+
+  .tabButtons{
+    display: flex; position: relative;
+    button{
+      &.active{}
+    }
+  }
+
+  .tabContentGroup{ position: relative;}
+  .tabContent{
+    display: none;
+    &:nth-of-type(1){display: block;}
+  }
+
+  // 三欄排版
+  .flex3col{
+    display: flex;
+    &>*{
+      outline: 1px solid red;
+
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    
+  }
+
+}
+// --------------------------------------------------------------- //

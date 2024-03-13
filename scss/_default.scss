@@ -1,0 +1,26 @@
+:root{
+  font-size: 1.125em; 
+}
+body{
+  margin: 0; padding: 0;
+  font-family: Arial, Helvetica, "Microsoft JhengHei", "微軟正黑體", sans-serif;
+  color: $fontColor;
+  
+  *{box-sizing: border-box;}
+  a{ outline: none;}
+
+  &.noScroll{ overflow: hidden; overflow-y:hidden; }
+}
+
+.main{
+  position: relative; margin: 0 auto;  clear: both;
+
+  @media screen and (min-width: $wwNormal){
+  }
+
+  @media screen and (min-width: $wwMaximum){
+  }
+
+}
+
+// ------------------------------------------------------ //

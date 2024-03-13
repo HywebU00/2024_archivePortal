@@ -1,0 +1,143 @@
+.formA {
+  @extend %primSecWidth;
+  padding: 24px 0;
+  background-color: #dde;
+}
+
+
+// 表單排版表格 
+// ------------------------------------------------------ //
+table.formLayout{
+  width: 100%; margin: 0 auto;
+  border-collapse: collapse;
+  font-size: 1.125em; line-height: 1.5;
+  td{
+    padding: 3px;
+    &:nth-child(odd) {
+      text-align: right; font-weight: 400;
+      vertical-align: top; padding-top: 1.1em;
+
+    }
+    &:nth-child(even) {
+      color: $fontColor;
+    }
+
+    .fullWidth{width: 90%;}
+    .duration { width: calc(90% + 10px); }
+  }
+
+  &+.formLayout {margin-top: 10px;}
+
+  &+.btnDv{ margin-top: 16px;}
+
+}
+
+
+.btnDv{
+  text-align: center; padding: 8px 16px;
+}
+
+
+
+
+// 表單中的訊息文字 
+// ------------------------------------------------------ //
+.notice{
+  position: relative;
+  display: inline-block; margin: 4px 0 0 .5em;
+
+  &.pass , &.warning, &.fail {
+    padding-left: 1.4em; 
+    &::before{
+      position: absolute; left: 0; top: .15em;
+      content: ''; width: 1.3rem; height: 1.3rem; 
+    }
+  }
+
+  // 打勾
+  &.pass{
+    color: $secondaryColor;
+    &::before{
+      background: $secondaryColor url(../images/icon_check.svg) no-repeat center center;
+      background-size: 70% 85%;
+      border-radius: 50%;
+    }
+  }
+
+  // 驚嘆號 ！
+  &.warning{
+    color: $hilight;
+    &::before{
+      background: url(../images/icon_warning.svg) no-repeat center center;
+      background-size: 100% auto;
+    }
+  }
+
+  // 打叉 ✖️
+  &.fail{
+    color: $hilight;
+    &::before{
+      background: url(../images/icon_error.svg) no-repeat center center;
+      background-size: 100% auto;
+      border-radius: 50%;
+    }
+  }
+
+}
+
+// 註記：input ＋ 返回button ＋ 訊息文字
+// ------------------------------------------------------ //
+.markSet{
+  display: flex; align-items: center; width: 100%;
+  input[type="text"]{ flex: 1 1 50%; margin-right: 8px;}
+  .button{ margin-bottom: 0;}
+  p.notice{ margin-left: 4px; margin-top: 0.3em;}
+}
+.meta td .markSet{ margin-top: -.35em;}
+
+
+// 日期區間
+// -------------------------------------------------------------- //
+.duration{
+  position: relative;
+  display: flex; justify-content: space-between;
+  input{ 
+    flex: 0 1 calc(50% - 1em);
+    &:last-child{margin-left: 1.2em;}
+  }
+  input[type="date"]{cursor: pointer;}
+  &::before{
+    content: '～'; display: inline-block;  text-align: center;
+    line-height: 2.9; width: 1.3em;
+    position: absolute; left: calc(50% - .6em);
+  }
+}
+
+// 單選、複選
+// ------------------------------------------------------ //
+.optionPool{ margin: 3px;
+  label{display: inline-block; margin:0 1em 3px 0; padding: .6em 1em .5em .6em; line-height: 1.5;
+    &:hover{
+      box-shadow: $borderColorLight 0 0 0 1px; border-radius: 2em;
+    }
+    input{ vertical-align: top; margin-top: .2em;}
+  }
+}
+
+// 條件搜尋 
+// ------------------------------------------------------ //
+.searchBy{
+  @extend %primSecWidth;
+  margin-bottom: 0;
+  overflow: hidden;
+  a{
+    float: right; height: 2.8em; line-height: 2.8;
+    text-decoration: none;
+    padding: 0 1em;
+    color: $white; background-color: $btnBg;
+  }
+
+  & + .formA {margin-top: 8px;}
+}
+
+// ------------------------------------------------------ //

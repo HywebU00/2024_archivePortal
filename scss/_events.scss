@@ -1,0 +1,154 @@
+// 首頁：近期活動
+// .main>section:not(.events) { display: none;}
+// .main>section.explore {display: block;}
+
+.events{
+  position: relative;
+  padding: 60px 0;
+  background-color: #f8f8f8;
+  &::after{
+    content: ''; display: block; clear: both;
+  }
+
+  .blockHeader{ width: $mobileWidth; margin: 0 auto 16px;}
+
+  // 文字區
+  .titles{
+    border: 1px solid #f008;
+    float: left; 
+    width: $mobileWidth*.42;
+    margin: 50px 0 0 3vw;
+    padding: 30px 0 10px 0;
+    time{ font-size: 3.8vw; line-height: 1.6;}
+    p{
+      margin: 25px 0 0; line-height: 1.6;
+      font-weight: bold;
+      font-size: calc( ($mobileWidthVW*.42)/7.5 );
+
+      // height: 7.6em; 
+      overflow: hidden;
+      display: -webkit-box; -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+    }
+  }
+
+  // 海報區
+  .flowItem{
+    margin:0;
+    outline: 1px solid #f008;
+    a {
+      display: block; width: 100%; 
+      // height: 100%;
+      height:  $mobileWidthVW * .55 * 1.4;
+      text-decoration: none; color: $fontColor;
+      transition: .2s;
+
+      &:hover, &:focus {
+      }
+    }
+    img{
+      display: block;
+      width: 100%; height: 100%; object-fit: cover;
+      transition: .2s;
+    }
+  
+  }
+
+  .flow{
+    outline: 1px dashed #00f8;
+    float: right; 
+    margin-right: 3vw;
+    padding-top: 50px; width: $mobileWidth*.55;
+    .slick-arrow {
+      top: 0; left: auto; right: 3%;
+      &.slick-prev { transform: translateX(calc(-100% - 6px));}
+    }
+  }
+
+
+  .more{
+    clear: both; 
+    // text-align: left;
+    // position: absolute; left: $marginDocMob; bottom: 100px;
+  }
+
+
+  @media screen and (min-width: $wwMedium){
+    .titles{
+      time{ font-size: 1.4rem;}
+      p{ font-size: 2rem;}
+    }
+
+  }
+
+  @media screen and (min-width: $wwNormal){
+
+    &::before{
+      content: ''; position: absolute; left: 33%; right: 0; top: 0; bottom: 0;
+      background: linear-gradient(180deg, #E2E2E2 0%, #FFFFFF 100%);
+
+    }
+
+    .blockHeader{ width: $normalWidth; position: relative;}
+    .titles{
+      width: $normalWidthVW * .27;
+      margin-left: $marginDoc;
+      p{font-size: 2rem;}
+    }
+
+    .flowItem{
+      margin: 0 0 0 20px ;
+      // width: calc($normalWidthVW * .35 - 20px) !important;
+      a{
+        height: calc(($normalWidthVW * .35 - 20px) * 1.4);
+      }
+    }
+    .flow{
+      width: $normalWidthVW * .7;
+      margin-right: $marginDoc;
+    }
+  }
+
+  @media screen and (min-width: calc($wwNormal + 300px) ){
+    .titles {
+      width: $normalWidthVW * .25; 
+      // p{font-size: 2rem;}
+    }
+
+    .flow{
+      width: $normalWidthVW * .72;
+      .slick-list {
+        padding: 1px 0;
+      }
+    }
+    .flowItem{
+      a{height: calc(($normalWidthVW * .24 - 20px) * 1.4);}
+
+      &.slick-current {
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwMaximum){
+    .blockHeader{ width: $wwMaximum*.9;}
+
+    .titles { 
+      width: $wwMaximum * .9 * .21;
+      margin-left: calc( 50% - $wwMaximum*.5 + $marginDoc);
+    }
+    .flowItem{
+      height: calc(($wwMaximum * .24 - 20px) * 1.4);
+      a:hover{
+      }
+      &.slick-current{}
+    }
+
+    .flow{
+      width: calc($wwMaximum * .9 *.77 + 40px );
+      padding-left: 20px;
+      margin-right: calc(50% - $wwMaximum*.5); 
+    }
+
+  }
+
+}
