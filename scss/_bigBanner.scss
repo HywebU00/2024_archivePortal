@@ -8,9 +8,9 @@
   h2{ 
     margin: 0; padding:12px 24px;
     font-size: 1.6em; line-height: 1.5;
-    color: $white;
-    background: $primaryColor url(../images/bbannerLeft.jpg) no-repeat center bottom;
-    background-size:cover;
+    color: $white;background: $primaryColor;
+    // background: $primaryColor url(../images/bbannerLeft.jpg) no-repeat center bottom;
+    // background-size:cover;
     .major{ display: block; margin-bottom: 32px; }
   }
 

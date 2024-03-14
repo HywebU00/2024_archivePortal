@@ -7,6 +7,33 @@
 
 // 表單排版表格 
 // ------------------------------------------------------ //
+table.layout {
+  width: 100%; margin: 0 auto; border-collapse: collapse;
+  font-size: 1.3em;
+  td {
+    padding: 0;
+    &:first-child { padding-right: 3px; width: 4.5em; white-space: nowrap; text-align: right;}
+  }
+
+  @media screen and (max-width: $wwMedium){
+    tr, td {display: block;}
+    td:first-child{
+      text-align: left; padding: .6em 6px 0; font-weight: bold;
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    max-width: 920px;
+
+  }
+}
+
+
+
+
+
+
+
 table.formLayout{
   width: 100%; margin: 0 auto;
   border-collapse: collapse;
@@ -34,6 +61,7 @@ table.formLayout{
 
 
 .btnDv{
+  font-size: 1.3em;
   text-align: center; padding: 8px 16px;
 }
 
@@ -134,7 +162,7 @@ table.formLayout{
     float: right; height: 2.8em; line-height: 2.8;
     text-decoration: none;
     padding: 0 1em;
-    color: $white; background-color: $btnBg;
+    // color: $white; background-color: $btnBg;
   }
 
   & + .formA {margin-top: 8px;}

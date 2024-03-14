@@ -27,31 +27,36 @@
 // 現在位置（麵包屑） //
 // ------------------------------------------------------ //
 .breadcrumb {
-  @extend %primSecWidth; margin: 15px auto; 
+  display: none;
+  @extend %primSecWidth;
 
-  ul, li{ list-style: none; margin: 0;padding: 0;}
-  ul{line-height: 1; overflow: hidden;}
-  li{
-    float: left; position: relative;color: $fontColor;
-    padding-right: .5em;
-    &:nth-child(n+2){
-      padding-left: 1.8em;
-      &::before{ 
-        content: '';position: absolute; left: .6em; top: 0; 
-        width: 1px; height: 1em;
-        background: none; border-left: 1px solid $fontColorLight;
-        transform: rotate(20deg);
+  @media screen and (min-width: $wwNormal){
+    display: block;
+    margin: 15px auto; 
+    ul, li{ list-style: none; margin: 0;padding: 0;}
+    ul{line-height: 1; overflow: hidden;}
+    li{
+      float: left; position: relative;color: $fontColor;
+      padding-right: .5em;
+      &:nth-child(n+2){
+        padding-left: 1.8em;
+        &::before{ 
+          content: '';position: absolute; left: .6em; top: 0; 
+          width: 1px; height: 1em;
+          background: none; border-left: 1px solid $fontColorLight;
+          transform: rotate(20deg);
+        }
       }
-    }
-    &:first-child{padding-left: 0;}
-    a{
-      display: block; text-decoration: none; color: $fontColorDark;
-      border-bottom: 1px solid transparent;
-        &:hover, &:focus{  border-bottom-color: $fontColor; color: $fontColor;}
-    }
-    &:last-child{
-      color: $fontColorDark;
-      a{color: $fontColorDark;}
+      &:first-child{padding-left: 0;}
+      a{
+        display: block; text-decoration: none; color: $fontColorDark;
+        border-bottom: 1px solid transparent;
+          &:hover, &:focus{  border-bottom-color: $fontColor; color: $fontColor;}
+      }
+      &:last-child{
+        color: $fontColorDark;
+        a{color: $fontColorDark;}
+      }
     }
   }
 }
@@ -99,25 +104,26 @@
         margin:0; padding:0; width: var(--size);height: var(--size);
 
         border-radius: 50%;
-        font-size: .92rem; line-height: 1;
+        
         text-decoration: none; white-space: nowrap;
-        border: 2px solid var(--tinge);
-        box-shadow: none; 
         color: transparent;
         background-color: $white; background-repeat: no-repeat; 
         background-position: center center;
+        border: 2px solid var(--tinge);
 
-        transition:background .2s, box-shadow .2s;
+        transition:background .2s, box-shadow .2s, border .2s;
 
         &::before {
-          content: attr(aria-label); position: absolute; left: 0; top: 0;
-          width: 100%; height: 1.2em; color: $fontColor;
+          content: attr(aria-label); 
+          position: absolute; left: 0; top: 0;
+          width: 100%; height: 1.2em;line-height: 1;
+          font-size: .9rem; color: $fontColor;
           opacity: 0; transform: translateY(0);
           transition: .3s;
         }
         &:hover, &:focus{
-          background-color: var(--hover);
-          // box-shadow: var(--hover) 0 0 0 3px;
+          border-color: white;
+          box-shadow: var(--tinge) 0 0 0 3px;
           &::before{
             opacity: 1;transform: translateY(-120%);
           }
@@ -128,45 +134,77 @@
         background-size: 30px;
       }
       &.print>button, &.print>a{
-        background-image: url(../images/icon_print.png);
-        background-size: 24px;
+        background-image: url(../images/icon_print.svg);
+        background-size: 30px;
       }
       &.share>button, &.share>a{
-        background-image: url(../images/icon_share.png);
-        background-size: 24px;
+        background-image: url(../images/icon_share.svg);
+        background-size:auto 30px;
       }
 
       // 第二層
-      &.compound ul{ 
-        display: none;
-        position: absolute; top: auto; left: 0; 
-        width: var(--size); 
-        &>li{
-          position: absolute; top: 0; left: 0; 
-          margin: 4px 0; padding: 0;
-          &>a{
-            display: block;width: var(--size); height: var(--size);border-radius: 50%;
-            text-indent: -15em; overflow: hidden;
-            background-color: transparent;
-            transition: .2s;
-            &:hover{
-              background-color: transparent;
-              transform: scale(1.1);
+      &.compound {
+        &>button{ z-index: 9;position: relative;}
+        &>ul{ 
+          display: none;
+          position: absolute; top: auto; left: 0; 
+          width: var(--size); 
+          &>li{
+            position: absolute; top: 0; left: 0; 
+            margin: 4px 0; padding: 0;
+            &>a, &>button {
+              display: block; padding: 0; margin: 0;
+              width: var(--size); height: var(--size);
+              border-radius: 50%;
+              transition: .2s;
             }
-            &:focus{
-              box-shadow:$white 0 0 0 1px, $borderColorDark 0 0 0 4px;
-              background-color: transparent;
-              transform: scale(1);
-            }
-          }
-          img{
-            display: block; width: 100%; height: 100%; 
-            margin: 0 auto;border-radius: 50%;
           }
         }
       }
+      
+      // 分享
+      &.share>ul>li{
+        &>a{
+          text-indent: -15em; overflow: hidden;
+          background-color: transparent;
+          &:hover, &:focus{
+            box-shadow:$white 0 0 0 2px, var(--tinge) 0 0 0 4px;
+          }
+        }
+        img{
+          display: block; width: 100%; height: 100%; 
+          margin: 0 auto;border-radius: 50%;
+        }  
+      }
 
-      &.compound>button{position: relative; z-index: 19;}
+      // 字型大小
+      &.fontSize{
+        button{color: var(--tinge);}
+        &>button{ 
+          &::before{ opacity: 1; transform: none; display: inline; position: static;}
+        }
+        li{
+          button{
+            background-color: var(--tinge); color: $white;
+            border-color: transparent;
+            &:hover, &:focus{
+              border-color: var(--tinge);
+              background: $white; color:  var(--tinge);
+              box-shadow: var(--tinge) 0 0 0 2px;
+            }
+          }
+        }
+
+        .smallFont{ font-size: .88rem;}
+        .mediumFont{ font-size: 1rem;}
+        .largeFont{ font-size: 1.33rem;}
+
+        &>.smallFont::before{content: '小'; font-size: .4rem;}
+        &>.mediumFont::before{content: '中'; font-size: .4rem;}
+        &>.largeFont::before{content: '大';font-size: .4rem;}
+      }
+      
+      // &.compound>button{position: relative; z-index: 19;}
     }
   }
 }

@@ -1,26 +1,23 @@
 // 條列頁上方的查詢區
 // --------------------------------------------------------------- //
 .searchOnLp {
-  position: relative; padding: 30px 50px;
-  margin: 0 auto;
+  @extend %primSecWidth;
+  position: relative; padding: 30px 30px;
   background: linear-gradient(180deg, #F6F6F6 0%, #F9F9F9 9.38%, #FFFFFF 100%);
   box-shadow: 0 0 4px 0 rgba(15, 61, 95, 0.2);
 
   &.drawer{
-
     button.handle{
       position: relative; height: 2em; line-height: 2; width: 100%;
       padding: 0 44px 0 28px; margin: 0; text-align: left;
       font-size: 2rem; font-weight: bold;
       color: $primaryColor; background-color: transparent; 
-      box-shadow: none;
+      box-shadow: none; border: none;
 
-      outline: 1px dashed #0006;
-  
       &:hover, &:focus{ 
         &::after{}
       }
-      &:focus { box-shadow: $fontColorLight 0 0 0 2px;}
+      &:focus { box-shadow: $primaryColor 0 0 0 1px;}
   
       &::before, &::after{
         content: ''; position: absolute;
@@ -44,38 +41,35 @@
     }
   
     .tray {
-      display: none;
-      position: relative;z-index: 2;
+      display: none;position: relative;z-index: 2;
       padding: 14px 0 8px;
     }
   }
 
-  table.layout {
-    width: 94%; margin: 0 auto; border-collapse: collapse;
-    td {
-      padding: 0;
-      &:first-child { padding-right: 3px; width: 4.5em; white-space: nowrap; text-align: right;}
-    }
-  }
+  // table.layout {
+  //   width: 100%; margin: 0 auto; border-collapse: collapse;
+  //   font-size: 1.3em;
+  //   td {
+  //     padding: 0;
+  //     &:first-child { padding-right: 3px; width: 4.5em; white-space: nowrap; text-align: right;}
+  //   }
+  // }
 
   @media screen and (min-width: $wwNormal){
     width: $normalWidth; margin: 16px auto 0;
     .handle {right: 0;}
-    table.layout {
-      max-width: 920px;
-    }
   }
 
   @media screen and (min-width: $wwMaximum){
     width: $maximumWidth;
   }
 
-  @media screen and (max-width: $wwMedium){
-    table.layout {
-      tr, td {display: block;}
-      td:first-child{
-        text-align: left; padding: .6em 6px 0;
-      }
-    }
-  }
+  // @media screen and (max-width: $wwMedium){
+  //   table.layout {
+  //     tr, td {display: block;}
+  //     td:first-child{
+  //       text-align: left; padding: .6em 6px 0;
+  //     }
+  //   }
+  // }
 }

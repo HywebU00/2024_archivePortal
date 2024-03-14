@@ -18,10 +18,10 @@ label {
 // scss 變數
 // ------------------------------------------------------ //
 $inputBg: #fff;
-$inputColor: #000;
+$inputColor: #{$primaryColor};
 $inputBdr: #{$primaryColor};
-$inputBgHover: #ffc;
-$inputBdrHover: #888;
+$inputBgHover: #e7ffff;
+// $inputBdrHover: #888;
 
 // disabled
 $disColor: #888;
@@ -33,7 +33,7 @@ $roColor: #000;
 $roBg: #f3f3f3;
 
 
-$btnBg: #188eac;
+// $btnBg: #188eac;
 $btnColor: #fff;
 $btnBgHover: #00c0d0;
 $btnBg2: #ae2783;
@@ -52,12 +52,12 @@ $btnDisBg: #cfcfcf;
   --inputLineHeight : 2.7;
 
   // color
-  --inputColor: #{$inputColor};
-  --inputBg: #{$inputBg};
-  --inputBgHover: #{$inputBgHover};
-  --inputBdr: #{$inputBdr};
-  --btnBg: #{$btnBg};
-  --btnColor: #{$btnColor};
+  --inputColor: #{$fontColor};
+  --inputBg: #{$white};
+  --inputBgHover: #{$assistant1};
+  --inputBdr: #{$primaryColor};
+  --btnBg: #{$white};
+  --btnColor: #{$primaryColor};
 }
 // ------------------------------------------------------ //
 
@@ -69,19 +69,20 @@ $btnDisBg: #cfcfcf;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  margin: 5px;
-  padding: 0 10px; vertical-align: middle;border-radius: 0;
+
   height: var(--inputHeight); line-height: var(--inputLineHeight);
-  border: 1px solid var(--inputBdr);
-  color: var(--inputColor);
-  background-color: var(--inputBg);
+  padding: 0 10px; margin: 5px;
+  vertical-align: middle;border-radius: 0;
+
+  border: 1px solid $primaryColor;
+  background-color: $white;
+  color: $fontColor;
   transition: .2s;
 
-  &:hover { --inputBg: #{ $inputBgHover}; --inputBdr: #{ $inputBdrHover};}
+  &:hover, &:focus { background-color: $inputBgHover;}
   &:focus {
-    --inputBg: #{ $inputBgHover};
-    --inputBdr: #{ $inputBgHover};
-    box-shadow: $inputBdrHover 0 0 0 2px
+    box-shadow: $inputBdr 0 0 0 2px;
+    border-color: $white;
   }
 
 
@@ -146,18 +147,19 @@ textarea {
   margin: 5px;
   padding: 0 32px 0 10px;vertical-align: middle;border-radius: 0;
   height: var(--inputHeight); line-height: var(--inputLineHeight);
-  border: 1px solid var(--inputBdr);
-  background: var(--inputBg) url(../images/selectArrow.svg) no-repeat right 6px top .75em;
-  background-size: 16px auto;
+
+  border: 1px solid $primaryColor;
+  color: $fontColor;
+  background: $white url(../images/selectArrow.svg) no-repeat right 6px top .8em;
+  background-size: 24px auto;
   transition: .2s;
 
   cursor: pointer;
 
-  &:hover { --inputBg: #{ $inputBgHover}; --inputBdr: #{ $inputBdrHover};}
+  &:hover, &:focus { background-color: $inputBgHover;}
   &:focus {
-    --inputBg: #{ $inputBgHover};
-    --inputBdr: #{ $inputBgHover};
-    box-shadow: $inputBdrHover 0 0 0 2px
+    box-shadow: $inputBdr 0 0 0 2px;
+    border-color: $white;
   }
   &[disabled]{ 
     --inputColor: #{$disColor}; --inputBg:#{$inputBg}; --inputBdr: #{$disBdr};
@@ -188,20 +190,22 @@ input[type="reset"] {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  border: none;
-
-  padding:0 1.2em; margin:5px; border-radius: 0;
+    
+  border: 1px solid $inputBdr;
+  padding:0 2em; margin:5px; border-radius: 0;
   vertical-align: middle;
   cursor: pointer; transition: .2s;
 
-  height: var(--inputHeight); line-height: var(--inputLineHeight);
-  background-color: var(--btnBg); color: var(--btnColor);
-  box-shadow: var(--btnBg) 0 0 0 1px;
+  height: var(--inputHeight); line-height: var(--inputHeight);
+
+  background-color: $inputBg; color: $inputColor;
+  // box-shadow: $inputBdr 0 0 0 1px;
 
   &:hover, &:focus {
-    --btnBg: #{$btnBgHover};
+    background-color: $assistant1;
+    border-color: $assistant1;
   }
-  &:focus{box-shadow: var(--btnBg) 0 0 0 4px;}
+  &:focus{ box-shadow: $inputBdr 0 0 0 3px;}
 
   &[disabled] { --btnBg: #{$btnDisBg}; --btnColor: #{$btnDisColor}; cursor: not-allowed;}
 }
@@ -242,16 +246,16 @@ input[type="radio"] {
 input[type="checkbox"] { 
   border-radius: 0;
   &:checked{
-    background: $btnBg url(../images/icon_check.svg) no-repeat center .05em;
+    background: var(--btnColor) url(../images/icon_check.svg) no-repeat center .05em;
     background-size: 96%;
-    box-shadow: $btnBg 0 0 0 2px; border-color: transparent;
+    box-shadow: var(--btnColor) 0 0 0 2px; border-color: transparent;
   }
 }
 // ------------------------------------------------------ //
 
 
 
-// 模擬文字輸入匡
+// 模擬文字輸入框
 // ------------------------------------------------------ //
 .mimicInput{
   height: var(--inputHeight); line-height: var(--inputLineHeight);

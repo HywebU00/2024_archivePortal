@@ -30,9 +30,9 @@ $radius: 16px; // 圓角半徑
 // 首頁主要區塊寬度
 // ---------------------------------------------------------------- //
 %primSecWidth {
-  width: $mobileWidth; margin: 40px auto;
+  width: $mobileWidth; margin: 50px auto;
   @media screen and (min-width: $wwNormal){
-    width: $normalWidth; margin: 100px auto;
+    width: $normalWidth; margin: 80px auto;
   }
   @media screen and (min-width: $wwMaximum){
     width: $wwMaximum * .9;
@@ -49,8 +49,8 @@ $secondaryColor: #E2E2E2;
 $assistant1: #8FFDFF;
 // $assistant2: #424530;
 $hilight : #e09132;
-$focus: #d00;
-$hover: #fffecd;
+$warning: #e41c97;
+$hover: #e7ffff;
 
 $fontColor: #2a485d;
 $fontColorLight: #555;
@@ -72,9 +72,15 @@ $gray: #d3d5d6;
 $grayLight: #eff7fb;
 $grayDark: #424344;
 
-$btnBg1: $primaryColor;
-$btnBg2: #01425c;
 
-$footBg: $primaryColor;
-$sidebarBg: $grayDark;
+%gradient1 {
+  background: linear-gradient(180deg, #F6F6F6 0%, #F9F9F9 9.38%, #FFFFFF 100%);
+  box-shadow: 0 0 4px rgba(15 61 95 / .2);
+}
+
+// $btnBg1: $primaryColor;
+// $btnBg2: #01425c;
+
+// $footBg: $primaryColor;
+// $sidebarBg: $grayDark;
 // ---------------------------------------------------------------- //

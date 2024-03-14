@@ -1,12 +1,13 @@
 // 分頁
 // ------------------------------------------------------ //
 .pagination {
-  --tinge: #333;
-  --active: #f60;
-  --invert: #fff;
+  --tinge: #{$primaryColor};
+  --active: #{$primaryColor};
+  --hover: #{$assistant1};
+  --em: #045C9A;
 
-  @extend %primSecWidth; margin: 3em auto 0; padding: 10px 0;
-  text-align: center;font-size: 1em; line-height: 1.5;
+  @extend %primSecWidth; 
+  text-align: center;font-size: 1.1em; line-height: 1.5;
   letter-spacing: 0;
   form{ display: inline-block;}
   input, select{font-size: inherit; height: 2.4em; line-height: 2.4;}
@@ -15,92 +16,81 @@
   em{
     display: inline-block; margin: 0 .4em; 
     font-style: normal; font-weight: bold;
+    color: var(--em);
   }
 
   .items{ 
     display: inline;
     a{ 
-      display: inline-block; font-weight: bold; color: $fontColor;
-      height: 1.8em; line-height: 1.6; margin:0 3px;padding: 0 6px;
-      border-radius: 4px; transition: .2s;
-      &:hover, &:focus{box-shadow: var(--active) 0 0 0 1px;}
+      display: inline-block; font-weight: bold; color: var(--em);
+      height: 1.6em; line-height: 1.7; margin:0 3px;padding: 0 6px;
+      transition: .2s;
+      &:hover, &:focus{box-shadow: var(--tinge) 0 0 0 1px;}
       &.active{ 
-        background-color: var(--active); color:var(--invert);
+        box-shadow: var(--active) 0 0 0 1px;
         &:hover, &:focus{box-shadow: var(--active) 0 0 0 2px;}
       }
     }
   }
 
   .page{ 
-    list-style: none; line-height: 1; letter-spacing: 0;
     display: flex; flex-flow: row wrap; justify-content: center;
-    margin:8px auto; padding: 3px; 
+    list-style: none; line-height: 1; letter-spacing: 0;
+    margin:16px auto; padding: 3px; font-weight: bold;
     &>li{ 
-      flex: 0 0 auto;
-      margin: 3px -1px 3px 0;
-      background-color: $white;
-      border: 1px solid $borderColor;
-
-      &:hover{ border-color: var(--active); z-index: 19;}
-
-      &:first-child {
-        border-radius: 5px 0 0 5px;
-        overflow: hidden;
-      }
-      &:last-child{ border-radius: 0 5px 5px 0;}
+      flex: 0 0 auto; margin:5px 3px;
+      &:hover{ border-color: var(--tinge);}
 
       a{ 
-        display: block; min-width: 46px;height: 46px; line-height: 46px;
-        position: relative; bottom: 0;
-        padding: 0 5px;
-        color: $fontColor; 
+        display: block; min-width: 2em;height: 2em; line-height: 2;
+        position: relative; bottom: 0; padding: 0 5px;
+        color: var(--em);
         transition:box-shadow .2s, background .2s;
-        &:hover, &:focus{ box-shadow: var(--active) 0 0 0 2px inset;}
+        &:hover, &:focus {background-color: var(--hover); color: var(--tinge);}
       }
+      
       &.active{
-        z-index: 29; font-weight: normal;
         a{
           color: $fontInvert; background-color: var(--active);
-          box-shadow: var(--active) 0 0 0 1px;
-          &:hover, &:focus{ box-shadow:$white 0 0 0 1px, var(--active) 0 0 0 4px;}
+          &:hover, &:focus{ box-shadow:$assistant1 0 0 0 1px inset, var(--active) 0 0 0 2px;}
         }
       }
 
       // 箭頭
-      &.first, &.prev, &.next, &.last{  
-        text-indent: -20em;
+      &.first, &.prev, &.next, &.last{
+        margin: 5px; text-indent: -20em;
         a{ 
           position: relative; overflow: hidden; padding: 0;
-          &::after{
-            content: ''; position: absolute; top: 50%;
-            width:8px; height:8px; margin-top: -5px;
-            border: 2px solid var(--tinge); border-top: none; border-right: none;
+          @extend %gradient1;
+          &::before, &::after { content: ''; position: absolute; top: 50%;}
+          &::after{ // 直角
+            width:11px; height:11px; margin-top: -7px;
+            border: 3px solid var(--tinge); border-top: none; border-right: none;
             transform: rotate(45deg);
           }
           &:hover, &:focus{
-            --tinge: var(--invert);
-            background-color: var(--active);
+            box-shadow: var(--tinge) 0 0 0 1px;
           }
         }
       }
       &.first, &.last{
         a{
-          &::before{
-            content: ''; position: absolute; top: 50%; left: 16px;
-            width: 2px; height: 14px; transform: translateY(-50%);
-            background:var(--tinge);
+          &::before{ // 直線
+            width: 3px; height: 20px; left: 15px;
+            transform: translateY(-50%);
+            background-color:var(--tinge);
           }
-          &::after{ left: 20px; }
         }
-      }
-
-      &.prev, &.next{
-        a::after{left: 18px;}
       }
       &.next, &.last{
-        a{ 
-          transform: rotate(180deg);
-        }
+        a::after{transform: rotate(225deg);}
+      }
+      &.first a::after {left: 20px; }
+      &.prev a::after{left: 17px; }
+      &.next a::after{left: 12px;}
+      &.last a{
+        &::before{ left: 25px;}
+        &::after{ left: 9px;}
       }
     }
   }
