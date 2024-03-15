@@ -4,7 +4,7 @@
 
   ul{list-style: none; margin: 0; padding: 0;}
   &>ul{
-    line-height: 1.1;
+    line-height: 1.6;
     &>li{
       margin: 0 0 20px;padding: 0;
       &>a{
@@ -33,15 +33,12 @@
 
       .label{ 
         position: absolute; right: 5px; top: -4px; 
-        height: 2.1em; line-height: 2.3em; padding: 0 1em;
-        background-color: $assistant1; color: $primaryColor;
-        border-radius: 2px 2px 6px 6px; box-shadow: #0004 0 2px 3px; z-index: 9;
-        &.style1 {background-color: #d74d11; color: $white;}
-        &.style2 {background-color: #087c67; color: $white;}  
+        border-radius: 2px 2px 6px 6px;
+        box-shadow: #0004 0 2px 3px; z-index: 9;
       }
 
       p{ 
-        margin: 0 6px; line-height: 1.5;
+        margin: 0 6px;
         &.title{ 
           font-size: 1.2em; font-weight: bold; 
           overflow: hidden;
@@ -61,7 +58,7 @@
       }
      
       .info{
-        margin:24px 6px 5px; padding: 0; line-height: 1.5;
+        margin:24px 6px 5px; padding: 0;
         abbr{ text-decoration: none; margin: 0 3px;}
       }
     }

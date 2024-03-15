@@ -341,6 +341,44 @@ button.sidebarCtrl{
 // --------------------------------------------------------------- //
 
 
+// 小標籤：［最新］、［展覽］、［活動］
+// --------------------------------------------------------------- //
+.label{ 
+  display: inline-block;
+  height: 2.1em; line-height: 2.3em; padding: 0 1em;
+  background-color: $assistant1; color: $primaryColor;
+  &.style1 {background-color: #d74d11; color: $white;}
+  &.style2 {background-color: #087c67; color: $white;}  
+}
+// --------------------------------------------------------------- //
+
+// 圖釘 map pin icon
+.mapPin {
+  display: inline-block; margin: 0 5px;
+  a{
+    display: block; position: relative; 
+    padding: 0 13px 0 36px;
+    height: 2.2em; line-height: 2.3; border-radius: 2em;
+    text-decoration: none;
+    background-color: $assistant1;color: $primaryColor;
+    box-shadow: $shadow1 0 1px 4px;
+    transition: .2s;
+    &::before {
+      content: '';
+      position: absolute; left: 7px; top: calc(50% - 14px);
+      width: 28px; height: 28px;
+      background: url(../images/icon_mapPin.svg) no-repeat center center;
+      background-size: auto 100%;
+      transition: .2s;
+    }
+    &:hover, &:focus{
+      background-color: $primaryColor; color: $white;
+      &::before { filter: brightness(16);}
+    }
+    &:focus{ box-shadow: $primaryColor 0 0 0 2px;}
+  }
+
+}
 
 // --------------------------------------------------------------- //
 // 內頁附圖 flow 點點、箭頭樣式
