@@ -93,8 +93,6 @@ time {
   }
 
   &:hover, &:focus {
-    --tinge: #{$assistant1};
-    --bg: #{$primaryColor};
     box-shadow: var(--tinge) 0 0 0 3px;
   }
 
@@ -150,7 +148,7 @@ time {
 
 // 行動版側欄開關 （漢堡）
 // --------------------------------------------------------------- //
-.sidebarCtrl{
+button.sidebarCtrl{
   --tinge : #{$primaryColor};
   --bg: #{$white};
   
@@ -168,10 +166,24 @@ time {
   }
   &::after {opacity: 0;}
 
+  &:hover, &:focus {
+    --tinge : #{$white};
+    --bg: #{$primaryColor};
+    background-color: var(--bg);
+    // box-shadow: none;
+  }
+  &:focus{
+    // --tinge : #{$white};
+    // --bg: #{$primaryColor};
+    box-shadow: var(--bg) 0 0 0 4px;
+  }
+
   &.closeIt{
     --bg: #{$assistant1};
-
+    --tinge : #{$primaryColor};
     box-shadow: var(--bg) 0 0 0 4px;
+    // box-shadow: none;
+
     &::before, &::after{
       width: 32px;left: calc(50% - 16px);
       background-color: var(--tinge); 
@@ -184,18 +196,15 @@ time {
       opacity: 1;
       transform: rotate(-45deg);
     }
+
+    &:hover {
+      --tinge : #{$white};
+      --bg: #{$primaryColor};
+      box-shadow: none;
+    }
   }
   
-  &:hover {
-    --bg: #{$primaryColor};
-    --tinge : #{$white};
-    box-shadow: none;
-  }
-  &:focus{
-    --tinge : #{$white};
-    --bg: #{$primaryColor};
-    box-shadow: var(--bg) 0 0 0 4px;
-  }
+
 
 }
 // --------------------------------------------------------------- //

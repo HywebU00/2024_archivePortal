@@ -12,9 +12,10 @@
       a {
         display: block;
         text-decoration: none; padding: 1em 1.5em .9em;
-        font-weight: bold; color: $primaryColor;
-        background: linear-gradient(180deg, #F6F6F6 0%, #F9F9F9 9.38%, #FFFFFF 100%);
-        box-shadow: $borderColorLight 0 0 0 1px, $borderColor 0 0 4px 0;
+        font-weight: bold; 
+
+        @extend %gradient1;color: $primaryColor;
+        box-shadow: $borderColorLight 0 0 0 1px, $shadow1 0 0 4px 0;
         transition: .15s;
 
         &:hover,  &:focus{box-shadow: $borderColor 0 0 0 1px;}
