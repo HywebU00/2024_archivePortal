@@ -2,32 +2,36 @@
 // --------------------------------------------------------------- //
 .searchOnLp {
   @extend %primSecWidth;
-  position: relative; padding: 30px 30px;
+  position: relative; padding: 30px 20px;
   background: linear-gradient(180deg, #F6F6F6 0%, #F9F9F9 9.38%, #FFFFFF 100%);
   box-shadow: 0 0 4px 0 rgba(15, 61, 95, 0.2);
 
   &.drawer{
     button.handle{
       position: relative; height: 2em; line-height: 2; width: 100%;
-      padding: 0 44px 0 28px; margin: 0; text-align: left;
-      font-size: 2rem; font-weight: bold;
+      padding: 0 44px 0 36px; margin: 0; text-align: left;
+      font-size: 1.5rem; font-weight: bold;
       color: $primaryColor; background-color: transparent; 
       box-shadow: none; border: none;
+      transition: .2s;
 
       &:hover, &:focus{ 
-        &::after{}
+        background-color: $hover;
+        &::before{}
+        &::after {}
       }
-      &:focus { box-shadow: $primaryColor 0 0 0 1px;}
+      &:focus {outline: 1px dashed $primaryColor;}
   
       &::before, &::after{
         content: ''; position: absolute;
+        transition: .2s;
       }
       &::before {
-        width: 12px; height: 1em; left: 0; top: .5em;
+        width: 12px; height: 1em; left: 10px; top: .5em;
         background-color: $primaryColor;
       }
       &::after{
-        right: 6px; top: calc(50% - 7px);
+        right: 20px; top: calc(50% - 7px);
         width: 16px; height: 16px;
         border: 4px solid $primaryColor; border-bottom: none; border-right: none;
         transform: rotate(45deg); transition: .3s;
@@ -35,7 +39,7 @@
   
       &.openIt{
         &::after{
-          transform: rotate(225deg); margin-top: -8px;
+          transform: rotate(225deg); margin-top: -6px;
         }
       }
     }
@@ -44,6 +48,8 @@
       display: none;position: relative;z-index: 2;
       padding: 14px 0 8px;
     }
+
+    .btnDv{margin-top: 20px;}
   }
 
   // table.layout {

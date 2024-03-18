@@ -191,19 +191,20 @@ input[type="reset"] {
   -webkit-appearance: none;
   -moz-appearance: none;
     
-  border: 1px solid $inputBdr;
+  border: 1px solid $primaryColor;
   padding:0 2em; margin:5px; border-radius: 0;
   vertical-align: middle;
   cursor: pointer; transition: .2s;
 
   height: var(--inputHeight); line-height: var(--inputHeight);
 
-  background-color: $inputBg; color: $inputColor;
+  background-color: $primaryColor; color: $white;
   // box-shadow: $inputBdr 0 0 0 1px;
 
   &:hover, &:focus {
     background-color: $assistant1;
-    border-color: $assistant1;
+    border-color: $primaryColor;
+    color: $primaryColor;
   }
   &:focus{ box-shadow: $inputBdr 0 0 0 3px;}
 
@@ -224,32 +225,39 @@ input[type="submit"]{
 input[type="radio"],
 input[type="checkbox"] {
   -webkit-appearance: none; -moz-appearance: none; appearance: none;
-  margin:-.2em 7px 0 4px; 
-  width: 1.2em; height: 1.2em; line-height: 1; 
+  margin:-.1em 7px 0 4px; 
+  line-height: 1; 
   border: 1px solid var(--inputBdr);
   vertical-align: middle;
   cursor: pointer;
-  transition: .1s;
 }
 
 // radio
 input[type="radio"] {
+  width: 1.2em; height: 1.2em; 
   border-radius: 50%;
-  &:focus, &:checked{
-    border-width: 2px; border-color: var(--btnColor);
-    background-color: var(--btnBg);
-    box-shadow:var(--btnBg) 0 0 0 3px;
+  &:hover, &:focus { border-width: 2px;}
+  &:checked{
+    border-width: 2px;
+    box-shadow: $white 0 0 0 3px inset, $primaryColor 0 0 0 10px inset;
+    &:focus {
+      box-shadow: $white 0 0 0 5px inset, $primaryColor 0 0 0 10px inset;
+    }
   }
 }
 
 // checkbox
-input[type="checkbox"] { 
-  border-radius: 0;
+input[type="checkbox"] {
+  width: 1em; height: 1em; 
+  border-radius: 2px;
+  &:hover, &:focus { box-shadow: $primaryColor 0 0 0 1px;}
   &:checked{
-    background: var(--btnColor) url(../images/icon_check.svg) no-repeat center .05em;
-    background-size: 96%;
-    box-shadow: var(--btnColor) 0 0 0 2px; border-color: transparent;
+    background: var(--btnColor) url(../images/icon_check.svg) no-repeat center .06em;
+    background-size: 88%;
+    box-shadow: $primaryColor 0 0 0 2px; border-color: transparent;
+    &:focus {box-shadow: $primaryColor 0 0 0 3px;border-color: $white;}
   }
+
 }
 // ------------------------------------------------------ //
 

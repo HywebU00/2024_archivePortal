@@ -1,7 +1,6 @@
 .formA {
   @extend %primSecWidth;
   padding: 24px 0;
-  background-color: #dde;
 }
 
 
@@ -9,11 +8,14 @@
 // ------------------------------------------------------ //
 table.layout {
   width: 100%; margin: 0 auto; border-collapse: collapse;
-  font-size: 1.3em;
+  font-size: 1.11em;
   td {
-    padding: 0;
-    &:first-child { padding-right: 3px; width: 4.5em; white-space: nowrap; text-align: right;}
-  }
+    padding:5px 0;
+    &:first-child {
+      padding-right: 3px;width: 4.5em;
+      white-space: nowrap;text-align: right;
+      }
+    }
 
   @media screen and (max-width: $wwMedium){
     tr, td {display: block;}
@@ -23,42 +25,10 @@ table.layout {
   }
 
   @media screen and (min-width: $wwNormal){
-    max-width: 920px;
+    max-width: 960px;
 
   }
 }
-
-
-
-
-
-
-
-table.formLayout{
-  width: 100%; margin: 0 auto;
-  border-collapse: collapse;
-  font-size: 1.125em; line-height: 1.5;
-  td{
-    padding: 3px;
-    &:nth-child(odd) {
-      text-align: right; font-weight: 400;
-      vertical-align: top; padding-top: 1.1em;
-
-    }
-    &:nth-child(even) {
-      color: $fontColor;
-    }
-
-    .fullWidth{width: 90%;}
-    .duration { width: calc(90% + 10px); }
-  }
-
-  &+.formLayout {margin-top: 10px;}
-
-  &+.btnDv{ margin-top: 16px;}
-
-}
-
 
 .btnDv{
   font-size: 1.3em;
@@ -141,14 +111,20 @@ table.formLayout{
   }
 }
 
-// 單選、複選
+// 單選、複選 radio button & checkbox
 // ------------------------------------------------------ //
-.optionPool{ margin: 3px;
-  label{display: inline-block; margin:0 1em 3px 0; padding: .6em 1em .5em .6em; line-height: 1.5;
-    &:hover{
-      box-shadow: $borderColorLight 0 0 0 1px; border-radius: 2em;
+.optionPool{ 
+  margin: 5px;
+  label{
+    display: inline-block;line-height: 1.4; border-radius: 2em;
+    margin:3px .6em 3px 3px; padding: .6em 1em .5em .6em; 
+    &:hover, &:focus {
+      box-shadow: $borderColor 0 0 0 1px; border-radius: 2em;
     }
-    input{ vertical-align: top; margin-top: .2em;}
+    input{ 
+      vertical-align: top; margin-top: .08em;
+      &[type="checkbox"]{margin-top: .18em;}
+    }
   }
 }
 
