@@ -215,7 +215,7 @@
   line-height: 1.6;
 
   background: linear-gradient(180deg, #F6F6F6 0%, #F9F9F9 9.38%, #FFFFFF 100%);
-  box-shadow: 0 0 4px 0 #0F3D5F33;
+  box-shadow: 0 0 4px 0 $shadow1;
 
   a{ text-decoration: underline; color: $linkColor;
     &:hover {text-decoration: none;}
