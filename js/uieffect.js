@@ -599,6 +599,35 @@ $(function(){
 
 
 
+  // 問答列表 展開／收合
+  // --------------------------------------------------------------- //
+  $('.qaList').each( function () {
+    let _showHideItems = $(this).children('ul').children('li');
+    let _ctrlBtn = _showHideItems.find('.ctrlBtn');
+    let _answer = _showHideItems.find('.a');
+    const textOpen = "展開";
+    const textClose = "收合";
+
+    _ctrlBtn.click(function () {
+      let _this = $(this);
+      let _thisQ = _this.parent('.q');
+      let _thisA = _thisQ.next();
+      if ( _thisA.is(':visible')) {
+        _thisA.slideUp(400);
+        _this.removeClass('closeIt').text(textOpen);
+      } else {
+        _ctrlBtn.removeClass('closeIt').text(textOpen);
+        _answer.not(_thisA).slideUp(400);
+        _thisA.slideDown(400);
+        _this.addClass('closeIt').text(textClose);
+      }
+    });
+  });
+  // --------------------------------------------------------------- //
+
+
+
+
 
   // 改變瀏覽器寬度 window resize 
   // --------------------------------------------------------------- //

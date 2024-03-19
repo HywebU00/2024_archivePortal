@@ -1,0 +1,89 @@
+.qaList{
+  @extend %primSecWidth;
+  &>ul{
+    font-size: 1.1em;
+    list-style: none; margin: 0; padding: 0;
+    &>li{
+      padding:0; margin: 0 0 20px; line-height: 1.7;
+      @extend %gradient1;
+      color: $fontColor;
+      box-shadow:$borderColor 0 0 0 0, $shadow1 0 2px 8px;
+
+      // 問題編號
+      .qaIndex {
+        position: absolute; top: -4px; left: 20px;
+        height: 2.7em; line-height: 3.2; padding:0 20px;
+        border-radius: 2px 2px 6px 6px;
+        box-shadow: #0004 0 2px 3px; z-index: 9;
+        background-color: $primaryColor; color: $white;
+      }
+
+      // 問題
+      .q{
+        position: relative;
+        padding: 4em 20px 20px 20px;
+
+        .ctrlBtn{
+          position: absolute; right: 16px; top: 8px;
+          width: 52px; height: 52px; padding: 0; border-radius: 30px;
+          overflow: hidden; text-align: left;
+          border-color: transparent;
+          background-color: $white;
+          box-shadow: $shadow1 0 2px 6px;
+          &::before{
+            content: ''; position: absolute; right: 16px; top: calc(50% - 12px);
+            width: 10px; height: 10px;
+            border: 3px solid $primaryColor; 
+            border-left-color: transparent; border-top-color: transparent;
+            transform: rotate(45deg);
+            transition: .3s;
+          }
+          &:hover, &:focus{
+            width: calc(3em + 52px); padding-right: 40px; padding-left: 1em;
+          }
+          &:focus{
+            box-shadow: $shadow1 0 0 0, $primaryColor 0 0 0 2px;
+          
+          }
+
+          &.closeIt{
+            &::before { transform: rotate(225deg); top: calc(50% - 4px);}
+          }
+        }
+
+        p{margin: 0 0 1em;}
+      
+      }
+
+      // 回覆
+      .a{
+        display: none;
+        padding:30px 0 40px 20px; margin: 0 20px;
+        border-top: 2px solid $borderColor;
+
+        .update{
+          margin: 2em 0 0; padding: 1em 0 0; text-align: right; font-size: .9em;
+          border-top: 1px dashed $borderColor;
+        }
+      }
+
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    &>ul{
+      &>li{
+        .qaIndex { left: 24px;}
+        .q{
+          padding: 4em calc(4em + 72px) 30px 40px;
+          .ctrlBtn{ top: 3.2em;}
+        }
+        .a{
+          padding-top: 36px;
+          margin: 0 40px;
+        }
+      }
+    
+    }
+  }
+}
