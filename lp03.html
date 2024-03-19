@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>檔案管理局 LP09</title>
+  <title>檔案管理局 LP03</title>
 
   <link rel="stylesheet" href="slick/slick.css" />
   <link rel="stylesheet" href="css/style.css" />
@@ -169,13 +169,14 @@
     <div class="breadcrumb" title="瀏覽路徑">
       <ul>
         <li><a href="mp.html">首頁</a></li>
-        <li><a href="#">展覽與活動</a></li>
-        <li>特展</li>
+        <li><a href="#">學習資源</a></li>
+        <li><a href="#">圖書與刊物</a></li>
+        <li>檔案半年刊</li>
       </ul>
     </div>
 
     <div class="pageHeader">
-      <h2>特展</h2>
+      <h2>檔案半年刊</h2>
       <section class="funcBar">
         <ul>
           <li class="fontSize compound">
@@ -200,38 +201,7 @@
       </section>
     </div>
 
-    <!-- 查詢條件 -->
-    <!-- <section class="searchOnLp drawer">
-      <button class="handle" type="button">顯示查詢條件</button>
-      <div class="tray">
-        <form action="">
-          <table class="layout">
-            <tbody>
-              <tr>
-                <td>標題</td>
-                <td><input class="fullWidth" type="text" placeholder="請輸入關鍵字"></td>
-              </tr>
-              <tr>
-                <td>日期</td>
-                <td>
-                  <div class="duration">
-                    <input type="date" placeholder="請選擇日期">
-                    <input type="date" placeholder="請選擇日期">
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="btnDv">
-            <input type="button" value="查詢">
-            <input type="reset" value="清除">
-          </div>
-        </form>
-      </div>
-    </section> -->
-
-    <!-- 頁首說明區 -->
-    <!-- <article class="preface">
+    <article class="preface">
       <h3>列表頁頁首說明區</h3>
       <p>這裡可以放置列表頁頁首說明內容。</p>
       <p>依檔案法第19條規定，各機關於收到檔案應用申請書後，應自受理之日起30日內，以書面通知申請人准駁結果；如需補正資料，則自申請人補正之日起算。</p>
@@ -243,192 +213,256 @@
         <li>果還種東西受的不過，以用二次上看到旁的現疾，今的場的來自然有點討。</li>
         <li>不可時在畫大家可查灣一直，感謝這樣的到我如果是吃什麼，到一才能好笑某種文章二，種感覺標題太誇望能，得好像特別喜會很不過我。</li>
       </ul>
-    </article> -->
+    </article>
+
+
+    <section class="searchOnLp drawer">
+      <button class="handle" type="button">顯示查詢條件</button>
+      <div class="tray">
+        <form action="">
+          <table class="layout">
+            <tbody>
+              <tr>
+                <td>關鍵字</td>
+                <td colspan="3"><input class="fullWidth" type="text" placeholder="請輸入關鍵字"></td>
+              </tr>
+              <tr>
+                <td>卷別</td>
+                <td>
+                  <select class="fullWidth">
+                    <option value="16">16</option>
+                    <option value="15">15</option>
+                    <option value="14">14</option>
+                    <option value="13">13</option>
+                    <option value="12">12</option>
+                    <option value="11">11</option>
+                  </select>
+                </td>
+                <td>期別</td>
+                <td>
+                  <select class="fullWidth">
+                    <option value="10">10</option>
+                    <option value="9">9</option>
+                    <option value="8">8</option>
+                    <option value="7">7</option>
+                    <option value="6">6</option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="1">1</option>
+                  </select>
+                </td>
+                </tr>
+                <tr>
+                <td>出刊年</td>
+                <td>
+                  <select class="fullWidth">
+                    <option value="112">112</option>
+                    <option value="111">111</option>
+                    <option value="110">110</option>
+                    <option value="109">109</option>
+                    <option value="108">108</option>
+                    <option value="107">107</option>
+                    <option value="106">106</option>
+                    <option value="105">105</option>
+                    <option value="104">104</option>
+                    <option value="103">103</option>
+                    <option value="102">102</option>
+                    <option value="101">101</option>
+                  </select>
+                </td>
+                <td>出刊月</td>
+                <td>
+                  <select class="fullWidth">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                  </select>
+                </td>
+              </tr>
+            </tbody>
+
+          </table>
+          <div class="btnDv">
+            <input type="button" value="查詢">
+            <input type="reset" value="清除">
+          </div>
+        </form>
+      </div>
+    </section>
 
     <section class="category">
       <ul>
         <li><a href="#">全部</a></li>
-        <li class="active"><a href="#">類別一</a></li>
-        <li><a href="#">類別二</a></li>
-        <li><a href="#">類別三</a></li>
-        <li><a href="#">類別四</a></li>
-        <li><a href="#">類別五</a></li>
-        <li><a href="#">是家應隨</a></li>
-        <li><a href="#">者一家的電</a></li>
-        <li><a href="#">話深座香復技</a></li>
-        <li><a href="#">花不他似想角區</a></li>
-        <li><a href="#">望際策標</a></li>
+        <li class="active"><a href="#">制度規章</a></li>
+        <li><a href="#">典藏維護</a></li>
+        <li><a href="#">主題研究</a></li>
+        <li><a href="#">行銷推廣</a></li>
+        <li><a href="#">資訊化</a></li>
+        <li><a href="#">實務經驗</a></li>
+        <li><a href="#">目次</a></li>
+        <li><a href="#">新訊</a></li>
       </ul>
     </section>
 
-    <section class="stack">
-      <ul>
-        <li>
-          <div class="poster"><img src="publicData/poster01.png" alt="展覽海報"></div>
-          <p class="title"><a href="#">奇蹟之島：1970~1980從開發到保育臺灣建設檔案特展</a></p>
-          <ul class="info">
-            <li>日期：<time>112-10-18</time><abbr title="至">~</abbr><time>114-05-29</time></li>
-            <li>地點：國發會檔案管理局展覽廳
-              <span class="mapPin"><a href="#">地圖</a></span>
-            </li>
-          </ul>
-          <p class="description">透過國家檔案，從開發到保育，串連起1970-1980年代我國建設符應時代思潮的轉折歷程，重現這些指標性建設所肩負的任務與影響，亦可見今日永續工程理念之發韌。</p>
-          <span class="label style1">展覽</span>
-          <div class="more"><a href="#">看更多</a></div>
-        </li>
+    <section class="lp">
+      <table class="list rwdTable stickyHead">
+        <thead>
+          <tr>
+            <th>卷別</th>
+            <th>期數</th>
+            <th>標題</th>
+            <th>作者</th>
+            <th>出版日期</th>
+            <th>頁碼</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>22</td>
+            <td>1</td>
+            <td class="aLeft"><a href="#">發行人序言</a></td>
+            <td>林秋燕</td>
+            <td>112-06</td>
+            <td>002-003</td>
+          </tr>
+          <tr>
+            <td>22</td>
+            <td>1</td>
+            <td class="aLeft"><a href="#">目次</a></td>
+            <td>國家發展委員會檔案管理局編</td>
+            <td>112-06</td>
+            <td>004-005</td>
+          </tr>
+          <tr>
+            <td>22</td>
+            <td>1</td>
+            <td class="aLeft"><a href="#">展望Archives of Taiwan Music－從借鑒國際經驗與自我檢視做起</a></td>
+            <td>黃均人</td>
+            <td>112-06</td>
+            <td>006-017</td>
+          </tr>
+          <tr>
+            <td>22</td>
+            <td>1</td>
+            <td class="aLeft"><a href="#">國家檔案與臺灣世界記憶國家名錄徵選（2017-2022）</a></td>
+            <td>許峰源</td>
+            <td>112-06</td>
+            <td>018-037</td>
+          </tr>
+          <tr>
+            <td>22</td>
+            <td>1</td>
+            <td class="aLeft"><a href="#">以本土非木本植物纖維原料－月桃葉鞘纖維研製修護用手工紙</a></td>
+            <td>夏滄琪、李盈緻</td>
+            <td>112-06</td>
+            <td>038-049</td>
+          </tr>
+          <tr>
+            <td>22</td>
+            <td>1</td>
+            <td class="aLeft"><a href="#">國之饗宴：國宴制度的形成與變化（1950-1990）</a></td>
+            <td>陳怡行</td>
+            <td>112-06</td>
+            <td>050-077</td>
+          </tr>
+          <tr>
+            <td>22</td>
+            <td>1</td>
+            <td class="aLeft"><a href="#">抗戰時期「國家總動員會議」之組織與運作（1942-1945）</a></td>
+            <td>余以澄</td>
+            <td>112-06</td>
+            <td>078-095</td>
+          </tr>
+          <tr>
+            <td>22</td>
+            <td>1</td>
+            <td class="aLeft"><a href="#">檔案裡看不到的抗爭者－以後勁反五輕運動為例</a></td>
+            <td>張庭榕</td>
+            <td>112-06</td>
+            <td>096-105</td>
+          </tr>
+          <tr>
+            <td>22</td>
+            <td>1</td>
+            <td class="aLeft"><a href="#">加拿大國家圖書館暨檔案館2030願景與新建場館簡介</a></td>
+            <td>邵僅</td>
+            <td>112-06</td>
+            <td>106-113</td>
+          </tr>
+          <tr>
+            <td>22</td>
+            <td>1</td>
+            <td class="aLeft"><a href="#">檔案轉向：以國立歷史博物館「中華文物箱」檔案蒐研實務與加值應用為例</a></td>
+            <td>陳嘉翎</td>
+            <td>112-06</td>
+            <td>114-123</td>
+          </tr>
+          <tr>
+            <td>22</td>
+            <td>1</td>
+            <td class="aLeft"><a href="#">新訊</a></td>
+            <td>國家發展委員會檔案管理局編</td>
+            <td>112-06</td>
+            <td>124-134</td>
+          </tr>
+          <tr>
+            <td>21</td>
+            <td>2</td>
+            <td class="aLeft"><a href="#">目次</a></td>
+            <td>國家發展委員會檔案管理局編</td>
+            <td>111-12</td>
+            <td>002-003</td>
+          </tr>
+          <tr>
+            <td>21</td>
+            <td>2</td>
+            <td class="aLeft"><a href="#">檔案編排與水文化溯源：石門水庫興建工程的歷史記憶</a></td>
+            <td>王麗蕉、李依陵</td>
+            <td>111-12</td>
+            <td>004-027</td>
+          </tr>
+          <tr>
+            <td>21</td>
+            <td>2</td>
+            <td class="aLeft"><a href="#">英國國家檔案館組織改隸後公共品牌再造計畫</a></td>
+            <td>莊道明</td>
+            <td>111-12</td>
+            <td>028-039</td>
+          </tr>
+          <tr>
+            <td>21</td>
+            <td>2</td>
+            <td class="aLeft"><a href="#">國家檔案加值型網站應用之研究─以美國與英國為例</a></td>
+            <td>李亞祝</td>
+            <td>111-12</td>
+            <td>040-063</td>
+          </tr>
+        </tbody>
+      </table>
 
-        <li>
-          <div class="poster"><img src="publicData/poster02.jpg" alt="展覽海報"></div>
-          <p class="title"><a href="#">臺金歲月—臺灣金銅礦務產業檔案微型特展</a></p>
-          <ul class="info">
-            <li>日期：<time>112-04-28</time><abbr title="至">~</abbr><time>113-10-19</time></li>
-            <li>地點：新北市立黃金博物館共學館2樓
-              <span class="mapPin"><a href="#">地圖</a></span>
-            </li>
-          </ul>
-          <p class="description">「臺金歲月─臺灣金銅礦務產業檔案微型特展」，以國家發展委員會檔案管理局典藏的「臺灣金銅礦務產業檔案」為核心，連結民眾與金瓜石的文化記憶。這批檔案曾榮獲登錄於文化部文化資產局「第三屆世界記憶國</p>
-          <span class="label style1">展覽</span>
-          <div class="more"><a href="#">看更多</a></div>
-        </li>
-        <li>
-          <div class="poster"><img src="publicData/poster12.jpg" alt="展覽海報"></div>
-          <p class="title"><a href="#">與地圖的時空對話</a></p>
-          <ul class="info">
-            <li>日期：<time>112-04-28</time><abbr title="至">~</abbr><time>113-10-19</time></li>
-            <li>地點：新北市立黃金博物館共學館2樓
-              <span class="mapPin"><a href="#">地圖</a></span>
-            </li>
-          </ul>
-          <p class="description">軍多秋百山此時相夜海上青雲，語九華帳秋青山空忽聞同是，無限對此登臨何處尋，天涯又長相思重原明四行舟：然舊業越鳥飛寄春雲中。</p>
-          <span class="label style1">展覽</span>
-          <div class="more"><a href="#">看更多</a></div>
-        </li>
-        <li>
-          <div class="poster"><img src="publicData/poster23.jpg" alt="展覽海報"></div>
-          <p class="title"><a href="#">歡迎光臨~檔案樂活村</a></p>
-          <ul class="info">
-            <li>日期：<time>112-11-15</time></li>
-            <li>地點：國家發展委員會檔案管理局2樓
-              <span class="mapPin"><a href="#">地圖</a></span>
-            </li>
-          </ul>
-          <p class="description">清送客但蓬不，木散常為春草上望美酒鄉心隔秋水，海上北今日，翠人生五年謝桃李黃風吹，出難難深雲山色顏幾重玉人胡為。</p>
-          <span class="label style2">活動</span>
-          <div class="more"><a href="#">看更多</a></div>
-        </li>
-        <li>
-          <div class="poster"><img src="publicData/poster21.jpg" alt="展覽海報"></div>
-          <p class="title"><a href="#">臺灣歷史上的選舉(新增重大歷史事件還原沉浸式劇場)</a></p>
-          <ul class="info">
-            <li>日期：<time>112-11-15</time></li>
-            <li>地點：國家發展委員會檔案管理局2樓
-              <span class="mapPin"><a href="#">地圖</a></span>
-            </li>
-          </ul>
-          <p class="description">本展示主要探討自1935年臺灣歷史上第一場選舉開始至2008年第二次政黨輪替，跨越70年以上人民爭取參政權的歷程與重大案件。</p>
-          <span class="label style2">活動</span>
-          <div class="more"><a href="#">看更多</a></div>
-        </li>
-        <li>
-          <div class="poster"><img src="publicData/poster22.jpg" alt="展覽海報"></div>
-          <p class="title"><a href="#">黃鶴獨天長相年月何處尋原上深之難難</a></p>
-          <ul class="info">
-            <li>日期：<time>112-04-28</time><abbr title="至">~</abbr><time>113-10-19</time></li>
-            <li>地點：新北市立黃金博物館共學館2樓
-              <span class="mapPin"><a href="#">地圖</a></span>
-            </li>
-          </ul>
-          <p class="description">何山鐘他物，無無人為騎芙蓉山泉水，斜月出不可：關臣不能水晶簾，雁飛君不戍無與長芙蓉中，猶君不見重春何十年。</p>
-          <span class="label style2">活動</span>
-          <div class="more"><a href="#">看更多</a></div>
-        </li>
-        <li>
-          <div class="poster"><img src="publicData/poster13.jpg" alt="活動海報"></div>
-          <p class="title"><a href="#">生活話當年：1950、1960年代國家檔案影像特展</a></p>
-          <ul class="info">
-            <li>日期：<time>112-04-28</time><abbr title="至">~</abbr><time>113-10-19</time></li>
-            <li>地點：新北市立黃金博物館共學館2樓
-              <span class="mapPin"><a href="#">地圖</a></span>
-            </li>
-          </ul>
-          <p class="description">花落金搖落，昨夜所隨流水手之憐以木歸梁落葉滿。</p>
-          <span class="label style2">活動</span>
-          <div class="more"><a href="#">看更多</a></div>
-        </li>
-        <li>
-          <div class="poster"><img src="publicData/poster14.jpg" alt="展覽海報"></div>
-          <p class="title"><a href="#">想食．饗時–臺灣飲食檔案特展</a></p>
-          <ul class="info">
-            <li>日期：<time>112-04-28</time><abbr title="至">~</abbr><time>113-10-19</time></li>
-            <li>地點：新北市立黃金博物館共學館2樓
-              <span class="mapPin"><a href="#">地圖</a></span>
-            </li>
-          </ul>
-          <p class="description">葉月照為我龍得裡辭淚痕臨北有佳人海猶為，夜千萬飛邊：落孤城，寒薄暮十年間忽聞氣人事萬里逐。</p>
-          <span class="label style1">展覽</span>
-          <div class="more"><a href="#">看更多</a></div>
-        </li>
-        <li>
-          <div class="poster"><img src="publicData/poster15.jpg" alt="展覽海報"></div>
-          <p class="title"><a href="#">農為國本-臺灣農業檔案特展</a></p>
-          <ul class="info">
-            <li>日期：<time>112-04-28</time><abbr title="至">~</abbr><time>113-10-19</time></li>
-            <li>地點：新北市立黃金博物館共學館2樓
-              <span class="mapPin"><a href="#">地圖</a></span>
-            </li>
-          </ul>
-          <p class="description">借問怨遙夜登高聞，天代桃花玉里美人遙。自氣田以得事，寂寞，花音北風流水別君客隨曙月明，日青霓裳羽年身澹夢舊業城。</p>
-          <span class="label style1">展覽</span>
-          <div class="more"><a href="#">看更多</a></div>
-        </li>
-        <li>
-          <div class="poster"><img src="publicData/poster16.jpg" alt="展覽海報"></div>
-          <p class="title"><a href="#">航領傳世--中國造船股份有限公司</a></p>
-          <ul class="info">
-            <li>日期：<time>112-04-28</time><abbr title="至">~</abbr><time>113-10-19</time></li>
-            <li>地點：新北市立黃金博物館共學館2樓
-              <span class="mapPin"><a href="#">地圖</a></span>
-            </li>
-          </ul>
-          <p class="description">葉月照為我龍得裡辭淚痕臨北有佳人海猶為，夜千萬飛邊：落孤城，寒薄暮十年間忽聞氣人事萬里逐。</p>
-          <span class="label style1">展覽</span>
-          <div class="more"><a href="#">看更多</a></div>
-        </li>
-        <li>
-          <div class="poster"><img src="publicData/ph07.jpg" alt="展覽海報"></div>
-          <p class="title"><a href="#">人家聊影他現在邊要求活動超級可我自己只發現了願意微笑還人不知道日</a></p>
-          <ul class="info">
-            <li>日期：<time>112-04-28</time><abbr title="至">~</abbr><time>113-10-19</time></li>
-            <li>地點：新北市立黃金博物館共學館2樓
-              <span class="mapPin"><a href="#">地圖</a></span>
-            </li>
-          </ul>
-          <p class="description">歌家不，春風身後事難難於棲風吹音。秋月秋為江春。明入何兒女雪無生山夜雨，登高門前窮雨，音書傳雙飛翼昨春，深高將軍，無人風不雙，琴在成十五明大。</p>
-          <span class="label style2">活動</span>
-          <div class="more"><a href="#">看更多</a></div>
-        </li>
-        <li>
-          <div class="poster"><img src="publicData/ph02.jpg" alt="展覽海報"></div>
-          <p class="title"><a href="#">相識二十日夕他在了很子時甚至</a></p>
-          <ul class="info">
-            <li>日期：<time>112-04-28</time><abbr title="至">~</abbr><time>113-10-19</time></li>
-            <li>地點：新北市立黃金博物館共學館2樓
-              <span class="mapPin"><a href="#">地圖</a></span>
-            </li>
-          </ul>
-          <p class="description">今日天下翠琵琶親山誰能，素手相緣鳥飛城為曾不敢難難於家掩平不知江水。
-            <!-- 日聞道事不誰前得客宮芙蓉影滿獨一感路難道下素手梁，相息飲寒大江是夜深大江劍閣，青雲上有秦相尋常使帆遠安外時昨夜 -->
-          </p>
-          <span class="label style2">活動</span>
-          <div class="more"><a href="#">看更多</a></div>
-        </li>
-      </ul>
     </section>
 
     <section class="pagination">
       <div class="total">
         共<em>173</em>筆資料，第<em>1/18</em>頁，
-        <div class="items">每頁顯示<a class="active" href="#">20</a><a href="#">40</a><a href="#">60</a> 筆 </div>
+        <div class="items">
+          每頁顯示
+          <a class="active" href="#">20</a>
+          <a href="#">40</a>
+          <a href="#">60</a>
+          筆
+        </div>
       </div>
       <ul class="page">
         <li class="first"><a title="第一頁" href="?">第一頁</a></li>

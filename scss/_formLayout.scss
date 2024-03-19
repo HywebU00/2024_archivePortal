@@ -11,22 +11,22 @@ table.layout {
   font-size: 1.11em;
   td {
     padding:5px 0;
-    &:first-child {
-      padding-right: 3px;width: 4.5em;
-      white-space: nowrap;text-align: right;
-      }
+    &:nth-child(odd) {
+      padding-right: 3px; padding-left: 1.5em;width: 4.5em;
+      white-space: nowrap;text-align: right; font-weight: bold;
     }
+  }
 
   @media screen and (max-width: $wwMedium){
     tr, td {display: block;}
-    td:first-child{
-      text-align: left; padding: .6em 6px 0; font-weight: bold;
+    td:nth-child(odd){
+      text-align: left;
+      padding: .8em 6px 0; margin-bottom: -6px;
     }
   }
 
   @media screen and (min-width: $wwNormal){
-    max-width: 960px;
-
+    max-width: 1100px;
   }
 }
 

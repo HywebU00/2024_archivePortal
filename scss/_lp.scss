@@ -22,6 +22,7 @@
     }
   }
 
+  // 項目條列
   ul.list{
     font-size: 1.11em;
     border-top: 2px solid $borderColor;
@@ -66,6 +67,148 @@
 // ------------------------------------------------------ //
 
 
+
+// 表格 table 條列
+// ------------------------------------------------------ //
+.lp{
+  table.list{ 
+    border-collapse: collapse; line-height: 1.6; 
+    width: calc(100% - 10px); margin:0 5px;
+    caption{
+      padding: 0 0 .4em;
+      font-size: 1.15em; font-weight: normal;
+    }
+
+    thead{
+      background-color: $primaryColor; color: $white;
+      // tr{border-bottom-color: $borderColorDark;}
+      th{ white-space: nowrap;}
+    }
+
+    // 固定表頭
+    &.stickyHead {
+      thead{ 
+        position: sticky; top: 96px; z-index: 9;
+        // box-shadow: $borderColorDark 0 1px 0;
+        tr{ border-bottom: none;}
+      }
+    }
+
+    tbody{
+      border-bottom: 1px solid $borderColor;
+      tr{
+        transition: background .2s;
+        &:nth-child(even) { background-color: $grayLight;}
+        &:hover{ background-color: $assistant1;}
+      }
+    }
+
+    th, td{
+      padding: 15px;
+    }
+
+    td{
+      text-align: center;
+      &.aLeft{ text-align: left;}
+      &.aRight{ text-align: right;}
+
+      &.numb{ 
+        text-align: right; width: 4em;
+        &::after{content: '.'; position: static;}
+      }
+      &.title { font-size: 1.125em; text-align: left; }
+      a{
+        color: $primaryColor; text-decoration: underline; transition: .2s;
+        &:hover, &:focus{
+         text-decoration: none;
+        }
+      }
+      time{ display: inline-block; white-space: nowrap; }
+
+      .downloadFiles{
+        ul{ list-style: none; margin: 0; padding: 0; line-height: 1; }
+        li{
+          display: inline-block;padding: 0; margin: 2px;
+          a{ text-decoration: none; display: block; padding: 0;}
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: calc($wwNormal - 1px)){
+    &.stickyHead {
+      thead{ 
+        top: 60px;
+      }
+    }
+  }
+
+  @media screen and (max-width: calc($wwMedium + 100px)){
+    &>table{
+      width: calc(100% - 10px); margin: 0 auto;
+      &.rwdTable{
+        // border: 1px solid $borderColor;
+        thead{ display: none;}
+        tbody{ border: none;
+          tr{
+            &:hover{ 
+              background-color: transparent;
+              box-shadow: $primaryColor 0 0 0 2px;
+            }
+          }
+        }
+        tr, th, td{ display: block;}
+        tr{ 
+          position: relative; overflow: hidden;
+          padding: .5em 12px .4em; margin:0 0 10px;
+          border: none;
+          // border-bottom: 1px solid $borderColor;
+          box-shadow: $borderColor 0 0 0 1px;
+          transition: .2s;
+
+
+        }
+        th, td{
+          position: static; padding: 0;margin: 0; text-align: left;
+          border: none;
+        }
+        td{
+          padding:.35em 0; text-align: left;
+          border-bottom: 1px dotted $borderColor;
+          &:last-child{ border: none;}
+          &::before {
+            content: attr(data-th); display: inline-block; margin-right: .5em;
+            font-size: .92em; line-height: 1.7; height: 1.6em;
+            background-color: $gray;color: $fontColor;
+            padding: 0 .6em 1px 5px; border-radius: 3px 1em 1em 3px
+          }
+          &>a{ 
+            text-decoration: underline; text-underline-offset: 3px;
+            text-decoration-color: $linkColor;
+            &:hover{
+              text-decoration: none; color: $linkColor;
+            }
+          }
+          &.numb{
+            padding-top: 0; padding-bottom: 0; padding-left: 7px;
+            display: block; text-align: left; font-weight: bold; width: auto;
+            &::before{ display: none;}
+            &::after{display: inline-block;}
+          }
+
+          .downloadFiles {display: inline;}
+        }
+      }
+    }
+  }
+
+
+}
+// ------------------------------------------------------ //
+// ------------------------------------------------------ //
+
+
+// ------------------------------------------------------ //
 .preface{
 
   @extend %primSecWidth; padding: 30px;
@@ -85,6 +228,7 @@
 
 
 // 條列上方節點
+// ------------------------------------------------------ //
 .nodes{
   @extend %primSecWidth;
   &>ul{

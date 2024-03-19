@@ -83,5 +83,55 @@
   }
 }
 // ------------------------------------------------------ //
+
+
+// 檔案類型圖示 //
+// ------------------------------------------------------ //
+.fileType{
+  --bg : #aaa;
+  --color : #fff;
+
+  display: block; position: relative; 
+  margin: 0; width: 28px; height: 32px; line-height:42px;
+  font-size: .6rem; text-decoration: none; text-align: center;
+  color: var(--color); 
+  // background-color: var(--bg);
+  background-image: linear-gradient(45deg, var(--bg) 86%, transparent 86%);
+  border-radius: 3px;
+  transition: .2s;
+
+  &::before, &::after{
+    content: ''; position: absolute;
+  }
+  &::before{
+    top: 5px; left: 5px; right: 5px; height: 1px;
+    background-color: rgba(255,255,255,.65);
+    box-shadow: rgba(255,255,255,.65) 0 3px 0, rgba(255,255,255,.65) 0 6px 0;
+  }
+  &::after{
+    right: 0; top: 0;
+    width: 8px; height: 8px; border-radius: 0 0 0 2px;
+    background-color: rgba(255,255,255,.65);
+  }
+  &.pdf { --bg : #d00; }
+  &.doc , &.docx, &.odt{ --bg:#0863a0; }
+  &.xls, &.xlsx, &.csv, &.ods { --bg:#48920f; }
+  &.ppt, &.pptx, &.odp{ --bg:#ef5527; }
+  &.txt { --bg:#1d98e4; }
+  &.jpg,  &.jpeg,  &.png { --bg:#089c9f; }
+  &.mp3, &.mp4 { --bg:#9d3a89; }
+  &.mov, &.wmv{ --bg:#5843a9; }
+  &.zip { --bg:#333; }
+  &.other { --bg:#555; }
+}
+a .fileType{ color: $white;text-decoration: none; }
+a:hover, a:focus{
+  .fileType{box-shadow:var(--color) 0 0 0 1px inset, var(--bg) 0 0 0 2px;}
+}
+// ------------------------------------------------------ //
+
+
+
+
 // ------------------------------------------------------ //
 // ------------------------------------------------------ //
