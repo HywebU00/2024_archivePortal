@@ -7,6 +7,7 @@ $(function(){
   var ww = _window.width();
   var wwNew = ww;
 
+  const wwSlim= 400; //更窄螢幕
   const wwMedium = 700; //此值以下是手機
   const wwNormal = 1000; //此值以上是電腦
   const wwMaximum = 1440; // 最大寬度
@@ -625,6 +626,224 @@ $(function(){
   });
   // --------------------------------------------------------------- //
 
+    // 燈箱 
+  // --------------------------------------------------------------- //
+  var _lightbox = $('.lightbox');
+  var _hideLightbox = _lightbox.find('.closeThis');
+  const lbxSpeed = 400;
+
+  _lightbox.before('<div class="coverAll"></div>');
+  _lightbox.append('<button type="button" class="skip">焦點移到 "關閉此燈箱"</button>');
+  var _cover = $('.coverAll');
+  var _skipToClose = _lightbox.find('.skip');
+
+  _skipToClose.focus( function () {
+    _hideLightbox.focus();
+  })
+
+  // 關燈箱
+  _hideLightbox.click(function(){
+    let _targetLbx = $(this).parents('.lightbox');
+    _targetLbx.stop(true, false).fadeOut(lbxSpeed,
+      function(){
+        _cpBigPhoto.find('.flowList').find('li').hide();
+      }
+    );
+    _targetLbx.prev(_cover).fadeOut(lbxSpeed);
+    _body.removeClass('noScroll');
+  })
+
+  _cover.click(function(){
+    let _targetLbx = $(this).next('.lightbox');
+    $(this).fadeOut(lbxSpeed);
+    _body.removeClass('noScroll');
+    _targetLbx.stop(true, false).fadeOut(lbxSpeed,
+      function(){
+        _cpBigPhoto.find('.flowList').find('li').hide();
+      }
+    );
+  })
+  // --------------------------------------------------------------- //
+
+
+  // .photoflow：cp頁的相關圖片（Related Photos）
+  // --------------------------------------------------------------- //
+  // 點擊圖片要開燈箱並顯示大圖
+  var _photoflow = $('.photoflow');
+  var _cpBigPhoto = $('.lightbox.bigPhotos');
+  var photoIndex;
+  var _keptFlowItem;
+  var www = _window.width();
+
+  _photoflow.each( function(){
+    let _this = $(this);
+    let _floxBox = _this.find('.flowBox');
+    let _flowList = _floxBox.find('.flowList');
+    _flowList.wrap('<div class="flowShow"></div>');
+    let _flowItem = _flowList.children('li');
+    let slideDistance = _flowItem.first().outerWidth(true);
+    let slideCount = _flowItem.length;
+    let _btnRight = _this.find('.arrowBtn.next');
+    let _btnLeft = _this.find('.arrowBtn.prev');
+    const speed = 400;
+    const actClassName = 'active';
+    let i = 0;
+    let j;
+    let _dots = '';
+
+    // 產生 indicator 和 自訂屬性 data-index
+    _floxBox.append('<div class="flowNav"><ul></ul></div>');
+    let _indicator = _this.find(".flowNav>ul");
+    for (let n = 1; n <= slideCount; n++) {
+      _dots = _dots + '<li>'+ n +'</li>';
+      _flowItem.eq(n-1).attr('data-index', n-1);
+    }
+    _indicator.append(_dots);
+
+    // 複製到燈箱中 *** //
+    _floxBox.clone().insertBefore(_skipToClose);
+
+    let _indicatItem = _indicator.find('li');
+    _indicatItem.eq(i).addClass(actClassName);
+    _indicatItem.eq((i + 1) % slideCount).addClass(actClassName);
+
+
+    // 依據可視的 slide 項目，決定 indicator 樣式
+    indicatReady();
+    function indicatReady() {
+      _indicatItem.removeClass(actClassName);
+      _indicatItem.eq(i).addClass(actClassName);
+      if (www < wwSlim) {
+        if (slideCount > 1) {
+          flownavShow();
+        } else {
+          flownavHide();
+        }
+      }
+      
+      if (www >= wwSlim) {
+        if (slideCount <= 2) {
+          flownavHide();
+        } else {
+          flownavShow();
+          _indicatItem.eq((i + 1) % slideCount).addClass(actClassName);
+        }
+      }
+
+      if (www >= wwMedium) {
+        if (slideCount <= 3) {
+          flownavHide();
+        } else {
+          flownavShow();
+          _indicatItem.eq((i + 1) % slideCount).addClass(actClassName);
+          _indicatItem.eq((i + 2) % slideCount).addClass(actClassName);
+        }
+      }
+
+      if (www >= wwNormal) {
+        if (slideCount <= 4) {
+          flownavHide();
+        } else {
+          flownavShow();
+          _indicatItem.eq((i + 1) % slideCount).addClass(actClassName);
+          _indicatItem.eq((i + 2) % slideCount).addClass(actClassName);
+          _indicatItem.eq((i + 3) % slideCount).addClass(actClassName);
+        }
+      }
+    }
+
+    function flownavShow(){
+      _indicator.add(_btnRight).add(_btnLeft).show();
+    }
+
+    function flownavHide(){
+      _indicator.add(_btnRight).add(_btnLeft).hide();
+    }
+
+    function slideForward(){
+      _flowList.stop(true, false).animate({'margin-left': -1 * slideDistance }, speed, function(){
+        j = (i + 1) % slideCount;
+        _flowItem.eq(i).appendTo(_flowList);
+        _indicatItem.eq(i).removeClass(actClassName);
+        _indicatItem.eq(j).addClass(actClassName);
+        _flowList.css('margin-left', 0);
+        if (ww >= wwSlim) {
+          _indicatItem.eq((j + 1) % slideCount).addClass(actClassName);
+        }
+        if (ww >= wwMedium) {
+          _indicatItem.eq((j + 2) % slideCount).addClass(actClassName);
+        }
+        if (ww >= wwNormal) {
+          _indicatItem.eq((j + 3) % slideCount).addClass(actClassName);
+        }
+        i = j;
+      });
+    }
+    function slideBackward() {
+      j = (i - 1) % slideCount;
+      _flowItem.eq(j).prependTo(_flowList);
+      _flowList.css("margin-left", -1 * slideDistance);
+
+      _flowList.stop(true, false).animate({ "margin-left": 0 }, speed, function () {
+          _indicatItem.eq(j).addClass(actClassName);
+          if (ww >= wwNormal) {
+            _indicatItem.eq((i + 3) % slideCount).removeClass(actClassName);
+          } else if (ww >= wwMedium) {
+            _indicatItem.eq((i + 2) % slideCount).removeClass(actClassName);
+          } else if (ww >= wwSlim) {
+            _indicatItem.eq((i + 1) % slideCount).removeClass(actClassName);
+          } else {
+            _indicatItem.eq(i).removeClass(actClassName);
+          }
+          i = j;
+        });
+    }
+
+    // 點擊向右箭頭
+    _btnRight.click(function () { 
+      slideForward();
+    });
+
+    // 點擊向左箭頭
+    _btnLeft.click(function () {
+      slideBackward();
+    });
+
+    // touch and swipe 左右滑動
+    _floxBox.swipe({
+      swipeRight: function () {slideBackward();},
+      swipeLeft: function () {slideForward();},
+      threshold: 20,
+    });
+
+
+
+
+    // 點擊.photoflow的圖片，開燈箱顯示大圖 ***
+    _flowItem.children('a').click(function(){
+      _keptFlowItem = $(this);
+      photoIndex = _keptFlowItem.parent().attr('data-index');
+      _cpBigPhoto.stop(true, false).fadeIn().find('.flowList').find('li').filter( function(){
+        return $(this).attr('data-index') == photoIndex;
+      }).show();
+      _hideLightbox.focus();
+      _cover.stop(true, false).fadeIn();
+      _body.addClass('noScroll');
+    })
+
+
+    let winResizeTimer1;
+    _window.resize(function () {
+      clearTimeout(winResizeTimer1);
+      winResizeTimer1 = setTimeout(function () {
+        www = _window.width();
+        slideDistance = _flowItem.first().outerWidth(true);
+        indicatReady();
+      }, 200);
+    });
+
+  });
+  // --------------------------------------------------------------- //
 
 
 

@@ -72,13 +72,13 @@
   // border-bottom: $secondaryColor 4px solid;
   h2 {
     padding: 0;margin: 0;
-    font-size: 2em;line-height: 1.3; letter-spacing: .1em;
+    font-size: 2em;line-height: 1.3;
     color: $primaryColor;
   }
-  .funcBar{ margin: 0;}
+  .funcBar{ margin:4px 0;}
   @media screen and (min-width: $wwNormal){
     position: relative;
-    h2{ margin-right: 190px; padding-top: 16px; padding-bottom: 4px;}
+    h2{ margin-right: 300px; padding-top: 16px; padding-bottom: 4px;}
     .funcBar{ position: absolute; right: 0; top: 0;}
   }
 }
