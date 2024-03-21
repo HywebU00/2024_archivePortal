@@ -230,7 +230,7 @@
 // 條列上方節點
 // ------------------------------------------------------ //
 .nodes{
-  @extend %primSecWidth;
+  @extend %primSecWidth; 
   &>ul{
     list-style: none; margin: 0 -10px; padding: 0;
     font-size: 1.11em; line-height: 1.4;
@@ -261,6 +261,7 @@
   }
 
   @media screen and (min-width: $wwNormal){
+    margin-top: 40px; margin-bottom: 40px;
     &>ul{
       &>li{
         flex-basis: 33.33%;

@@ -30,7 +30,7 @@ $radius: 16px; // 圓角半徑
 // 首頁主要區塊寬度
 // ---------------------------------------------------------------- //
 %primSecWidth {
-  width: $mobileWidth; margin: 50px auto;
+  width: $mobileWidth; margin: 40px auto;
   @media screen and (min-width: $wwNormal){
     width: $normalWidth; margin: 80px auto;
   }
