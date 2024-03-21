@@ -1,0 +1,30 @@
+// 文章標籤
+// ------------------------------------------------------ //
+.tags{
+  margin: 50px 0;
+  ul{ 
+    list-style: none; margin: 0; padding: 0; overflow: hidden;
+    line-height: 1.3;
+  }
+  li{
+    float: left; margin: 4px 8px 8px 4px; padding: 0;
+    a {
+      display: block; position: relative; text-decoration: none;
+      padding: .7em 1em .6em 24px;
+      border: 1px solid transparent;
+      color: $primaryColor;
+      box-shadow: rgb(0 0 0 / .25) 1px 1px 6px;
+      transition: .2s;
+      &::before {
+        content: ''; position: absolute; left: -1px; top: -1px; bottom: -1px;
+        width: 8px; background-color: $gray;
+        transition: .2s;
+      }
+      &:hover, &:focus {
+        border-color: $primaryColor;
+        &::before { background-color: $primaryColor; }
+      }
+    }
+  }
+}
+// ------------------------------------------------------ //
