@@ -1,6 +1,13 @@
 .formA {
   @extend %primSecWidth;
-  padding: 24px 0;
+  
+  padding: 24px;
+  box-shadow: $shadow1 0 0 15px;
+
+  table.layout{ 
+    width: 96%;
+    tr{border-bottom: 1px solid $borderColor;}
+  }
 }
 
 
@@ -10,11 +17,21 @@ table.layout {
   width: 100%; margin: 0 auto; border-collapse: collapse;
   font-size: 1.11em;
   td {
-    padding:5px 0;
+    padding:5px 0; vertical-align: top;
     &:nth-child(odd) {
       padding-right: 3px; padding-left: 1.5em;width: 4.5em;
       white-space: nowrap;text-align: right; font-weight: bold;
     }
+  }
+
+  .msg{
+    display: none;
+    padding-left: 40px;
+    margin: 8px 0; font-size: .88em;
+    color: $fontColor;
+    &.hint{ color: $primaryColor;}
+    &.error{ color: $warning;}
+    &.warning{ color: $hilight;}
   }
 
   @media screen and (max-width: $wwMedium){
@@ -33,6 +50,11 @@ table.layout {
 .btnDv{
   font-size: 1.3em;
   text-align: center; padding: 8px 16px;
+}
+
+.required{
+  color: $warning; margin-right: 3px; text-decoration: none;
+  font-size: 1.2em;
 }
 
 
