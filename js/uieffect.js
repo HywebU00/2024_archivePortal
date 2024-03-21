@@ -845,6 +845,60 @@ $(function(){
   });
   // --------------------------------------------------------------- //
 
+  // cp 頁大圖燈箱
+  // --------------------------------------------------------------- //
+  _cpBigPhoto.each(function(){
+    let _this = $(this);
+    // let _photoBox = _this.find('.flowBox').find('.flowList');
+    let _photoList = _this.find('.flowList');
+    let _photoItem = _photoList.children('li');
+    let photoCount = _photoItem.length;
+    let _btnRight = _this.find('.arrowBtn.next');
+    let _btnLeft = _this.find('.arrowBtn.prev');
+    let _hideBigPhoto = _this.find('.closeThis');
+
+    const speed = 400;
+    let i, j;
+
+    _photoItem.find('img').unwrap('a');
+
+    // 點擊向右箭頭
+    _btnRight.click(function(){
+      i = Number( _photoItem.filter(':visible').attr('data-index') );
+      j = (i+1) % photoCount;
+
+      _photoItem.filter( function(){
+        return $(this).attr('data-index') == i;
+      }).stop(true, false).fadeOut(speed, function(){
+        $(this).hide();
+      });
+      _photoItem.filter( function(){
+        return $(this).attr('data-index') == j;
+      }).stop(true, false).fadeIn(speed);
+    })
+    
+    // 點擊向左箭頭
+    _btnLeft.click(function(){
+      i = Number(_photoItem.filter(':visible').attr('data-index'));
+      j = (i-1+photoCount) % photoCount;
+
+      _photoItem.filter(function(){
+        return $(this).attr('data-index') == i;
+      }).stop(true, false).fadeOut(speed, function(){
+        $(this).hide();
+      });
+      _photoItem.filter( function(){
+        return $(this).attr('data-index') == j;
+      }).stop(true, false).fadeIn(speed);
+    })
+
+    // 關閉大圖燈箱
+    _hideBigPhoto.add(_cover).click(function(){
+      _photoItem.hide();
+      _keptFlowItem.focus();
+    })
+  })
+  // --------------------------------------------------------------- //
 
 
 

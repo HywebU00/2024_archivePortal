@@ -9,12 +9,10 @@
   background-color: $white;
   box-shadow:rgba(0,0,0,.6) 0 0 28px;
 
-  &.lbSearch{background-color: $white;}
   &.bigPhotos{ background-color: $black;}
 
   button.closeThis{
-    position: absolute; right:4px; top: 4px; z-index:99;
-    margin: 0; padding: 0; border-radius: 0;
+    position: absolute; right:0; top: 0; z-index:99;
   }
 
   .header {

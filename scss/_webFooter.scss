@@ -181,7 +181,6 @@
     }
 
     .iconLinks {
-      outline: 1px dashed #ccc;
       flex: 0 1 88px;
       li{
         margin: 2px 0 10px; padding: 0;
@@ -201,7 +200,7 @@
       li{
         margin: 10px 0 18px;
         a{
-          position: relative; display: inline-block; padding: 0 0 3px;
+          position: relative; padding: 0 0 3px;
           &::before{
             content: ''; 
             position: absolute; left: 0;right: 0; bottom: 0;
@@ -263,26 +262,24 @@
  
   @media screen and (min-width: $wwNormal){
     .middle{
-      position: relative;padding-left: 360px;
-      justify-content: flex-end; flex-wrap: nowrap;
-      justify-items:end;
-      // &>*{ outline: 1px solid #fff1;}
-      outline: 1px solid #f009;
+      flex-wrap: nowrap;justify-content: flex-end;
+      // &>*{ outline: 1px dotted #fff3;}
+      // outline: 1px solid #f889;
     
-      .logo {position: absolute; left: 0; top: 56px; width: 340px;}
+      .logo {flex: 1 0 340px;}
       .iconLinks {
-        flex:0 0 120px; text-align: right; white-space: nowrap;
+        flex:1 1 10%; min-width: 120px; text-align: right; white-space: nowrap;
         li{
           display: inline-block; margin: 0 0 0 10px; padding: 0;
           a{ margin: 0;}
         }
       }
       .textLinks {
-        flex: 1 0 calc(100% - 360px);
-        outline: 1px solid #fff1;
+        flex: 0 1 calc(90% - 360px);
+        max-width: 37em;
         display: flex; flex-flow: row nowrap;
         align-items: flex-start; justify-content: flex-end;
-        margin:5px 0 0 30px; padding: 0;
+        margin:5px 0 0 20px; padding: 0;
         border: none; line-height: 1.2;
         li{
           position: relative;
@@ -321,6 +318,7 @@
   }
 
   @media screen and (min-width: $wwMaximum){
+    .middle, .base { width: $maximumWidth;}
 
   }
 
