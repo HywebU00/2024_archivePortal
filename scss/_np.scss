@@ -1,11 +1,82 @@
 // 節點頁
 // ------------------------------------------------------ //
 .np{
+  @extend %primSecWidth;
+
+  ul{ list-style: none; margin: 0; padding: 0; }
+
+  &>ul{
+    font-size: 1.5em; font-weight: bold; letter-spacing: .03em;
+    &>li{
+      position: relative;
+      margin: 12px 0; padding: 0;
+      &>a{
+        position: relative;
+        padding: 1.2em 80px 1.1em 66px;
+        display: block; text-decoration: none;
+        color: $primaryColor;
+        background: linear-gradient(180deg, #C7F7F2 0%, #EAFFFD 100%)  right 0 top 0;
+        background-size: 50px auto;
+        border: 1px solid #B9E7E5;
+        transition:background-color .3s, color .3s;
+        &::before, &::after {content: ''; position: absolute;}
+        &::before{
+          left: 24px; top: 1.6em;
+          width: 13px;height: 13px;
+          border: 4px solid $primaryColor;
+          border-left: none; border-bottom: none;
+          transform: rotate(45deg);
+          transition: .3s;
+        }
+        &::after {
+          display: none;
+          right: 22px; top: 30px;
+          width: 40px; height: 40px;
+          background: url(../images/npBg2.svg) no-repeat 0 0;
+          background-size: 39px auto;
+          offset-rotate: 0deg;
+          offset-path: path('M34,17.5c-.27-8.6-7.31-15.5-16-15.5S2,9.16,2,18s7.16,16,16,16,15.71-6.9,16-15.5');
+        }
+        &:hover, &:focus {
+          color: $white;
+          background: url(../images/npBg.svg) no-repeat right 24px top .7em;
+          background-size: auto 64px;
+          background-color: $primaryColor;
+          border-color: $primaryColor;
+          &::before {border-color: $white; left: 36px;}
+          &::after{
+            display: block;
+            animation: npAni 2s infinite linear;
+          }
+        }
+      }
+    }
+  }
   
   @media screen and (min-width: $wwMedium){
+    &>ul{
+      display: flex; flex-wrap: wrap;
+      &>li{
+        margin: 1.2vw 2.4vw 1.2vw 0;
+        flex: 0 0 calc(50% - 1.2vw);
+        &:nth-child(2n){margin-right: 0;}
+        &>a{height: 100%;}
+      }
+    }
   }
 
   @media screen and (min-width: $wwNormal){
+    &>ul{
+      &>li{
+        margin: 12px 24px 12px 0;
+        flex: 0 0 calc(50% - 12px);
+      }
+    }
+  }
+
+  @keyframes npAni {
+    0% { offset-distance: 0%; };
+    100% { offset-distance: 100%; };
   }
 
 }
