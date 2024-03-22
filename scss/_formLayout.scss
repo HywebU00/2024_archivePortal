@@ -15,7 +15,7 @@
 // ------------------------------------------------------ //
 table.layout {
   width: 100%; margin: 0 auto; border-collapse: collapse;
-  font-size: 1.11em;
+  font-size: 1.11em; line-height: 1.3;
   td {
     padding:5px 0; vertical-align: top;
     &:nth-child(odd) {
@@ -32,6 +32,11 @@ table.layout {
     &.hint{ color: $primaryColor;}
     &.error{ color: $warning;}
     &.warning{ color: $hilight;}
+  }
+
+  p.note{
+    margin:5px; line-height: inherit;
+    font-size: .88em; color: $fontColorLight;
   }
 
   @media screen and (max-width: $wwMedium){
@@ -167,3 +172,23 @@ table.layout {
 }
 
 // ------------------------------------------------------ //
+
+
+
+
+.fieldConfirm{
+  @extend %primSecWidth;
+  // outline: 1px dashed pink;
+  font-size: 1.1em;
+  padding:40px 20px;
+  box-shadow: 0 0 4px $shadow1;
+
+  .fieldset{
+    margin: 0 0 3em; 
+  }
+
+  .legent{
+    font-weight: bold; font-size: 1.15em; margin: 0;
+  }
+
+}

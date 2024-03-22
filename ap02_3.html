@@ -213,7 +213,7 @@
     <section class="preface">
       <h3>填寫注意事項</h3>
       <ol>
-        <li>當您發信至本局電子信箱後，於上班時間內，我們會由專人受理並分派至相關單位處理，處理時間約需六至八個工作天。</li>
+        <li>當您發信至本局電子信箱後，於上班時間內，我們會由專人受理並分派至相關單位處理，<strong>處理時間約需六至八個工作天</strong>。</li>
         <li>若有不明原因導致未能收到本局回函之狀況，請透過本網頁「處理進度查詢」功能，查詢受理情形。</li>
         <li>請於來信中避免涉及人身攻擊、謾罵、詆毀之言詞，該類信件本系統管理者將直接刪除。</li>
         <li>如主旨與留言內容中若使用特殊號＜＞：；”’＆％＄／和--與..等相關字，請使用全型符號填寫。</li>
@@ -222,6 +222,97 @@
     </section>
 
     <section class="formA">
+      <p class="note">註：<abbr title="必填欄位標註符號" class="required">*</abbr>為必填（選）欄位。</p>
+      <table class="layout">
+        <tr>
+          <td><abbr class="required" title="必填欄位">*</abbr>
+            真實姓名</td>
+          <td>
+            <input type="text" class="fullWidth">
+            <p class="msg error" style="display: block;">格式錯誤，請重新輸入。</p>
+          </td>
+        </tr>
+        <tr>
+          <td><abbr class="required" title="必填欄位">*</abbr>
+            聯絡電話</td>
+          <td>
+            <label>行動電話 <input type="tel"></label>
+            <label>市內電話 <div class="telset"><input type="tel"><input type="tel"></div></label>
+            <p class="msg hint" style="display: block;">至少需填寫一組聯絡電話。</p>
+            <p class="msg error" style="display: block;">格式錯誤，請重新輸入。</p>
+          </td>
+        </tr>
+        <tr>
+          <td><abbr class="required" title="必填欄位">*</abbr>
+            通訊地址</td>
+          <td><input type="text" class="fullWidth"></td>
+        </tr>
+        <tr>
+          <td><abbr class="required" title="必填欄位">*</abbr>
+            E-mail電子信箱</td>
+          <td>
+            <input type="email" class="fullWidth">
+            <p class="msg error" style="display: block;">E-mail格式錯誤，請重新輸入。</p>
+          </td>
+        </tr>
+        <tr>
+          <td><abbr class="required" title="必填欄位">*</abbr>
+            回覆方式</td>
+          <td>
+            <div class="optionPool">
+              <label><input type="radio">線上回覆</label>
+              <label><input type="radio">電話回覆</label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><abbr class="required" title="必填欄位">*</abbr>
+            主旨</td>
+          <td>
+            <input type="text" class="fullWidth" placeholder="請輸入主旨">
+            <p class="note">主旨限30字以內。</p>
+          </td>
+        </tr>
+        <tr>
+          <td><abbr class="required" title="必填欄位">*</abbr>
+            意見內容</td>
+          <td>
+            <p class="note">為保護您個人資料安全，請勿張貼私敏資料於網站上。</p>
+            <textarea placeholder="請輸入意見內容"></textarea>
+            <p class="note">字數限300字以內。</p>
+            <p class="note">小祕訣：建議可先在記事本上編輯內容再將文字貼上，避免重打的可能。</p>
+          </td>
+        </tr>
+        <tr>
+          <td>附件上傳</td>
+          <td>
+            <p class="note">本功能僅提供上傳一個檔案，檔案格式限doc,docx,odt,jpg,pdf，上傳總容量限制1MB。</p>
+            <input type="file">
+            <ol class="uploadFileList">
+              <li>
+                <span class="fileName">檔案名稱1</span>
+                <span class="fileSIze">1.3MB</span>
+                <button type="button" class="icon delete"></button>
+              </li>
+            </ol>
+            <p class="msg warning" style="display: block;">上傳的檔案大小超過限制，請重新上傳。</p>
+            <p class="msg error" style="display: block;">上傳的檔案格式不支援，請重新上傳。</p>
+          </td>
+        </tr>
+        <tr>
+          <td><abbr class="required" title="必填欄位">*</abbr>
+            驗證碼</td>
+          <td>
+            <input type="text" placeholder="請輸入驗證碼">
+            <p class="note">如果無法使用語音，請下載語音檔案。</p>
+            <p class="msg error" style="display: block;">您輸入的驗證碼錯誤，請重新輸入。</p>
+          </td>
+        </tr>
+      </table>
+      <div class="btnDv">
+        <input type="button" value="下一步">
+        <input type="reset" value="清除重填">
+      </div>
 
     </section>
 

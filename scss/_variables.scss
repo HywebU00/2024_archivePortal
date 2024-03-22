@@ -62,8 +62,8 @@ $mainBg: #fff;
 $borderColor: #c1c4c6;
 $borderColorLight: #e2e2e2;
 $borderColorDark:#434242;
-$shadow1:rgba(0, 0, 0, 0.3);
-$shadow2:rgba(0, 0, 0, 0.5);
+$shadow1:rgba(15 61 95 / .2);
+$shadow2:rgba(15 61 95 / .5);
 
 $white: #fff;
 $black: #000;
@@ -74,7 +74,7 @@ $grayDark: #5d6063;
 
 %gradient1 {
   background: linear-gradient(180deg, #F6F6F6 0%, #F9F9F9 9.38%, #FFFFFF 100%);
-  box-shadow: 0 0 4px rgba(15 61 95 / .2);
+  box-shadow: 0 0 4px $shadow1;
 }
 
 // $btnBg1: $primaryColor;
