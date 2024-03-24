@@ -21,7 +21,7 @@ table.metaTable{
     color: $primaryColor; vertical-align: top; text-align: right;
     &::after{
       content: ''; position: absolute; top: 3px; bottom: 3px; right: 0;
-      width: 3px; background-color: $primaryColor;
+      width: 3px; background-color: $borderColor;
     }
   }
   tr{
