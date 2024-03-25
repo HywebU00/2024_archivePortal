@@ -2,114 +2,147 @@
 // .main>section:not(.bigBanner) { display: none;}
 
 .bigBanner{
-  position: relative; padding: 0 0 38px;
   background-color: $primaryColor; 
 
-  h2{ 
-    margin: 0; padding:12px 24px;
-    font-size: 1.6em; line-height: 1.5;
+  // 文字區
+  .bbHeader{
+    margin: 0; padding:0;
     color: $white;background: $primaryColor;
-    // background: $primaryColor url(../images/bbannerLeft.jpg) no-repeat center bottom;
-    // background-size:cover;
-    .major{ display: block; margin-bottom: 32px; }
-  }
-
-  .flowItem{
-    width: 100vw; height: 66.67vw; // w:h = 3:2
-    a{ display: block;width: 100%; height: 100%; }
-    img{ width: 100%; height: 100%; object-fit: cover;}
-  }
-  
-  .flow{
-    .slick-arrow{
-      top: -44px; right: 16px;
-      background-color: transparent;
-      &.slick-prev { transform: translateX(calc(-100% - 5px));}
-      &::before{ filter: brightness(6); }
-      &:hover, &:focus {
-        background-color: transparent;
-        box-shadow: $assistant1 0 0 0 1px;
-      }
-      &:focus { box-shadow: $assistant1 0 0 0 2px;}
+    .flowItem{
+      margin: 20px 24px;
+      font-size: 1.6em; letter-spacing: .04em;
+      line-height: 1.5; font-weight: bold;
     }
-
-    .slick-dots{
-      position: absolute;  z-index: 9;
-      left: auto; right: 24px; bottom: -30px; margin: 0;
-      button{ background-color: transparentize( $assistant1, .65);}
-      .slick-active {
-        button{ background-color: $assistant1; }
-      }
-    }
-  }
-
-  @media screen and (min-width: $wwMedium){
-    padding-left: 25vw; padding-bottom: 0;
-    h2{
-      position: absolute;left: 0; top: 0; bottom: 0;
-      width: 25vw; padding: 0;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 4vw;text-align: center;
-      .major { width: 4.2em; margin: 0 auto 80px;}
-    }
-
-    .flowItem {height: 50vw; width: 75vw;}
 
     .flow{
-      .slick-arrow{ 
-        top: auto; bottom: 50px; 
-        right: auto; left: -12.4vw;
-        width: 40px;
-        &::before{ width: 40px;}
-      }
+      position: relative;
+      padding-bottom: 44px;
 
+      .slick-arrow{
+        bottom: 8px; left: 24px;
+        background-color: transparent;
+        &.slick-next { transform: translateX(100%)}
+        &::before{ filter: brightness(6); }
+        &:hover, &:focus {
+          background-color: transparent;
+          box-shadow: $assistant1 0 0 0 1px;
+        }
+        &:focus { box-shadow: $assistant1 0 0 0 2px;}
+      }
+  
       .slick-dots{
-        text-align: center;
-        width: 25vw; bottom: 10px; right: 75vw;
-        .slick-active button{ width: 24px;}
+        margin: 0; padding: 0;
+        position: absolute; left: auto; right: 24px; bottom: 10px;
+        button{ background-color: transparentize( $assistant1, .65);}
+        .slick-active {
+          button{ background-color: $assistant1; width: 32px;}
+        }
+      }
+    }
+  }
+
+  // 圖片區
+  .bbImage{
+    .flowItem{
+      width: 100vw; height: 66.67vw; // w:h = 3:2
+      a{ display: block;width: 100%; height: 100%; }
+      img{ width: 100%; height: 100%; object-fit: cover;}
+    }
+  }
+
+
+  @media screen and (min-width: $wwMedium){
+
+    position: relative;padding-left: 25vw;
+    
+    // 文字區
+    .bbHeader{
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 25vw;
+
+      .flowItem{margin: 4vw;font-size: 4vw;}
+
+      .flow{
+        height: 100%;
+        .slick-arrow{ 
+          bottom: 50px; left:auto; 
+          width: 10vw;padding: 8px 0;
+          &::before{ width: 5vw; max-width: 60px;}
+          &.slick-prev { left: 1vw;}
+          &.slick-next {transform: none; right: 1vw;}
+        }
+  
+        .slick-dots{
+          text-align: center; margin: 0 -24px;
+          width: 25vw; bottom: 12px; 
+          .slick-active button{ width: 24px;}
+        }
       }
     }
 
-
+    // 圖片區
+    .bbImage{
+      position: relative;
+      .flowItem {height: 50vw; width: 75vw;}
+    }
   }
 
   @media screen and (min-width: $wwNormal ){
-    padding-left: 31%;
-    h2{width: 31%;}
-    .flowItem{width: 69%; height: 46vw;}
-
-    .flow{
-      .slick-arrow{ 
-        width: 60px; left: -15vw; bottom: 70px;
-        &::before{width: 60px;}
-      }
-
-      .slick-dots{
-        width: 31vw; right: 69vw; bottom: 24px;
-        .slick-active{
-          button{ width: 46px;}
+    padding-left: 31vw;
+    
+    // 文字區
+    .bbHeader{
+      width: 31vw;
+      .flowItem{margin: 7vw 7.5vw; font-size: 3.8vw;}
+      .flow{
+        .slick-arrow{ 
+          bottom: 60px; width: 100px;
+          &.slick-prev{ left: 2vw;}
+          &.slick-next{ right: 2vw;}
+        }
+        .slick-dots{
+          width: 31vw;bottom: 20px;
+          .slick-active{
+            button{ width: 46px;}
+          }
         }
       }
+    }
+
+    // 圖片區
+    .bbImage{
+      margin: 0; padding: 0;
+      .flowItem{width: 69%; height: 46vw;}
     }
   }
 
   @media screen and (min-width: $wwMaximum){
     width: $wwMaximum; margin: 0 auto; 
     padding-left: calc( $wwMaximum * .31);
-    h2{
+    
+    // 文字區
+    .bbHeader{
       width: calc($wwMaximum * .31);
-      font-size: calc($wwMaximum * .04);
-    }
-
-    .flowItem { width: calc( $wwMaximum * .69); height: calc( $wwMaximum * .46); }
-
-    .flow{
-      .slick-arrow { left: -.15 * $wwMaximum}
-      .slick-dots{
-        width: $wwMaximum * .31;
-        right: $wwMaximum * .69;
+      .flowItem{
+        font-size: $wwMaximum*.038;
+        margin: $wwMaximum*.07 $wwMaximum*.075;
+      }
+      .flow{
+        .slick-arrow {
+          &.slick-prev{ left: $wwMaximum * .02; }
+          &.slick-next{ right: $wwMaximum * .02; }
+        }
+        .slick-dots{
+          width: $wwMaximum * .31;
+        }
       }
     }
+  
+    // 圖片區
+    .bbImage{  
+      .flowItem { width: calc( $wwMaximum * .69); height: calc( $wwMaximum * .46); }
+    }
+
   }
 
 }

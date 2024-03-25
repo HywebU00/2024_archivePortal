@@ -950,18 +950,34 @@ $(function(){
 
   // 首頁大圖輪播
   // --------------------------------------------------------------- //
-  $('.bigBanner').find('.flow').slick({
+  var _bbImage = $('.bigBanner').children('.bbImage').find('.flow');
+  var _bbHeader = $('.bigBanner').children('.bbHeader').find('.flow');
+
+  _bbImage.slick({
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplaySpeed: 5000,
+    asNavFor: _bbHeader,
+    autoplaySpeed: 2000,
     speed: 800,
     autoplay: true,
-    arrows: true,
-    dots: true,
+    arrows: false,
+    dots: false,
     fade: true,
     infinite: true,
     zIndex:8
   });
+  
+  _bbHeader.slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    asNavFor: _bbImage,
+    arrows: true,
+    dots: true,
+    fade: true
+  });
+
+
+
 
   // 探索國家故事
   // --------------------------------------------------------------- //
@@ -1003,10 +1019,10 @@ $(function(){
 
   // 近期活動 EVENTS
   // --------------------------------------------------------------- //
-  // 海報區
   var _eventPoster = $('.events').find('.flow');
   var _eventTitle = $('.events').find('.titles');
-
+  
+  // 海報區
   _eventPoster.slick({
     slidesToShow: 1,
     slidesToScroll: 1,
