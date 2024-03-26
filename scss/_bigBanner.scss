@@ -59,6 +59,8 @@
     .bbHeader{
       position: absolute; left: 0; top: 0; bottom: 0;
       width: 25vw;
+      background: url(../images/bbannerLeft.jpg) no-repeat center top;
+      background-size: cover;
 
       .flowItem{margin: 4vw;font-size: 4vw;}
 

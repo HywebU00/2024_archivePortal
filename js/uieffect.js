@@ -1039,7 +1039,7 @@ $(function(){
     variableWidth: true,
     responsive: [
       {
-        breakpoint: 1000,
+        breakpoint: 700,
         settings: {
           slidesToShow: 2,
         }
@@ -1047,7 +1047,7 @@ $(function(){
     ],
     responsive: [
       {
-        breakpoint: 1300,
+        breakpoint: 1000,
         settings: {
           slidesToShow: 3,
         }
