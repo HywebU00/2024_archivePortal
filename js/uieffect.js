@@ -950,16 +950,13 @@ $(function(){
 
   // 首頁大圖輪播
   // --------------------------------------------------------------- //
-  var _bbImage = $('.bigBanner').children('.bbImage').find('.flow');
-  var _bbHeader = $('.bigBanner').children('.bbHeader').find('.flow');
+  var _bbImages = $('.bigBanner').find('.bbImages');
+  var _bbTitles = $('.bigBanner').children('.bbTitles');
 
-  _bbImage.slick({
+  _bbImages.slick({
     slidesToShow: 1,
     slidesToScroll: 1,
-    asNavFor: _bbHeader,
-    autoplaySpeed: 2000,
-    speed: 800,
-    autoplay: true,
+    asNavFor: _bbTitles,
     arrows: false,
     dots: false,
     fade: true,
@@ -967,15 +964,20 @@ $(function(){
     zIndex:8
   });
   
-  _bbHeader.slick({
+  _bbTitles.slick({
     slidesToShow: 1,
     slidesToScroll: 1,
-    asNavFor: _bbImage,
+    asNavFor: _bbImages,
+    autoplaySpeed: 5000,
+    speed: 800,
+    autoplay: true,
     arrows: true,
     dots: true,
     fade: true
   });
 
+  // 把向右箭頭搬移到向左箭頭之後（移到 .slick-list 之前）
+  _bbTitles.find('.slick-arrow.slick-next').insertAfter( _bbTitles.find('.slick-arrow.slick-prev') );
 
 
 
@@ -1016,10 +1018,14 @@ $(function(){
       }
     ]
   });
+  // 把向右箭頭搬移到向左箭頭之後（移到 .slick-list 之前）
+  $('.explore').find('.slick-arrow.slick-next').insertAfter($('.explore').find('.slick-arrow.slick-prev'));
+
+
 
   // 近期活動 EVENTS
   // --------------------------------------------------------------- //
-  var _eventPoster = $('.events').find('.flow');
+  var _eventPoster = $('.events').find('.images');
   var _eventTitle = $('.events').find('.titles');
   
   // 海報區
@@ -1066,6 +1072,10 @@ $(function(){
     dots: false,
     fade: true
   })
+
+  // 把向右箭頭搬移到向左箭頭之後（移到 .slick-list 之前）
+  _eventPoster.find('.slick-arrow.slick-next').insertAfter( _eventPoster.find('.slick-arrow.slick-prev'));
+
 
   
   // --------------------------------------------------------------- //

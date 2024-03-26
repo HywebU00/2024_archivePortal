@@ -25,7 +25,7 @@
   }
 
   // 海報區
-  .flow{
+  .images{
     float: right;width: 55vw; margin: 0; padding-top: 50px; 
     .slick-arrow {
       top: 0; left: auto; right: 3%;
@@ -46,12 +46,8 @@
           content: ''; 
           position: absolute; left: 0; right: 0; top: 0;bottom: 0;
         }
-        &:hover::before {
-          box-shadow: $linkColor 0 0 0 1px inset;
-        }
-        &:focus::before {
-          box-shadow: $linkColor 0 0 0 3px inset;
-        }
+        &:hover::before {box-shadow: $linkColor 0 0 0 1px inset;}
+        &:focus::before {box-shadow: $linkColor 0 0 0 3px inset;}
       }
       img{
         display: block;
@@ -77,7 +73,7 @@
       time{font-size: 1em;}
     }
 
-    .flow{
+    .images{
       width: 68vw;
       .flowItem{
         width: 35.5vw; height: 49.7vw;transform: scale(.82);
@@ -97,7 +93,7 @@
       time{ font-size: 1.2em;}
     }
 
-    .flow{
+    .images{
       padding-top: 60px; width: 70vw;
       .flowItem{
         width: 25vw; height: 35vw;
@@ -109,7 +105,7 @@
 
   @media screen and (min-width: $wwMaximum){
 
-    &::before{left:  calc($wwMaximum*.29 + $marginDocMax); }
+    &::before{ left:  calc($wwMaximum*.29 + $marginDocMax); }
 
     .blockHeader{ width: $wwMaximum*.9;}
 
@@ -118,11 +114,9 @@
       p{ font-size: 2.1em;}
     }
 
-
-    .flow{
+    .images{
       width: $wwMaximum*.71;
       margin-right: calc(50vw - $wwMaximum*.5); 
-
       .flowItem{
         width: $wwMaximum*.25; height: $wwMaximum *.35;
         &.slick-current +.flowItem { margin-right: -.024*$wwMaximum;}
