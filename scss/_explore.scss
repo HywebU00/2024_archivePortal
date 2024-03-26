@@ -14,9 +14,9 @@
       text-decoration: none;color: $white;
       transition: .4s;
       &::before{
-        content: ''; opacity: 0;
+        content: ''; opacity: 0; z-index: -1;
         position: absolute; left: 0;right: 0;top: 0;bottom: 0;
-        box-shadow: $primaryColor 0 0 0 2px inset;
+        box-shadow: $linkColor 0 0 0 2px inset;
       }
       &:hover, &:focus {
         img{ filter: brightness(1) saturate(1); }
@@ -40,9 +40,7 @@
     }
 
     &.slick-current{
-      a{
-        img{filter: brightness(1) saturate(1);}
-      }
+      a img{filter: brightness(1) saturate(1);}
     }
   }
 

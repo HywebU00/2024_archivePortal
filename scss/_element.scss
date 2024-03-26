@@ -42,24 +42,23 @@ time {
 // 跳至內容區 
 // --------------------------------------------------------------- //
 .goCenter{
-  --bg:#555;
-  --color:#fff;
+  --bg:#{$primaryColor};
+  --color:#{$white};
 
   display: none;
   @media screen and (min-width: $wwNormal) {
     display: block; z-index: 880;
-    position: fixed; top: -2em; right: 60%; 
+    position: fixed; top: -2.2em; left: 50px;
     padding: 0 .5em; border-radius: 0 0 4px 4px;
     overflow: hidden;
     height: 1.8em; line-height: 1.9;
     text-decoration: none; outline: none; cursor: pointer;
     background-color: var(--bg); color: var(--color);
     transition:top .3s; 
-    &:focus{ --bg: #000; top: 0;}
+    &:focus{ --bg: #{$primaryColor}; top: 0;}
   }
   @media screen and (min-width: $wwMaximum) {
-    // left: calc( 50vw  - #{$wwMaximum}*.5 );
-    right: calc(50% + #{$wwMaximum}*.1);
+    left: calc( 50vw  - #{$wwMaximum}*.5 + 50px );
   }
 }
 // --------------------------------------------------------------- //
@@ -98,8 +97,8 @@ time {
 
   &.show{ bottom: 16px;}
 
-  @media screen and ( min-width: calc($wwMaximum + 152px) ){
-    right: calc(50% - $wwMaximum*.5 - var(--size));
+  @media screen and ( min-width: calc($wwMaximum + 408px) ){
+    right: calc(50% - $wwMaximum*.5 - var(--size) - 100px - 16px );
   }
 
 }
