@@ -1,3 +1,11 @@
-<svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M21 3.5C11.3348 3.5 3.5 11.3348 3.5 21C3.5 29.7343 9.89975 36.974 18.2665 38.2882V26.0575H13.8215V21H18.2665V17.1447C18.2665 12.7592 20.8775 10.3373 24.8763 10.3373C26.7908 10.3373 28.7927 10.6785 28.7927 10.6785V14.9835H26.5877C24.4125 14.9835 23.7352 16.3327 23.7352 17.717V21H28.588L27.8127 26.0575H23.7352V38.2882C32.1002 36.9757 38.5 29.7325 38.5 21C38.5 11.3348 30.6652 3.5 21 3.5Z" fill="#0F3D5F"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 42 42" style="enable-background:new 0 0 42 42;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#0F3D5F;}
+</style>
+<path class="st0" d="M21,3.5C11.3,3.5,3.5,11.3,3.5,21c0,8.7,6.4,16,14.8,17.3V26.1h-4.4V21h4.4v-3.9c0-4.4,2.6-6.8,6.6-6.8
+	c1.9,0,3.9,0.3,3.9,0.3V15h-2.2c-2.2,0-2.9,1.3-2.9,2.7V21h4.9l-0.8,5.1h-4.1v12.2C32.1,37,38.5,29.7,38.5,21
+	C38.5,11.3,30.7,3.5,21,3.5z"/>
 </svg>
