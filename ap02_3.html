@@ -228,83 +228,102 @@
           <td><abbr class="required" title="必填欄位">*</abbr>
             真實姓名</td>
           <td>
-            <input type="text" class="fullWidth">
-            <p class="msg error" style="display: block;">格式錯誤，請重新輸入。</p>
+            <input type="text" class="fullWidth" placeholder="請輸入真實姓名">
+            <p class="msg error" style="display: block;">格式錯誤，請重新輸入。<button class="closeThis" type="button">隱藏</button></p>
           </td>
         </tr>
         <tr>
           <td><abbr class="required" title="必填欄位">*</abbr>
             聯絡電話</td>
           <td>
-            <label>行動電話 <input type="tel"></label>
-            <label>市內電話 <div class="telset"><input type="tel"><input type="tel"></div></label>
+            <div class="mobilePhoneSet">
+              <label for="mph999">行動電話</label>
+              <input id="mph999" type="tel" placeholder="09********">
+            </div>
+            <div class="phoneSet">
+              <label for="XXX01">市內電話</label>
+              <input type="tel" id="XXX01" class="areaCode" aria-label="區碼" placeholder="區碼">
+              <input type="tel" aria-label="用戶電話號碼" placeholder="用戶電話號碼">
+            </div>
             <p class="msg hint" style="display: block;">至少需填寫一組聯絡電話。</p>
-            <p class="msg error" style="display: block;">格式錯誤，請重新輸入。</p>
+            <p class="msg error" style="display: block;">格式錯誤，請重新輸入。<button class="closeThis" type="button">隱藏</button></p>
           </td>
         </tr>
         <tr>
           <td><abbr class="required" title="必填欄位">*</abbr>
             通訊地址</td>
-          <td><input type="text" class="fullWidth"></td>
+          <td><input type="text" class="fullWidth" placeholder="請輸入地址"></td>
         </tr>
         <tr>
           <td><abbr class="required" title="必填欄位">*</abbr>
-            E-mail電子信箱</td>
+            E-mail電子信箱
+          </td>
           <td>
-            <input type="email" class="fullWidth">
-            <p class="msg error" style="display: block;">E-mail格式錯誤，請重新輸入。</p>
+            <input type="email" class="fullWidth" placeholder="例: 111@gmail.com">
+            <p class="msg error" style="display: block;">E-mail格式錯誤，請重新輸入。<button class="closeThis" type="button">隱藏</button></p>
           </td>
         </tr>
         <tr>
           <td><abbr class="required" title="必填欄位">*</abbr>
-            回覆方式</td>
+            回覆方式
+          </td>
           <td>
             <div class="optionPool">
-              <label><input type="radio">線上回覆</label>
-              <label><input type="radio">電話回覆</label>
+              <label><input name="rrr" type="radio">線上回覆</label>
+              <label><input name="rrr" type="radio">電話回覆</label>
             </div>
           </td>
         </tr>
         <tr>
           <td><abbr class="required" title="必填欄位">*</abbr>
-            主旨</td>
+            主旨
+          </td>
           <td>
             <input type="text" class="fullWidth" placeholder="請輸入主旨">
-            <p class="note">主旨限30字以內。</p>
+            <p class="note">限30字以內。</p>
           </td>
         </tr>
         <tr>
           <td><abbr class="required" title="必填欄位">*</abbr>
-            意見內容</td>
+            意見內容
+          </td>
           <td>
-            <p class="note">為保護您個人資料安全，請勿張貼私敏資料於網站上。</p>
             <textarea placeholder="請輸入意見內容"></textarea>
-            <p class="note">字數限300字以內。</p>
-            <p class="note">小祕訣：建議可先在記事本上編輯內容再將文字貼上，避免重打的可能。</p>
+            <p class="note">為保護您個人資料安全，請勿張貼私敏資料於網站上。字數限300字以內。</p>
+            <p class="msg hint" style="display: block;">小祕訣：建議可先在記事本上編輯內容再將文字貼上，避免重打的可能。<button class="closeThis" type="button">隱藏</button></p>
           </td>
         </tr>
         <tr>
           <td>附件上傳</td>
           <td>
+            <div class="uploadFile">
+              <input type="text" readonly="readonly">
+              <button type="button">上傳檔案</button>
+              <button>刪除檔案</button>
+            </div>
             <p class="note">本功能僅提供上傳一個檔案，檔案格式限doc,docx,odt,jpg,pdf，上傳總容量限制1MB。</p>
-            <input type="file">
-            <ol class="uploadFileList">
-              <li>
-                <span class="fileName">檔案名稱1</span>
-                <span class="fileSIze">1.3MB</span>
-                <button type="button" class="icon delete"></button>
-              </li>
-            </ol>
-            <p class="msg warning" style="display: block;">上傳的檔案大小超過限制，請重新上傳。</p>
-            <p class="msg error" style="display: block;">上傳的檔案格式不支援，請重新上傳。</p>
+            <p class="msg warning" style="display: block;">上傳的檔案大小超過限制，請重新上傳。
+              <button class="closeThis" type="button">隱藏</button></p>
+            <p class="msg error" style="display: block;">上傳的檔案格式不支援，請重新上傳。
+              <button class="closeThis" type="button">隱藏</button></p>
           </td>
         </tr>
         <tr>
           <td><abbr class="required" title="必填欄位">*</abbr>
             驗證碼</td>
           <td>
-            <input type="text" placeholder="請輸入驗證碼">
-            <p class="note">如果無法使用語音，請下載語音檔案。</p>
+            <div class="captchaSet">
+              <img src="publicData/stickyCaptcha.png" alt="">
+              <input type="text" id="captcha" name="captcha" value="">
+              <a href="javascript:void(0)" onclick="reloadCaptcha('captchaImg', 'captchaAudio')" class="refresh">更換驗證碼</a>
+              <a href="javascript:void(0)" onclick="document.getElementById('captchaAudioControl').play()" onkeypress="document.getElementById('captchaAudioControl').play()" class="play">語音播放</a>
+              <div id="captchaAudioSpan" style="display:none">
+                  <audio id="captchaAudioControl" controls="">
+                  <source id="captchaAudio" src="/wSite/audioCaptcha.mp3?" type="audio/mp3">
+                </audio>
+              </div>
+            </div>
+            <p class="note">如果無法使用語音，請<a href="/wSite/audioCaptcha.mp3" title="驗證碼語音檔">下載語音檔案</a>。</p>
             <p class="msg error" style="display: block;">您輸入的驗證碼錯誤，請重新輸入。</p>
           </td>
         </tr>
