@@ -343,16 +343,22 @@ button.sidebarCtrl{
 // 關閉 「X」
 // --------------------------------------------------------------- //
 button.closeThis{
+  --width:48px;
+  --bar-length:28px;
+  --bar-thick:4px;
 
   position: relative;
-  height: 49px; width: 48px; padding: 0; margin: 0;
+  height: var(--width); width:  var(--width); padding: 0; margin: 0;
   text-indent: -20em; overflow: hidden;
   border-radius: 0; border: none;
   background-color: $shadow1;
 
   &::before, &::after{
-    content: ''; position: absolute; left: 10px; top: 23px;
-    width: 28px; height: 3px;
+    content: ''; 
+    position: absolute; 
+    left: calc( (var(--width) - var(--bar-length))/2 );
+    top:  calc( (var(--width) - var(--bar-thick))/2 );
+    width: var(--bar-length); height: var(--bar-thick); 
     background-color: $white;
   }
   &::before{transform: rotate(45deg);}

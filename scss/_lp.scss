@@ -222,6 +222,8 @@
     &:focus { text-decoration: none; outline: 1px solid $linkColor;}
   }
 
+  strong{ color: $warning;}
+
   h3{margin-top: 0;}
   li+li{ margin-top: .5em;}
 }

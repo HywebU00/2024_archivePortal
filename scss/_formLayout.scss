@@ -20,24 +20,80 @@ table.layout {
     padding:5px 0; vertical-align: top;
     &:nth-child(odd) {
       padding-right: 3px; padding-left: 1.5em;width: 4.5em;
+      padding-top: 1em;
       white-space: nowrap;text-align: right; font-weight: bold;
     }
+    &:nth-child(even){ padding-right: 1.5em;}
   }
 
+  // 表單中的 提示、警告、錯誤訊息
+  // -------------------------- //
   .msg{
-    display: none;
-    padding-left: 40px;
-    margin: 8px 0; font-size: .88em;
-    color: $fontColor;
-    &.hint{ color: $primaryColor;}
-    &.error{ color: $warning;}
-    &.warning{ color: $hilight;}
+    --color-hint: #{$fontColor};
+    --color-warning: #{$hilight};
+    --color-error: #{$warning};
+
+    display: none; position: relative;
+    padding:4px 38px 3px 34px; margin: 8px 0; border-radius: 5px;
+    font-size: .88em; line-height: 1.4;
+    &::before{
+      content: ''; position: absolute; left: 4px; top: 4px;
+      width: 24px; height: 24px; border-radius: 50%;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 20px;
+      background-color: $gray;
+    }
+    
+    &:hover{
+      outline: 1px solid $borderColorLight;
+    }
+
+    &.hint{
+      color: var(--color-hint);
+      &::before{  
+        background-image:url(../images/icon_msg_hint.svg);
+        background-color:var(--color-hint);
+      }
+    }
+    &.warning{ 
+      color: var(--color-warning);
+      &::before{
+        background-image:url(../images/icon_msg_warning.svg);
+        background-color:var(--color-warning);
+      }
+    }
+    &.error{
+      color: var(--color-error);
+      &::before{
+        background-image:url(../images/icon_msg_error.svg);
+        background-color:var(--color-error);
+      }
+    }
+
+    button.closeThis{
+      --width:26px;
+      --bar-length:18px;
+      --bar-thick:3px;
+
+      background-color: transparent;
+    
+      position: absolute; right: 3px; top: 3px;
+      border-radius: 3px;
+      &::before, &::after { background-color: $primaryColor}
+      &:hover, &:focus { 
+        background-color: $primaryColor;
+        &::before, &::after { background-color: $white;}
+      }
+    }
   }
 
   p.note{
     margin:5px; line-height: inherit;
     font-size: .88em; color: $fontColorLight;
   }
+
+  &+.btnDv{ padding-top: 1.5em;}
 
   @media screen and (max-width: $wwMedium){
     tr, td {display: block;}
@@ -52,11 +108,20 @@ table.layout {
   }
 }
 
+
+
+// 表單送出、清除等按鈕群
 .btnDv{
   font-size: 1.3em;
   text-align: center; padding: 8px 16px;
+  input[type="button"], input[type="submit"],input[type="reset"], button{
+    padding-left: 2em; padding-right: 2em; min-width: 8em;
+  }
 }
 
+
+
+// 必填符號
 .required{
   color: $warning; margin-right: 3px; text-decoration: none;
   font-size: 1.2em;
@@ -67,48 +132,48 @@ table.layout {
 
 // 表單中的訊息文字 
 // ------------------------------------------------------ //
-.notice{
-  position: relative;
-  display: inline-block; margin: 4px 0 0 .5em;
+// .notice{
+//   position: relative;
+//   display: inline-block; margin: 4px 0 0 .5em;
 
-  &.pass , &.warning, &.fail {
-    padding-left: 1.4em; 
-    &::before{
-      position: absolute; left: 0; top: .15em;
-      content: ''; width: 1.3rem; height: 1.3rem; 
-    }
-  }
+//   &.pass , &.warning, &.fail {
+//     padding-left: 1.4em; 
+//     &::before{
+//       position: absolute; left: 0; top: .15em;
+//       content: ''; width: 1.3rem; height: 1.3rem; 
+//     }
+//   }
 
-  // 打勾
-  &.pass{
-    color: $secondaryColor;
-    &::before{
-      background: $secondaryColor url(../images/icon_check.svg) no-repeat center center;
-      background-size: 70% 85%;
-      border-radius: 50%;
-    }
-  }
+//   // 打勾
+//   &.pass{
+//     color: $secondaryColor;
+//     &::before{
+//       background: $secondaryColor url(../images/icon_check.svg) no-repeat center center;
+//       background-size: 70% 85%;
+//       border-radius: 50%;
+//     }
+//   }
 
-  // 驚嘆號 ！
-  &.warning{
-    color: $hilight;
-    &::before{
-      background: url(../images/icon_warning.svg) no-repeat center center;
-      background-size: 100% auto;
-    }
-  }
+//   // 驚嘆號 ！
+//   &.warning{
+//     color: $hilight;
+//     &::before{
+//       background: url(../images/icon_warning.svg) no-repeat center center;
+//       background-size: 100% auto;
+//     }
+//   }
 
-  // 打叉 ✖️
-  &.fail{
-    color: $hilight;
-    &::before{
-      background: url(../images/icon_error.svg) no-repeat center center;
-      background-size: 100% auto;
-      border-radius: 50%;
-    }
-  }
+//   // 打叉 ✖️
+//   &.fail{
+//     color: $hilight;
+//     &::before{
+//       background: url(../images/icon_error.svg) no-repeat center center;
+//       background-size: 100% auto;
+//       border-radius: 50%;
+//     }
+//   }
+// }
 
-}
 
 // 註記：input ＋ 返回button ＋ 訊息文字
 // ------------------------------------------------------ //
@@ -137,6 +202,8 @@ table.layout {
     position: absolute; left: calc(50% - .6em);
   }
 }
+// -------------------------------------------------------------- //
+
 
 // 單選、複選 radio button & checkbox
 // ------------------------------------------------------ //
@@ -154,6 +221,8 @@ table.layout {
     }
   }
 }
+// -------------------------------------------------------------- //
+
 
 // 條件搜尋 
 // ------------------------------------------------------ //
@@ -170,12 +239,20 @@ table.layout {
 
   & + .formA {margin-top: 8px;}
 }
+// -------------------------------------------------------------- //
+
+
+// 信箱輸入與「發送驗證碼」
+// ------------------------------------------------------ //
+.inputButtonSet{
+ display: flex;
+ input{flex: 1 1 60%}
+  button{ flex: 0 1 auto; padding-left: .9em; padding-right: .9em;}
+}
+
+
 
 // ------------------------------------------------------ //
-
-
-
-
 .fieldConfirm{
   @extend %primSecWidth;
   // outline: 1px dashed pink;
@@ -192,3 +269,4 @@ table.layout {
   }
 
 }
+// -------------------------------------------------------------- //

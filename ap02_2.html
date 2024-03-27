@@ -222,32 +222,33 @@
       <form action="">
         <table class="layout">
           <tr>
+            <td><abbr class="required" title="必填欄位">*</abbr>
+              E-mail電子信箱
+            </td>
             <td>
-              <abbr class="required" title="必填欄位">*</abbr>
-              E-mail電子信箱</td>
-            <td>
-              <input type="email" placeholder="請輸入寄件人電子信箱">
-              <button type="button">發送驗證碼</button>
-              <p class="msg warning" style="display: block;">同一組E-mail限5分鐘後可重新發送驗證碼。</p>
-              <p class="msg hint" style="display: block;">E-mail驗證碼已發送，請到信箱查看。</p>
-              <p class="msg error" style="display: block;">E-mail格式錯誤，請重新輸入。</p>
+              <div class="inputButtonSet">
+                <input type="email" placeholder="請輸入寄件人電子信箱">
+                <button type="button">發送驗證碼</button>
+              </div>
+              <p class="msg hint" style="display: block;">E-mail驗證碼已發送，請到信箱查看，請到信箱查看，請到信箱查看。<button class="closeThis" type="button">隱藏</button></p>
+              <p class="msg warning" style="display: block;">同一組E-mail限5分鐘後可重新發送驗證碼。<button class="closeThis" type="button">隱藏</button></p>
+              <p class="msg error" style="display: block;">E-mail格式錯誤，請重新輸入。<button class="closeThis" type="button">隱藏</button></p>
             </td>
           </tr>
           <tr>
-            <td>
-              <abbr class="required" title="必填欄位">*</abbr>
+            <td><abbr class="required" title="必填欄位">*</abbr>
               E-mail驗證碼
             </td>
-            <td><input type="text" name="" id="" placeholder="請輸入E-mail驗證碼">
-              <p class="msg hint" style="display: block;">本局已發送驗證碼至您的電子信箱，請於10分鐘內輸入驗證碼，以完成驗證。</p>
-              <p class="msg warning" style="display: block;">E-mail驗證碼已失效，請重新發送驗證碼。</p>
-              <p class="msg error" style="display: block;">E-mail驗證碼錯誤，請重新輸入。</p>
+            <td><input type="text" class="fullWidth" name="" id="" placeholder="請輸入E-mail驗證碼">
+              <p class="msg hint" style="display: block;">本局已發送驗證碼至您的電子信箱，請於10分鐘內輸入驗證碼，以完成驗證。<button class="closeThis" type="button">隱藏</button></p>
+              <p class="msg warning" style="display: block;">E-mail驗證碼已失效，請重新發送驗證碼。<button class="closeThis" type="button">隱藏</button></p>
+              <p class="msg error" style="display: block;">E-mail驗證碼錯誤，請重新輸入。<button class="closeThis" type="button">隱藏</button></p>
             </td>
           </tr>
         </table>
 
         <div class="btnDv">
-          <input type="button" value="下一步">
+          <input class="submit" type="button" value="下一步">
           <input type="reset" value="清除重填">
         </div>
       </form>
