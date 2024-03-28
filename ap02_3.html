@@ -225,7 +225,7 @@
     <section class="formA">
       <p class="note">註：<abbr title="必填欄位標註符號" class="required">*</abbr>為必填（選）欄位。</p>
       <table class="layout">
-        <!-- <tr>
+        <tr>
           <td><abbr class="required" title="必填欄位">*</abbr>
             真實姓名</td>
           <td>
@@ -246,7 +246,7 @@
               <input type="tel" id="XXX01" class="areaCode" aria-label="區碼" placeholder="區碼">
               <input type="tel" aria-label="用戶電話號碼" placeholder="用戶電話號碼">
             </div>
-            <p class="msg hint" style="display: block;">至少需填寫一組聯絡電話。</p>
+            <p class="msg hint" style="display: block;">至少需填寫一組聯絡電話。<button class="closeThis" type="button">隱藏</button></p>
             <p class="msg error" style="display: block;">格式錯誤，請重新輸入。<button class="closeThis" type="button">隱藏</button></p>
           </td>
         </tr>
@@ -299,7 +299,7 @@
           <td>附件上傳</td>
           <td>
             <div class="uploadFile">
-              <input type="text" readonly="readonly">
+              <input type="text" readonly="readonly" value="filename.jpg">
               <button type="button" class="hasIcon upload">上傳檔案</button>
               <button type="button" class="hasIcon delete">刪除檔案</button>
             </div>
@@ -309,7 +309,7 @@
             <p class="msg error" style="display: block;">上傳的檔案格式不支援，請重新上傳。
               <button class="closeThis" type="button">隱藏</button></p>
           </td>
-        </tr> -->
+        </tr>
 
         <tr>
           <td><abbr class="required" title="必填欄位">*</abbr>
@@ -333,7 +333,7 @@
               </div>
             </div>
             <p class="note">如果無法使用語音，請<a href="/wSite/audioCaptcha.mp3" title="驗證碼語音檔">下載語音檔案</a>。</p>
-            <p class="msg error" style="display: block;">您輸入的驗證碼錯誤，請重新輸入。</p>
+            <p class="msg error" style="display: block;">您輸入的驗證碼錯誤，請重新輸入。<button class="closeThis" type="button">隱藏</button></p>
           </td>
         </tr>
       </table>

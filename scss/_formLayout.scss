@@ -31,7 +31,7 @@ table.layout {
     &:nth-child(even){ padding-right: 1.5em;}
   }
 
-  // 表單中的 提示、警告、錯誤訊息
+  // 表單中的 提示、警告、錯誤訊息；說明文字
   // -------------------------- //
   .msg{
     --color-hint: #{$fontColor};
@@ -39,23 +39,19 @@ table.layout {
     --color-error: #{$warning};
 
     display: none; position: relative;
-    padding:4px 38px 3px 34px; margin: 8px 0; border-radius: 5px;
+    padding:5px 38px 5px 34px; margin: 6px 0;
     font-size: .88em; line-height: 1.4;
     &::before{
-      content: ''; position: absolute; left: 4px; top: 4px;
+      content: ''; position: absolute; left: 4px; top: 5px;
       width: 24px; height: 24px; border-radius: 50%;
       background-repeat: no-repeat;
       background-position: center center;
       background-size: 20px;
-      background-color: $gray;
-    }
-    
-    &:hover{
-      outline: 1px solid $borderColorLight;
     }
 
     &.hint{
       color: var(--color-hint);
+      background-color: #cdeff3;
       &::before{  
         background-image:url(../images/icon_msg_hint.svg);
         background-color:var(--color-hint);
@@ -63,6 +59,7 @@ table.layout {
     }
     &.warning{ 
       color: var(--color-warning);
+      background-color: #fce8d4;
       &::before{
         background-image:url(../images/icon_msg_warning.svg);
         background-color:var(--color-warning);
@@ -70,6 +67,7 @@ table.layout {
     }
     &.error{
       color: var(--color-error);
+      background-color: #fae1eb;
       &::before{
         background-image:url(../images/icon_msg_error.svg);
         background-color:var(--color-error);
@@ -83,8 +81,8 @@ table.layout {
 
       background-color: transparent;
     
-      position: absolute; right: 3px; top: 3px;
-      border-radius: 3px;
+      position: absolute; right: 4px; top: 4px;
+      border-radius: 0;
       &::before, &::after { background-color: $primaryColor}
       &:hover, &:focus { 
         background-color: $primaryColor;
@@ -93,10 +91,14 @@ table.layout {
     }
   }
 
+  // 輸入欄位之外的說明或提示文字
   p.note{
-    margin:9px 5px; line-height: inherit;
+    margin:9px 5px 12px; line-height: inherit;
     font-size: .88em; color: $fontColorLight;
-    a{ color: $linkColor;}
+    &::before {content: '❖'; margin-right: 6px; color: $fontColorDark;}
+    a{ color: $linkColor;
+      &:hover, &:focus{outline: 1px solid $linkColor; text-decoration: none;}
+    }
   }
 
   &+.btnDv{ padding-top: 1.5em;}
@@ -140,17 +142,6 @@ table.layout {
 // ------------------------------------------------------ //
 // 表單內的模組 ----------------------------------------- //
 // ------------------------------------------------------ //
-
-
-// 註記：input ＋ 返回button ＋ 訊息文字
-// ------------------------------------------------------ //
-.markSet{
-  display: flex; align-items: center; width: 100%;
-  input[type="text"]{ flex: 1 1 50%; margin-right: 8px;}
-  .button{ margin-bottom: 0;}
-  p.notice{ margin-left: 4px; margin-top: 0.3em;}
-}
-.meta td .markSet{ margin-top: -.35em;}
 
 
 // 日期區間
@@ -256,12 +247,16 @@ table.layout {
 .uploadFile{
   display: flex;flex-wrap: wrap;
   input:first-child { flex: 1 1 100%}
-  button{ flex: 1 1 45%}
+  button{ flex: 1 1 45%; padding-left: 0.5em; padding-right: 0.5em;}
 
   @media screen and (min-width: $wwNormal){
-    input:first-child { flex: 1 1 40%}
+    flex-wrap: nowrap;
+    input:first-child { flex-basis: 42%}
     button{ flex: 1 1 auto}
+  }
 
+  @media screen and (min-width: $wwMaximum){
+    input:first-child { flex-basis: 52%}
   }
 }
 // ------------------------------------------------------ //
@@ -299,6 +294,8 @@ table.layout {
       filter: brightness(15);
     }
     &:hover, &:focus{
+      background-color: $assistant1;
+      color: $primaryColor;
       &::before{filter: none;}
     }
   }
@@ -311,24 +308,3 @@ table.layout {
   }
 }
 // ------------------------------------------------------ //
-
-
-
-// ------------------------------------------------------ //
-.fieldConfirm{
-  @extend %primSecWidth;
-  // outline: 1px dashed pink;
-  font-size: 1.1em;
-  padding:40px 20px;
-  box-shadow: 0 0 4px $shadow1;
-
-  .fieldset{
-    margin: 0 0 3em; 
-  }
-
-  .legent{
-    font-weight: bold; font-size: 1.15em; margin: 0;
-  }
-
-}
-// -------------------------------------------------------------- //

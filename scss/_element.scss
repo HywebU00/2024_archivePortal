@@ -451,7 +451,7 @@ button.hasIcon{
     background-image: url(../images/icon_voice.png);
   }
 
-  &:hover{
+  &:hover, &:focus {
     &::before{ filter:none;}
   }
 }

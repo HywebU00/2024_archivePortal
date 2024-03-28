@@ -25,12 +25,13 @@ $inputBgHover: #e7ffff;
 
 // disabled
 $disColor: #888;
-$disBg: #f3f3f3;
+$disBg: #f0f0f0;
 $disBdr: #ddd;
 
 // readonly
-$roColor: #000;
-$roBg: #f3f3f3;
+$roColor: #555;
+$roBg: #{$grayLight};
+$roBdr: #{$borderColor};
 
 
 // $btnBg: #188eac;
@@ -53,9 +54,10 @@ $btnDisBg: #cfcfcf;
 
   // color
   --inputColor: #{$fontColor};
-  --inputBg: #{$white};
+  --inputBg: #fff;
   --inputBgHover: #{$assistant1};
   --inputBdr: #{$primaryColor};
+
   --btnBg: #{$white};
   --btnColor: #{$primaryColor};
 }
@@ -74,9 +76,9 @@ $btnDisBg: #cfcfcf;
   padding: 0 10px; margin: 5px;
   vertical-align: middle;border-radius: 0;
 
-  border: 1px solid $primaryColor;
-  background-color: $white;
-  color: $fontColor;
+  border: 1px solid var(--inputBdr);
+  background-color: var(--inputBg);
+  color: var(--inputColor);
   transition: .2s;
 
   &:hover, &:focus { background-color: $inputBgHover;}
@@ -92,10 +94,15 @@ $btnDisBg: #cfcfcf;
     cursor: not-allowed;
   }
   &[readonly]{ 
-    --inputColor: #{$roColor}; --inputBg:#{$roBg};
-    --inputBdr: #{$inputBdr};
+    --inputColor: #{$roColor}; 
+    --inputBg:#{$roBg};
+    --inputBdr: #{$roBdr};
     box-shadow: none;
     cursor: default;
+    &:hover, &:focus{ 
+      background-color: var(--inputBg);
+    }
+    &:focus{border-color:  $borderColorDark;}
   }
 }
 // ------------------------------------------------------ //
