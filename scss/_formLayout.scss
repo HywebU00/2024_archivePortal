@@ -308,3 +308,39 @@ table.layout {
   }
 }
 // ------------------------------------------------------ //
+
+
+
+.fieldConfirm{
+  // outline: 1px solid red;
+  @extend %primSecWidth;
+  padding: 40px 3vw;
+  box-shadow: $shadow1 0 0 15px;
+
+
+  .legent {
+    position: relative;
+    margin: 0; padding: 0 0 5px 18px;
+    font-size: 1.125em; font-weight: bold; line-height: 1.1;
+    border-bottom: 3px solid $primaryColor;
+    &::before {
+      content: '';
+      position: absolute; left: 0; top: 0;
+      width: 12px; height: 1.1em;
+      background-color: $primaryColor;
+    }
+  }
+
+  .fieldset{
+    margin: 0 0 3.5em;
+    .metaTable{
+      // border-top: 1px solid $borderColor;
+      border-bottom: 1px solid $primaryColor;
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    padding: 50px 40px;
+  }
+
+}

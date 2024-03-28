@@ -16,6 +16,12 @@ table.metaTable{
   width: 100%; margin: 0 auto;
   border-collapse: collapse; line-height: 1.8;
   th, td {padding: .7em 1em .6em;}
+  tr{
+    border-bottom: 1px solid $borderColor;
+    transition: .25s;
+    &:last-child{border: none;}
+    &:hover{background-color: $hover;}
+  }
   th{ 
     width: 22%; position: relative;
     color: $primaryColor; vertical-align: top; text-align: right;
@@ -24,11 +30,8 @@ table.metaTable{
       width: 3px; background-color: $borderColor;
     }
   }
-  tr{
-    border-bottom: 1px solid $borderColor;
-    transition: .25s;
-    &:last-child{border: none;}
-    &:hover{background-color: $hover;}
+  td{
+    ol, ul{ margin-top: 0; margin-bottom: 0;}
   }
 
   @media screen and (max-width: $wwMedium){
@@ -48,4 +51,12 @@ table.metaTable{
   
   }
 
+}
+
+
+.uploadFileList{
+  .fileName, .fileSize {
+    display: inline-block;
+  }
+  .fileSize{ margin-left: 1em;}
 }
