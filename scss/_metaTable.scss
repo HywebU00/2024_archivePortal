@@ -32,6 +32,9 @@ table.metaTable{
   }
   td{
     ol, ul{ margin-top: 0; margin-bottom: 0;}
+    a{ color: $linkColor;
+      &:hover, &:focus { text-decoration: none; outline: 1px solid $linkColor;}
+    }
   }
 
   @media screen and (max-width: $wwMedium){

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>檔案管理局 AP02-4</title>
+  <title>檔案管理局 AP02-6</title>
   <link href="images/favicon.ico" rel="icon" type="image/ico">
 
   <link rel="stylesheet" href="slick/slick.css" />
@@ -176,7 +176,7 @@
     </div>
 
     <div class="pageHeader">
-      <h2>意見信箱</h2>
+      <h2>意見信箱進度查詢</h2>
       <section class="funcBar">
         <ul>
           <li class="fontSize compound">
@@ -201,93 +201,46 @@
       </section>
     </div>
 
-    <section class="steps">
-      <ul>
-        <li class="done"><em>1</em>個資聲明</li>
-        <li class="done"><em>2</em>E-mail驗證</li>
-        <li class="done"><em>3</em>資料填寫</li>
-        <li class="now"><em>4</em>預覽確認</li>
-        <li><em>5</em>案件送出成功</li>
-      </ul>
-    </section>
 
-    <section class="preface">
-      <h3>填寫注意事項</h3>
-      <ol>
-        <li>當您發信至本局電子信箱後，於上班時間內，我們會由專人受理並分派至相關單位處理，處理時間約需六至八個工作天。</li>
-        <li>若有不明原因導致未能收到本局回函之狀況，請透過本網頁「處理進度查詢」功能，查詢受理情形。</li>
-        <li>請於來信中避免涉及人身攻擊、謾罵、詆毀之言詞，該類信件本系統管理者將直接刪除。</li>
-        <li>如主旨與留言內容中若使用特殊號＜＞：；”’＆％＄／和--與..等相關字，請使用全型符號填寫。</li>
-      </ol>
-
-    </section>
-
-    <section class="fieldConfirm">
-      <div class="fieldset">
-        <p class="legent">填寫人資訊</p>
-        <table class="metaTable">
+    <section class="formA">
+      <p class="note">註：<abbr title="必填欄位標註符號" class="required">*</abbr>為必填（選）欄位。</p>
+      <form action="">
+        <table class="layout">
           <tr>
-            <th><abbr class="required" title="必填欄位">*</abbr>真實姓名</th>
-            <td>王大明</td>
+            <td><abbr class="required" title="必填欄位">*</abbr>案件編號</td>
+            <td>
+              <input type="text" class="fullWidth" placeholder="請輸入案件編號">
+              <p class="msg hint" style="display: block;">意見信箱案件送出成功時，案件編號已一併寄至您的E-mail，請至信箱查看。<button class="closeThis" type="button">隱藏</button></p>
+            </td>
           </tr>
           <tr>
-            <th><abbr class="required" title="必填欄位">*</abbr>聯絡電話</th>
-            <td>行動電話 0912345678</td>
+            <td><abbr class="required" title="必填欄位">*</abbr>
+              E-mail電子信箱
+            </td>
+            <td>
+              <div class="inputButtonSet">
+                <input type="email" placeholder="請輸入寄件人電子信箱">
+                <button type="button">發送驗證碼</button>
+              </div>
+              <p class="msg hint" style="display: block;">本局已發送驗證碼至您的電子信箱，請於10分鐘內輸入驗證碼，以完成驗證。<button class="closeThis" type="button">隱藏</button></p>
+            </td>
           </tr>
           <tr>
-            <th><abbr class="required" title="必填欄位">*</abbr>通訊地址</th>
-            <td>臺北市中正區重慶南路二段51號</td>
-          </tr>
-          <tr>
-            <th><abbr class="required" title="必填欄位">*</abbr>E-mail電子信箱</th>
-            <td>test@gmail.com</td>
+            <td><abbr class="required" title="必填欄位">*</abbr>
+              E-mail驗證碼
+            </td>
+            <td>
+              <input type="text" class="fullWidth" name="" id="" placeholder="請輸入E-mail驗證碼">
+              <p class="msg error" style="display: block;">E-mail驗證碼錯誤，請重新輸入。<button class="closeThis" type="button">隱藏</button></p>
+            </td>
           </tr>
         </table>
-      </div>
 
-      <div class="fieldset">
-        <p class="legent">填寫內容</p>
-        <table class="metaTable">
-          <tr>
-            <th><abbr class="required" title="必填欄位">*</abbr>主旨</th>
-            <td>您好，想請問有關紙質類檔案修復問題</td>
-          </tr>
-          <tr>
-            <th><abbr class="required" title="必填欄位">*</abbr>意見留言</th>
-            <td>本單位現有一卷公文檔案經判定發生受菌霉蝕現象，需進行修復， 依機關檔案管理作業手冊14.3.2.8規定所列，共有燻蒸法、低溫法及低氧法等除蟲菌方法。因本單位並無添購燻蒸車，亦無設置冷凍庫(櫃)及低氧庫(櫃)，可否購入吸(脫)氧劑，依手冊規範進行滅菌施作？或僅能委由廠商施作前開等除蟲菌法？ 如可購入吸(脫)氧劑，吸(脫)氧劑材質有無限制？</td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="fieldset">
-        <p class="legent">回覆方式</p>
-        <table class="metaTable">
-          <tr>
-            <th><abbr class="required" title="必填欄位">*</abbr>回覆方式</th>
-            <td>線上回覆</td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="fieldset">
-        <p class="legent">附件上傳</p>
-        <table class="metaTable">
-          <th>附件上傳</th>
-          <td>
-            <ol class="uploadFileList">
-              <li><span class="fileName">檔案名稱1.jpg</span> <span class="fileSize">1.3MB</span></li>
-              <li><span class="fileName">檔案名稱2.doc</span> <span class="fileSize">3.9KB</span></li>
-            </ol>
-          </td>
-        </table>
-      </div>
-
-      <div class="btnDv">
-        <input type="submit" value="確認送出">
-        <input type="button" value="回上一步">
-      </div>
-
-
+        <div class="btnDv">
+          <input class="submit" type="button" value="確認送出">
+          <input type="reset" value="清除重填">
+        </div>
+      </form>
     </section>
 
   </main>

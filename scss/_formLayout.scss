@@ -39,7 +39,7 @@ table.layout {
     --color-error: #{$warning};
 
     display: none; position: relative;
-    padding:5px 38px 5px 34px; margin: 6px 0;
+    padding:5px 38px 5px 34px; margin: 6px 5px;
     font-size: .88em; line-height: 1.4;
     &::before{
       content: ''; position: absolute; left: 4px; top: 5px;
@@ -310,13 +310,12 @@ table.layout {
 // ------------------------------------------------------ //
 
 
-
+// 意見信箱: 預覽確認 + 查詢結果
+// ------------------------------------------------------ //
 .fieldConfirm{
-  // outline: 1px solid red;
   @extend %primSecWidth;
   padding: 40px 3vw;
   box-shadow: $shadow1 0 0 15px;
-
 
   .legent {
     position: relative;
@@ -329,12 +328,13 @@ table.layout {
       width: 12px; height: 1.1em;
       background-color: $primaryColor;
     }
+    &+.fieldset{ border-top: none;}
   }
 
   .fieldset{
     margin: 0 0 3.5em;
     .metaTable{
-      // border-top: 1px solid $borderColor;
+      border-top: 1px solid $primaryColor;
       border-bottom: 1px solid $primaryColor;
     }
   }
@@ -344,3 +344,4 @@ table.layout {
   }
 
 }
+// ------------------------------------------------------ //
