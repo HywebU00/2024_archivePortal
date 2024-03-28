@@ -94,8 +94,9 @@ table.layout {
   }
 
   p.note{
-    margin:5px; line-height: inherit;
+    margin:9px 5px; line-height: inherit;
     font-size: .88em; color: $fontColorLight;
+    a{ color: $linkColor;}
   }
 
   &+.btnDv{ padding-top: 1.5em;}
@@ -119,7 +120,7 @@ table.layout {
 
 
 // 表單送出、清除等按鈕群
-.btnDv{
+.btnDv {
   font-size: 1.3em;
   text-align: center; padding: 8px 16px;
   input[type="button"], input[type="submit"],input[type="reset"], button{
@@ -128,59 +129,13 @@ table.layout {
 }
 
 
-
-// 必填符號
+// 必填符號 *
 .required{
   color: $warning; margin-right: 3px; text-decoration: none;
   font-size: 1.2em;
 }
 
 
-
-
-// 表單中的訊息文字 
-// ------------------------------------------------------ //
-// .notice{
-//   position: relative;
-//   display: inline-block; margin: 4px 0 0 .5em;
-
-//   &.pass , &.warning, &.fail {
-//     padding-left: 1.4em; 
-//     &::before{
-//       position: absolute; left: 0; top: .15em;
-//       content: ''; width: 1.3rem; height: 1.3rem; 
-//     }
-//   }
-
-//   // 打勾
-//   &.pass{
-//     color: $secondaryColor;
-//     &::before{
-//       background: $secondaryColor url(../images/icon_check.svg) no-repeat center center;
-//       background-size: 70% 85%;
-//       border-radius: 50%;
-//     }
-//   }
-
-//   // 驚嘆號 ！
-//   &.warning{
-//     color: $hilight;
-//     &::before{
-//       background: url(../images/icon_warning.svg) no-repeat center center;
-//       background-size: 100% auto;
-//     }
-//   }
-
-//   // 打叉 ✖️
-//   &.fail{
-//     color: $hilight;
-//     &::before{
-//       background: url(../images/icon_error.svg) no-repeat center center;
-//       background-size: 100% auto;
-//       border-radius: 50%;
-//     }
-//   }
-// }
 
 // ------------------------------------------------------ //
 // 表單內的模組 ----------------------------------------- //
@@ -316,28 +271,43 @@ table.layout {
 // 驗證碼
 // ------------------------------------------------------ //
 .captchaSet{
-  outline: 1px dashed #dd0;
   display: flex; align-items: center; flex-wrap: wrap;
-  img{flex: 0 0 auto; height: 50px; width: auto; margin:5px 10px 5px 0; margin: 5px;}
-  input{  flex: 1 1 100%;}
-  .refresh, .play{
-    flex: 1 1 auto;
-    padding: 0 .5em 0 40px; margin: 5px;
+  img{flex: 0 0 auto; height: 50px; margin: 5px;}
+  input{ flex: 1 1 50%; width: auto;}
+
+  // a 或 button 元件排版
+  .refresh, .play{flex: 1 1 45%;}
+
+  // a 或 button 元件 樣式細節
+  a.refresh, a.play, 
+  button.refresh, button.play {
+    position: relative;
+    padding: 0 .5em; margin: 5px;
     font-size: inherit; white-space: nowrap; text-align: center;
     height: var(--inputHeight); line-height: var(--inputLineHeight);
     border: 1px solid $primaryColor;
     color: $white; background-color: $primaryColor;
     text-decoration: none;
+    &::before{
+      content: ''; display: inline-block;
+      position: relative; top: calc(50% - 18px);
+      margin: 0 4px 0 0; width: 36px; height: 36px;
+      vertical-align: top;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100%;
+      filter: brightness(15);
+    }
+    &:hover, &:focus{
+      &::before{filter: none;}
+    }
   }
+  .refresh::before{background-image: url(../images/icon_refresh.png);}
+  .play::before{background-image: url(../images/icon_voice.png);}
 
-  @media screen and (min-width: $wwMedium){
-    input{flex: 1 1 calc(100% - 220px);}
-  }
-
-  @media screen and (min-width: $wwNormal){
+  @media screen and (min-width: calc($wwNormal + 100px)){
     input{ flex: 0 1 25%; min-width: 9em;}
-    .refresh, .play{ flex: 0 0 auto; padding-right: 1em; }
-    
+    .refresh, .play{ flex: 1 1 20%; max-width: 10em}
   }
 }
 // ------------------------------------------------------ //

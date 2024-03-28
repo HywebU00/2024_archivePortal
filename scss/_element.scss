@@ -423,6 +423,39 @@ button.skip{
 
 }
 
+
+
+button.hasIcon{
+  position: relative;
+  &::before{
+    content: ''; display: inline-block;
+    position: relative; top: calc(50% - 18px);
+    margin: 0 4px 0 0; width: 36px; height: 36px;
+    vertical-align: top;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+    filter: brightness(15);
+  }
+
+  &.upload::before{
+    background-image: url(../images/icon_upload.png);
+  }
+  &.delete::before{
+    background-image: url(../images/icon_delete.png);
+  }
+  &.refresh::before{
+    background-image: url(../images/icon_refresh.png);
+  }
+  &.voice::before{
+    background-image: url(../images/icon_voice.png);
+  }
+
+  &:hover{
+    &::before{ filter:none;}
+  }
+}
+
 // --------------------------------------------------------------- //
 // 內頁附圖 flow 點點、箭頭樣式
 // .flow {

@@ -10,7 +10,7 @@
   .blockHeader, article {
     width: 88%;margin: 0 auto;
   }
-  .blockHeader{padding-top: var(--pdV);}
+  .blockHeader{padding-top: var(--pdV); color: $white;}
   article{
     padding-bottom: var(--pdV);
     font-size: 1.1em;line-height: 1.6; 

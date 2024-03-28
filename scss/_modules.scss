@@ -3,6 +3,7 @@
 .blockHeader{
   margin:10px 0 30px;
   font-size: 2rem; font-weight: bold;line-height: 1.1;
+  color: $primaryColor;
   .major, .sub{ display: inline-block;}
   .sub{ 
     margin-left: 12px; font-size: .65em;
