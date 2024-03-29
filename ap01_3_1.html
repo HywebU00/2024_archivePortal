@@ -226,123 +226,254 @@
     <section class="formA">
       <h3>申請項目：檔案志工</h3>
       <p class="note">註：<abbr title="必填欄位標註符號" class="required">*</abbr>為必填（選）欄位。</p>
-      <table class="layout">
-        <tr>
-          <td><abbr class="required" title="必填欄位">*</abbr>
-            真實姓名</td>
-          <td>
-            <input type="text" class="fullWidth" placeholder="請輸入真實姓名">
-            <p class="msg error" style="display: block;">格式錯誤，請重新輸入。<button class="closeThis" type="button">隱藏</button></p>
-          </td>
-        </tr>
-        <tr>
-          <td><abbr class="required" title="必填欄位">*</abbr>
-            聯絡電話</td>
-          <td>
-            <div class="mobilePhoneSet">
-              <label for="mph999">行動電話</label>
-              <input id="mph999" type="tel" placeholder="09********">
-            </div>
-            <div class="phoneSet">
-              <label for="XXX01">市內電話</label>
-              <input type="tel" id="XXX01" class="areaCode" aria-label="區碼" placeholder="區碼">
-              <input type="tel" aria-label="用戶電話號碼" placeholder="用戶電話號碼">
-            </div>
-            <p class="msg hint" style="display: block;">至少需填寫一組聯絡電話。<button class="closeThis" type="button">隱藏</button></p>
-            <p class="msg error" style="display: block;">格式錯誤，請重新輸入。<button class="closeThis" type="button">隱藏</button></p>
-          </td>
-        </tr>
-        <tr>
-          <td><abbr class="required" title="必填欄位">*</abbr>
-            通訊地址</td>
-          <td><input type="text" class="fullWidth" placeholder="請輸入地址"></td>
-        </tr>
-        <tr>
-          <td><abbr class="required" title="必填欄位">*</abbr>
-            E-mail電子信箱
-          </td>
-          <td>
-            <input type="email" class="fullWidth" placeholder="例: 111@gmail.com">
-            <p class="msg error" style="display: block;">E-mail格式錯誤，請重新輸入。<button class="closeThis" type="button">隱藏</button></p>
-          </td>
-        </tr>
-
-        <tr>
-          <td><abbr class="required" title="必填欄位">*</abbr>
-            回覆方式
-          </td>
-          <td>
-            <div class="optionPool">
-              <label><input name="rrr" type="radio">線上回覆</label>
-              <label><input name="rrr" type="radio">電話回覆</label>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><abbr class="required" title="必填欄位">*</abbr>
-            主旨
-          </td>
-          <td>
-            <input type="text" class="fullWidth" placeholder="請輸入主旨">
-            <p class="note">限30字以內。</p>
-          </td>
-        </tr>
-        <tr>
-          <td><abbr class="required" title="必填欄位">*</abbr>
-            意見內容
-          </td>
-          <td>
-            <textarea placeholder="請輸入意見內容"></textarea>
-            <p class="note">為保護您個人資料安全，請勿張貼私敏資料於網站上。字數限300字以內。</p>
-            <p class="msg hint" style="display: block;">小祕訣：建議可先在記事本上編輯內容再將文字貼上，避免重打的可能。<button class="closeThis" type="button">隱藏</button></p>
-          </td>
-        </tr>
-        <tr>
-          <td>附件上傳</td>
-          <td>
-            <div class="uploadFile">
-              <input type="text" readonly="readonly" value="filename.jpg">
-              <button type="button" class="hasIcon upload">上傳檔案</button>
-              <button type="button" class="hasIcon delete">刪除檔案</button>
-            </div>
-            <p class="note">本功能僅提供上傳一個檔案，檔案格式限doc,docx,odt,jpg,pdf，上傳總容量限制1MB。</p>
-            <p class="msg warning" style="display: block;">上傳的檔案大小超過限制，請重新上傳。
-              <button class="closeThis" type="button">隱藏</button></p>
-            <p class="msg error" style="display: block;">上傳的檔案格式不支援，請重新上傳。
-              <button class="closeThis" type="button">隱藏</button></p>
-          </td>
-        </tr>
-
-        <tr>
-          <td><abbr class="required" title="必填欄位">*</abbr>
-            驗證碼</td>
-          <td>
-            <div class="captchaSet">
-              <img src="publicData/stickyCaptcha.png" alt="">
-              <input type="text" id="captcha" name="captcha" value="">
-              
-              <!-- ＊＊＊ 建議更換 a 元件為 button 元件 ＊＊＊   
-                <a href="javascript:void(0)" onclick="reloadCaptcha('captchaImg', 'captchaAudio')" class="refresh">更換驗證碼</a>
-                <a href="javascript:void(0)" onclick="document.getElementById('captchaAudioControl').play()" onkeypress="document.getElementById('captchaAudioControl').play()" class="play">語音播放</a> 
-              -->
-              <button type="button" class="refresh" onclick="reloadCaptcha('captchaImg', 'captchaAudio')">更換驗證碼</button>
-              <button type="button" class="play" onclick="document.getElementById('captchaAudioControl').play()" onkeypress="document.getElementById('captchaAudioControl').play()">語音播放</button>
-
-              <div id="captchaAudioSpan" style="display:none">
-                  <audio id="captchaAudioControl" controls="">
-                  <source id="captchaAudio" src="/wSite/audioCaptcha.mp3?" type="audio/mp3">
-                </audio>
+      <form action="">
+        <table class="layout">
+          <tr>
+            <td><abbr class="required" title="必填欄位">*</abbr>姓名</td>
+            <td>
+              <input type="text" class="fullWidth" placeholder="請輸入姓名">
+              <p class="msg error" style="display: block;">格式錯誤，請重新輸入。<button class="closeThis" type="button">隱藏</button></p>
+            </td>
+          </tr>
+  
+          <tr>
+            <td><abbr class="required" title="必填欄位">*</abbr>出生年月日</td>
+            <td>
+              <input class="halfWidth" type="text" placeholder="55-11-20">
+              <p class="note">請輸入民國年，例:55-11-20</p>
+              <p class="msg error" style="display: block;">格式錯誤，請重新輸入。<button class="closeThis" type="button">隱藏</button></p>
+            </td>
+  
+          </tr>
+          <tr>
+            <td><abbr class="required" title="必填欄位">*</abbr>稱謂</td>
+            <td>
+              <div class="optionPool">
+                <label><input name="ttt" type="radio">先生</label>
+                <label><input name="ttt" type="radio">小姐</label>
               </div>
-            </div>
-            <p class="note">如果無法使用語音，請<a href="/wSite/audioCaptcha.mp3" title="驗證碼語音檔">下載語音檔案</a>。</p>
-            <p class="msg error" style="display: block;">您輸入的驗證碼錯誤，請重新輸入。<button class="closeThis" type="button">隱藏</button></p>
-          </td>
-        </tr>
-      </table>
-      <div class="btnDv">
-        <button type="button">下一步</button>
-        <button type="reset" class="reset">清除重填</button>
-      </div>
+            </td>
+          </tr>
+          <tr>
+            <td><abbr class="required" title="必填欄位">*</abbr>聯絡電話</td>
+            <td>
+              <div class="mobilePhoneSet">
+                <label for="mph999">行動電話</label>
+                <input id="mph999" type="tel" placeholder="09********">
+              </div>
+              <div class="phoneSet">
+                <label for="XXX01">市內電話</label>
+                <input type="tel" id="XXX01" class="areaCode" aria-label="區碼" placeholder="區碼">
+                <input type="tel" aria-label="用戶電話號碼" placeholder="用戶電話號碼">
+              </div>
+              <p class="msg hint" style="display: block;">至少需填寫一組聯絡電話。<button class="closeThis" type="button">隱藏</button></p>
+              <p class="msg error" style="display: block;">格式錯誤，請重新輸入。<button class="closeThis" type="button">隱藏</button></p>
+            </td>
+          </tr>
+          <tr>
+            <td><abbr class="required" title="必填欄位">*</abbr>通訊地址</td>
+            <td><input type="text" class="fullWidth" placeholder="請輸入地址"></td>
+          </tr>
+          <tr>
+            <td><abbr class="required" title="必填欄位">*</abbr>E-mail電子信箱</td>
+            <td>
+              <input type="email" class="fullWidth" placeholder="例: 111@gmail.com">
+              <p class="msg error" style="display: block;">E-mail格式錯誤，請重新輸入。<button class="closeThis" type="button">隱藏</button></p>
+            </td>
+          </tr>
+          <tr>
+            <td><abbr class="required" title="必填欄位">*</abbr>最高學歷</td>
+            <td>
+              <div class="optionPool">
+                <label><input name="eeee" type="radio">高中(職)</label>
+                <label><input name="eeee" type="radio">大學(專)</label>
+                <label><input name="eeee" type="radio">碩士</label>
+                <label><input name="eeee" type="radio">博士</label>
+              </div>
+            </td>
+          </tr>
+  
+          <tr>
+            <td><abbr class="required" title="必填欄位">*</abbr>職業狀況</td>
+            <td>
+              <div class="optionPool">
+                <div class="checkAndText">
+                  <label><input name="jjjj" type="radio">退休公務人員，原服務單位</label>
+                  <input type="text" name="" id="" placeholder="請輸入原服務單位">
+                </div>
+                <div class="checkAndText">
+                  <label><input name="jjjj" type="radio">退休非公務人員，原服務單位</label>
+                  <input type="text" name="" id="" placeholder="請輸入原服務單位">
+                </div>
+                <div class="checkAndText">
+                  <label><input name="jjjj" type="radio">公務人員，服務單位</label>
+                  <input type="text" name="" id="" placeholder="請輸入服務單位">
+                </div>
+                <div class="checkAndText">
+                  <label><input name="jjjj" type="radio">工商人士，服務單位</label>
+                  <input type="text" name="" id="" placeholder="請輸入服務單位">
+                </div>
+                <div class="checkAndText">
+                  <label><input name="jjjj" type="radio">家管</label>
+                </div>
+                <div class="checkAndText">
+                  <label><input name="jjjj" type="radio">學生，就讀學校</label>
+                  <input type="text" name="" id="" placeholder="請輸入就讀學校">
+                </div>
+                <div class="checkAndText">
+                  <label><input name="jjjj" type="radio">其他，請輸入職業狀況</label>
+                  <input type="text" name="" id="" placeholder="請輸入職業狀況">
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><abbr class="required" title="必填欄位">*</abbr>志工經歷</td>
+            <td>
+              <div class="optionPool">
+                <div class="checkAndText">
+                  <label><input name="kkk" type="checkbox">目前服務於</label>
+                  <input type="text" name="" id="" placeholder="請輸入服務機構">
+                </div>
+                <div class="checkAndText">
+                  <label><input name="kkk" type="checkbox">曾服務於</label>
+                  <input type="text" name="" id="" placeholder="請輸入服務機構">
+                </div>
+                <div class="checkAndText">
+                  <label><input name="kkk" type="checkbox">有志願服務紀錄冊</label>
+                  <input type="text" name="" id="" placeholder="請輸入紀錄冊核發字號">
+                </div>
+                <div class="checkAndText">
+                  <label><input name="kkk" type="checkbox">第一次參加</label>
+                </div>
+              </div>
+              <p class="note">志工經歷可複選。</p>
+              <p class="msg hint" style="display: block;">至少需填寫一組志工經歷。<button class="closeThis" type="button">隱藏</button></p>
+            </td>
+          </tr>
+          <tr>
+            <td><abbr class="required" title="必填欄位">*</abbr>精通語言</td>
+            <td>
+              <div class="optionPool">
+                <label><input name="lll" type="checkbox">國語</label>
+                <label><input name="lll" type="checkbox">台語</label>
+                <label><input name="lll" type="checkbox">客語</label>
+                <label><input name="lll" type="checkbox">英語</label>
+                <label><input name="lll" type="checkbox">日語</label>
+                <span class="addition">
+                  <label><input name="lll" type="checkbox">其他，請說明</label>
+                  <input type="text" name="" id="" placeholder="請輸入精通語言">
+                </span>
+              </div>
+              <p class="note">精通語言可複選。</p>
+              <p class="msg hint" style="display: block;">至少需填寫一組精通語言。<button class="closeThis" type="button">隱藏</button></p>
+            </td>
+          </tr>
+          <tr>
+            <td><abbr class="required" title="必填欄位">*</abbr>個人專長或興趣</td>
+            <td>
+              <div class="optionPool">
+                <label><input name="hhh" type="checkbox">工藝</label>
+                <label><input name="hhh" type="checkbox">刻印</label>
+                <label><input name="hhh" type="checkbox">語文</label>
+                <label><input name="hhh" type="checkbox">文書事務</label>
+                <label><input name="hhh" type="checkbox">編輯</label>
+                <label><input name="hhh" type="checkbox">美工</label>
+                <label><input name="hhh" type="checkbox">家事服務</label>
+                <label><input name="hhh" type="checkbox">護理</label>
+                <label><input name="hhh" type="checkbox">手工藝</label>
+                <label><input name="hhh" type="checkbox">打字</label>
+                <label><input name="hhh" type="checkbox">電腦</label>
+                <label><input name="hhh" type="checkbox">攝影</label>
+                <label><input name="hhh" type="checkbox">團康</label>
+                <label><input name="hhh" type="checkbox">農牧(藝)</label>
+                <label><input name="hhh" type="checkbox">音樂</label>
+                <label><input name="hhh" type="checkbox">體育</label>
+                <label><input name="hhh" type="checkbox">特殊教育</label>
+                <span class="addition">
+                  <label><input name="hhh" type="checkbox">其他，請說明</label>
+                  <input type="text" name="" id="" placeholder="請輸入個人專長或興趣">
+                </span>
+              </div>
+              <p class="note">個人專長或興趣可複選。</p>
+              <p class="msg hint" style="display: block;">至少需填寫一組個人專長或興趣。<button class="closeThis" type="button">隱藏</button></p>
+            </td>
+          </tr>
+          <tr>
+            <td><abbr class="required" title="必填欄位">*</abbr>參加動機</td>
+            <td>
+              <textarea placeholder="請輸入參加動機"></textarea>
+              <p class="note">字數限200字以內。</p>
+              <p class="msg hint" style="display: block;">小祕訣：建議可先在記事本上編輯內容再將文字貼上，避免重打的可能。<button class="closeThis" type="button">隱藏</button></p>
+            </td>
+          </tr>
+          <tr>
+            <td>備註</td>
+            <td>
+              <textarea placeholder="請輸入備註"></textarea>
+              <p class="note">字數限200字以內。</p>
+            </td>
+          </tr>
+          <tr>
+            <td><abbr class="required" title="必填欄位">*</abbr>服務項目</td>
+            <td>
+              <div class="optionPool">
+                <label><input name="sss" type="checkbox">國家檔案應用及推廣服務</label>
+                <label><input name="sss" type="checkbox">國家檔案整理暨調案作業</label>
+              </div>
+              <p class="note">服務項目可複選。</p>
+              <p class="msg hint" style="display: block;">至少需填寫一組服務項目。<button class="closeThis" type="button">隱藏</button></p>
+            </td>
+          </tr>
+  
+          <tr>
+            <td><abbr class="required" title="必填欄位">*</abbr>照片上傳</td>
+            <td>
+              <div class="uploadFile">
+                <input type="text" readonly="readonly" value="filename.jpg">
+                <button type="button" class="hasIcon upload">上傳檔案</button>
+                <button type="button" class="hasIcon delete">刪除檔案</button>
+              </div>
+              <p class="note">請上傳正面清晰大頭照（大頭照須為最近 2 年內所攝之正面半身彩色，脫帽且頭不得側向一邊，眼睛正視相機鏡頭拍攝、未有拍照手勢之照片）。</p>
+              <p class="note">本功能僅提供上傳一個檔案，檔案格式限 jpg，上傳總容量限制 5MB。</p>
+              <p class="msg warning" style="display: block;">上傳的檔案大小超過限制，請重新上傳。
+                <button class="closeThis" type="button">隱藏</button></p>
+              <p class="msg error" style="display: block;">上傳的檔案格式不支援，請重新上傳。
+                <button class="closeThis" type="button">隱藏</button></p>
+            </td>
+          </tr>
+  
+          <tr>
+            <td><abbr class="required" title="必填欄位">*</abbr>
+              驗證碼</td>
+            <td>
+              <div class="captchaSet">
+                <img src="publicData/stickyCaptcha.png" alt="">
+                <input type="text" id="captcha" name="captcha" value="">
+                
+                <!-- ＊＊＊ 建議更換 a 元件為 button 元件 ＊＊＊   
+                  <a href="javascript:void(0)" onclick="reloadCaptcha('captchaImg', 'captchaAudio')" class="refresh">更換驗證碼</a>
+                  <a href="javascript:void(0)" onclick="document.getElementById('captchaAudioControl').play()" onkeypress="document.getElementById('captchaAudioControl').play()" class="play">語音播放</a> 
+                -->
+                <button type="button" class="refresh" onclick="reloadCaptcha('captchaImg', 'captchaAudio')">更換驗證碼</button>
+                <button type="button" class="play" onclick="document.getElementById('captchaAudioControl').play()" onkeypress="document.getElementById('captchaAudioControl').play()">語音播放</button>
+  
+                <div id="captchaAudioSpan" style="display:none">
+                    <audio id="captchaAudioControl" controls="">
+                    <source id="captchaAudio" src="/wSite/audioCaptcha.mp3?" type="audio/mp3">
+                  </audio>
+                </div>
+              </div>
+              <p class="note">如果無法使用語音，請<a href="/wSite/audioCaptcha.mp3" title="驗證碼語音檔">下載語音檔案</a>。</p>
+              <p class="msg error" style="display: block;">您輸入的驗證碼錯誤，請重新輸入。<button class="closeThis" type="button">隱藏</button></p>
+            </td>
+          </tr>
+        </table>
+        <div class="btnDv">
+          <button type="button">下一步</button>
+          <button type="reset" class="reset">清除重填</button>
+        </div>
+      </form>
 
     </section>
 

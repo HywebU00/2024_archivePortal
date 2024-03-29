@@ -172,14 +172,42 @@ table.layout {
 .optionPool{ 
   margin: 5px;
   label{
-    display: inline-block;line-height: 1.4; border-radius: 2em;
-    margin:3px .6em 3px 3px; padding: .6em 1em .5em .6em; 
-    &:hover, &:focus {
-      box-shadow: $borderColor 0 0 0 1px; border-radius: 2em;
+    display: inline-block;line-height: 1.4;
+    margin:3px .6em 3px 3px; padding: .6em .7em .5em .5em; 
+    &:hover, &:focus {box-shadow: $borderColor 0 0 0 1px;}
+    input[type="checkbox"], input[type="radio"]{ vertical-align: top; }
+    input[type="radio"]{margin-top: .08em;}
+    input[type="checkbox"]{margin-top: .18em;}
+  }
+
+  &>.checkAndText{
+    padding-bottom: 1px;
+    border-bottom: 1px dashed $borderColor;
+    input[type="text"]{ 
+      margin-left: 1.8em;
+      width: calc(100% - 1.8em);
     }
-    input{ 
-      vertical-align: top; margin-top: .08em;
-      &[type="checkbox"]{margin-top: .18em;}
+  }
+
+  .addition{ 
+    width: 100%;
+    display: flex;
+    input[type="text"] {flex: 1 1 auto; margin-left: -.45em; max-width: 20em;}
+  }
+
+  @media screen and (min-width: $wwNormal){
+    &>.checkAndText {
+      display: flex; align-items: center;
+      min-height: 2.2em;
+      &>label{
+        flex: 0 0 48%;
+        padding-left: 2em; padding-right: 0;
+        text-indent: -1.7em;
+      }
+      &>input[type="text"] {
+        flex: 1 1 calc(50% - 12px); width: auto;
+        margin-left: 12px;
+      }
     }
   }
 }
