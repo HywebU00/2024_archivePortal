@@ -33,7 +33,10 @@
 // 時間、日期格式
 // --------------------------------------------------------------- //
 time {
-  display: inline-block;
+  display: inline-block; 
+  color: $fontColorLight;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  // font-family: 'Times New Roman', Times, serif;
 }
 // --------------------------------------------------------------- //
 
