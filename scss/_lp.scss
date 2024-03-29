@@ -226,6 +226,10 @@
 
   h3{margin-top: 0;}
   li+li{ margin-top: .5em;}
+
+  .btnDv{ font-size: 1.1em;
+    button:only-child{ min-width: 12em;}
+  }
 }
 
 

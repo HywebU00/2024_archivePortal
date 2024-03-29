@@ -125,8 +125,12 @@ table.layout {
 .btnDv {
   font-size: 1.3em;
   text-align: center; padding: 8px 16px;
-  input[type="button"], input[type="submit"],input[type="reset"], button{
+  input[type="button"], input[type="submit"], input[type="reset"], button{
     padding-left: 2em; padding-right: 2em; min-width: 8em;
+  }
+  button.reset, input.reset {
+    background-color: $secondaryColor;color: $primaryColor;
+    &:hover, &:focus {background-color: $grayLight;}
   }
 }
 
