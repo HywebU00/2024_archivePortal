@@ -8,6 +8,11 @@
     tr{border-bottom: 1px solid $borderColor;}
   }
 
+  h3{
+    border-bottom: 2px solid $borderColor;
+    padding-bottom: 5px; margin-bottom: 40px;
+  }
+
   @media screen and (min-width: $wwNormal){
     padding: 24px;
     table.layout{ width: 96%;}
@@ -179,6 +184,11 @@ table.layout {
     input[type="radio"]{margin-top: .08em;}
     input[type="checkbox"]{margin-top: .18em;}
   }
+  &.block {
+    label{ display: block;
+      &:hover, &:focus {box-shadow: none;}
+    }
+  }
 
   &>.checkAndText{
     padding-bottom: 1px;
@@ -189,10 +199,28 @@ table.layout {
     }
   }
 
+  // 「其他」項目，含文字輸入
   .addition{ 
-    width: 100%;
-    display: flex;
+    display: flex; width: 100%;
     input[type="text"] {flex: 1 1 auto; margin-left: -.45em; max-width: 20em;}
+  }
+
+  // 選項 check 後出現的附件或連結
+  .checkToShow {
+    display: none; 
+    margin: 0;padding: 0 0 .5em 2.2em;
+    line-height: 1.3;
+    li{
+      display: inline-block;padding: 0; margin:0 1.2em .4em 0;
+      &::before {content: '▸ ';}
+      a{ 
+        color: $linkColor;
+        &:hover, &:focus {
+          text-decoration: none;
+          outline: 1px solid $linkColor;
+        }
+      }
+    }
   }
 
   @media screen and (min-width: $wwNormal){
