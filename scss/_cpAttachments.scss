@@ -1,17 +1,23 @@
+// 相關檔案, 相關連結 , 相關圖檔 共用區塊標題樣式
+.photoflow, .fileDownload, .seeAlso{
+
+  h3{
+    position: relative;padding:0 0 6px 24px; margin: 0;
+    font-size: 1.3em;  line-height: 1.2;
+    border-bottom: 3px solid $primaryColor;
+    &::before {
+      content: '';position: absolute; left: 0; top: 4px;
+      width: 9px; height: 1em;
+      background-color: $primaryColor;
+    }
+  }
+
+}
+
 // 相關檔案, 相關連結 
 // ------------------------------------------------------ //
 .fileDownload, .seeAlso{
   clear: both; margin: 60px 0; font-size: 1.1em;
-  h3{
-    position: relative;padding:0 0 6px 2em; margin: 0;
-    font-size: 1.4rem;  line-height: 1.2;
-    border-bottom: 3px solid $primaryColor;
-    &::before {
-      content: '';position: absolute; left: .6em; top: 4px;
-      width: 16px; height: 1em;
-      background-color: $primaryColor;
-    }
-  }
   ul{list-style: none;  padding: 0; margin: 0;}
   &>ul, &>ol{
     line-height: 1.6;
@@ -20,6 +26,21 @@
     }
   }
 }
+
+// h4{
+//   font-weight: bold; font-size: 1.3em; line-height: 1.4;
+//   margin: 2.5em 0 .8em; padding: 0 0 0 24px;
+//   position: relative;
+//   &::before{
+//     content: ''; position: absolute; left: 0; top: .15em;
+//     width: 9px; height: 1em;
+//     background-color: $primaryColor;
+//   }
+
+//   &+.tbStyle1, &+.tbStyle2{
+//     margin-top: 0;
+//   }
+// }
 // ------------------------------------------------------ //
 
 

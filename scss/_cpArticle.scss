@@ -52,7 +52,7 @@
 
 
   @media screen and (min-width: $wwNormal){
-    figure.prim{float: right; width: 40%; margin:0 0 15px 30px;}
+    figure.prim{ float: right; width: 40%; margin:0 0 15px 30px;}
     blockquote{ margin: 70px 0;}
   }
 
@@ -64,7 +64,6 @@
 // ------------------------------------------------------ //
 .imageRow {
   margin: 50px auto;
-  // outline: 1px dashed red;
   figure{
     margin: 0;padding: 0; display: block;
     background-color: #767676;
@@ -87,12 +86,17 @@
     }
   }
 
+  &.col2, &.col2a, &.col2b {
+    figure:last-child{ margin-top: 20px;}
+  }
+
 
   @media screen and (min-width: $wwMedium){
     margin: 70px auto; max-width: 1000px;
     &.col2, &.col2a, &.col2b {
       display: flex; justify-content: space-between;
       max-width: 1250px;
+      figure:last-child{ margin-top: 0;}
     }
     &.col2{
       figure{flex: 0 0 49%;}
@@ -118,6 +122,8 @@
 // 內容頁表格
 // ------------------------------------------------------ //
 .tbStyle1, .tbStyle2{
+  --tdbg: #f2f2f2;
+
   margin: 50px auto; width: 100%;
   border-collapse: collapse; line-height: 1.5;
   th, td{ padding: 15px;}
@@ -143,12 +149,8 @@
 table.tbStyle1{
   tbody{
     tr:nth-child(even){
-      background-color: $grayLight;
+      background-color: var(--tdbg);
     }
-    // td{ 
-    //   // border-left: 2px solid $white;
-    //   // &:first-child{border-left:none}
-    // }
   }
 }
 
@@ -156,7 +158,7 @@ table.tbStyle1{
 table.tbStyle2{
   th, td{border: 2px solid $white;}
   tbody{
-    background-color: #f2f2f2;
+    background-color: var(--tdbg--tdbg);
     th:first-child, td:first-child{ background-color: $primaryColor; color: $white;}
     td{ vertical-align: top; }
   }

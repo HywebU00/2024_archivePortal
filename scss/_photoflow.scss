@@ -97,23 +97,14 @@ button.arrowBtn {
 .photoflow{
   position: relative; margin:60px 0;
 
+  // h3 樣式設定在 _cpAttachments.scss
+
   ul{margin: 0; padding: 0; list-style: none;}
   a{text-decoration: none; }
 
-  h3{
-    position: relative;padding:0 0 6px 2em; margin: 0 0 20px;
-    font-size: 1.4rem;  line-height: 1.2;
-    border-bottom: 3px solid $primaryColor;
-    &::before {
-      content: '';position: absolute; left: .6em; top: 4px;
-      width: 16px; height: 1em;
-      background-color: $primaryColor;
-    }
-  }
-
   .flowBox{
     position: relative; width:100%;
-    padding-bottom: 20px;
+    padding-bottom: 20px; margin-top: 20px;
 
     // 此元件由 js 產生
     .flowShow{
