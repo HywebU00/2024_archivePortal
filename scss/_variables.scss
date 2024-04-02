@@ -76,6 +76,10 @@ $grayDark: #5d6063;
   background: linear-gradient(180deg, #F6F6F6 0%, #F9F9F9 9.38%, #FFFFFF 100%);
   box-shadow: 0 0 4px $shadow1;
 }
+%gradient2 {
+  background: linear-gradient(180deg, #C7F7F2 0%, #EAFFFD 100%)  right 0 top 0;
+  box-shadow: 0 0 4px 0 rgba(15, 61, 95, 0.2);
+}
 
 // $btnBg1: $primaryColor;
 // $btnBg2: #01425c;

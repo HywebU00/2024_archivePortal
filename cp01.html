@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>檔案管理局 CP01</title>
+  <link href="images/favicon.ico" rel="icon" type="image/ico">
+
+  <link rel="stylesheet" href="slick/slick.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="slick/slick.min.js"></script>
+  <script src="js/jquery.touchSwipe.min.js"></script>
+  <script src="js/uieffect.js"></script>
+</head>
+<body>
+  <a class="goCenter" href="#aC" tabindex="0">按 Enter 到主內容區</a>
+
+  <header class="webHeader">
+    <a class="accesskey" href="#aU" id="aU" accesskey="U" title="版頭區">:::</a>
+    <h1 aria-label="國家發展委員會檔案管理局"><a href="mp.html"><img src="images/h1.png" alt=""></a></h1>
+    
+    <nav class="headNav">
+      <ul>
+        <li><a href="mp.html">回首頁</a></li>
+        <li><a href="#">English</a></li>
+        <li><a href="#">網站導覽</a></li>
+        <li><a href="#">常見問答</a></li>
+        <li><a href="#">雙語詞彙</a></li>
+        <li><a href="#">SS訂閱</a></li>
+      </ul>
+    </nav>
+
+    <nav class="menu">
+      <ul>
+        <li><a href="#">參訪資訊</a>
+          <ul>
+            <li><a href="#">開放時間</a></li>
+            <li><a href="#">交通資訊</a></li>
+            <li><a href="#">導覽服務</a></li>
+            <li><a href="#">樓層設施</a>
+              <ul>
+                <li><a href="#">多層選單測試</a></li>
+                <li><a href="#">多層選單測試</a></li>
+                <li><a href="#">多層選單測試</a></li>
+              </ul>
+            </li>
+            <li><a href="#">閱覽中心</a></li>
+            <li><a href="#">餐飲資訊</a></li>
+            <li><a href="#">參訪報名</a></li>
+            <li><a href="#">場地預約</a></li>
+            <li><a href="#">聯絡我們</a></li>
+          </ul>
+        </li>
+        <li><a href="#">展覽與活動</a>
+          <ul>
+            <li><a href="#">常設展</a>
+              <ul>
+                <li><a href="#">多層選單測試</a></li>
+                <li><a href="#">多層選單測試多層選單測試多層選單測試</a></li>
+                <li><a href="#">多層選單測試</a></li>
+              </ul>
+            </li>
+            <li><a href="#">特展</a></li>
+            <li><a href="#">展覽回顧</a></li>
+            <li><a href="#">活動</a></li>
+            <li><a href="#">活動回顧</a></li>
+            <li><a href="#">檔案月</a></li>
+            <li><a href="#">活動報名</a></li>
+          </ul>
+        </li>
+        <li><a href="#">檔案應用與研究</a>
+          <ul>
+            <li><a href="#">國家檔案資訊網(A+)</a></li>
+            <li><a href="#">政治檔案服務</a></li>
+            <li><a href="#">主題簡介</a></li>
+            <li><a href="#">國家檔案素材</a></li>
+            <li><a href="#">學術交流</a></li>
+            <li><a href="#">機關檔案目錄查詢網(NEAR)</a></li>
+            <li><a href="#">檔案資源整合查詢平台</a></li>
+            <li><a href="#">檔案調閱</a></li>
+          </ul>
+        </li>
+        <li><a href="#">學習資源</a>
+          <ul>
+            <li><a href="#">檔案支援教學網</a></li>
+            <li><a href="#">利用指導活動</a></li>
+            <li><a href="#">行動展示資源</a></li>
+            <li><a href="#">檔案樂活情報</a></li>
+            <li><a href="#">圖書與刊物</a></li>
+          </ul>
+        </li>
+        <li><a href="#">國家檔案管理</a>
+          <ul>
+            <li><a href="#">徵集</a></li>
+            <li><a href="#">保存維護</a></li>
+          </ul>
+        </li>
+        <li><a href="#">機關服務</a>
+          <ul>
+            <li><a href="#">檔案管理制度</a></li>
+            <li><a href="#">文書檔案資訊管理</a></li>
+            <li><a href="#">金檔獎暨金質獎</a></li>
+            <li><a href="#">機關檔案目錄查詢網(NEAR)</a></li>
+            <li><a href="#">教育訓練報名</a></li>
+            <li><a href="#">專業認證</a></li>
+            <li><a href="#">統計資料</a></li>
+          </ul>
+        </li>
+        <li><a href="#">認識我們</a>
+          <ul>
+            <li><a href="#">歷史沿革</a></li>
+            <li><a href="#">首長介紹</a></li>
+            <li><a href="#">組織職掌</a></li>
+            <li><a href="#">局館政策</a></li>
+            <li><a href="#">文檔法規</a></li>
+            <li><a href="#">大事紀要</a></li>
+            <li><a href="#">省政資料館</a></li>
+            <li><a href="#">各館中心介紹</a></li>
+            <li><a href="#">促轉基金</a></li>
+            <li><a href="#">檔案服務宣言</a></li>
+            <li><a href="#">業務窗口</a></li>
+          </ul>
+        </li>
+        <li><a href="#">便民服務</a>
+          <ul>
+            <li><a href="#">政府資訊公開</a></li>
+            <li><a href="#">志工與實習</a></li>
+            <li><a href="#">下載專區</a></li>
+            <li><a href="#">常見問答</a></li>
+            <li><a href="#">文創商店</a></li>
+            <li><a href="#">雙向溝通</a></li>
+            <li><a href="#">雙語詞彙</a></li>
+            <li><a href="#">影音專區</a></li>
+            <li><a href="#">合作交流</a></li>
+            <li><a href="#">意見信箱</a></li>
+            <li><a href="#">滿意度調查</a></li>
+            <li><a href="#">相關網站</a></li>
+          </ul>
+        </li>
+        <li><a href="#">最新消息</a></li>
+      </ul>
+    </nav>
+
+    <button type="button" class="sidebarCtrl" aria-label="開啟側欄"></button>
+    <button type="button" class="searchCtrl" aria-label="開啟查詢區"></button>
+    <section class="search">
+      <form action="">
+        <input type="text" placeholder="請輸入關鍵字">
+        <input type="button" value="查詢">
+      </form>
+      <div class="hotKeywords">
+        <span class="label">熱門查詢詞</span>
+        <ul>
+          <li><a href="#">檔案法</a></li>
+          <li><a href="#">下載專區</a></li>
+          <li><a href="#">金檔獎</a></li>
+        </ul>
+      </div>
+    </section>
+  </header>
+
+  <!-- 行動版側欄 -->
+  <aside class="sidebar">
+  </aside>
+
+  <main class="main">
+    <a class="accesskey" href="#aC" id="aC" accesskey="C" title="主要內容區">:::</a>
+    <div class="breadcrumb" title="瀏覽路徑">
+      <ul>
+        <li><a href="mp.html">首頁</a></li>
+        <li><a href="#">學習資源</a></li>
+        <li><a href="#">國家檔案融入教學應用</a></li>
+      </ul>
+    </div>
+
+    <div class="pageHeader">
+      <h2>國家檔案融入教學應用</h2>
+      <section class="funcBar">
+        <ul>
+          <li class="fontSize compound">
+            <button type="button" aria-label="字體">字</button>
+            <ul>
+              <li><button class="smallFont" type="button">小</button></li>
+              <li><button class="mediumFont" type="button">中</button></li>
+              <li><button class="largeFont" type="button">大</button></li>
+            </ul>
+          </li>
+          <li class="print"><button type="button" aria-label="列印"></button></li>
+          <li class="share compound">
+            <button type="button" aria-label="分享"></button>
+            <ul>
+              <li><a target="_blank" title="分享到 Facebook（開新視窗）" href="https://www.facebook.com/"><img src="images/icon_fb.png" alt="Facebook"></a></li>
+              <li><a target="_blank" title="分享到 X（開新視窗）" href="https://twitter.com/"><img src="images/icon_X.png" alt="X"></a></li>
+              <li><a target="_blank" title="分享到 LINE（開新視窗）" href="https://access.line.me/"><img src="images/icon_line.png" alt="LINE"></a></li>
+            </ul>
+          </li>
+          <li class="back"><a href="javascript:;" aria-label="回前頁"></a></li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="cp">
+
+      <nav class="cpAnchors">
+        <ul>
+          <li><a href="#pa01">內文錨點</a></li>
+          <li><a href="#pa02">檔案支援教學網</a></li>
+          <li><a href="#pa03">檔案應用指導</a></li>
+          <li><a href="#pa04">檔案支援教學網</a></li>
+        </ul>
+      </nav>
+
+      <article class="cpArticle">
+        <figure class="prim">
+          <img src="publicData/ph03.jpg" alt="">
+          <figcaption>檔案支援教學的介紹</figcaption>
+        </figure>
+
+        <p>為引導各界有效應用國家檔案資料，本局透過<a href="#">數位教材研編</a>、<a href="#">實地參訪或課程研習</a>等方式，增進學校師生認識檔案的內涵及價值，激發使用檔案興趣，將其運用於學習及教學。</p>
+        <h4>檔案支援教學網</h4>
+        <p>本局每年配合學校課綱研編檔案教學資源素材集，並匯入
+          檔案支援教學網，現有「民國38年以前國共兩黨的合作與衝突」、「臺灣戰後初期的接收與治理」、「民國38年以前國家重大發展：抗日戰爭」、「民國38年以後臺灣政治發展」、「民國34年至70年臺灣經濟發展」、「民國34年至87年臺灣議會與地方自治發展」、「臺灣農工業發展與轉型」、「臺灣交通網絡之建設與影響」、「臺灣民生產業的發展與變遷」、「臺灣衛生醫療體系的建置與發展」等主題單元，提供下載運用。
+        </p>
+      
+        <h4>檔案應用指導</h4>
+        <p>
+          為將檔案應用指導活動融入學校課程教學或學習，本局以到局參訪、到校推廣二種方式，介紹檔案資源之保存維護、查詢應用、加值推廣、小論文寫作、或特定主題國家檔案內容等，到局參訪行程更安排導覽解說，歡迎各級學校申請。此外，本局於各校推廣國家檔案之課程教材亦上網，提供下載運用。
+        </p>
+        <p>申請方式如下：</p>
+        <p>請至本局全球資訊網首頁 / 便民服務 / 申辦服務 / 本局參訪及檔案應用指導 / 線上申辦服務進行申請。</p>
+        <p>地址：新北市新莊區中平路439號北棟2樓檔案利用指導室</p>
+        <p>聯絡電話：(02)8995-3614</p>
+        <div class="button center"><a href="#">國家檔案複製費用繳費方式說明</a></div>
+      
+        <h4>檔案支援教學網</h4>
+        <p>本局每年配合學校課綱研編檔案教學資源素材集，並匯入
+          檔案支援教學網，現有「民國38年以前國共兩黨的合作與衝突」、「臺灣戰後初期的接收與治理」、「民國38年以前國家重大發展：抗日戰爭」、「民國38年以後臺灣政治發展」、「民國34年至70年臺灣經濟發展」、「民國34年至87年臺灣議會與地方自治發展」、「臺灣農工業發展與轉型」、「臺灣交通網絡之建設與影響」、「臺灣民生產業的發展與變遷」、「臺灣衛生醫療體系的建置與發展」等主題單元，提供下載運用。
+        </p>
+        <div class="button"><a href="#">查詢與申請國家檔案</a></div>
+
+        <blockquote>
+          National Archives Repository：國家檔案庫房National Archives Repository：國家檔案庫房National Archives Repository：國家檔案庫房National Archives Repository：國家檔案庫房National Archives Repository：國家檔案庫房
+        </blockquote>
+      
+        <h4>雙語詞彙</h4>
+        <table class="tbStyle1">
+          <!-- <caption>雙語詞彙</caption> -->
+          <thead>
+            <tr>
+              <th>正體中文詞彙</th>
+              <th>英文詞彙</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>上架</td>
+              <td>Filing</td>
+            </tr>
+            <tr>
+              <td>上漿</td>
+              <td>Pasting</td>
+            </tr>
+            <tr>
+              <td>分類</td>
+              <td>Classification</td>
+            </tr>
+            <tr>
+              <td>方心</td>
+              <td>Squaring</td>
+            </tr>
+            <tr>
+              <td>去酸紙</td>
+              <td>Acid-free Paper</td>
+            </tr>
+            <tr>
+              <td>回卷</td>
+              <td>Re-binding</td>
+            </tr>
+            <tr>
+              <td>回溫處理</td>
+              <td>Acclimation</td>
+            </tr>
+          </tbody>
+        </table>
+      
+        <h4>各單位業務簡介</h4>
+        <table class="tbStyle2">
+          <!-- <caption>各單位業務簡介</caption> -->
+          <thead>
+            <tr>
+              <th>組室別</th>
+              <th>聯絡電話</th>
+              <th>業務職掌</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>企劃組</th>
+              <td>
+                (02)8995-3507
+                <br>（辦理公文時效管制業務）
+                <br>(02)8995-3518
+                <br>（辦理人員培訓業務）
+                <br>(02)8995-3522
+                <br>（辦理輔導訪視）
+                <br>(02)8995-3986
+                <br>（辦理評鑑業務）
+                <br>(02)8995-3515
+                <br>（辦理促轉基金計畫申請、基金管理會業務）
+              </td>
+              <td>
+                <ol>
+                  <li>國家檔案管理委員會之議事幕僚作業。</li>
+                  <li>檔案管理發展策略之規劃、協調及推動。</li>
+                  <li>檔案管理組織發展之規劃。</li>
+                  <li>本局中、長程計畫與年度施政計畫之擬訂、協調及執行考核。</li>
+                  <li>本局重要業務之追蹤考核。</li>
+                  <li>機關檔案管理作業輔導訪視、評鑑、人員培訓及調查分析。</li>
+                  <li>檔案管理與應用之學術交流與國際合作之規劃、協調及推動。</li>
+                  <li>行政院與所屬各機關公文時效管制之規劃及推動。</li>
+                  <li>本局出版品之出版、發行、管理及推廣。</li>
+                  <li>本局委託研究與自行研究之協調、推動及追蹤。</li>
+                  <li>其他有關企劃事項。</li>
+                </ol>
+              </td>
+            </tr>
+      
+            <tr>
+              <th>檔案徵集組</th>
+              <td>
+                (02)8995-3587<br>
+                （辦理檔案立案編目業務）<br>
+                (02)8995-3592<br>
+                （辦理檔案銷毀審核業務）<br>
+                (02)8995-3596<br>
+                （辦理檔案保存年限業務）<br>
+                (02)8995-3602<br>
+                （辦理檔案移轉審核業務）<br>
+                (02)8995-3604<br>
+                （辦理政黨政治檔案調查審定業務）
+              </td>
+              <td>
+                <ol>
+                  <li>機關檔案點收制度與作業之規劃、推動及輔導。</li>
+                  <li>機關檔案分類編案、編目制度與作業之規劃、推動及輔導。</li>
+                  <li>機關檔案保存年限制度之規劃、推動、輔導及審核。</li>
+                  <li>檔案保存價值鑑定制度之規劃、推動及輔導。</li>
+                  <li>機關檔案銷毀制度之規劃、推動、輔導及機關檔案銷毀之審核。</li>
+                  <li>機密檔案管理制度與作業之規劃、推動及輔導。</li>
+                  <li>國家檔案移轉制度與徵集鑑選作業之規劃、推動及輔導。</li>
+                  <li>私人或團體所有珍貴文書或資料之受贈、受託保管及收購。</li>
+                  <li>其他有關檔案徵集事項。</li>
+                </ol>
+              </td>
+            </tr>
+      
+      
+            <tr>
+              <th>檔案典藏組</th>
+              <td>
+                (02)8995-3576<br>
+                （辦理檔案典藏設施業務）<br>
+                (02)8995-3564<br>
+                （辦理檔案整理保管業務）<br>
+                (02)8995-3573<br>
+                （辦理檔案保存複製業務）
+              </td>
+              <td>
+                <ol>
+                  <li>檔案典藏環境與設施之規劃、推動及輔導。</li>
+                  <li>機關檔案整理保管、保存修護與複製儲存之制度規劃、推動及輔導。</li>
+                  <li>國家檔案整理保管、編排描述、清查與機密等級檢討之規劃及執行。</li>
+                  <li>國家檔案保存修護與複製儲存之規劃、技術研發及執行。</li>
+                  <li>國家檔案典藏館舍興建與土建、機電、空調等相關設施之規劃及執行。</li>
+                  <li>其他有關檔案典藏事項。</li>
+                </ol>
+              </td>
+            </tr>
+      
+            <tr>
+              <th>應用服務組</th>
+              <td>
+                (02)8995-3616<br>
+                （辦理國家檔案研究出版業務）<br>
+                (02)8995-3619<br>
+                （辦理機關檔案應用推動業務）<br>
+                (02)8995-3625<br>
+                （辦理國家檔案申請應用服務）<br>
+                (02)8995-3628<br>
+                （辦理國家檔案展示業務）<br>
+                (02)8995-3623<br>
+                （辦理政治檔案開放業務）
+              </td>
+              <td>
+                <ol>
+                  <li>檔案應用制度與作業之規劃、推動及輔導。</li>
+                  <li>檔案目錄應用效能之規劃及推動。</li>
+                  <li>檔案目錄彙整公布作業之規劃、推動及輔導。</li>
+                  <li>國家檔案應用服務之規劃及執行。</li>
+                  <li>國家檔案研究、編輯、出版、推廣與展示之規劃及執行。</li>
+                  <li>機關檔案應用服務作業之指導及諮詢。</li>
+                  <li>檔案管理書刊蒐集、整理及服務。</li>
+                  <li>其他有關檔案應用服務事項。</li>
+                </ol>
+              </td>
+            </tr>
+            <tr>
+              <th>文書檔案資訊組</th>
+              <td>
+                (02)8995-3538<br>
+                （辦理電子檔案、國家檔案管理資訊系統及本局全球資訊網業務）<br>
+                (02)8995-3543<br>
+                （辦理文檔法規、機關檔案資訊系統及文書編輯系統業務）<br>
+                (02)8995-3552<br>
+                （辦理公文電子交換業務）<br>
+                (02)8995-3989<br>
+                （辦理資訊安全業務）
+              </td>
+              <td>
+                <ol>
+                  <li>文書與檔案管理資訊技術規範之研訂及執行。</li>
+                  <li>文書與檔案管理資訊系統之整合、協調、推動、輔導及技術研發。</li>
+                  <li>國家檔案管理資訊系統與網站之規劃、建置、管理、維運及推動。</li>
+                  <li>電子檔案長期保存環境管理、技術諮詢及維運。</li>
+                  <li>機關檔案目錄管理資訊系統與網站之規劃、建置、管理、維運及推動。</li>
+                  <li>本局資訊系統應用服務策略規劃及協調推動。</li>
+                  <li>本局資通安全規劃及推動。</li>
+                  <li>本局資訊應用環境規劃及管理。</li>
+                  <li>其他有關文書及檔案資訊系統事項。</li>
+                </ol>
+              </td>
+            </tr>
+            <tr>
+              <th>秘書室</th>
+              <td>
+                (02)8995-3647<br>
+                （辦理檔案法制業務）<br>
+                (02)8995-3639<br>
+                （辦理文書、檔案、印信管理及國會聯絡與新聞處理業務）<br>
+                (02)8995-3608<br>
+                （辦理採購、財產管理、事務管理、廳舍管理等業務）<br>
+                (02)8995-3608<br>
+                （辦理促轉基金財產管理業務）
+              </td>
+              <td>
+                <ol>
+                  <li>檔案法令制（訂）定、修正、廢止之研議或審議及協調。</li>
+                  <li>本局法令之異動、彙整及通報。</li>
+                  <li>業務行政涉及法令之審議。</li>
+                  <li>文書、檔案、印信、出納、庶務及財產管理。</li>
+                  <li>國會聯絡及媒體公關。</li>
+                  <li>不屬其他各組、室事項。</li>
+                </ol>
+              </td>
+            </tr>
+      
+            <tr>
+              <th>人事室</th>
+              <td>(02)8995-3529</td>
+              <td>負責本局人事事項。</td>
+            </tr>
+            <tr>
+              <th>主計室</th>
+              <td>(02)8995-3534</td>
+              <td>負責本局歲計、會計及統計事項。</td>
+            </tr>
+      
+      
+      
+          </tbody>
+        </table>
+
+        <!-- 【圖片區】一排一個 -->
+        <div class="imageRow">
+          <figure>
+            <img src="publicData/bb03.jpg" alt="">
+            <figcaption>
+              <p>圖1  民國37年普通考試及格證書(蕭鎮國先生捐贈檔案)</p>
+              <dl>
+                <div>
+                  <dt>案名</dt>
+                  <dd>高雄港第二港口開闢建修工程案</dd>
+                </div>
+                <div>
+                  <dt>檔號</dt>
+                  <dd>0057/9-6-3-1/6</dd>
+                </div>
+                <div>
+                  <dt>來源機關</dt>
+                  <dd>行政院</dd>
+                </div>
+                <div>
+                  <dt>管有機關</dt>
+                  <dd>國家發展委員會檔案管理局</dd>
+                </div>
+              </dl>
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- 【圖片區】一排2個，2個等寬 -->
+        <div class="imageRow col2">
+          <figure>
+            <img src="publicData/ph22.jpg" alt="">
+            <figcaption>
+              <p>圖5 員工於釀酒發酵槽中翻攪拌麴(此舉稱為「翻槽」)</p>
+              <dl>
+                  <div>
+                    <dt>案名</dt>
+                    <dd>交通建設、食品工業</dd>
+                  </div>
+                  <div>
+                    <dt>檔號</dt>
+                    <dd>0051/0067/1</dd>
+                  </div>
+                  <div>
+                    <dt>來源機關</dt>
+                    <dd>行政院新聞局</dd>
+                  </div>
+                  <div>
+                    <dt>管有機關</dt>
+                    <dd>國家發展委員會檔案管理局</dd>
+                  </div>
+                </dl>
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="publicData/ph23.jpg" alt="">
+            <figcaption>
+              <p>圖6 製酒廠以自動裝灌機進行灌裝工作</p>
+              <dl>
+                <div>
+                  <dt>案名</dt>
+                  <dd>交通建設、食品工業</dd>
+                </div>
+                <div>
+                  <dt>檔號</dt>
+                  <dd>0051/0067/1</dd>
+                </div>
+                <div>
+                  <dt>來源機關</dt>
+                  <dd>行政院新聞局</dd>
+                </div>
+                <div>
+                  <dt>管有機關</dt>
+                  <dd>國家發展委員會檔案管理局</dd>
+                </div>
+              </dl>
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- 【圖片區】一排2個，第一個較寬 -->
+        <div class="imageRow col2a">
+          <figure>
+            <img src="publicData/ph12.jpg" alt="">
+            <figcaption>
+              <p>圖3 臺灣省菸酒公賣局零售商標誌</p>
+              <p>許峰源提供</p>
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="publicData/ph21.jpg" alt="">
+            <figcaption>
+              <p>圖4 財政部臺北關函請臺灣省菸酒公賣局核發菸酒專賣憑證</p>
+              <dl>
+                <div>
+                  <dt>案名</dt>
+                  <dd>製撥洋菸酒專賣憑證</dd>
+                </div>
+                <div>
+                  <dt>檔號</dt>
+                  <dd>0062/435004/1</dd>
+                </div>
+                <div>
+                  <dt>來源機關</dt>
+                  <dd>臺灣省菸酒公賣局</dd>
+                </div>
+                <div>
+                  <dt>管有機關</dt>
+                  <dd>國家發展委員會檔案管理局</dd>
+                </div>
+              </dl>
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- 【圖片區】一排2個，第二個較寬 -->
+        <div class="imageRow col2b">
+          <figure>
+            <img src="publicData/ph21.jpg" alt="">
+            <figcaption>
+              <p>圖4 財政部臺北關函請臺灣省菸酒公賣局核發菸酒專賣憑證</p>
+              <dl>
+                <div>
+                  <dt>案名</dt>
+                  <dd>製撥洋菸酒專賣憑證</dd>
+                </div>
+                <div>
+                  <dt>檔號</dt>
+                  <dd>0062/435004/1</dd>
+                </div>
+                <div>
+                  <dt>來源機關</dt>
+                  <dd>臺灣省菸酒公賣局</dd>
+                </div>
+                <div>
+                  <dt>管有機關</dt>
+                  <dd>國家發展委員會檔案管理局</dd>
+                </div>
+              </dl>
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="publicData/ph12.jpg" alt="">
+            <figcaption>
+              <p>圖3 臺灣省菸酒公賣局零售商標誌</p>
+              <p>許峰源提供</p>
+            </figcaption>
+          </figure>
+        </div>
+     
+      </article>
+
+
+      <!-- 關鍵字標籤 -->
+      <section class="tags">
+        <ul>
+          <li><a href="#">文章標籤1</a></li>
+          <li><a href="#">文章標籤標籤標籤2</a></li>
+          <li><a href="#">文章標籤3</a></li>
+          <li><a href="#">文章標籤4</a></li>
+          <li><a href="#">文章標籤標籤標籤標籤標籤5</a></li>
+          <li><a href="#">風蓬萊西心</a></li>
+          <li><a href="#">夕陽斜</a></li>
+          <li><a href="#">蕭少鳥盡薄暮處處彈有望秋月</a></li>
+          <li><a href="#">未關</a></li>
+          <li><a href="#">何出門鳳凰徘徊年</a></li>
+          <li><a href="#">度花落無限</a></li>
+        </ul>
+      </section>
+      
+      <section class="photoflow">
+        <h3>相關圖檔</h3>
+        <div class="flowBox">
+          <ul class="flowList">
+            <li><a href="javascript:;">
+              <img src="publicData/ph01.jpg" alt="替代文字">
+              <p>圖說1</p>
+            </a></li>
+            <li><a href="javascript:;">
+              <img src="publicData/ph02.jpg" alt="替代文字">
+              <p>圖說2 式表是德們平足角企萬可後便。師合念目支通下業易他是英整做道變國交電車人</p>
+            </a></li>
+            <li><a href="javascript:;">
+              <img src="publicData/ph10.jpg" alt="替代文字">
+              <p>圖說圖說圖說圖說圖說圖說</p>
+            </a></li>
+            <li><a href="javascript:;">
+              <img src="publicData/ph03.jpg" alt="替代文字">
+              <p>圖說3</p>
+            </a></li>
+            <li><a href="javascript:;">
+              <img src="publicData/ph04.jpg" alt="替代文字">
+              <p>圖說4 自還清地衣理委的養無</p>
+            </a></li>
+            <li><a href="javascript:;">
+              <img src="publicData/ph05.jpg" alt="替代文字">
+              <p>圖說五取論我曾保策一里主靜起同不平原在畫案育我客</p>
+            </a></li>
+            <li><a href="javascript:;">
+              <img src="publicData/ph06.jpg" alt="替代文字">
+              <p>圖說6</p>
+            </a></li>
+          </ul>
+          <button type="button" class="arrowBtn prev">上一張</button>
+          <button type="button" class="arrowBtn next">下一張</button>
+        </div>
+      </section>
+  
+      <!-- 燈箱：顯示photoflow的大圖 -->
+      <div class="lightbox bigPhotos" role="dialog">
+        <button type="button" class="closeThis">關閉此燈箱</button>
+      </div>
+
+      <section class="seeAlso">
+        <h3>相關連結</h3>
+        <ol>
+          <li><a href="#" target="_blank">博客來網路書店</a></li>
+          <li><a href="#" target="_blank">金石堂網路書店</a></li>
+          <li><a href="#">證起現音加已常不頭人是此自個整黃提作影時是地區到利先內演且學，才生院此成標保語他平自中果評可一之，境過那女過樂意選親上急方遠信此臺遠物話。</a></li>
+        </ol>
+      </section>
+
+      <section class="fileDownload">
+        <h3>相關檔案</h3>
+        <ol>
+          <li>
+            <span class="fileName">林怡芬、葉奕昕-從文書流程管理缺失探討提升政府行政效能精進做法</span>
+            <ul class="downloadFiles">
+              <li><a download href="filename.doc" title="下載檔名.doc"><span class="fileType doc">doc</span><span class="fileSize">149.48KB</span></a></li>
+              <li><a download href="filename.pdf" title="下載檔名.pdf"><span class="fileType pdf">pdf</span><span class="fileSize">106.5KB</span></a></li>
+              <li><a download href="filename.odt" title="下載檔名.odt"><span class="fileType odt">odt</span><span class="fileSize">100KB</span></a></li>
+            </ul>
+          </li>
+          <li>
+            <span class="fileName">檔案名稱檔案名稱檔案名稱</span>
+            <ul class="downloadFiles">
+              <li><a download="" href="filename.ods" title="下載檔名.ods"><span class="fileType ods">ods</span><span class="fileSize">99.5KB</span></a></li>
+            </ul>
+          </li>
+          <li>
+            <span class="fileName">檔案名稱檔案名稱檔案名稱檔案名稱檔案名稱檔案名稱檔案名稱</span>
+            <ul class="downloadFiles">
+              <li><a download="" href="filename.xls" title="下載檔名.xls"><span class="fileType xls">xls</span><span class="fileSize">16.05KB</span></a></li>
+              <li><a download="" href="filename.xlsx" title="下載檔名.xlsx"><span class="fileType xlsx">xlsx</span><span class="fileSize">8.21KB</span></a></li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+
+      <section class="poInfo">
+        <ul>
+          <li>張貼日期：<time>112-04-04</time></li>
+          <li>更新日期：<time>112-04-04</time></li>
+          <li>瀏覽人次：<em>888</em></li>
+        </ul>
+      </section>
+      
+    </section>
+
+
+
+
+  </main>
+
+  <footer class="webFooter">
+    <a class="accesskey" href="#aZ" id="aZ" accesskey="Z" title="頁腳區">:::</a>
+
+    <button type="button" class="fatFootCtrl" data-altText="開啟">收合</button>
+
+    <div class="fatFooter">
+      <nav class="siteTree">
+        <ul>
+          <li><a href="#">參訪資訊</a>
+            <ul>
+              <li><a href="#">開放時間</a></li>
+              <li><a href="#">交通資訊</a></li>
+              <li><a href="#">導覽服務</a></li>
+              <li><a href="#">樓層設施</a></li>
+              <li><a href="#">閱覽中心</a></li>
+              <li><a href="#">餐飲資訊</a></li>
+              <li><a href="#">參訪報名</a></li>
+              <li><a href="#">場地預約</a></li>
+              <li><a href="#">聯絡我們</a></li>
+            </ul>
+          </li>
+          <li><a href="#">展覽與活動</a>
+            <ul>
+              <li><a href="#">常設展</a></li>
+              <li><a href="#">特展</a></li>
+              <li><a href="#">展覽回顧</a></li>
+              <li><a href="#">活動</a></li>
+              <li><a href="#">活動回顧</a></li>
+              <li><a href="#">檔案月</a></li>
+              <li><a href="#">活動報名</a></li>
+            </ul>
+          </li>
+          <li><a href="#">檔案應用與研究</a>
+            <ul>
+              <li><a href="#">國家檔案資訊網(A+)</a></li>
+              <li><a href="#">政治檔案服務</a></li>
+              <li><a href="#">主題簡介</a></li>
+              <li><a href="#">國家檔案素材</a></li>
+              <li><a href="#">學術交流</a></li>
+              <li><a href="#">機關檔案目錄查詢網(NEAR)</a></li>
+              <li><a href="#">檔案資源整合查詢平台</a></li>
+              <li><a href="#">檔案調閱</a></li>
+            </ul>
+          </li>
+          <li><a href="#">學習資源</a>
+            <ul>
+              <li><a href="#">檔案支援教學網</a></li>
+              <li><a href="#">利用指導活動</a></li>
+              <li><a href="#">行動展示資源</a></li>
+              <li><a href="#">檔案樂活情報</a></li>
+              <li><a href="#">圖書與刊物</a></li>
+            </ul>
+          </li>
+          <li><a href="#">國家檔案管理</a>
+            <ul>
+              <li><a href="#">徵集</a></li>
+              <li><a href="#">保存維護</a></li>
+            </ul>
+          </li>
+          <li><a href="#">機關服務</a>
+            <ul>
+              <li><a href="#">檔案管理制度</a></li>
+              <li><a href="#">文書檔案資訊管理</a></li>
+              <li><a href="#">金檔獎暨金質獎</a></li>
+              <li><a href="#">機關檔案目錄查詢網(NEAR)</a></li>
+              <li><a href="#">教育訓練報名</a></li>
+              <li><a href="#">專業認證</a></li>
+              <li><a href="#">統計資料</a></li>
+            </ul>
+          </li>
+          <li><a href="#">認識我們</a>
+            <ul>
+              <li><a href="#">歷史沿革</a></li>
+              <li><a href="#">首長介紹</a></li>
+              <li><a href="#">組織職掌</a></li>
+              <li><a href="#">局館政策</a></li>
+              <li><a href="#">文檔法規</a></li>
+              <li><a href="#">大事紀要</a></li>
+              <li><a href="#">省政資料館</a></li>
+              <li><a href="#">各館中心介紹</a></li>
+              <li><a href="#">促轉基金</a></li>
+              <li><a href="#">檔案服務宣言</a></li>
+              <li><a href="#">業務窗口</a></li>
+            </ul>
+          </li>
+          <li><a href="#">便民服務</a>
+            <ul>
+              <li><a href="#">政府資訊公開</a></li>
+              <li><a href="#">志工與實習</a></li>
+              <li><a href="#">下載專區</a></li>
+              <li><a href="#">常見問答</a></li>
+              <li><a href="#">文創商店</a></li>
+              <li><a href="#">雙向溝通</a></li>
+              <li><a href="#">雙語詞彙</a></li>
+              <li><a href="#">影音專區</a></li>
+              <li><a href="#">合作交流</a></li>
+              <li><a href="#">意見信箱</a></li>
+              <li><a href="#">滿意度調查</a></li>
+              <li><a href="#">相關網站</a></li>
+            </ul>
+          </li>
+          <li><a href="#">最新消息</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="middle">
+      <div class="logo">
+        <img src="publicData/footLogo.png" alt="">
+      </div>
+      <ul class="iconLinks">
+        <li><a href="#"><img src="publicData/icon_ft_youtube.svg" alt="YouTube"></a></li>
+        <li><a href="#"><img src="publicData/icon_ft_fb.svg" alt="facebook"></a></li>
+      </ul>
+      <ul class="textLinks">
+        <li><a href="#">政府網站資料開放宣告</a></li>
+        <li><a href="#">隱私權、著作權及資訊安全政策宣告</a></li>
+        <li><a href="#">本局電子信箱</a></li>
+      </ul>
+    </div>
+    
+    <div class="base">
+      <ul class="contact">
+        <li>242030 新北市新莊區中平路439號(北棟)9樓</li>
+        <li>總機：(02)8995-3700</li>
+        <li>傳真：(02)8995-6469</li>
+      </ul>
+      <ul class="update">
+        <li>瀏覽人次：5585488</li>
+        <li>更新日期：112-08-0</li>
+      </ul>
+      <ul class="pics">
+        <li class="badge"><a href="#"><img src="publicData/badge_AA.webp" alt="無障礙標章"></a></li>
+        <li class="qrcode"><img src="publicData/qrcode.png" alt="二維條碼"></li>
+      </ul>
+    </div>
+
+  </footer>
+
+  <button class="goTop" type="button" title="回頁面頂端">回頁首</button>
+
+</body>
+</html>

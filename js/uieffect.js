@@ -1042,10 +1042,10 @@ $(function(){
     infinite: true,
     mobileFirst: true,
     vertical: false,
-    variableWidth: true,
+    // variableWidth: true,
     responsive: [
       {
-        breakpoint: 700,
+        breakpoint: wwMedium,
         settings: {
           slidesToShow: 2,
         }
@@ -1053,7 +1053,7 @@ $(function(){
     ],
     responsive: [
       {
-        breakpoint: 1000,
+        breakpoint: wwNormal,
         settings: {
           slidesToShow: 3,
         }
@@ -1075,6 +1075,41 @@ $(function(){
 
   // 把向右箭頭搬移到向左箭頭之後（移到 .slick-list 之前）
   _eventPoster.find('.slick-arrow.slick-next').insertAfter( _eventPoster.find('.slick-arrow.slick-prev'));
+
+
+
+
+  // 圖書內容頁
+  // --------------------------------------------------------------- //
+  var _coverAndPages = $('.bookDetails').find('.coverAndPages');
+  var _coverAndPagesLightbox = $('.lightbox.bigImages');
+  _coverAndPages.clone().insertBefore(_coverAndPagesLightbox.find('.skip') );
+
+  _coverAndPages.slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay:false,
+    speed: 800,
+    autoplay: false,
+    arrows: true,
+    dots: true,
+    fade:false
+  })
+
+  _coverAndPagesLightbox.find('.coverAndPages').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay:false,
+    speed: 800,
+    autoplay: false,
+    arrows: true,
+    dots: true,
+    fade:true
+  })
+
+  _coverAndPagesLightbox.show();
+
+
 
 
   
