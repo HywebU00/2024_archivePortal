@@ -254,7 +254,7 @@
         }
       }
 
-      &.active{
+      &.here{
         a{
           background-color: $primaryColor; color: $white;
           &:hover, &:focus {
