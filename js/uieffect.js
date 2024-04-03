@@ -244,6 +244,8 @@ $(function(){
   // --------------------------------------------------------------- //
   var fixHeadThreshold;
   var hh = _webHeader.innerHeight();
+  var xhh; // 存放固定版頭（ .webHeader.fixed ）的高度
+
   if ( ww >= wwNormal) {
     fixHeadThreshold = hh;
   } else {
@@ -254,6 +256,7 @@ $(function(){
     if (_window.scrollTop() > fixHeadThreshold ) {
       _webHeader.addClass('fixed');
       _body.offset({top: hh});
+      xhh = _webHeader.outerHeight();
     } else {
       _webHeader.removeClass('fixed');
       _body.removeAttr('style');
@@ -902,6 +905,25 @@ $(function(){
 
 
 
+  // 內頁錨點
+  // --------------------------------------------------------------- //
+  var _cpAnchors = $('.cpAnchors').find('li>a');
+  _cpAnchors.on('click', function() {
+  
+    var hash = this.hash;
+    var scrollHeight = $(hash).offset().top - xhh;
+    console.log(hash, scrollHeight);
+
+    _html.animate({
+      scrollTop: scrollHeight
+    }, 800, function(){
+      scrollHeight = 0;
+    });
+
+  });  
+  // --------------------------------------------------------------- //
+
+
   // 改變瀏覽器寬度 window resize 
   // --------------------------------------------------------------- //
   var winResizeTimer;
@@ -978,6 +1000,7 @@ $(function(){
 
   // 把向右箭頭搬移到向左箭頭之後（移到 .slick-list 之前）
   _bbTitles.find('.slick-arrow.slick-next').insertAfter( _bbTitles.find('.slick-arrow.slick-prev') );
+  // --------------------------------------------------------------- //
 
 
 
@@ -1020,6 +1043,7 @@ $(function(){
   });
   // 把向右箭頭搬移到向左箭頭之後（移到 .slick-list 之前）
   $('.explore').find('.slick-arrow.slick-next').insertAfter($('.explore').find('.slick-arrow.slick-prev'));
+  // --------------------------------------------------------------- //
 
 
 
@@ -1033,7 +1057,6 @@ $(function(){
     slidesToShow: 1,
     slidesToScroll: 1,
     asNavFor: _eventTitle,
-    autoplaySpeed: 5000,
     speed: 800,
     autoplay: false,
     arrows: true,
@@ -1075,11 +1098,71 @@ $(function(){
 
   // 把向右箭頭搬移到向左箭頭之後（移到 .slick-list 之前）
   _eventPoster.find('.slick-arrow.slick-next').insertAfter( _eventPoster.find('.slick-arrow.slick-prev'));
+  // --------------------------------------------------------------- //
 
 
 
+  // 相片內容頁
+  // --------------------------------------------------------------- //
+  var _photoSlide = $('.photoSlide');
+  var _photoShow = _photoSlide.find('.photoShow');
+  var _photoNav = _photoSlide.find('.photoNav');
+  const phsLength = _photoShow.find('.flowItem').length;
 
-  // 圖書內容頁
+  // 大圖區
+  _photoShow.slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    asNavFor: _photoNav,
+    speed: 800,
+    autoplay: false,
+    arrows: true,
+    dots: true,
+    fade: true,
+    infinite: true,
+  })
+
+  // 小圖區
+  _photoNav.slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    asNavFor: _photoShow,
+    speed: 800,
+    autoplay: false,
+    arrows: true,
+    dots: false,
+    fade: false,
+    infinite: true,
+    centerMode: true,
+    focusOnSelect: true,
+    variableWidth: true,
+    mobileFirst: true,
+    responsive: [
+      {
+        breakpoint: wwMedium,
+        settings: {
+          slidesToShow: 5,
+        }
+      }
+    ],
+    responsive: [
+      {
+        breakpoint: wwNormal,
+        settings: {
+          slidesToShow: 7,
+        }
+      }
+    ]
+
+  })
+
+  _photoShow.append('<div class="total">' + phsLength +'</div>');
+
+
+
+  // --------------------------------------------------------------- //
+
+  // 圖書內容頁 *** 未完 ***
   // --------------------------------------------------------------- //
   var _coverAndPages = $('.bookDetails').find('.coverAndPages');
   var _coverAndPagesLightbox = $('.lightbox.bigImages');
@@ -1107,7 +1190,9 @@ $(function(){
     fade:true
   })
 
-  _coverAndPagesLightbox.show();
+  // _coverAndPagesLightbox.show();
+  // --------------------------------------------------------------- //
+
 
 
 

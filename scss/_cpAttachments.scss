@@ -1,6 +1,5 @@
 // 相關檔案, 相關連結 , 相關圖檔 共用區塊標題樣式
 .photoflow, .fileDownload, .seeAlso{
-
   h3{
     position: relative;padding:0 0 6px 24px; margin: 0;
     font-size: 1.3em;  line-height: 1.2;
@@ -24,6 +23,10 @@
     &>li{ margin:3px 0 0; padding: 0;
       a{ text-decoration: none; color: $fontColor; }
     }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    margin: 90px 0;
   }
 }
 

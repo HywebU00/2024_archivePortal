@@ -1,12 +1,17 @@
 // 一般內容頁
 // ------------------------------------------------------ //
 .cpArticle{
+  padding: 0 0 50px;
   line-height: 1.8; font-size: 1.11em;
 
   a {
     color: $linkColor; text-decoration: underline;
     &:hover {text-decoration: none;outline: 1px solid $linkColor;}
     &:focus{text-decoration: none;outline: 2px solid $linkColor;}
+  }
+  p{ margin: 0 0 1em;}
+  li{line-height: 1.5;
+    &+li{ margin-top: 0.8em;}
   }
 
   // 內文標題
