@@ -244,7 +244,6 @@ $(function(){
   // --------------------------------------------------------------- //
   var fixHeadThreshold;
   var hh = _webHeader.innerHeight();
-  var xhh; // 存放固定版頭（ .webHeader.fixed ）的高度
 
   if ( ww >= wwNormal) {
     fixHeadThreshold = hh;
@@ -256,7 +255,7 @@ $(function(){
     if (_window.scrollTop() > fixHeadThreshold ) {
       _webHeader.addClass('fixed');
       _body.offset({top: hh});
-      xhh = _webHeader.outerHeight();
+      $('.goCenter').trigger('blur');
     } else {
       _webHeader.removeClass('fixed');
       _body.removeAttr('style');
@@ -442,11 +441,12 @@ $(function(){
   // 回到頁面頂端 Go Top
   // --------------------------------------------------------------- //
   _goTop.on( 'click', function(){
+    // const hrefText = window.location.href.split('#')[0];
     _html.stop(true,false).animate({scrollTop: 0}, 800, function(){
       $('.goCenter').trigger('focus');
+      // history.replaceState(null, null, hrefText);
     });
   });
-
 
 
 
@@ -908,16 +908,16 @@ $(function(){
   // 內頁錨點
   // --------------------------------------------------------------- //
   var _cpAnchors = $('.cpAnchors').find('li>a');
-  _cpAnchors.on('click', function() {
-  
+  _cpAnchors.on('click', function(e) {
+    e.preventDefault();
     var hash = this.hash;
-    var scrollHeight = $(hash).offset().top - xhh;
-    console.log(hash, scrollHeight);
+    var scrollHeight = $(hash).offset().top;
+    // console.log(hash, scrollHeight);
 
     _html.animate({
       scrollTop: scrollHeight
     }, 800, function(){
-      scrollHeight = 0;
+      _html.animate({scrollTop: scrollHeight - _webHeader.outerHeight()}, 500)
     });
 
   });  
@@ -1065,7 +1065,6 @@ $(function(){
     infinite: true,
     mobileFirst: true,
     vertical: false,
-    // variableWidth: true,
     responsive: [
       {
         breakpoint: wwMedium,

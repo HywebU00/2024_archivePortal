@@ -17,10 +17,10 @@
   // 內文標題
   h4{
     font-weight: bold; font-size: 1.3em; line-height: 1.4;
-    margin: 2.5em 0 .8em; padding: 0 0 0 24px;
+    margin: 2em 0 .8em; padding: 25px 0 0 24px;
     position: relative;
     &::before{
-      content: ''; position: absolute; left: 0; top: .15em;
+      content: ''; position: absolute; left: 0; top: 30px;
       width: 9px; height: 1em;
       background-color: $primaryColor;
     }
