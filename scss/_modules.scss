@@ -103,7 +103,6 @@
   margin: 0; width: 28px; height: 32px; line-height:42px;
   font-size: .6rem; text-decoration: none; text-align: center;
   color: var(--color); 
-  // background-color: var(--bg);
   background-image: linear-gradient(45deg, var(--bg) 86%, transparent 86%);
   border-radius: 3px;
   transition: .2s;
@@ -132,7 +131,7 @@
   &.zip { --bg:#333; }
   &.other { --bg:#555; }
 }
-a .fileType{ color: $white;text-decoration: none; }
+a .fileType, .fileType>a{ color: $white; text-decoration: none; }
 a:hover, a:focus{
   .fileType{box-shadow:var(--color) 0 0 0 1px inset, var(--bg) 0 0 0 2px;}
 }

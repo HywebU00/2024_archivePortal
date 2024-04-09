@@ -43,9 +43,9 @@
       // 已完成
       &.done{
         color: $fontColorLight;
-        &::before{ background-color: $gray;}
+        &::before{ background-color: $borderColor;}
         &::after {
-          background: $grayDark;box-shadow: $white 0 0 0 2px inset, $gray 0 0 0 4px;
+          background: $grayDark;box-shadow: $white 0 0 0 2px inset, $borderColor 0 0 0 4px;
         }
         em{ color: $white; }
       }
@@ -59,7 +59,7 @@
           box-shadow:$white 0 0 0 2px, $primaryColor 0 0 0 6px;
         }
         &::before{
-          background-image: linear-gradient(to right, $gray 50% , $primaryColor 50%);
+          background-image: linear-gradient(to right, $borderColor 50% , $primaryColor 50%);
         }
         em{color: $white;}
 
