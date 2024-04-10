@@ -16,12 +16,10 @@
 
     table {counter-reset: item;border-collapse: collapse;margin: 20px auto;max-width: 1400px;width: 96%;line-height: 1.5;border-bottom: 2px solid #bbb;color: #456;}
 
-    td,
-    th {position: relative;padding: .5em .9em;border-bottom: 1px solid #d6d6d6;}
-
+    td,  th {position: relative;padding: .5em .9em;border-bottom: 1px solid #d6d6d6;}
     th {border-bottom: 3px solid #bbb;white-space: nowrap;}
-
-    tr.new{background: #f1fad0;}
+    tr:nth-child(5n) td {border-bottom-color: #999}
+    /* tr.new{background: #f1fad0;} */
 
     th:after,
     td:after {content: '';position: absolute;top: 4px;bottom: 4px;right: 0;width: 1px;background: #ddd;}
@@ -63,7 +61,7 @@
 
       tr {border: 1px solid #999;margin: 0 0 10px;}
 
-      tr:nth-child(5n+1) td {border-bottom-color: #d6d6d6}
+      tr:nth-child(5n) td {border-bottom-color: #d6d6d6}
 
       td:first-child,
       td:nth-child(2) {float: left;padding: 8px;height: 16px;background: #eee;border: none;}
@@ -236,28 +234,27 @@
       <tr>
         <td></td>
         <td>電子報: 訂閱電子報</td>
-        <td></td>
-        <td></td>
+        <td><a href="epaper_subscribe.html" target="_Blank">epaper_subscribe.html</a></td>
+        <td>4/9 完成</td>
       </tr>
       <tr>
         <td></td>
         <td>電子報: 取消訂閱</td>
-        <td></td>
-        <td></td>
+        <td><a href="epaper_done_unsubscribe.html" target="_Blank">epaper_done_unsubscribe.html</a></td>
+        <td>4/9 完成</td>
       </tr>
       <tr>
         <td></td>
         <td>電子報: 完成訂閱</td>
-        <td></td>
-        <td></td>
+        <td><a href="epaper_done_subscribe.html" target="_Blank">epaper_done_subscribe.html</a></td>
+        <td>4/9 完成</td>
       </tr>
       <tr>
         <td></td>
         <td>電子報: 電子報列表</td>
-        <td></td>
-        <td></td>
+        <td><a href="epaper_list.html" target="_Blank">epaper_list.html</a></td>
+        <td>4/9 完成</td>
       </tr>
-
 
       <!-- 志工招募 -->
       <tr>

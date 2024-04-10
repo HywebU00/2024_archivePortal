@@ -36,6 +36,7 @@
         &:hover, &:focus {
           color: $white;
           background: $primaryColor;
+          *{color: $white;}
         }
       }
 

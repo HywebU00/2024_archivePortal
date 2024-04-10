@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>檔案管理局 epaper</title>
+  <link href="images/favicon.ico" rel="icon" type="image/ico">
+
+  <link rel="stylesheet" href="slick/slick.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="slick/slick.min.js"></script>
+  <script src="js/jquery.touchSwipe.min.js"></script>
+  <script src="js/uieffect.js"></script>
+</head>
+<body>
+  <a class="goCenter" href="#aC" tabindex="0">按 Enter 到主內容區</a>
+
+  <header class="webHeader">
+    <a class="accesskey" href="#aU" id="aU" accesskey="U" title="版頭區">:::</a>
+    <h1 aria-label="國家發展委員會檔案管理局"><a href="mp.html"><img src="images/h1.png" alt=""></a></h1>
+    
+    <nav class="headNav">
+      <ul>
+        <li><a href="mp.html">回首頁</a></li>
+        <li><a href="#">English</a></li>
+        <li><a href="#">網站導覽</a></li>
+        <li><a href="#">常見問答</a></li>
+        <li><a href="#">雙語詞彙</a></li>
+        <li><a href="#">SS訂閱</a></li>
+      </ul>
+    </nav>
+
+    <nav class="menu">
+      <ul>
+        <li><a href="#">參訪資訊</a>
+          <ul>
+            <li><a href="#">開放時間</a></li>
+            <li><a href="#">交通資訊</a></li>
+            <li><a href="#">導覽服務</a></li>
+            <li><a href="#">樓層設施</a>
+              <ul>
+                <li><a href="#">多層選單測試</a></li>
+                <li><a href="#">多層選單測試</a></li>
+                <li><a href="#">多層選單測試</a></li>
+              </ul>
+            </li>
+            <li><a href="#">閱覽中心</a></li>
+            <li><a href="#">餐飲資訊</a></li>
+            <li><a href="#">參訪報名</a></li>
+            <li><a href="#">場地預約</a></li>
+            <li><a href="#">聯絡我們</a></li>
+          </ul>
+        </li>
+        <li><a href="#">展覽與活動</a>
+          <ul>
+            <li><a href="#">常設展</a>
+              <ul>
+                <li><a href="#">多層選單測試</a></li>
+                <li><a href="#">多層選單測試多層選單測試多層選單測試</a></li>
+                <li><a href="#">多層選單測試</a></li>
+              </ul>
+            </li>
+            <li><a href="#">特展</a></li>
+            <li><a href="#">展覽回顧</a></li>
+            <li><a href="#">活動</a></li>
+            <li><a href="#">活動回顧</a></li>
+            <li><a href="#">檔案月</a></li>
+            <li><a href="#">活動報名</a></li>
+          </ul>
+        </li>
+        <li><a href="#">檔案應用與研究</a>
+          <ul>
+            <li><a href="#">國家檔案資訊網(A+)</a></li>
+            <li><a href="#">政治檔案服務</a></li>
+            <li><a href="#">主題簡介</a></li>
+            <li><a href="#">國家檔案素材</a></li>
+            <li><a href="#">學術交流</a></li>
+            <li><a href="#">機關檔案目錄查詢網(NEAR)</a></li>
+            <li><a href="#">檔案資源整合查詢平台</a></li>
+            <li><a href="#">檔案調閱</a></li>
+          </ul>
+        </li>
+        <li><a href="#">學習資源</a>
+          <ul>
+            <li><a href="#">檔案支援教學網</a></li>
+            <li><a href="#">利用指導活動</a></li>
+            <li><a href="#">行動展示資源</a></li>
+            <li><a href="#">檔案樂活情報</a></li>
+            <li><a href="#">圖書與刊物</a></li>
+          </ul>
+        </li>
+        <li><a href="#">國家檔案管理</a>
+          <ul>
+            <li><a href="#">徵集</a></li>
+            <li><a href="#">保存維護</a></li>
+          </ul>
+        </li>
+        <li><a href="#">機關服務</a>
+          <ul>
+            <li><a href="#">檔案管理制度</a></li>
+            <li><a href="#">文書檔案資訊管理</a></li>
+            <li><a href="#">金檔獎暨金質獎</a></li>
+            <li><a href="#">機關檔案目錄查詢網(NEAR)</a></li>
+            <li><a href="#">教育訓練報名</a></li>
+            <li><a href="#">專業認證</a></li>
+            <li><a href="#">統計資料</a></li>
+          </ul>
+        </li>
+        <li><a href="#">認識我們</a>
+          <ul>
+            <li><a href="#">歷史沿革</a></li>
+            <li><a href="#">首長介紹</a></li>
+            <li><a href="#">組織職掌</a></li>
+            <li><a href="#">局館政策</a></li>
+            <li><a href="#">文檔法規</a></li>
+            <li><a href="#">大事紀要</a></li>
+            <li><a href="#">省政資料館</a></li>
+            <li><a href="#">各館中心介紹</a></li>
+            <li><a href="#">促轉基金</a></li>
+            <li><a href="#">檔案服務宣言</a></li>
+            <li><a href="#">業務窗口</a></li>
+          </ul>
+        </li>
+        <li><a href="#">便民服務</a>
+          <ul>
+            <li><a href="#">政府資訊公開</a></li>
+            <li><a href="#">志工與實習</a></li>
+            <li><a href="#">下載專區</a></li>
+            <li><a href="#">常見問答</a></li>
+            <li><a href="#">文創商店</a></li>
+            <li><a href="#">雙向溝通</a></li>
+            <li><a href="#">雙語詞彙</a></li>
+            <li><a href="#">影音專區</a></li>
+            <li><a href="#">合作交流</a></li>
+            <li><a href="#">意見信箱</a></li>
+            <li><a href="#">滿意度調查</a></li>
+            <li><a href="#">相關網站</a></li>
+          </ul>
+        </li>
+        <li><a href="#">最新消息</a></li>
+      </ul>
+    </nav>
+
+    <button type="button" class="sidebarCtrl" aria-label="開啟側欄"></button>
+    <button type="button" class="searchCtrl" aria-label="開啟查詢區"></button>
+    <section class="search">
+      <form action="">
+        <input type="text" placeholder="請輸入關鍵字">
+        <input type="button" value="查詢">
+      </form>
+      <div class="hotKeywords">
+        <span class="label">熱門查詢詞</span>
+        <ul>
+          <li><a href="#">檔案法</a></li>
+          <li><a href="#">下載專區</a></li>
+          <li><a href="#">金檔獎</a></li>
+        </ul>
+      </div>
+    </section>
+  </header>
+
+  <!-- 行動版側欄 -->
+  <aside class="sidebar">
+  </aside>
+
+  <main class="main">
+    <a class="accesskey" href="#aC" id="aC" accesskey="C" title="主要內容區">:::</a>
+    <div class="breadcrumb" title="瀏覽路徑">
+      <ul>
+        <li><a href="mp.html">首頁</a></li>
+        <li><a href="#">國家檔案</a></li>
+        <li><a href="#">檔案樂活情報</a></li>
+      </ul>
+    </div>
+
+    
+    <section class="epaper">
+      <header>
+        <h2><img src="publicData/ep_banner.png" alt="檔案樂活情報 Archives Lohas"></h2>
+        <ul>
+          <li>第196期</li>
+          <li>發行日期：2023-10-19</li>
+        </ul>
+      </header>
+
+      <section class="row">
+        <article>
+          <h3>檔案瑰寶</h3>
+          <h4>從開發到保育：走過臺灣的建設時代</h4>
+          <p>當您搭乘火車前往花東，穿越一座座隧道時，可曾想過這些隧道是怎麼開鑿的？開車經過北部關渡大橋、南部過港隧道，能否感受工程背後的挑戰？行經新中橫公路遠眺玉山，或遊歷臺北市立動物園，是否關懷環境保育？就讓我們回首臺灣建設時代，觀察從開發到保育並重的轉折。</p>
+          <div class="readMore"><a href="#">閱讀更多</a></div>
+          </article>
+        <figure>
+          <img src="publicData/ep_image01.png" alt="">
+        </figure>
+      </section>
+
+      <section class="row">
+        <figure>
+          <img src="publicData/ep_image02.png" alt="">
+        </figure>
+        <article>
+          <h3>檔案知識+</h3>
+          <h4>先閱覽抄錄再複製便捷應用國家檔案簡介「保密具結閱覽抄錄」措施</h4>
+          <p>隨著全民檔案意識提升，申請應用國家檔案人數及數量急遽增加，國家發展委員會檔案管理局(下稱檔案局)為提升服務效能，縮短申請人等待時間，兼顧檔案開放應用之法理，並參考國際做法，業推行保密具結閱覽抄錄措施多年。</p>
+          <div class="readMore"><a href="#">閱讀更多</a></div>
+        </article>
+      
+      </section>
+
+      <section class="epNews">
+        <h3>檔案搶先報</h3>
+        <h4>本局消息</h4>
+        <ul>
+          <li><a href="#"><span class="label">HOT</span>從檔案凝望大建設時代 開幕之夜浪漫登場</a></li>
+          <li><a href="#"><span class="label">HOT</span>鹽業檔案巡迴臺南 邀您體驗鹽民生活</a></li>
+          <li><a href="#"><span class="label">HOT</span>奇蹟之島系列推廣活動10月開跑！</a></li>
+          <li><a href="#"><span class="label">HOT</span>新品上市～「時光旅行｜Time Travel」密碼鎖行李秤束帶禮盒組</a></li>
+          <li><a href="#"><span class="label">HOT</span>「釐定領海範圍問題」、「關於航政規章及法令」等新主題上線 歡迎來共筆！</a></li>
+          <li><a href="#">國家檔案典藏新訊第55期出刊</a></li>
+          <li><a href="#">臺北市政府教育局檔案新上線！</a></li>
+          <li><a href="#">機關團體參訪集錦</a></li>
+          <li><a href="#">學校參訪集錦</a></li>
+          <li><a href="#">線上聆聽廣播！科技時代：清華大學電動車的研發</a></li>
+        </ul>
+
+        <h4>國外新訊</h4>
+        <ul class="stack">
+          <li><a href="#">日本國立公文書館「病與生—江戶時代傳染病與幕府醫學館」特展</a></li>
+          <li><a href="#">法國國家檔案館「聖殿騎士的審判」特展</a></li>
+          <li><a href="#">澳洲國家檔案館「共同的城市」特展</a></li>
+        </ul>
+
+        <h4>ALM展覽</h4>
+        <ul class="cards">
+          <li><a href="#">「當我們望春風：臺灣流行音樂90年」特展</a></li>
+          <li><a href="#">「我們的世界不斷在開門」特展</a></li>
+          <li><a href="#">「耕讀傳家－客家人好讀書」特展</a></li>
+          <li><a href="#">「『現代』文青養成術—與美新處的超時空對話」特展</a></li>
+        </ul>
+
+      </section>
+
+      <section class="recommond">
+        <h3>推薦閱讀</h3>
+        <ul>
+          <li><a href="#">
+              <img src="publicData/ep_image11.jpg" alt="">
+              <span class="label">檔案塊寶</span>
+              <p>水庫紀元：曾文水庫的竣工與開放</p>
+            </a></li>
+          <li><a href="#">
+              <img src="publicData/ep_image11.jpg" alt="">
+              <span class="label">檔案塊寶</span>
+              <p>航向國際：高雄國際機場的蛻變</p>
+            </a></li>
+          <li><a href="#">
+              <img src="publicData/ep_image11.jpg" alt="">
+              <span class="label">檔案塊寶</span>
+              <p>走過五十載的澎湖跨海大橋</p>
+            </a></li>
+        </ul>
+      </section>
+
+
+      <section class="adBanner">
+        <h3>推薦展覽&活動</h3>
+        <img src="" alt="">
+      </section>
+
+
+      <footer>
+        <div>
+          <p>喜歡我們的內容嗎？</p>
+          <p>訂閱檔案樂活情報</p>
+          <span class="button"><a href="#">訂閱樂活報</a></span>
+        </div>
+
+        <ul class="links">
+          <li><a href="#">資訊專區</a></li>
+          <li><a href="#">徵稿訊息</a></li>
+          <li><a href="#">各期電子報查詢</a></li>
+        </ul>
+        <ul class="links">
+          <li><a href="#">YouTube官方頻道</a></li>
+          <li><a href="#">Facebook粉絲專頁</a></li>
+        </ul>
+
+        <div class="base">
+          歡迎您對檔案樂活情報提出寶貴建議，請聯絡：<a href="#">alohas@archives.gov.tw</a>
+        </div>
+      </footer>
+
+
+    </section>
+
+
+  </main>
+
+  <footer class="webFooter">
+    <a class="accesskey" href="#aZ" id="aZ" accesskey="Z" title="頁腳區">:::</a>
+
+    <button type="button" class="fatFootCtrl" data-altText="開啟">收合</button>
+
+    <div class="fatFooter">
+      <nav class="siteTree">
+        <ul>
+          <li><a href="#">參訪資訊</a>
+            <ul>
+              <li><a href="#">開放時間</a></li>
+              <li><a href="#">交通資訊</a></li>
+              <li><a href="#">導覽服務</a></li>
+              <li><a href="#">樓層設施</a></li>
+              <li><a href="#">閱覽中心</a></li>
+              <li><a href="#">餐飲資訊</a></li>
+              <li><a href="#">參訪報名</a></li>
+              <li><a href="#">場地預約</a></li>
+              <li><a href="#">聯絡我們</a></li>
+            </ul>
+          </li>
+          <li><a href="#">展覽與活動</a>
+            <ul>
+              <li><a href="#">常設展</a></li>
+              <li><a href="#">特展</a></li>
+              <li><a href="#">展覽回顧</a></li>
+              <li><a href="#">活動</a></li>
+              <li><a href="#">活動回顧</a></li>
+              <li><a href="#">檔案月</a></li>
+              <li><a href="#">活動報名</a></li>
+            </ul>
+          </li>
+          <li><a href="#">檔案應用與研究</a>
+            <ul>
+              <li><a href="#">國家檔案資訊網(A+)</a></li>
+              <li><a href="#">政治檔案服務</a></li>
+              <li><a href="#">主題簡介</a></li>
+              <li><a href="#">國家檔案素材</a></li>
+              <li><a href="#">學術交流</a></li>
+              <li><a href="#">機關檔案目錄查詢網(NEAR)</a></li>
+              <li><a href="#">檔案資源整合查詢平台</a></li>
+              <li><a href="#">檔案調閱</a></li>
+            </ul>
+          </li>
+          <li><a href="#">學習資源</a>
+            <ul>
+              <li><a href="#">檔案支援教學網</a></li>
+              <li><a href="#">利用指導活動</a></li>
+              <li><a href="#">行動展示資源</a></li>
+              <li><a href="#">檔案樂活情報</a></li>
+              <li><a href="#">圖書與刊物</a></li>
+            </ul>
+          </li>
+          <li><a href="#">國家檔案管理</a>
+            <ul>
+              <li><a href="#">徵集</a></li>
+              <li><a href="#">保存維護</a></li>
+            </ul>
+          </li>
+          <li><a href="#">機關服務</a>
+            <ul>
+              <li><a href="#">檔案管理制度</a></li>
+              <li><a href="#">文書檔案資訊管理</a></li>
+              <li><a href="#">金檔獎暨金質獎</a></li>
+              <li><a href="#">機關檔案目錄查詢網(NEAR)</a></li>
+              <li><a href="#">教育訓練報名</a></li>
+              <li><a href="#">專業認證</a></li>
+              <li><a href="#">統計資料</a></li>
+            </ul>
+          </li>
+          <li><a href="#">認識我們</a>
+            <ul>
+              <li><a href="#">歷史沿革</a></li>
+              <li><a href="#">首長介紹</a></li>
+              <li><a href="#">組織職掌</a></li>
+              <li><a href="#">局館政策</a></li>
+              <li><a href="#">文檔法規</a></li>
+              <li><a href="#">大事紀要</a></li>
+              <li><a href="#">省政資料館</a></li>
+              <li><a href="#">各館中心介紹</a></li>
+              <li><a href="#">促轉基金</a></li>
+              <li><a href="#">檔案服務宣言</a></li>
+              <li><a href="#">業務窗口</a></li>
+            </ul>
+          </li>
+          <li><a href="#">便民服務</a>
+            <ul>
+              <li><a href="#">政府資訊公開</a></li>
+              <li><a href="#">志工與實習</a></li>
+              <li><a href="#">下載專區</a></li>
+              <li><a href="#">常見問答</a></li>
+              <li><a href="#">文創商店</a></li>
+              <li><a href="#">雙向溝通</a></li>
+              <li><a href="#">雙語詞彙</a></li>
+              <li><a href="#">影音專區</a></li>
+              <li><a href="#">合作交流</a></li>
+              <li><a href="#">意見信箱</a></li>
+              <li><a href="#">滿意度調查</a></li>
+              <li><a href="#">相關網站</a></li>
+            </ul>
+          </li>
+          <li><a href="#">最新消息</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="middle">
+      <div class="logo">
+        <img src="publicData/footLogo.png" alt="">
+      </div>
+      <ul class="iconLinks">
+        <li><a href="#"><img src="publicData/icon_ft_youtube.svg" alt="YouTube"></a></li>
+        <li><a href="#"><img src="publicData/icon_ft_fb.svg" alt="facebook"></a></li>
+      </ul>
+      <ul class="textLinks">
+        <li><a href="#">政府網站資料開放宣告</a></li>
+        <li><a href="#">隱私權、著作權及資訊安全政策宣告</a></li>
+        <li><a href="#">本局電子信箱</a></li>
+      </ul>
+    </div>
+    
+    <div class="base">
+      <ul class="contact">
+        <li>242030 新北市新莊區中平路439號(北棟)9樓</li>
+        <li>總機：(02)8995-3700</li>
+        <li>傳真：(02)8995-6469</li>
+      </ul>
+      <ul class="update">
+        <li>瀏覽人次：5585488</li>
+        <li>更新日期：112-08-0</li>
+      </ul>
+      <ul class="pics">
+        <li class="badge"><a href="#"><img src="publicData/badge_AA.webp" alt="無障礙標章"></a></li>
+        <li class="qrcode"><img src="publicData/qrcode.png" alt="二維條碼"></li>
+      </ul>
+    </div>
+
+  </footer>
+
+  <button class="goTop" type="button" title="回頁面頂端">回頁首</button>
+
+</body>
+</html>
