@@ -666,6 +666,14 @@ $(function(){
       }
     );
   })
+
+  _lightbox.on('keydown', function(e){
+    if ( e.keyCode == 27) {
+      _hideLightbox.trigger('click');
+    }
+  })
+
+
   // --------------------------------------------------------------- //
 
 
@@ -894,6 +902,17 @@ $(function(){
         return $(this).attr('data-index') == j;
       }).stop(true, false).fadeIn(speed);
     })
+
+    _cpBigPhoto.on('keydown', function(e){
+      if ( e.keyCode == 37) {
+        _btnLeft.trigger('click');
+      }
+      if ( e.keyCode == 39) {
+        _btnRight.trigger('click');
+      }
+  
+    })
+  
 
     // 關閉大圖燈箱
     _hideBigPhoto.add(_cover).click(function(){

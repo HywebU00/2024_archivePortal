@@ -2,7 +2,7 @@
 .cpAnchors{
   margin: 0 0 30px;
   font-size: 1.11em;
-  ul, ol{ list-style: none; overflow: hidden; margin: 0 -8px;padding: 0;}
+  &>ul, &>ol{ list-style: none; overflow: hidden; margin: 0 -8px;padding: 0;}
   li{
     float: left; line-height: 1; margin:5px;
     a{
@@ -23,3 +23,4 @@
     li{ margin:10px;}
   }
 }
+.cpArticle .cpAnchors {font-size: 1em;}
