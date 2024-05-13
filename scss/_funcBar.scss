@@ -114,9 +114,9 @@
           position: relative; padding-left: .6em;
           &::after{ position: absolute; left: 10px; bottom: 20px; line-height: 1;}
         }        
-        &>.smallFont::after{content: '小'; font-size: .4rem;}
-        &>.mediumFont::after{content: '中'; font-size: .4rem;}
-        &>.largeFont::after{content: '大';font-size: .4rem;}
+        &>.smallFont::after{content: '小'; font-size: .6rem;}
+        &>.mediumFont::after{content: '中'; font-size: .6rem;}
+        &>.largeFont::after{content: '大';font-size: .6rem;}
       }
       
       // &.compound>button{position: relative; z-index: 19;}
