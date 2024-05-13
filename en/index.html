@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>2024《檔案管理局全球網》英文版 gui 清單</title>
+
+  <style>
+    body {margin: 0;font-family: 'Source Code Pro', Arial, Helvetica, sans-serif;font-size: 16px;background: #fff;}
+
+    h1 {text-align: center;background: #0F3D5F;color: #fff;margin: 0 0 10px;padding: 10px;font-size: 22px;font-family: Georgia, 'Times New Roman', Times, serif}
+
+    table {counter-reset: item;border-collapse: collapse;margin: 20px auto;max-width: 1400px;width: 96%;line-height: 1.5;border-bottom: 2px solid #bbb;color: #456;}
+
+    td,  th {position: relative;padding: .5em .9em;border-bottom: 1px solid #d6d6d6;}
+    th {border-bottom: 3px solid #bbb;white-space: nowrap;}
+    tr:nth-child(5n) td {border-bottom-color: #999}
+    /* tr.new{background: #f1fad0;} */
+
+    th:after,
+    td:after {content: '';position: absolute;top: 4px;bottom: 4px;right: 0;width: 1px;background: #ddd;}
+
+    th:last-child:after,
+    td:last-child:after {display: none}
+
+    td:first-child {text-align: center;font-size: .9em;}
+
+    td:first-child:before {content: counter(item);counter-increment: item;}
+
+    td[colspan] {font-size: 13px;padding: 3px 0 2px;}
+    td[colspan]::before{display: none}
+
+
+    td ul,
+    td ol {margin: 0;padding-left: 1.25em;line-height: 1.4;}
+
+    td ul,
+    td ol {display: none}
+
+    td li+li {margin-top: .6em;}
+
+    a {text-decoration: none;color: #084099;}
+
+    a:hover {text-decoration: underline;color: #0199eb;}
+
+
+    /* tr.hidden, tr.hidden ~ tr{display: none} */
+    @media screen and (max-width: 700px) {
+
+      tr,td,th {display: block;}
+
+      td:after {display: none;}
+
+      td {min-height: 1em;}
+
+      tr:first-child {display: none}
+
+      tr {border: 1px solid #999;margin: 0 0 10px;}
+
+      tr:nth-child(5n) td {border-bottom-color: #d6d6d6}
+
+      td:first-child,
+      td:nth-child(2) {float: left;padding: 8px;height: 16px;background: #eee;border: none;}
+
+      td:nth-child(2) {float: right;}
+
+      td:nth-child(3) {clear: both;}
+
+      td:last-child {border: none;}
+
+      .seperator td:nth-child(2) {float: none;background: transparent;padding: 0;}
+
+      .seperator td:first-child {display: none}
+    }
+  </style>
+
+</head>
+<body>
+  <h1>2024《檔案管理局全球網》英文版 gui 清單</h1>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 2em;">序號</th>
+        <th>功能、頁面名稱</th>
+        <th>檔名／連結</th>
+        <th>備註</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td>首頁</td>
+        <!-- <td><a href="mp.html" target="_Blank">mp.html</a></td> -->
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>LP01-一般列表頁【最新消息News】</td>
+        <td><a href="lp01.html" target="_Blank">lp01.html</a></td>
+        <td>5/13 完成</td>
+      </tr>
+
+      <tr>
+        <td></td>
+        <td>LP02-欄位列表頁【檔案半年刊Archives semiannual】</td>
+        <td><a href="lp02.html" target="_Blank">lp02.html</a></td>
+        <td>5/13 完成</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>LP03-圖片列表頁【文化商品展售Archives Cultural Goods】</td>
+        <td><a href="lp03.html" target="_Blank">lp03.html</a></td>
+        <td>5/13 完成</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>LP04-問答列表頁【FAQs】</td>
+        <td><a href="lp04.html" target="_Blank">lp04.html</a></td>
+        <td>5/13 完成</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>CP01-內容頁顯示上層節點</td>
+        <!-- <td><a href="xxx.html" target="_Blank">xxx.html</a></td> -->
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>CP02-表格內容頁【檔案半年刊】</td>
+        <!-- <td><a href="xxx.html" target="_Blank">xxx.html</a></td> -->
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>CP03-圖書內容頁【專書Monographs】</td>
+        <!-- <td><a href="xxx.html" target="_Blank">xxx.html</a></td> -->
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>CP04-首長介紹</td>
+        <!-- <td><a href="xxx.html" target="_Blank">xxx.html</a></td> -->
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>NP-節點頁</td>
+        <td><a href="np.html" target="_Blank">np.html</a></td>
+        <td>5/13 完成</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Sitemap-網站導覽</td>
+        <!-- <td><a href="xxx.html" target="_Blank">xxx.html</a></td> -->
+        <td></td>
+        <td></td>
+      </tr>
+    
+    </tbody>
+  </table>
+
+</body>
+</html>

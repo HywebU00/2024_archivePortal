@@ -1,0 +1,112 @@
+// 圖書內容頁
+.bookDetails{
+  // @extend %gradient1;
+  .coverAndPages{
+    position: relative; width: 100%;
+    border: 1px solid $borderColor;
+    .image{
+      img{width: 100%; height: $mobileWidthVW; object-fit: contain;}
+    }
+
+    .slick-arrow{
+      top: calc($mobileWidthVW*.5 - 16px);
+      &.slick-next{ right: 0;}
+    }
+    .slick-dots{ text-align: center;}
+  }
+
+  @media screen and (min-width: $wwMedium){
+    // overflow: hidden;
+    // &+*{clear: both;}
+
+    display: flex; justify-content: space-between;
+    &>.left{ flex: 0 0 40%; width: 40%;}
+    // 文字資料區
+    .metaTable{flex: 0 0 57%; margin: 0;}
+
+    // 圖區
+    .coverAndPages{
+      position: sticky; top: 70px;
+      .image{
+        img{height: $mobileWidthVW*.4;}
+      }
+
+      .slick-arrow{
+        top: calc($mobileWidthVW*.2 - 16px);
+      }
+    }
+
+  }
+
+  @media screen and (min-width: $wwNormal){
+
+    .coverAndPages{ top: 110px;
+      .image{
+        img{ height: $normalWidthVW*.4;}
+      }
+
+      .slick-arrow{top: calc($normalWidthVW*.2 - 16px);}
+    }
+  }
+
+  @media screen and (min-width: $wwMaximum){
+    .coverAndPages{
+      .image{
+        img{ height: $maximumWidth*.4;}
+      }
+
+      .slick-arrow{top: calc($maximumWidth*.2 - 16px);}
+    }
+
+  }
+
+}
+
+
+.lightbox.bigImages{
+
+  .coverAndPages{
+    position: relative;
+    width: 100%;
+    .image{
+      img{ width: 100%;height: $mobileWidthVW; object-fit: contain;}
+    }
+
+
+    .slick-arrow{
+      top: calc($mobileWidthVW*.5 - 16px);
+      &.slick-next{ right: 0;}
+    }
+    .slick-dots{ text-align: center;}
+  }
+
+  @media screen and (min-width: $wwNormal){
+    .coverAndPages{
+      .image {
+        border: 1px solid red;
+        img{ height: calc($normalWidthVW - 50px); }
+      }
+
+      .slick-arrow{
+        top: calc($normalWidthVW*.5 - 16px);
+      }
+    }
+
+
+  }
+
+  @media screen and (min-width: $wwMaximum){
+    // height: calc($maximumWidth - 50px);
+    .coverAndPages{
+      .image {
+        img{ height: calc($maximumWidth - 50px); }
+      }
+
+      .slick-arrow{
+        top: calc($maximumWidth*.5 - 16px - 50px);
+      }
+    }
+  }
+
+
+}

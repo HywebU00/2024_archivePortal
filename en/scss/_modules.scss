@@ -1,0 +1,144 @@
+// 首頁區塊標題字
+// ------------------------------------------------------ //
+.blockHeader{
+  margin:10px 0 30px;
+  font-size: 2rem; font-weight: bold;line-height: 1.1;
+  color: $primaryColor;
+  .major, .sub{ display: inline-block;}
+  .sub{ 
+    margin-left: 12px; font-size: .65em;
+    &::before{
+      content: ''; display: inline-block;
+      width: 2px; height: 1em; margin-right: 18px;vertical-align: -3px;
+      background-color: $assistant1;
+    }
+  }
+  p{
+    font-weight: normal; font-size: 1rem; line-height: 1.5;
+  }
+
+  @media screen and (min-width: $wwNormal){
+    margin:15px 0 40px;
+    .sub{ font-size: 1em}
+  }
+}
+// ------------------------------------------------------ //
+
+
+// 現在位置（麵包屑） //
+// ------------------------------------------------------ //
+.breadcrumb {
+  display: none;
+  @extend %primSecWidth;
+
+  @media screen and (min-width: $wwNormal){
+    display: block;margin: 15px auto; 
+    color: $fontColorLight;
+    ul, li{ list-style: none; margin: 0;padding: 0;}
+    ul{line-height: 1.2; overflow: hidden;}
+    li{
+      float: left; position: relative;color: $fontColor;
+      padding-right: .5em;
+      &:nth-child(n+2){
+        padding-left: 1.8em;
+        &::before{ 
+          content: '';position: absolute; left: .6em; top: 0; 
+          width: 1px; height: 1em;
+          background: none; border-left: 1px solid $fontColorLight;
+          transform: rotate(20deg);
+        }
+      }
+      &:first-child{padding-left: 0;}
+      a{
+        display: block; text-decoration: none; color: $fontColorLight;
+        border-bottom: 2px solid transparent;
+          &:hover, &:focus{  
+            border-bottom-color: $fontColorLight; color: $fontColorLight;
+          }
+      }
+    }
+  }
+}
+// ------------------------------------------------------ //
+
+
+// 內頁標題 //
+// ------------------------------------------------------ //
+.pageHeader{
+  @extend %primSecWidth;
+  position: relative;
+  margin: 0 auto 30px; padding: 30px 0 10px;
+  color: $fontColorDark; 
+  border-bottom: #DBDBDB 1px solid;
+  &::after{
+    content: ''; position: absolute; left: 2%; bottom: -11px;
+    width: 96%; height: 20px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    filter: blur(12px);
+    clip-path: inset( 50% 0 -24px 0);
+  }
+  h2 {
+    padding: 0;margin: 0;
+    font-size: 2em;line-height: 1.3;
+    color: $primaryColor;
+  }
+  .funcBar{ margin:4px 0;}
+  @media screen and (min-width: $wwNormal){
+    padding: 5px 0 16px;
+    h2{ margin-right: 300px; padding-top: 16px; padding-bottom: 4px;}
+    .funcBar{ position: absolute; right: 0; top: 0;}
+  }
+}
+// ------------------------------------------------------ //
+
+
+// 檔案類型圖示 //
+// ------------------------------------------------------ //
+.fileType{
+  --bg : #aaa;
+  --color : #fff;
+
+  display: block; position: relative; 
+  margin: 0; width: 28px; height: 32px; line-height:42px;
+  font-size: .6rem; text-decoration: none; text-align: center;
+  color: var(--color); 
+  background-image: linear-gradient(45deg, var(--bg) 86%, transparent 86%);
+  border-radius: 3px;
+  transition: .2s;
+
+  &::before, &::after{
+    content: ''; position: absolute;
+  }
+  &::before{
+    top: 5px; left: 5px; right: 5px; height: 1px;
+    background-color: rgba(255,255,255,.65);
+    box-shadow: rgba(255,255,255,.65) 0 3px 0, rgba(255,255,255,.65) 0 6px 0;
+  }
+  &::after{
+    right: 0; top: 0;
+    width: 8px; height: 8px; border-radius: 0 0 0 2px;
+    background-color: rgba(255,255,255,.65);
+  }
+  &.pdf { --bg : #d00; }
+  &.doc , &.docx, &.odt{ --bg:#0863a0; }
+  &.xls, &.xlsx, &.csv, &.ods { --bg:#48920f; }
+  &.ppt, &.pptx, &.odp{ --bg:#ef5527; }
+  &.txt { --bg:#1d98e4; }
+  &.jpg,  &.jpeg,  &.png { --bg:#089c9f; }
+  &.mp3, &.mp4 { --bg:#9d3a89; }
+  &.mov, &.wmv{ --bg:#5843a9; }
+  &.zip { --bg:#333; }
+  &.other { --bg:#555; }
+}
+a .fileType, .fileType>a{ color: $white; text-decoration: none; }
+a:hover, a:focus{
+  .fileType{box-shadow:var(--color) 0 0 0 1px inset, var(--bg) 0 0 0 2px;}
+}
+// ------------------------------------------------------ //
+
+
+
+
+// ------------------------------------------------------ //
+// ------------------------------------------------------ //

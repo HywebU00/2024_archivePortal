@@ -1,0 +1,166 @@
+// 首頁：典藏國家百年記憶（大圖輪播）
+// .main>section:not(.bigBanner) { display: none;}
+
+.bigBanner{
+  background-color: $primaryColor; 
+
+  // 標題區
+  .bbTitles{
+    position: relative;
+    margin: 0; padding:0 0 44px;
+    color: $white;background: $primaryColor;
+
+    .flowItem{
+      margin: 20px 24px;
+      font-size: 1.6em; letter-spacing: .04em;
+      line-height: 1.5; font-weight: bold;
+    }
+
+    .slick-arrow{
+      bottom: 8px; left: 24px;
+      background-color: transparent;
+      &.slick-next { transform: translateX(100%)}
+      &::before{ filter: brightness(6); }
+      &:hover, &:focus {
+        background-color: transparent;
+        box-shadow: $assistant1 0 0 0 1px;
+      }
+      &:focus { box-shadow: $assistant1 0 0 0 2px;}
+    }
+
+    .slick-dots{
+      margin: 0; padding: 0;
+      position: absolute; left: auto; right: 24px; bottom: 10px;
+      button{
+        background-color: transparentize( $assistant1, .65);
+        &:hover, &:focus { background-color: $assistant1;}
+        &:focus{
+          box-shadow: $primaryColor 0 0 0 1px, $assistant1 0 0 0 3px;
+        }
+      }
+      .slick-active {
+        button{ 
+          background-color: $assistant1; width: 32px;
+          &:focus{
+            box-shadow: $primaryColor 0 0 0 1px, $assistant1 0 0 0 3px;
+          }          
+        }
+      }
+    }
+  }
+
+  // 圖片區
+  .bbImages{
+    .flowItem{
+      width: 100vw; height: 66.67vw; // w:h = 3:2
+      a{ 
+        position: relative; display: block;width: 100%; height: 100%;
+        &::before{
+          content: ''; z-index: -1;
+          position: absolute;left: 0;right: 0;top: 0;bottom: 0;
+          box-shadow: $linkColor 0 0 0 1px inset;
+        }
+        &:hover, &:focus{
+          &::before{ z-index: 5;}
+        }
+        &:focus{
+          &::before{box-shadow: $linkColor 0 0 0 3px inset;}
+        }
+      }
+      img{ width: 100%; height: 100%; object-fit: cover;}
+    }
+  }
+
+
+  @media screen and (min-width: $wwMedium){
+
+    position: relative;padding-left: 25vw;
+    
+    // 標題區
+    .bbTitles{
+      width: 25vw;
+      position: absolute; left: 0; top: 0; bottom: 0; 
+      background: url(../images/bbannerLeft.jpg) no-repeat center top;
+      background-size: cover;
+
+      .flowItem{margin: 4vw; font-size: 4vw;}
+
+      .slick-arrow{ 
+        bottom: 50px; left:auto; 
+        width: 10vw;padding: 8px 0;
+        &::before{ width: 5vw; max-width: 60px;}
+        &.slick-prev { left: 1vw;}
+        &.slick-next {transform: none; right: 1vw;}
+      }
+
+      .slick-dots{
+        text-align: center; margin: 0 -24px;
+        width: 25vw; bottom: 12px; 
+        .slick-active button{ width: 24px;}
+      }
+    }
+
+    // 圖片區
+    .bbImages{
+      position: relative;
+      .flowItem {height: 50vw; width: 75vw;}
+    }
+
+  }
+
+  @media screen and (min-width: $wwNormal ){
+    padding-left: 31vw;
+    
+    // 標題區
+    .bbTitles{
+      width: 31vw;
+
+      .flowItem{margin: 7vw 7.5vw; font-size: 3.8vw;}
+
+      .slick-arrow{ 
+        bottom: 60px; width: 100px;
+        &.slick-prev{ left: 2vw;}
+        &.slick-next{ right: 2vw;}
+      }
+      .slick-dots{
+        width: 31vw;bottom: 20px;
+        .slick-active{
+          button{ width: 46px;}
+        }
+      }
+    }
+
+    // 圖片區
+    .bbImages{
+      .flowItem{width: 69%; height: 46vw;}
+    }
+  }
+
+  @media screen and (min-width: $wwMaximum){
+
+    width: $wwMaximum; margin: 0 auto; 
+    padding-left: calc( $wwMaximum * .31);
+    
+    // 文字區
+    .bbTitles{
+      width: calc($wwMaximum * .31);
+      .flowItem{
+        font-size: $wwMaximum*.038;
+        margin: $wwMaximum*.07 $wwMaximum*.075;
+      }
+
+      .slick-arrow {
+        &.slick-prev{ left: $wwMaximum * .02; }
+        &.slick-next{ right: $wwMaximum * .02; }
+      }
+      .slick-dots{ width: $wwMaximum * .31;}
+    }
+  
+    // 圖片區
+    .bbImages{  
+      .flowItem { width: calc( $wwMaximum * .69); height: calc( $wwMaximum * .46); }
+    }
+
+  }
+
+}

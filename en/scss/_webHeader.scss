@@ -1,0 +1,115 @@
+// 版頭
+// --------------------------------------------------------------- //
+.webHeader {
+  position: relative; z-index: 810; 
+  height: 60px; margin: 0 auto;
+  background-color: $white;
+  h1{ 
+    margin: 0 60px; padding: 5px 0; text-align: center;
+    font-size: 1.5em; line-height: 50px;
+    a{
+      text-decoration: none; display: block; height: 50px;
+      background: url(../images/h1_mobile.png) no-repeat center center;
+      background-size: contain;
+      &:focus{ outline: 1px solid $primaryColor;}
+    }
+    img{ display: none;}
+  }
+
+  .sidebarCtrl, .searchCtrl {position: absolute; top: 5px; }
+  .sidebarCtrl { left: 5px; }
+  .searchCtrl { right: 5px;background-color: transparent;
+    &.closeIt {
+      background-color: $assistant1;
+      box-shadow: $assistant1 0 0 0 4px;
+    }
+    &:hover, &:focus{
+      background-color: $primaryColor;
+      box-shadow: none;
+      &::before{ filter: brightness(16);}
+    }
+    &:focus {
+      box-shadow: $primaryColor 0 0 0 4px;
+    }
+    
+  }
+
+  &.fixed{
+    position: fixed; left: 0; top: 0;right: 0;
+    background-color: #fff;
+    box-shadow: rgb(0 0 0 / 0.3) 0 0 16px;
+  }
+  
+  @media screen and (min-width: $wwNormal){
+    height: auto; 
+    display: flex; align-items: flex-start;
+    h1 {
+      flex: 0 0 31%;padding: 60px 0; margin: 0;
+      font-size: 1.6em;
+      background: linear-gradient(180deg, rgba(226, 226, 226, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
+      a{ height: 100%; background: none;}
+      img{ display: block;width: 79%; margin: 0 auto; }
+    }
+    .menu{ flex: 1 1 69%;}
+
+    .sidebarCtrl, .searchCtrl{ display: none;}
+
+
+    // 固定版頭
+    &.fixed {
+      z-index: 980;
+      position: fixed;left: 0; right: 0; top: 0;
+      padding:5px;
+      align-items: center;
+      background-color: $white;
+      box-shadow: rgb(0 0 0 / .5) 0 2px 6px;
+      animation: fixHeadAni .5s 1 ease-out;
+      h1{ 
+        flex-basis: 230px; height: 50px; padding: 0;
+        background: $white url(../images/h1_mobile.png) no-repeat 12px 0;
+        background-size: auto 50px;
+        img{display: none;}
+      }
+      .menu{ 
+        flex: 1 1 auto;width: auto;  padding-left: 0;
+        margin-top: 0;margin-left: 1.5%;
+        &>ul{
+          font-size: 1rem;
+          display: flex; flex-flow: row wrap;
+          &>li{
+            flex: 0 1 20%;
+            &>a{ padding: .6em 1vw .5em; }
+          }
+        }
+      }
+      .headNav { display: none; }
+    }
+  }
+
+  @media screen and (min-width: $wwMaximum){
+    width: $wwMaximum;
+    h1 {
+      img{width: 352px;}
+    }
+    
+    // 固定版頭
+    &.fixed{ 
+      width: 100%;
+      h1{margin-left: calc( 50% - $wwMaximum*.5);}
+      .menu{
+        margin-right: calc( 50% - $wwMaximum*.5);
+        margin-left: 30px;
+        &>ul>li>a{
+          padding-left: 16px; padding-right: 16px;
+        }
+      }
+    }
+  }
+
+}
+// --------------------------------------------------------------- //
+
+@keyframes fixHeadAni {
+  0% {transform: translateY( -100% );}
+  100% {transform: translateY(0);}
+}

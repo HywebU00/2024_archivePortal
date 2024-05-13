@@ -1,0 +1,91 @@
+// RWD 斷點 
+// ---------------------------------------------------------------- //
+$wwSlim: 400px;
+$wwMedium: 700px;
+$wwNormal: 1000px;
+$wwMaximum: 1440px;
+// ---------------------------------------------------------------- //
+
+
+// 長度常數
+// ---------------------------------------------------------------- //
+$sideBarWidth: 300px;  // 窄版側欄選單
+$mobileWidth: 94%; // 窄螢幕寬度 moduals width in mobile
+$normalWidth: 90%; // 寬螢幕寬度
+$mobileWidthVW: 94vw; // 窄螢幕寬度 moduals width in mobile
+$normalWidthVW: 90vw; // 寬螢幕寬度
+$maximumWidth: $wwMaximum*.9; // 內容區最大寬度
+
+// 文件邊界寬度
+$marginDoc: 5%;
+$marginDocMob: 3%;
+$marginDocMax: calc(50% - $wwMaximum*.45);
+
+$bigRadius: 32px; // 圓角半徑
+$radius: 16px; // 圓角半徑
+// ---------------------------------------------------------------- //
+
+
+
+// 首頁主要區塊寬度
+// ---------------------------------------------------------------- //
+%primSecWidth {
+  width: $mobileWidth; margin: 40px auto;
+  @media screen and (min-width: $wwNormal){
+    width: $normalWidth; margin: 80px auto;
+  }
+  @media screen and (min-width: $wwMaximum){
+    width: $wwMaximum * .9;
+  }
+}
+// ---------------------------------------------------------------- //
+
+
+
+// 顏色變數
+// ---------------------------------------------------------------- //
+$primaryColor:#0F3D5F;
+$secondaryColor: #E2E2E2;
+$assistant1: #8FFDFF;
+$hilight : #ef460e;
+$warning: #ca0956;
+$hover: #ebf2f3;
+
+$fontColor: #2a4f5d;
+$fontColorLight: #666;
+$fontColorPale: #888;
+$fontColorDark: #000;
+$fontInvert: #fff;
+$linkColor: #045c9a;
+$mainBg: #fff;
+
+$borderColor: #c1c5c6;
+$borderColorLight: #e2e2e2;
+$borderColorDark:#424444;
+$shadow1:rgba(15 61 95 / .2);
+$shadow2:rgba(15 61 95 / .5);
+
+$white: #fff;
+$black: #000;
+// $gray: #d3d5d6; 
+// $grayLight: #f4f6f9;
+$gray: #ebf2f3;
+$grayLight: #ebf2f3;
+$grayDark: #5d6263;
+
+
+%gradient1 {
+  background: linear-gradient(180deg, #F6F6F6 0%, #F9F9F9 9.38%, #FFFFFF 100%);
+  box-shadow: 0 0 4px $shadow1;
+}
+%gradient2 {
+  background: linear-gradient(180deg, #C7F7F2 0%, #EAFFFD 100%)  right 0 top 0;
+  box-shadow: 0 0 4px 0 rgba(15, 61, 95, 0.2);
+}
+
+// $btnBg1: $primaryColor;
+// $btnBg2: #01425c;
+
+// $footBg: $primaryColor;
+// $sidebarBg: $grayDark;
+// ---------------------------------------------------------------- //

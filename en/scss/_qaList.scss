@@ -1,0 +1,113 @@
+.qaList{
+  @extend %primSecWidth;
+
+  &>ul{
+    font-size: 1.1em;
+    list-style: none; margin: 0; padding: 0;
+    &>li{
+      padding:0; margin: 0 0 20px; line-height: 1.7;
+      @extend %gradient1; color: $fontColor;
+      box-shadow:$borderColor 0 0 0 0, $shadow1 0 2px 8px;
+    }
+  }
+
+  // 問題
+  .q{
+    position: relative; padding: 3.5em 3vw 12px;
+    // overflow: hidden;
+
+    &::after{ content: ''; display: block; clear: both;}
+
+    // 展開／收合 button
+    .ctrlBtn{
+      position: relative; float: right;
+      width: 52px; height: 52px; padding: 0; border-radius: 30px;
+      text-indent: -10em; overflow: hidden;
+      border-color: transparent;
+      background-color: $white;
+      box-shadow: $shadow1 0 2px 6px;
+      &::before{
+        content: ''; position: absolute; right: 17px; top: calc(50% - 10px);
+        width: 12px; height: 12px;
+        border: 3px solid $primaryColor;
+        border-left: none; border-top: none;
+        transform: rotate(45deg);
+        transition: .3s;
+      }
+      &:hover, &:focus{
+        // width: calc(3em + 52px); padding-right: 40px; padding-left: 1em;
+        background-color: $assistant1;
+      }
+      &:focus{box-shadow: $shadow1 0 0 0, $primaryColor 0 0 0 2px; }
+
+      &.closeIt{
+        &::before { transform: rotate(225deg); top: calc(50% - 4px);}
+      }
+    }
+
+    // 問題編號
+    .qaIndex {
+      position: absolute; top: -4px; left: 3vw;
+      height: 2.7em; line-height: 3.2; padding:0 20px;
+      border-radius: 2px 2px 6px 6px;
+      box-shadow: $shadow2 0 2px 5px;
+      background-color: $primaryColor; color: $white;
+    }
+
+    // 回覆狀態標籤
+    .label{
+      position: absolute; top: -4px; right: 3vw;
+      height: 2.3em; line-height: 2.6; padding:0 16px;
+      border-radius: 2px 2px 6px 6px;
+      box-shadow: $shadow2 0 2px 5px;
+      background-color: $white; color: $primaryColor;
+      &.done{
+        background-color: $assistant1;
+        border-color: transparent;
+      }
+    }
+
+    p{ margin: 0 0 3px;
+      &+p{margin-top: 1em;}
+    }
+    time{ margin-left: 1em;}
+  
+  }
+
+  // 回覆
+  .a{
+    display: none; clear: both;
+    padding:30px 0 40px; margin: 0 20px;
+    border-top: 2px solid $borderColor;
+    .update{
+      margin: 2em 0 0; padding: 1em 0 0; text-align: right; font-size: .9em;
+      border-top: 1px dashed $borderColor;
+    }
+  }
+
+  @media screen and (min-width: $wwMedium){
+
+    .q{
+      padding: 4em  calc(4em + 72px) 28px 3vw;
+      .ctrlBtn{ 
+        float: none;
+        position: absolute; right: 12px; top: 3.3em;
+      }
+    }
+
+  }
+
+  @media screen and (min-width: $wwNormal){
+
+    .q {
+      padding-left: 30px; padding-right: 30px;
+      .qaIndex { left: 24px;}
+      .label{ right: calc(4em + 110px); padding-left: 1.2em; padding-right: 1.2em;}
+      .ctrlBtn{ right: 24px; top: 6px;}
+    }
+    .a{
+      margin: 0 30px;
+    }
+
+  }
+}

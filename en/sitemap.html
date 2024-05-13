@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>National Archives CP06</title>
+  <link href="images/favicon.ico" rel="icon" type="image/ico">
+
+  <link rel="stylesheet" href="slick/slick.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="slick/slick.min.js"></script>
+  <script src="js/jquery.touchSwipe.min.js"></script>
+  <script src="js/uieffect.js"></script>
+</head>
+<body>
+  <a class="goCenter" href="#aC" tabindex="0">Jump to main content</a>
+
+  <header class="webHeader">
+    <a class="accesskey" href="#aU" id="aU" accesskey="U" title="upper block">:::</a>
+    <h1 aria-label="National Archives Administration"><a href="mp.html"><img src="images/h1.png" alt=""></a></h1>
+    
+    <nav class="headNav">
+      <ul>
+        <li><a href="#">中文版</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">SiteMap</a></li>
+        <li><a href="#">Bilingual Glossary</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <nav class="menu">
+      <ul>
+        <li><a href="#">About us</a>
+          <ul>
+            <li><a href="#">Welcome</a></li>
+            <li><a href="#">Director-General</a></li>
+            <li><a href="#">Our History</a></li>
+            <li><a href="#">Organization</a></li>
+            <li><a href="#">Vision, Strategies and Projects</a></li>
+            <li><a href="#">Laboratory</a></li>
+            <li><a href="#">Opening Hours</a></li>
+            <li><a href="#">Visit us</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Bilingual Glossary</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Collections</a>
+          <ul>
+            <li><a href="#">Newsletter</a></li>
+            <li><a href="#">Outline</a></li>
+            <li><a href="#">Thematic Archives</a></li>
+            <li><a href="#">Archives Access Service</a>
+              <ul>
+                <li><a href="#">Archives Access Center</a></li>
+                <li><a href="#">Access to Archives</a></li>
+                <li><a href="#">Integrate Archives into Teaching and Learning</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Archives Cultural Goods</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Laws</a>
+          <ul>
+            <li><a href="#">Archives Act</a></li>
+            <li><a href="#">Political Archives Act</a></li>
+            <li><a href="#">Organization Act</a></li>
+            <li><a href="#">Regulations</a></li>
+            <li><a href="#">Directions</a></li>
+            <li><a href="#">Handbooks</a></li>
+          </ul>
+        </li>
+        <li><a href="#">National Archives</a>
+          <ul>
+            <li><a href="#">Vision and role</a></li>
+            <li><a href="#">Location</a></li>
+            <li><a href="#">Service plan</a></li>
+            <li><a href="#">Timeline</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Publications</a>
+          <ul>
+            <li><a href="#">Monographs</a></li>
+            <li><a href="#">Archives Semiannual</a></li>
+            <li><a href="#">Annual Reports</a></li>
+            <li><a href="#">Archives LOHAS</a></li>
+          </ul>
+        </li>
+        <li><a href="#">News</a>
+        </li>
+      </ul>
+    </nav>
+
+    <button type="button" class="sidebarCtrl" aria-label="開啟側欄"></button>
+    <button type="button" class="searchCtrl" aria-label="開啟查詢區"></button>
+    <section class="search">
+      <form action="">
+        <input type="text" placeholder="請輸入關鍵字">
+        <input type="button" value="查詢">
+      </form>
+      <div class="hotKeywords">
+        <span class="label">熱門查詢詞</span>
+        <ul>
+          <li><a href="#">檔案法</a></li>
+          <li><a href="#">下載專區</a></li>
+          <li><a href="#">金檔獎</a></li>
+        </ul>
+      </div>
+    </section>
+  </header>
+
+  <!-- 行動版側欄 -->
+  <aside class="sidebar">
+  </aside>
+
+  <main class="main">
+    <a class="accesskey" href="#aC" id="aC" accesskey="C" title="main content">:::</a>
+    <div class="breadcrumb" title="you are here">
+      <ul>
+        <li><a href="mp.html">Home</a></li>
+        <li><a href="#">網站導覽</a></li>
+      </ul>
+    </div>
+
+    <div class="pageHeader">
+      <h2>網站導覽</h2>
+      <section class="funcBar">
+        <ul>
+          <li class="fontSize compound">
+            <button type="button" aria-label="Font size">A</button>
+            <ul>
+              <li><button class="smallFont" aria-label="small font" type="button">A-</button></li>
+              <li><button class="mediumFont" aria-label="medium font" type="button">A</button></li>
+              <li><button class="largeFont" aria-label="large font" type="button">A+</button></li>
+            </ul>
+          </li>
+          <li class="print"><button type="button" aria-label="Print"></button></li>
+          <li class="share compound">
+            <button type="button" aria-label="Share"></button>
+            <ul>
+              <li><a target="_blank" title="Share on Facebook (open new window)" href="https://www.facebook.com/"><img src="images/icon_fb.png" alt="Facebook"></a></li>
+              <li><a target="_blank" title="Share on X (open new window)" href="https://twitter.com/"><img src="images/icon_X.png" alt="X"></a></li>
+              <li><a target="_blank" title="Share on Facebook (open new window)" href="https://access.line.me/"><img src="images/icon_line.png" alt="LINE"></a></li>
+            </ul>
+          </li>
+          <li class="back"><a href="javascript:;" aria-label="Back"></a></li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="sitemap">
+      <article class="keyboardGuide">
+        <p>本網站的<kbd><i>快速鍵</i></kbd>（Accesskey）設定如下，需搭配<kbd><i>修飾鍵</i></kbd>使用。例如在 Windows 平台使用 Chrome 瀏覽器，應使用修飾鍵<kbd>Alt</kbd>，其快速鍵的操作如下：</p>
+        <!-- <p>「修飾鍵」指<kbd>Alt</kbd>、<kbd>Option</kbd>、<kbd>Control</kbd>、<kbd>Shift</kbd>等特殊鍵。</p> -->
+        
+        <ul class="accesskeyDefine">
+          <li><kbd>Alt</kbd>+<kbd>U</kbd>版頭區，包括本站名稱、網站地圖連結、本站其他語言或分眾版本連結、站內搜尋、選擇字體大小等。</li>
+          <li><kbd>Alt</kbd>+<kbd>C</kbd>中央內容區塊，每頁的主要內容。</li>
+          <li><kbd>Alt</kbd>+<kbd>Z</kbd>下方頁腳區塊，包括本網站的主要單元連結、聯絡資訊、版權宣告等。</li>
+          <li><kbd>Alt</kbd>+<kbd>S</kbd>本網站內搜尋。</li>
+        </ul>
+
+        <p>其他平台和瀏覽器搭配的<kbd><i>修飾鍵</i></kbd>如下：</p>
+        <div class="modifierKeys">
+          <div class="platform">
+            <p>Windows</p>
+            <ul>
+              <li>Chrome: <kbd>Alt</kbd>+<kbd><i>快速鍵</i></kbd></li>
+              <li>Edge: <kbd>Alt</kbd>+<kbd><i>快速鍵</i></kbd></li>
+              <li>Firefox: <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd><i>快速鍵</i></kbd></li>
+            </ul>
+          </div>
+          <div class="platform">
+            <p>Mac</p>
+            <ul>
+              <li>Chrome: <kbd>Control</kbd>+<kbd>Option</kbd>+<kbd><i>快速鍵</i></kbd></li>
+              <li>Firefox 14-56: <kbd>Control</kbd>+<kbd>Alt</kbd>+<kbd><i>快速鍵</i></kbd></li>
+              <li>Firefox 57+: <kbd>Control</kbd>+<kbd>Option</kbd>+<kbd><i>快速鍵</i></kbd></li>
+              <li>Safari: <kbd>Control</kbd>+<kbd>Option</kbd>+<kbd><i>快速鍵</i></kbd></li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <div class="cascading">
+        <ul>
+          <li><a href="#"><span class="numb">1</span>參訪資訊</a>
+            <ul>
+              <li><a href="#"><span class="numb">1.1</span>開放時間開放時間開放時間開放時間</a></li>
+              <li><a href="#"><span class="numb">1.2</span>交通資訊</a></li>
+              <li><a href="#"><span class="numb">1.3</span>導覽服務</a></li>
+              <li><a href="#"><span class="numb">1.4</span>樓層設施</a></li>
+              <li><a href="#"><span class="numb">1.5</span>閱覽中心</a></li>
+              <li><a href="#"><span class="numb">1.6</span>餐飲資訊</a></li>
+              <li><a href="#"><span class="numb">1.7</span>參訪報名</a></li>
+              <li><a href="#"><span class="numb">1.8</span>場地預約</a></li>
+              <li><a href="#"><span class="numb">1.9</span>聯絡我們</a></li>
+            </ul>
+          </li>
+          <li><a href="#"><span class="numb">2</span>展覽與活動</a>
+            <ul>
+              <li><a href="#"><span class="numb">2.1</span>常設展</a></li>
+              <li><a href="#"><span class="numb">2.2</span>特展</a></li>
+              <li><a href="#"><span class="numb">2.3</span>展覽回顧</a>
+                <ul>
+                  <li><a href="#"><span class="numb">2.3.1</span>多層選單測試</a></li>
+                  <li><a href="#"><span class="numb">2.3.2</span>多層選單測試多層選單測試多層選單測試</a></li>
+                  <li><a href="#"><span class="numb">2.3.3</span>多層選單測試</a></li>
+                </ul>
+              </li>
+              <li><a href="#"><span class="numb">2.4</span>活動</a></li>
+              <li><a href="#"><span class="numb">2.5</span>活動回顧</a></li>
+              <li><a href="#"><span class="numb">2.6</span>檔案月</a></li>
+              <li><a href="#"><span class="numb">2.7</span>活動報名</a></li>
+            </ul>
+          </li>
+          <li><a href="#"><span class="numb">3</span>檔案應用與研究</a>
+            <ul>
+              <li><a href="#"><span class="numb">3.1</span>國家檔案資訊網(A+)</a></li>
+              <li><a href="#"><span class="numb">3.2</span>政治檔案服務</a></li>
+              <li><a href="#"><span class="numb">3.3</span>主題簡介</a></li>
+              <li><a href="#"><span class="numb">3.4</span>國家檔案素材</a></li>
+              <li><a href="#"><span class="numb">3.5</span>學術交流</a></li>
+              <li><a href="#"><span class="numb">3.6</span>機關檔案目錄查詢網(NEAR)</a></li>
+              <li><a href="#"><span class="numb">3.7</span>檔案資源整合查詢平台</a></li>
+              <li><a href="#"><span class="numb">3.8</span>檔案調閱</a></li>
+            </ul>
+          </li>
+          <li><a href="#"><span class="numb">4</span>學習資源</a>
+            <ul>
+              <li><a href="#"><span class="numb">4.1</span>檔案支援教學網</a></li>
+              <li><a href="#"><span class="numb">4.2</span>利用指導活動</a></li>
+              <li><a href="#"><span class="numb">4.3</span>行動展示資源</a></li>
+              <li><a href="#"><span class="numb">4.4</span>檔案樂活情報</a></li>
+              <li><a href="#"><span class="numb">4.5</span>圖書與刊物</a></li>
+            </ul>
+          </li>
+          <li><a href="#"><span class="numb">5</span>國家檔案管理</a>
+            <ul>
+              <li><a href="#"><span class="numb">5.1</span>徵集</a></li>
+              <li><a href="#"><span class="numb">5.2</span>保存維護</a></li>
+            </ul>
+          </li>
+          <li><a href="#"><span class="numb">6</span>機關服務</a>
+            <ul>
+              <li><a href="#"><span class="numb">6.1</span>檔案管理制度</a></li>
+              <li><a href="#"><span class="numb">6.2</span>文書檔案資訊管理</a></li>
+              <li><a href="#"><span class="numb">6.3</span>金檔獎暨金質獎</a></li>
+              <li><a href="#"><span class="numb">6.4</span>機關檔案目錄查詢網(NEAR)</a></li>
+              <li><a href="#"><span class="numb">6.5</span>教育訓練報名</a></li>
+              <li><a href="#"><span class="numb">6.6</span>專業認證</a></li>
+              <li><a href="#"><span class="numb">6.7</span>統計資料</a></li>
+            </ul>
+          </li>
+          <li><a href="#"><span class="numb">7</span>認識我們</a>
+            <ul>
+              <li><a href="#"><span class="numb">7.1</span>歷史沿革</a></li>
+              <li><a href="#"><span class="numb">7.2</span>首長介紹</a></li>
+              <li><a href="#"><span class="numb">7.3</span>組織職掌</a></li>
+              <li><a href="#"><span class="numb">7.4</span>局館政策</a></li>
+              <li><a href="#"><span class="numb">7.5</span>文檔法規</a></li>
+              <li><a href="#"><span class="numb">7.6</span>大事紀要</a></li>
+              <li><a href="#"><span class="numb">7.7</span>省政資料館</a></li>
+              <li><a href="#"><span class="numb">7.8</span>各館中心介紹</a></li>
+              <li><a href="#"><span class="numb">7.9</span>促轉基金</a></li>
+              <li><a href="#"><span class="numb">7.10</span>檔案服務宣言</a></li>
+              <li><a href="#"><span class="numb">7.11</span>業務窗口</a></li>
+            </ul>
+          </li>
+          <li><a href="#"><span class="numb">8</span>便民服務</a>
+            <ul>
+              <li><a href="#"><span class="numb">8.1</span>政府資訊公開</a></li>
+              <li><a href="#"><span class="numb">8.2</span>志工與實習</a></li>
+              <li><a href="#"><span class="numb">8.3</span>下載專區</a></li>
+              <li><a href="#"><span class="numb">8.4</span>常見問答</a></li>
+              <li><a href="#"><span class="numb">8.5</span>文創商店</a></li>
+              <li><a href="#"><span class="numb">8.6</span>雙向溝通</a></li>
+              <li><a href="#"><span class="numb">8.7</span>雙語詞彙</a></li>
+              <li><a href="#"><span class="numb">8.8</span>影音專區</a></li>
+              <li><a href="#"><span class="numb">8.9</span>合作交流</a></li>
+              <li><a href="#"><span class="numb">88.88</span>意見信箱</a></li>
+              <li><a href="#"><span class="numb">8.11</span>滿意度調查</a></li>
+              <li><a href="#"><span class="numb">8.12</span>相關網站</a></li>
+            </ul>
+          </li>
+          <li><a href="#"><span class="numb">9</span>最新消息</a></li>
+        </ul>
+  
+      </div>
+    </section>
+
+
+  </main>
+
+  <footer class="webFooter">
+    <a class="accesskey" href="#aZ" id="aZ" accesskey="Z" title="Bottom block">:::</a>
+
+    <button type="button" class="fatFootCtrl" aria-label="fat footer"></button>
+
+    <div class="fatFooter">
+      <nav class="siteTree">
+        <ul>
+          <li><a href="#">About us</a>
+            <ul>
+              <li><a href="#">Welcome</a></li>
+              <li><a href="#">Director-General</a></li>
+              <li><a href="#">Our History</a></li>
+              <li><a href="#">Organization</a></li>
+              <li><a href="#">Vision, Strategies and Projects</a></li>
+              <li><a href="#">Laboratory</a></li>
+              <li><a href="#">Opening Hours</a></li>
+              <li><a href="#">Visit us</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Bilingual Glossary</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Collections</a>
+            <ul>
+              <li><a href="#">Newsletter</a></li>
+              <li><a href="#">Outline</a></li>
+              <li><a href="#">Thematic Archives</a></li>
+              <li><a href="#">Archives Access Service</a></li>
+              <li><a href="#">Archives Cultural Goods</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Laws</a>
+            <ul>
+              <li><a href="#">Archives Act</a></li>
+              <li><a href="#">Political Archives Act</a></li>
+              <li><a href="#">Organization Act</a></li>
+              <li><a href="#">Regulations</a></li>
+              <li><a href="#">Directions</a></li>
+              <li><a href="#">Handbooks</a></li>
+            </ul>
+          </li>
+          <li><a href="#">e-Records</a>
+            <ul>
+              <li><a href="#">e-Documents</a></li>
+              <li><a href="#">Regulations</a></li>
+              <li><a href="#">Technical Appraisal</a></li>
+              <li><a href="#">Preserving Electronic Archives & Records Laboratory(PEARL)</a></li>
+              <li><a href="#">Electronic Documents and Records Management System(EDRMS) Validation</a></li>
+            </ul>
+          </li>
+          <li><a href="#">National Archives</a>
+            <ul>
+              <li><a href="#">Vision and role</a></li>
+              <li><a href="#">Location</a></li>
+              <li><a href="#">Service plan</a></li>
+              <li><a href="#">Timeline</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Publications</a>
+            <ul>
+              <li><a href="#">Monographs</a></li>
+              <li><a href="#">Archives Semiannual</a></li>
+              <li><a href="#">Annual Reports</a></li>
+              <li><a href="#">Archives LOHAS</a></li>
+            </ul>
+          </li>
+          <li><a href="#">News</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="middle">
+      <div class="logo">
+        <img src="publicData/footLogo.png" alt="">
+      </div>
+      <ul class="iconLinks">
+        <li><a href="#"><img src="publicData/icon_ft_youtube.svg" alt="YouTube"></a></li>
+        <li><a href="#"><img src="publicData/icon_ft_fb.svg" alt="facebook"></a></li>
+      </ul>
+      <ul class="textLinks">
+        <li><a href="#">Information Security Policy</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+    
+    <div class="base">
+      <ul class="contact">
+        <li>9F., North Tower, No.439, Zhongping Rd., Xinzhuang Dist., New Taipei City 242030, Taiwan (R.O.C.)</li>
+        <li>Tel: 886-2-8995-3700</li>
+        <li>Fax: 886-2-8995-6469</li>
+        <li>E-Mail: archives@archives.gov.tw</li>
+      </ul>
+      <ul class="pics">
+        <li class="badge"><a href="#"><img src="publicData/badge_A.webp" alt="conformance level A"></a></li>
+        <li class="qrcode"><img src="publicData/qrcode.png" alt="QR code"></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button class="goTop" type="button" title="GO TOP">GO TOP</button>
+
+</body>
+</html>

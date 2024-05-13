@@ -1,0 +1,85 @@
+// 國家檔案典藏統計｜STATISTICS
+.statistics{
+  --pdV: 70px;
+
+  width: 100%; margin: 0 auto;
+  background:#123650 url(../images/statisticsBg.jpg) no-repeat center center;
+  background-size: cover;
+  color: $white;
+
+  .blockHeader, article {
+    width: 88%;margin: 0 auto;
+  }
+  .blockHeader{padding-top: var(--pdV); color: $white;}
+  article{
+    padding-bottom: var(--pdV);
+    font-size: 1.1em;line-height: 1.6; 
+    p{margin: 0 0 1em;}
+    em{
+      font-weight: bold; font-style: normal; font-size: 1.5em;
+    }
+  }
+
+  .chart{
+    --deg : 0deg;
+
+    margin: 0; padding: var(--pdV) 0;
+    background: linear-gradient(var(--deg),
+    rgba(143, 253, 255, 0.8) 0%,
+    rgba(143, 253, 255, 0.5) 33.33%,
+    rgba(143, 253, 255, 0.2) 100%);
+    backdrop-filter: blur(5px) ;
+    a{ 
+      display: block; width: 88%; margin: 0 auto;
+      transition: .2s;
+      img{
+        display: block; width: 100%; padding: 30px 0;
+        background-color: $white;
+      }
+      &:hover{box-shadow: $white 0 0 0 3px;}
+      &:focus{box-shadow: $primaryColor 0 0 0 3px;}
+
+    }
+    // iframe{
+    //   display: block; width: 88%; height: 72vw;
+    //   margin: 0 auto; padding: 30px 0;
+    //   outline: 1px dashed #fff9;
+    // }
+  }
+
+  .more{
+    text-align: left; margin: 3em 0 0; padding: 0;
+    a{
+      background-color: transparentize($primaryColor, .3);color: $white;
+      box-shadow: $white 0 0 0 1px inset;
+      &:hover, &:focus{
+        background-color: $primaryColor;
+      }
+      &:focus{
+        box-shadow: $white 0 0 0 1px inset,  $white 0 0 0 1px;
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    --pdV: 110px;
+
+    position: relative;
+
+    .blockHeader, article{margin: 0 53% 0 5%; width: auto;}
+    .blockHeader{ margin-bottom:80px;}
+    article{ font-size: 1.3em;}
+
+    .chart{
+      --deg : 270deg;
+
+      position: absolute; left: 50%; top: 0; bottom: 0;
+      width: 50%; padding: var(--pdV) 2px;
+      a{width: 86%;}
+    }
+  }
+
+  @media screen and (min-width: $wwMaximum){
+    width: $wwMaximum;
+  }
+}

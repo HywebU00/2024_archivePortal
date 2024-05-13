@@ -1,0 +1,126 @@
+// 首頁：探索國家故事
+.explore{
+  padding: 50px 0;
+  background-color: #f6f6f6;
+
+  .blockHeader {padding-left: 40px; }
+
+  .flowItem{
+    padding:15px 0; margin: 6px 0 6px 6px;
+    a {
+      position: relative; 
+      display: block; margin:0;
+      height: calc((100vw - 40px)*1.28);
+      text-decoration: none;color: $white;
+      transition: .4s;
+      &::before{
+        content: ''; opacity: 0; z-index: -1;
+        position: absolute; left: 0;right: 0;top: 0;bottom: 0;
+        box-shadow: $linkColor 0 0 0 2px inset;
+      }
+      &:hover, &:focus {
+        img{ filter: brightness(1) saturate(1); }
+      }
+      &:focus {
+        &::before{ opacity: 1; z-index: 9; }
+      }
+    }
+    img{
+      display: block; 
+      width: 100%; height: 100%; object-fit: cover;
+      filter: brightness(.6) saturate(.2);
+      transition: .4s;
+    }
+    p{
+      position: absolute; left: 0; right: 0; bottom: 0; 
+      margin: 0; padding: 60px 22px 22px;
+      line-height: 1.2; font-size: 1.6em; font-weight: bold;
+      background: linear-gradient(180deg, rgb(0 0 0 /0) 0%, rgb(0 0 0 / .75) 85%);
+      text-shadow: rgb(0 0 0 / .7) 1px 1px 5px;
+    }
+
+    &.slick-current{
+      a img{filter: brightness(1) saturate(1);}
+    }
+  }
+
+  .flow{
+    margin-left: 40px; padding-top: 40px;
+    .slick-arrow {
+      top: 0; left: auto; right: 6%;
+      &.slick-prev { transform: translateX(calc(-100% - 6px));}
+    }
+  }
+
+
+  @media screen and (min-width: $wwMedium){
+    .flowItem{ // 顯示兩個
+      a{height: calc((100vw - 40px)/2 * 1.28);}
+
+      &.slick-current{
+        a{
+          margin: -15px 0;
+          height: calc((100vw - 40px)/2 * 1.28 + 30px);          
+        }
+      }
+    }
+  }
+
+
+  @media screen and (min-width: $wwNormal){
+    margin: 0 auto; padding: 100px 0;
+    background: url(../images/exploreBg.jpg) no-repeat center top;
+    background-size: cover;
+  
+    .blockHeader{ padding-left: 80px;}
+
+    .flowItem { //顯示三個
+      a{height: calc( (100vw - 80px)/3 * 1.28); }
+      &.slick-current{
+        a{
+          margin: -15px 0;
+          height: calc( (100vw - 80px)/3 * 1.28 + 30px);
+        }
+      }
+    }
+
+    .flow{
+      margin-left: 80px; padding-top: 60px;
+      .slick-arrow {
+        top: 0; left: auto; right: 6%;
+        &.slick-prev { transform: translateX(calc(-100% - 6px)); }
+      }
+    }
+  }
+
+  @media screen and (min-width: calc($wwNormal + 300px)){
+
+    .flowItem { //顯示四個
+      a{height: calc( (100vw - 80px)/4 * 1.28);}
+      &.slick-current{
+        a{height: calc( (100vw - 80px)/4 * 1.28 + 30px);}
+      }
+    }
+
+  }
+  
+  @media screen and (min-width: $wwMaximum){
+
+    .blockHeader{width: $wwMaximum; margin-left: auto; margin-right: auto;}
+
+    .flowItem{
+      a{ height: calc( ($wwMaximum - 80px)/4 * 1.28);}
+      &.slick-current{
+        a{  height: calc( ($wwMaximum - 80px)/4 * 1.28 + 30px);}
+      }
+    }
+
+    .flow {
+      width: ($wwMaximum - 80px);
+      margin-left: calc(50% - $wwMaximum*.5  + 80px);
+    }
+  }
+  
+}
+
+// ------------------------------------------------------ //

@@ -1,0 +1,64 @@
+// 首長
+// ------------------------------------------------------ //
+.figures{
+  @extend %primSecWidth; margin-bottom: 90px;
+  @extend %gradient1;
+  padding: 40px 3vw;
+  font-size: 1.1em; line-height: 1.6;
+
+  .image{
+    width: 100%; padding: 10px; margin: 0 0 50px;
+    background-color: $white;
+    box-shadow: $shadow1 0 2px 8px;
+    img{display: block; width: 100%;}
+  }
+
+  article{
+    h3{
+      position: relative;padding:0 0 6px 30px; margin: 6px 0 1em;
+      font-size: 1.4em;  line-height: 1.2;
+      border-bottom: 2px solid $primaryColor;
+      &::before {
+        content: '';position: absolute; left: 0; top: 4px;
+        width: 16px; height: 1em;
+        background-color: $primaryColor;
+      }
+    }
+    h4{
+      margin: 3em 0 0;
+      font-size: 1.2em;
+      border-bottom: 1px solid $borderColor;
+    }
+
+    ul{margin-top: 1.3em;}
+    li+li{margin-top: .8em;}
+
+  }
+
+  @media screen and (min-width: $wwMedium){
+    display: flex; align-items: flex-start;
+
+    .image{
+      flex: 0 0 36vw; max-width: 480px;
+      margin-right: 3vw; margin-bottom: 10px;
+      position: sticky; top: 70px;
+    }
+    article{
+      flex: 1 1 auto;
+      // margin-left: 39vw;
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    padding-top: 70px; padding-bottom: 60px;
+    margin-top: 40px;
+    .image{ top: 110px;}
+  }
+
+  @media screen and (min-width: $wwMaximum){
+    padding-left: $wwMaximum*.03; padding-right: $wwMaximum*.03;
+    .image{
+      margin-right: $wwMaximum*.03;
+    }
+  }
+}

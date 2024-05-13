@@ -1,0 +1,34 @@
+// 資料大類
+// ------------------------------------------------------ //
+.category{
+  @extend %primSecWidth;
+
+  ul{
+    list-style: none; margin: 0; padding: 0; overflow: hidden; 
+    line-height: 1.2; font-size: 1.11em;
+  }
+    li {
+      float: left; margin: 8px;
+      a {
+        display: block;
+        text-decoration: none; padding: 1em 1.5em .9em;
+        font-weight: bold; 
+
+        @extend %gradient1;color: $primaryColor;
+        box-shadow: $borderColorLight 0 0 0 1px, $shadow1 0 0 4px 0;
+        transition: .15s;
+
+        &:hover,  &:focus{box-shadow: $borderColor 0 0 0 1px;}
+        &:focus{box-shadow: $primaryColor 0 0 0 1px;}
+      }
+
+      &.active{
+        a{
+          background: $assistant1;
+          box-shadow: $assistant1 0 0 0 1px;
+          &:hover,  &:focus{box-shadow: $primaryColor 0 0 0 1px;}
+        }
+      }
+    }
+}
+// ------------------------------------------------------ //

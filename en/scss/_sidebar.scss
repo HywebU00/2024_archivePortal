@@ -1,0 +1,135 @@
+// 行動版側欄
+// --------------------------------------------------------------- //
+.sidebar{
+  --color:#{$white};
+  --sidebarBg : #{$primaryColor};
+  --menuHover: #{lighten($primaryColor, 12%)} ;
+  --border: rgb(255 255 255 / .25); 
+
+  display: none;
+  overflow: hidden; overflow-y: scroll;
+  background-color: var(--sidebarBg);
+
+  position: fixed; z-index: 998;
+  width: $sideBarWidth; height: 100vh;
+  top: 0; left: $sideBarWidth * (-1); overflow: auto;
+  transition: .5s;
+
+  &.reveal{ left:0;}
+
+
+  // 行動版側欄主選單
+  // ------------------------------------------------------ //
+  .menu {
+    ul{ 
+      list-style: none; margin: 0;padding: 0; line-height: 1.4;
+      a{ 
+        display: block;
+        color: var(--color); text-decoration: none; 
+        transition: .2s;
+        &:hover, &:focus{
+          background-color: var(--menuHover); 
+        }
+      }
+    }
+    
+    &>ul{
+      font-size: 1.12em; color: var(--color);
+      li.hasChild{
+        &>a{
+          position: relative;
+          &::after{
+            content: ''; 
+            position: absolute; right: 14px; top: calc(.9em + 3px);
+            width: 8px;height: 8px;
+            border: var(--color) solid 2px; 
+            border-top: none; border-left: none;
+            transform: rotate(45deg); transition: .3s;
+          }
+        }
+        &.closeIt{
+          &>a{
+            &:after{ transform: rotate(225deg);top: calc(.8em + 6px)}
+          }
+        }
+      }
+
+      // 第一層選單項
+      &>li{
+        border-bottom: 1px solid var(--border);
+        a{ padding:.8em 12px .7em;}
+      }
+
+      // 第二、三 ...層選單項
+      ul{ 
+        display: none; font-size: 1rem;
+        margin: 0 8px 12px 12px;
+        border: var(--border) solid 1px; border-top: none;
+        &>li{
+          border-top: var(--border) solid 1px;
+          &.hasChild{
+            a{ padding-right: 40px; }
+          }
+        }
+      }
+    }
+ 
+  }
+
+
+  // 行動版 headNav
+  // ------------------------------------------------------ //
+  .headNav {
+    --color : #{$white};
+  
+    margin:30px 10px 10px;
+  
+    &>ul{
+      display: flex; flex-flow: row wrap; text-align: center;
+      &>li{
+        flex: 0 1 calc(50% - 10px);margin: 5px;
+        &>a{
+          position: relative;
+          padding: .7em .5em  .3em; height: 100%;
+          color: var(--color);
+          transition: .2s;
+          &::after {
+            content: ''; position: absolute;
+            left: 0;right: 0; bottom: 0;
+            height: 1px; background-color: var(--menuHover);
+            transition: .2s;
+          }
+          &:hover, &:focus{
+            &::after{
+              height: 3px; background-color: $assistant1;
+            }
+          }
+          &:focus{
+            box-shadow: $assistant1 0 0 0 1px inset;
+          }
+        }
+
+        &:nth-child(odd):last-child{
+          flex-basis: 100%;
+        }
+      }
+    }
+
+    &>ul>li.searchLink>a{
+      width: 50%;height: 100%; margin: 0 auto;
+      border-radius: 2em;
+      background-color: $assistant1;
+
+      --color : #{$white};
+      --diam: 12px;
+      --width: 8px;
+      @extend %searchIcon;
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    display: none;
+  }
+
+}
+// --------------------------------------------------------------- //

@@ -1,0 +1,142 @@
+// 相片內容頁
+.photoSlide{
+
+  .slick-arrow{margin-top: -16px;}
+
+  // 大圖區
+  .photoShow{
+    .flowItem{
+      position: relative;
+      color: $white; background-color: $black;
+      img{
+        display: block; 
+        width: 100%; height: $mobileWidthVW;
+        object-fit: contain;
+      }
+      a{ color: $white;}
+      p{ 
+        position: absolute;left: 0;right: 0;bottom: 0;
+        padding: 20px; margin: 0;
+        background-color: rgb(0 0 0 / .6);
+      }
+    }
+
+    .slick-arrow{
+      top:$mobileWidthVW*.5;
+      background-color: rgb(255 255 255 / .65);
+      &.slick-next{ right: 0; }
+    }
+
+    .slick-dots{
+      position: relative; left: 50%; transform: translateX(-50%);
+      display: inline-block; 
+      margin: 20px 0; padding: 8px 3.2em 8px 1em; 
+      font-size: 1.11em; text-align: center;
+      background-color: $primaryColor; border-radius: 30px;
+      li{
+        display: none; margin: 0;padding: 0;
+        &.slick-active{ display: block;}
+        button{
+          padding: 0;margin: 0;text-align: right;
+          width: auto;min-width: 1.5em; height: 1em; line-height: 1; 
+          background-color: transparent; color: $white;
+        }
+      }
+    }
+
+    // 總張數
+    .total{
+      position: absolute; bottom: 26px; left: 50%;
+      font-size: 1.11em;
+      color: $white;
+      &::before{ content: '/ ' ;}
+    }
+
+    
+  }
+
+  
+  // 小圖區
+  .photoNav{
+    position: relative; padding-bottom: 40px;
+    .flowItem{
+      margin: 4px; box-shadow: $white 0 0 0 1px;
+      img{display: block; height: 120px;}
+
+      &.slick-current {
+        box-shadow:$white 0 0 0 1px, $primaryColor 0 0 0 4px;
+      }
+    }
+
+    .slick-arrow{
+      bottom: 0;
+      &.slick-next{ right: 0;}
+    }
+  }
+
+  .viewCount{
+    margin: 12px 0;
+    text-align: right;
+    em{ font-style: normal; font-weight: bold;}
+  }
+
+  @media screen and (min-width: $wwMedium){
+    .photoShow{
+      .flowItem{
+        img{ height: $mobileWidthVW*.7;}
+      }
+      .slick-arrow{ top: $mobileWidthVW*.35;}
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    .photoShow{
+      .flowItem{
+        img{ margin: 0 auto; height: $normalWidthVW*.67;}
+      }
+      .slick-arrow{ top: $normalWidthVW*.335;}
+    }
+
+    // 小圖區
+    .photoNav{
+      padding-bottom: 4px;
+      .flowItem{
+        img{height: 160px;}
+      }
+      .slick-arrow{ 
+        top: 84px; bottom: auto;
+        background-color: rgb(255 255 255 / .65);
+      }
+
+      &::before, &::after{
+        content: ''; position: absolute; z-index: 8;
+        top: 0; bottom: 0; width: 180px;
+        // background-color: #fffc;
+      }
+      &::before {left: 0; 
+        background-image: linear-gradient(90deg, rgb(255 255 255 / 1) 5%, rgb(255 255 255 / 0) 100%);
+      }
+      &::after{right: 0;
+        background-image: linear-gradient(270deg, rgb(255 255 255 / 1) 5%, rgb(255 255 255 / 0) 100%);
+      }
+    }
+
+  }
+
+  @media screen and (min-width: 1280px){
+    .photoShow{
+      width: 1152px; margin: 0 auto;
+      .flowItem{
+        img{height: 772px;}
+      }
+      .slick-arrow{ top: 386px;}
+    }
+
+  }
+
+  @media screen and (min-width: $wwMaximum){
+
+  }
+
+
+}
