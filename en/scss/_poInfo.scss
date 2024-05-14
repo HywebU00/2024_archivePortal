@@ -1,31 +1,33 @@
 // cp 頁張貼日期、瀏覽人次
 // ------------------------------------------------------ //
 .poInfo{
-  padding: 24px; margin: 60px 0;
+  padding: 24px 20px; margin: 60px 0;
   background-color: $grayLight;
   ul{ 
     list-style: none; margin: 0; padding: 0; line-height: 1.3;
     display: flex; flex-wrap: wrap;
   }
   li{
-    flex: 1 1 48%; 
-    margin: 8px;white-space: nowrap;
+    flex: 1 1 45%; 
+    margin:8px; padding: 0;
+    white-space: nowrap;
     time, em { 
-      display: inline-block;  margin-left: .5em;
+      display: inline-block; white-space: nowrap; margin-left: .5em;
       font-style: normal; font-weight: bold; color: $fontColor;
+      
     }
   }
 
   @media screen and (min-width: $wwMedium){
-    ul { display: flex;}
     li{
       flex-basis: 24%; margin-right: 16px; 
+      &:last-child {text-align: right; margin-right: 0;}
     }
   }
   
   @media screen and (min-width: $wwNormal){
     li{max-width: 15em;
-      &:last-child {text-align: right; max-width:none;}
+      &:last-child {max-width:none;}
     }
   }
 }

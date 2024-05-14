@@ -15,23 +15,23 @@
 table.metaTable{
   width: 100%; margin: 0 auto;
   border-collapse: collapse; line-height: 1.8;
-  th, td {padding: .7em 1em .6em;}
+  th, td {padding: .7em 1em .6em; vertical-align: top;}
   tr{
     border-bottom: 1px solid $borderColor;
     transition: .25s;
     &:last-child{border: none;}
     &:hover{background-color: $hover;}
   }
-  th, td:nth-child(odd){ 
-    width: 22%; position: relative;
-    color: $primaryColor; vertical-align: top; text-align: right;
-    font-weight: bold;
+  th, td:first-child{ 
+    width: 22%; position: relative; padding-left: 5px;
+    color: $primaryColor; text-align: right; font-weight: bold;
     &::after{
       content: ''; position: absolute; top: 3px; bottom: 3px; right: 0;
       width: 3px; background-color: $borderColor;
     }
   }
   td{
+    padding-right: 5px;
     ol, ul{ margin-top: 0; margin-bottom: 0;}
     a{ color: $linkColor;
       &:hover, &:focus { text-decoration: none; outline: 1px solid $linkColor;}
@@ -39,9 +39,8 @@ table.metaTable{
   }
 
   @media screen and (max-width: $wwMedium){
-    tr{
-      display: block;
-    }
+
+    tr{display: block;}
     th, td{ padding: .5em 0; display: inline-block;}
     th{
       display: inline-block; width: auto;
