@@ -4,7 +4,7 @@
   background-color: #f6f6f6;
 
   .flowItem{
-    padding:0; margin:10px 0 20px;
+    padding:0; margin:10px 12px 20px;
     a {
       position: relative; display: block; margin:0 auto;
       max-width: 420px;max-height: 700px;
@@ -40,17 +40,13 @@
       top: 50%; translate:0 -50%; z-index: 2;
       margin: 0; padding: 12px 20px 16px;
       line-height: 1.2; font-size: 2em; font-weight: bold;
-      // background: linear-gradient(180deg, rgb(0 0 0 /0) 0%, rgb(0 0 0 / .75) 85%);
-      // text-shadow: rgb(0 0 0 / .7) 1px 1px 5px;
     }
 
-    &.slick-current{
-      // a img{filter: brightness(1) saturate(1);}
-    }
   }
 
   .flow{
-    margin-left: 24px; margin-right: 24px; padding-top: 10px;
+    padding-top: 10px;
+    margin-left: 12px; margin-right: 12px; 
     .slick-arrow {
       top: -30px;  
       &.slick-prev {left: 0; }
@@ -65,11 +61,8 @@
 
   @media screen and (min-width: $wwMedium){
     .flowItem{ // 顯示兩個
-      margin: 10px 12px 20px;
       a{ height: calc((100vw - 72px)/2 * 1.8); }
     }
-
-    .flow{ margin-left: 12px; margin-right: 12px;}
   }
 
 
@@ -96,8 +89,6 @@
     .flowItem { // 4 items
       margin:10px 16px 20px;
       a{ height: 600px; } // width = 300px
-      &.slick-current{
-      }
     }
     .flow{ width: 1328px; margin-left: auto; margin-right: auto;}
 
