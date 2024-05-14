@@ -9,9 +9,10 @@
     &>li{
       flex: 0 0 calc(50% - 16px);
       margin: 8px; padding: 0;
+      &:last-child:nth-child(odd){ flex-grow: 1;}
       a {
         display: block; height: 100%;
-        padding: 22px 15px 20px 62px;
+        padding: 22px 15px 20px; text-align: center;
         text-decoration: none; color: $fontColor;
         background: linear-gradient(180deg, #F6F6F6 0%, #F9F9F9 9.38%, #FFFFFF 100%);
         box-shadow: 0 4px 9.699999809265137px 0 rgba(0, 0, 0, 0.1);
@@ -19,32 +20,26 @@
         &:hover, &:focus {
           background: $primaryColor; color: $white;
           box-shadow: none;
-          img{
-            filter: brightness(6);
-          }
         }
       }
 
-      img{ 
-        display: inline-block; vertical-align: middle; 
-        width: 40px; height: 40px; object-fit: contain;
-        margin-right: 8px; margin-left: -48px;
-      }
+    }
+  }
+
+  @media screen and (min-width: $wwMedium){
+    ul{ 
+      margin: 0 auto; 
+        &>li{flex:0 0 calc(33.3333% - 16px);}
     }
   }
 
   @media screen and (min-width: $wwNormal){
 
     ul{
-      margin: 0 auto;font-size: 1.33em; 
-      &>li{
-        flex-basis: calc(33.3333% - 24px);
-        margin: 12px;
-        a{padding: 40px 30px 38px 120px;}
-        img{
-          width: 64px; height: 64px;
-          margin: -4px 18px auto -82px;
-        }
+      font-size: 1.33em;
+      &>li{ 
+        a{padding: 40px 30px 38px;}
+        margin: 12px; flex: 0 0 calc(33.3333% - 24px);
       }
     }
   }
