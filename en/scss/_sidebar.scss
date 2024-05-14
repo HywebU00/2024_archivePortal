@@ -82,15 +82,17 @@
   .headNav {
     --color : #{$white};
   
-    margin:30px 10px 10px;
+    margin:30px auto 10px; width: 88%;
   
     &>ul{
-      display: flex; flex-flow: row wrap; text-align: center;
+      // display: flex; flex-flow: row wrap; 
+      text-align: center; 
       &>li{
-        flex: 0 1 calc(50% - 10px);margin: 5px;
+        // flex: 0 1 calc(50% - 10px);
+        margin:0 0 5px;
         &>a{
           position: relative;
-          padding: .7em .5em  .3em; height: 100%;
+          padding: 20px 2px 3px; height: 100%;
           color: var(--color);
           transition: .2s;
           &::after {
@@ -101,7 +103,7 @@
           }
           &:hover, &:focus{
             &::after{
-              height: 3px; background-color: $assistant1;
+              height: 2px; background-color: $assistant1;
             }
           }
           &:focus{

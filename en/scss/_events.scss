@@ -83,8 +83,6 @@
         transform: scale(.82);
         transition: .4s;
         &.slick-current {transform: scale(1);}
-
-        // box-shadow: #e00 0 0 0 2px;
       }
     }
   }
@@ -95,23 +93,14 @@
 
     .titles {
       width: 23vw; margin-left: 5vw;
-
-      // outline: 1px dashed #f008;
-      // outline-offset: -1px;
-
       p{font-size:calc(23vw / 8);}
       time{ font-size: 1.2em;}
     }
 
     .images{
       padding-top: 60px; width: 70vw;
-      
-      // outline: 1px dashed #f008;
-      // outline-offset: -1px;
-
       .flowItem{
         height: 35vw;
-        
         &.slick-current +.flowItem { margin-right: -2vw;}
       }
     }
@@ -137,7 +126,6 @@
         &.slick-current +.flowItem { margin-right: -.02*$wwMaximum;}
       }
     }
-
   }
 
 }

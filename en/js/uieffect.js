@@ -1086,9 +1086,7 @@ $(function(){
         settings: {
           slidesToShow: 2,
         }
-      }
-    ],
-    responsive: [
+      },
       {
         breakpoint: wwNormal,
         settings: {
