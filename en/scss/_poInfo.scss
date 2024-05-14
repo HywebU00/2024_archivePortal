@@ -8,15 +8,23 @@
     display: flex; flex-wrap: wrap;
   }
   li{
-    flex: 1 1 45%; 
+    flex: 1 1 48%; 
     margin: 8px;white-space: nowrap;
-   time, em { display: inline-block; font-style: normal; font-weight: bold;} 
+    time, em { 
+      display: inline-block;  margin-left: .5em;
+      font-style: normal; font-weight: bold; color: $fontColor;
+    }
   }
 
   @media screen and (min-width: $wwMedium){
     ul { display: flex;}
     li{
-      flex-basis: 28%; max-width: 12em;
+      flex-basis: 24%; margin-right: 16px; 
+    }
+  }
+  
+  @media screen and (min-width: $wwNormal){
+    li{max-width: 15em;
       &:last-child {text-align: right; max-width:none;}
     }
   }

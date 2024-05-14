@@ -22,9 +22,10 @@ table.metaTable{
     &:last-child{border: none;}
     &:hover{background-color: $hover;}
   }
-  th{ 
+  th, td:nth-child(odd){ 
     width: 22%; position: relative;
     color: $primaryColor; vertical-align: top; text-align: right;
+    font-weight: bold;
     &::after{
       content: ''; position: absolute; top: 3px; bottom: 3px; right: 0;
       width: 3px; background-color: $borderColor;
