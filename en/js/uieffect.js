@@ -380,7 +380,7 @@ $(function(){
     _body.removeClass('largeFont mediumFont smallFont').addClass(fontClass);
     createCookie('FontSize', fontClass , 365);
   })
-  createCookie('FontSize', fontClass , 365);
+
   function createCookie(name, value, days) {
     if (days) {
       var date = new Date();
@@ -1022,9 +1022,9 @@ $(function(){
 
 
 
-  // 探索國家故事
+  // TOPICs
   // --------------------------------------------------------------- //
-  $('.explore').find('.flow').slick({
+  $('.topics').find('.flow').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplaySpeed: 5000,
@@ -1047,20 +1047,17 @@ $(function(){
         breakpoint: 1000,
         settings: {
           slidesToShow: 3,
-          centerMode: true,
-          centerPadding: '0'
         }
       },
       {
-        breakpoint: 1300,
+        breakpoint: 1360,
         settings: {
           slidesToShow: 4,
         }
       }
     ]
   });
-  // 把向右箭頭搬移到向左箭頭之後（移到 .slick-list 之前）
-  $('.explore').find('.slick-arrow.slick-next').insertAfter($('.explore').find('.slick-arrow.slick-prev'));
+
   // --------------------------------------------------------------- //
 
 

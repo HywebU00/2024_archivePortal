@@ -265,12 +265,12 @@ button.sidebarCtrl{
 // MORE
 // --------------------------------------------------------------- //
 .more{
-  margin: 10px 0; padding: 10px;
+  margin: 20px 0 10px; padding: 10px;
   text-align: center;
   a{
     display: inline-block; position: relative;
     text-decoration: none; outline: none;
-    height: 2.8em; line-height: 2.8; padding: 0 32px;
+    height: 2.8em; line-height: 2.8; padding: 0 2em; min-width: 10em;
     color: $primaryColor;
     box-shadow: $primaryColor 0 0 0 1px inset;
     transition: .2s;

@@ -1,7 +1,7 @@
 {
 	"folders": [
 		{
-			"path": "../eng"
+			"path": "../en"
 		}
 	],
 	"settings": {
@@ -13,9 +13,7 @@
 			}
 		],
 		"liveSassCompile.settings.includeItems": [
-			"/scss/style.scss",
-			"/scss/pageNotFound.scss"
-
+			"/scss/style.scss"
 		],
 		"liveSassCompile.settings.showOutputWindowOn": "Warning",
 		"liveSassCompile.settings.autoprefix": [

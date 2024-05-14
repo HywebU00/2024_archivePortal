@@ -83,7 +83,7 @@
       background: url(../images/bbannerLeft.jpg) no-repeat center top;
       background-size: cover;
 
-      .flowItem{margin: 4vw; font-size: 4vw;}
+      .flowItem{margin: 4vw 2.5vw; font-size: 3vw;}
 
       .slick-arrow{ 
         bottom: 50px; left:auto; 
@@ -115,7 +115,7 @@
     .bbTitles{
       width: 31vw;
 
-      .flowItem{margin: 7vw 7.5vw; font-size: 3.8vw;}
+      .flowItem{margin: 7vw 4vw; font-size: 3.2vw;}
 
       .slick-arrow{ 
         bottom: 60px; width: 100px;
@@ -145,8 +145,8 @@
     .bbTitles{
       width: calc($wwMaximum * .31);
       .flowItem{
-        font-size: $wwMaximum*.038;
-        margin: $wwMaximum*.07 $wwMaximum*.075;
+        font-size: $wwMaximum*.032;
+        margin: $wwMaximum*.05 $wwMaximum*.04;
       }
 
       .slick-arrow {

@@ -1,25 +1,18 @@
 // 首頁區塊標題字
 // ------------------------------------------------------ //
 .blockHeader{
-  margin:10px 0 30px;
+  margin:10px auto 30px; text-align: center;
   font-size: 2rem; font-weight: bold;line-height: 1.1;
   color: $primaryColor;
-  .major, .sub{ display: inline-block;}
-  .sub{ 
-    margin-left: 12px; font-size: .65em;
-    &::before{
-      content: ''; display: inline-block;
-      width: 2px; height: 1em; margin-right: 18px;vertical-align: -3px;
-      background-color: $assistant1;
-    }
+  &::after{
+    content: ''; display: block; margin: 5px auto;
+    width: 1.3em; height: 3px;
+    background-color: $assistant1;
   }
-  p{
-    font-weight: normal; font-size: 1rem; line-height: 1.5;
-  }
+
 
   @media screen and (min-width: $wwNormal){
     margin:15px 0 40px;
-    .sub{ font-size: 1em}
   }
 }
 // ------------------------------------------------------ //
