@@ -48,7 +48,7 @@
   }
 
   .more{
-    text-align: left; margin: 3em 0 0; padding: 0;
+    margin: 3em 0 0; padding: 0;
     a{
       background-color: transparentize($primaryColor, .3);color: $white;
       box-shadow: $white 0 0 0 1px inset;
@@ -67,7 +67,10 @@
     position: relative;
 
     .blockHeader, article{margin: 0 53% 0 5%; width: auto;}
-    .blockHeader{ margin-bottom:80px;}
+    .blockHeader{ 
+      margin-bottom:80px; text-align: left;
+      &::after{ margin-left: 0;}
+    }
     article{ font-size: 1.3em;}
 
     .chart{
@@ -76,6 +79,11 @@
       position: absolute; left: 50%; top: 0; bottom: 0;
       width: 50%; padding: var(--pdV) 2px;
       a{width: 86%;}
+    }
+
+    .more{
+      text-align: left;
+      a{text-align: center;}
     }
   }
 

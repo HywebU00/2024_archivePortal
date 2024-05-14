@@ -1,7 +1,6 @@
 // 常用服務
 .services{
   @extend %primSecWidth;
-  .blockHeader {text-align: center;}
   ul{ 
     list-style: none; margin: 0 -6px; padding: 0; 
     display: flex; flex-flow: row wrap;

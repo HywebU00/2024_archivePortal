@@ -1111,7 +1111,7 @@ $(function(){
   })
 
   // 把向右箭頭搬移到向左箭頭之後（移到 .slick-list 之前）
-  _eventPoster.find('.slick-arrow.slick-next').insertAfter( _eventPoster.find('.slick-arrow.slick-prev'));
+  _eventPoster.find('.slick-next').insertAfter( _eventPoster.find('.slick-prev'));
   // --------------------------------------------------------------- //
 
 
