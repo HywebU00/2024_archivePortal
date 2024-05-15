@@ -279,21 +279,27 @@ $(function(){
   // --------------------------------------------------------------- //
   var _searchCtrl = $('.searchCtrl');
   var _search = $('.search');
-  _search.append('<button class="skip" type="button">回到控制開關</button>');
+  _search.append('<button class="skip" type="button">jump to open/close controller</button>');
   var _skipSearch = _search.find('.skip');
   const srSpeed = 320;
+
+  if (_search.is(':hidden')) {
+    _searchCtrl.removeClass('closeIt').attr('aria-expanded', false);
+  } else {
+    _searchCtrl.addClass('closeIt').attr('aria-expanded', true);
+  }
 
   _searchCtrl.on( 'click', function(){
     if( _search.hasClass('reveal')) {
       _search.slideUp(srSpeed, function(){
         _search.removeClass('reveal');
       })
-      _searchCtrl.removeClass('closeIt');
+      _searchCtrl.removeClass('closeIt').attr('aria-expanded', false);
       setTimeout(function(){_search.hide()}, srSpeed);
     } else {
       _search.slideDown(srSpeed, function(){
         _search.addClass('reveal');
-        _searchCtrl.addClass('closeIt');
+        _searchCtrl.addClass('closeIt').attr('aria-expanded', true);
         setTimeout (function(){_search.find('input[type="text"]').trigger('focus')}, srSpeed);
       });
     }

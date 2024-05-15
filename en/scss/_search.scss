@@ -35,6 +35,8 @@
   .hotKeywords{
     margin: 12px auto 0;
     .label{
+      background-color: transparent; color: $white;
+      padding: 0;
       &::after{content: '：';}
     }
     ul{list-style: none; margin:0; padding: 0;line-height: 1.3; display: inline;}
@@ -42,6 +44,7 @@
       display: inline-block; margin: 0 .5em 0 0; 
       a{
         position: relative; display: block;text-decoration: none;
+        color: $assistant1;
         &::after{
           content: ''; position: absolute; left: 50%; right: 50%;
           bottom: 0; height: 2px;
