@@ -283,18 +283,22 @@ $(function(){
   var _skipSearch = _search.find('.skip');
   const srSpeed = 320;
 
+  if (_search.is(':hidden')) {
+    _searchCtrl.removeClass('closeIt').attr('aria-expanded', false);
+  } else {
+    _searchCtrl.addClass('closeIt').attr('aria-expanded', true);
+  }
+
   _searchCtrl.on( 'click', function(){
     if( _search.hasClass('reveal')) {
       _search.slideUp(srSpeed, function(){
-        _search.removeClass('reveal');
+        _search.removeClass('reveal').hide();
       })
-      _searchCtrl.removeClass('closeIt');
-      setTimeout(function(){_search.hide()}, srSpeed);
+      _searchCtrl.removeClass('closeIt').attr('aria-expanded', false);
     } else {
       _search.slideDown(srSpeed, function(){
-        _search.addClass('reveal');
-        _searchCtrl.addClass('closeIt');
-        setTimeout (function(){_search.find('input[type="text"]').trigger('focus')}, srSpeed);
+        _search.addClass('reveal').find('input[type="text"]').trigger('focus');
+        _searchCtrl.addClass('closeIt').attr('aria-expanded', true);
       });
     }
   })

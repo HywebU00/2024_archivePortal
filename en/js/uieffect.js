@@ -292,15 +292,15 @@ $(function(){
   _searchCtrl.on( 'click', function(){
     if( _search.hasClass('reveal')) {
       _search.slideUp(srSpeed, function(){
-        _search.removeClass('reveal');
+        _search.removeClass('reveal').hide();
       })
       _searchCtrl.removeClass('closeIt').attr('aria-expanded', false);
-      setTimeout(function(){_search.hide()}, srSpeed);
+      // setTimeout(function(){_search.hide()}, srSpeed);
     } else {
       _search.slideDown(srSpeed, function(){
-        _search.addClass('reveal');
+        _search.addClass('reveal').find('input[type="text"]').trigger('focus');
         _searchCtrl.addClass('closeIt').attr('aria-expanded', true);
-        setTimeout (function(){_search.find('input[type="text"]').trigger('focus')}, srSpeed);
+        // setTimeout (function(){_search.find('input[type="text"]').trigger('focus')}, srSpeed);
       });
     }
   })
