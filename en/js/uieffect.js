@@ -634,7 +634,7 @@ $(function(){
   });
   // --------------------------------------------------------------- //
 
-    // 燈箱 
+  // 燈箱 
   // --------------------------------------------------------------- //
   var _lightbox = $('.lightbox');
   var _hideLightbox = _lightbox.find('.closeThis');
@@ -672,6 +672,7 @@ $(function(){
     );
   })
 
+  // 按 esc 鍵關燈箱
   _lightbox.on('keydown', function(e){
     if ( e.keyCode == 27) {
       _hideLightbox.trigger('click');
@@ -931,6 +932,7 @@ $(function(){
       }).stop(true, false).fadeIn(speed);
     })
 
+    // 鍵盤操作，點擊 向左、向右箭頭
     _cpBigPhoto.on('keydown', function(e){
       if ( e.keyCode == 37) {
         _btnLeft.trigger('click');
@@ -938,7 +940,6 @@ $(function(){
       if ( e.keyCode == 39) {
         _btnRight.trigger('click');
       }
-  
     })
   
 
@@ -1206,8 +1207,8 @@ $(function(){
   // 圖書內容頁 *** 未完 ***
   // --------------------------------------------------------------- //
   var _coverAndPages = $('.bookDetails').find('.coverAndPages');
-  var _coverAndPagesLightbox = $('.lightbox.bigImages');
-  _coverAndPages.clone().insertBefore(_coverAndPagesLightbox.find('.skip') );
+  // var _coverAndPagesLightbox = $('.lightbox.bigImages');
+  // _coverAndPages.clone().insertBefore(_coverAndPagesLightbox.find('.skip') );
 
   _coverAndPages.slick({
     slidesToShow: 1,
@@ -1220,16 +1221,16 @@ $(function(){
     fade:false
   })
 
-  _coverAndPagesLightbox.find('.coverAndPages').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay:false,
-    speed: 800,
-    autoplay: false,
-    arrows: true,
-    dots: true,
-    fade:true
-  })
+  // _coverAndPagesLightbox.find('.coverAndPages').slick({
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   autoplay:false,
+  //   speed: 800,
+  //   autoplay: false,
+  //   arrows: true,
+  //   dots: true,
+  //   fade:true
+  // })
 
   // _coverAndPagesLightbox.show();
   // --------------------------------------------------------------- //

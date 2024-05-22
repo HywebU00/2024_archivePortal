@@ -1,0 +1,299 @@
+@media print {
+  body{ background: none; position: static !important;}
+
+  .webHeader, .sidebar, .webFooter, 
+  .funcBar, .cpAnchors, .goTop, .goTop.show,
+  .searchOnLp, .sidebarMask { display: none; }
+
+  .mainRow{ max-width: none;}
+
+  // --------------------------------------------------------------- //
+
+  .breadcrumb {
+    padding-left: 0; background: none; width: 100%; display: block;
+    ul, li{ list-style: none; margin: 0;padding: 0;}
+    ul{line-height: 1.2; overflow: hidden;}
+    li{
+      float: left; margin-right: 8px;
+      &::after{content: '>'; display: inline-block; margin-left: 6px;}
+      &:last-child {
+        &::after{display: none;}
+      }
+      a{
+        display: inline-block; 
+        text-decoration: none; color: #333;
+        transition: .2s;
+      }
+    }
+  }
+  .pageHeader{
+    border-bottom: 1px solid $borderColor;
+    padding: 15px 0 5px; margin: 0 auto 10px !important;
+    h2{ 
+      padding: 0; margin: 0;
+      &::before {display: none;}
+    } 
+  }
+
+  .imageRow {
+    figure{ background-color: #fff;}
+    figcaption {color: $fontColor;}
+  }
+
+
+  // --------------------------------------------------------------- //
+  // ----------------------------- cp ------------------------------ //
+  // --------------------------------------------------------------- //
+  .cp{margin-top: 15px;}
+
+  .poInfo{
+    padding:0; margin: 10px 0 50px;
+    background: none;
+    ul{ display: block;}
+    li{ display: inline-block; margin-left: 0; margin-right: 1.5em;}
+  }
+
+  .cpArticle{
+    h3, h4 {
+      background: none; padding-left: 0;
+      color: #000;
+      &::before { display: none;}
+      &.style1 { 
+        color: #000; background-color: #fff; padding: 0 0 5px;
+        border-radius: 0;
+        border-bottom: 2px dotted $borderColorDark;
+      }
+    }
+  
+    .button a{
+      background-color: #fff; color: $fontColor !important;
+      border: 1px solid $borderColorDark;
+      height: 2.7em;
+    }
+  
+    blockquote{
+      border-radius: 16px; border-left-width: 12px; border-right-width: 12px;
+      &::before {display: none;}
+    }
+  
+    figure {
+      border: 1px solid $borderColor; background-color: #fff;
+    }
+  
+    table{
+      &.tbStyle1, &.tbStyle2 {
+        tbody, thead{
+          th{ background-color: #ddd; color: #000;}
+        }
+      }
+    }
+  
+  }
+
+  .seeAlso, .photoflow, .fileDownload {
+    h3{
+      padding-left: 0;
+      &::before {display: none;}
+    }
+  }
+
+  // 相關圖片
+  .photoflow {
+    .flowNav, button.arrowBtn{ display: none !important;}
+
+    .flowList{
+      display: block;
+      &>li{ 
+        display: block; width: 100%; height: auto ; margin: 0 0 12px;
+        &>a{ 
+          height: auto !important;
+          &::before{
+            box-shadow: $borderColorDark 0 0 0 1px inset; 
+          }
+        }
+        img{ width: 100%; height: auto !important; transform: none; }
+        p{
+          position: static; display: block;
+          background: none; color: $fontColor;
+          transform: none;
+        }
+      
+      }
+    }
+  }
+
+
+  // --------------------------------------------------------------- //
+  // ------------------------------- lp ---------------------------- //
+  // --------------------------------------------------------------- //
+  .listTb>table.stickyHead thead {
+    position: static !important;
+  }
+
+
+  // --------------------------------------------------------------- //
+  // ---------------------------- sp(fp02) ------------------------- //
+  // --------------------------------------------------------------- //
+  .meta {
+    box-shadow: none; border-radius: 0;
+    border: 1px solid $borderColor;
+    padding-top: 12px; padding-bottom: 12px;
+
+    .metaTable{
+      tr{
+        &:first-child {border-top: none;}
+        &:last-child {border-bottom: none;}
+        &:nth-child(n) { background-color: transparent;}
+      }
+      th, td:first-child {
+        &::after {display: none;}
+        border-right: 1px solid $borderColor;
+      }
+    }
+
+    @media screen and (max-width: calc($wwMedium - 1px)){
+      border: none;
+      .metaTable{
+        th, td:first-child { border-right: none ; margin-right: 0.65em;}
+      }
+    }
+
+  }
+
+  
+}
+
+
+
+// --------------------------------------------------------------- //
+// --------------------------------------------------------------- //
+// --------------------------------------------------------------- //
+// ------------------------- fp 版型 ----------------------------- //
+// --------------------------------------------------------------- //
+
+.main.print{
+  width: 92%; margin: 0 auto;
+
+  .breadcrumb, .pageHeader, .cp, .meta{ width: 100%;}
+
+  .breadcrumb { padding-left: 0; background: none; display: block;}
+
+  .pageHeader{
+    border-bottom: 4px solid $borderColor;
+    padding: 5px 0; margin: 0 auto 10px !important;
+    h2{ 
+      padding: 0; margin: 0; color: #000;
+      &::before {display: none;}
+    } 
+  }
+
+  // fp01
+  .cp{margin-top: 15px;}
+
+  .poInfo{
+    padding:0; margin: 10px 0 50px;
+    background: none;
+    ul{ display: block;}
+    li{ display: inline-block; margin-left: 0; margin-right: 1.5em;}
+  }
+
+  .cpArticle{
+    h3, h4 {
+      background: none; padding-left: 0;
+      color: #000;
+      &::before { display: none;}
+      &.style1 { 
+        color: #000; background-color: #fff; padding: 0 0 5px;
+        border-radius: 0;
+        border-bottom: 2px dotted $borderColorDark;
+      }
+    }
+  
+    .button a{
+      background-color: #fff; color: $fontColor !important;
+      border: 1px solid $borderColorDark;
+      height: 2.7em;
+    }
+  
+    blockquote{
+      border-radius: 16px; border-left-width: 12px; border-right-width: 12px;
+      &::before {display: none;}
+    }
+  
+    figure {
+      border: 1px solid $borderColor; background-color: #fff;
+    }
+  
+    table{
+      &.tbStyle1, &.tbStyle2 {
+        tbody, thead{
+          th{ background-color: #ddd; color: #000;}
+        }
+      }
+    }
+  
+  }
+
+  .seeAlso, .photoflow, .fileDownload {
+    h3{
+      padding-left: 0;
+      &::before {display: none;}
+    }
+  }
+
+  // 相關圖片
+  .photoflow {
+    .flowNav, button.arrowBtn{ display: none !important;}
+
+    .flowList{
+      display: block;
+      &>li{ 
+        display: block; width: 100%; height: auto ; margin: 0 0 12px;
+        &>a{ 
+          height: auto !important;
+          &::before{
+            box-shadow: $borderColorDark 0 0 0 1px inset; 
+          }
+        }
+        img{ width: 100%; height: auto !important; transform: none; }
+        p{
+          position: static; display: block;
+          background: none; color: $fontColor;
+          transform: none;
+        }
+      }
+    }
+  }
+
+
+
+  // fp02
+  .meta {
+    box-shadow: none; border-radius: 0;
+    border: 1px solid $borderColor;
+    padding-top: 12px; padding-bottom: 12px;
+
+    .metaTable{
+      tr{
+        &:first-child {border-top: none;}
+        &:last-child {border-bottom: none;}
+        &:nth-child(n) { background-color: transparent;}
+      }
+      th, td:first-child {
+        &::after {display: none;}
+        border-right: 1px solid $borderColor;
+      }
+    }
+
+    @media screen and (max-width: calc($wwMedium - 1px)){
+      border: none;
+      .metaTable{
+        th, td:first-child { border-right: none ; margin-right: 0.65em;}
+      }
+    }
+
+  }
+
+
+}
+  
