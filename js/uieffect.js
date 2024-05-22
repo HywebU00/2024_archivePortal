@@ -935,12 +935,11 @@ $(function(){
     e.preventDefault();
     var hash = this.hash;
     var scrollHeight = $(hash).offset().top;
-    // console.log(hash, scrollHeight);
-
+    
     _html.animate({
       scrollTop: scrollHeight
     }, 800, function(){
-      _html.animate({scrollTop: scrollHeight - _webHeader.outerHeight()}, 500)
+      _html.animate({scrollTop: scrollHeight - _webHeader.outerHeight()}, 500);
     });
 
   });  
