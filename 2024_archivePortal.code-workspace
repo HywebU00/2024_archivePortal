@@ -7,6 +7,7 @@
 	"settings": {
 		"liveServer.settings.port": 5502,
 		"liveSassCompile.settings.formats": [
+
 			{
 				"format": "compressed",
 				"extensionName": ".css",
@@ -16,9 +17,10 @@
 		"liveSassCompile.settings.includeItems": [
 			"/scss/style.scss",
 			"/scss/pageNotFound.scss"
-
 		],
 		"liveSassCompile.settings.showOutputWindowOn": "Warning",
-		"liveSassCompile.settings.autoprefix": []
+		"liveSassCompile.settings.autoprefix": [
+		
+		]
 	}
 }
