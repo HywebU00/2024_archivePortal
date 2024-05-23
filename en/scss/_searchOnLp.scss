@@ -15,11 +15,7 @@
       box-shadow: none; border: none;
       transition: .2s;
 
-      &:hover, &:focus{ 
-        background-color: $hover;
-        &::before{}
-        &::after {}
-      }
+      &:hover, &:focus{ background-color: $hover;}
       &:focus {outline: 1px dashed $primaryColor;}
   
       &::before, &::after{

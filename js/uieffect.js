@@ -544,39 +544,37 @@ $(function(){
 
 
 
-  // 可收合區 
+  // lp 頁上方可收合查詢區 
   // --------------------------------------------------------------- //
-  _drawer = $('.drawer');
+  var _showHideSearch = $('.searchOnLp');
+  var _drawer = $('.drawer');
   _drawer.each(function () {
     let _this = $(this);
-    let _handle = _this.find('.handle');
+    let _handle = _this.find('button.handle');
     let _tray = _this.find('.tray');
-    let _showHideSearch = _this.filter('.searchOnLp');
     const speed = 500;
     const text1 = "顯示查詢條件";
     const text2 = "隱藏查詢條件";
 
-    if ( _tray.is(':hidden')) {
-      _handle.addClass('openIt');
-      
-    } else {
-      _handle.removeClass('openIt');
-    }
+    _handle.attr('aria-label', "查詢開關");
 
+    if ( _tray.is(':hidden')) {
+      _handle.addClass('openIt').attr('aria-expanded', false);
+      if (_this.is(_showHideSearch) ) {_handle.text(text1)}
+    } else {
+      _handle.removeClass('openIt').attr('aria-expanded', true);
+      if (_this.is(_showHideSearch) ) {_handle.text(text2)}
+    }
 
     _handle.click(function () {
       if (_tray.is(':hidden')) {
         _tray.stop(true, false).slideDown(speed);
-        _handle.removeClass('openIt');
-        if ( _handle.parent('.searchOnLp').length == 1 ) {
-          _handle.text(text2);
-        }
+        _handle.removeClass('openIt').attr('aria-expanded', true);
+        if (_this.is(_showHideSearch) ) {_handle.text(text2)}
       } else {
         _tray.stop(true, false).slideUp(speed, function(){
-         _handle.addClass('openIt');
-          if (_handle.parent('.searchOnLp').length == 1 ) {
-           _handle.text(text1);
-          }
+          _handle.addClass('openIt').attr('aria-expanded', false);
+          if (_this.is(_showHideSearch) ) {_handle.text(text1)}
         })
       }
     })
