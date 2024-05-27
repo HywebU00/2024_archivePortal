@@ -48,14 +48,7 @@
     .btnDv{margin-top: 20px;}
   }
 
-  // table.layout {
-  //   width: 100%; margin: 0 auto; border-collapse: collapse;
-  //   font-size: 1.3em;
-  //   td {
-  //     padding: 0;
-  //     &:first-child { padding-right: 3px; width: 4.5em; white-space: nowrap; text-align: right;}
-  //   }
-  // }
+
 
   @media screen and (min-width: $wwNormal){
     width: $normalWidth; margin: 16px auto 0;
@@ -66,12 +59,4 @@
     width: $maximumWidth;
   }
 
-  // @media screen and (max-width: $wwMedium){
-  //   table.layout {
-  //     tr, td {display: block;}
-  //     td:first-child{
-  //       text-align: left; padding: .6em 6px 0;
-  //     }
-  //   }
-  // }
 }

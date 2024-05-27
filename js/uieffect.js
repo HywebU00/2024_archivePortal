@@ -34,14 +34,15 @@ $(function(){
 
   // 找出_menu中有次選單的li 
   _menu.find('li').has('ul').addClass('hasChild');
-  
+  var _hasChildA = _menu.find('.hasChild').children('a').attr('role', 'button').attr('aria-expanded', false);
+
   // 行動版「主選單」 
+  // --------------------------------------------------------------- //
   _menu.clone().prependTo(_sidebar);  // 複製「主選單」到側欄給行動版用
   $('.headNav').clone().appendTo(_sidebar);  // 複製「topLinks」到側欄給行動版用
 
   var _sidebarMenu = _sidebar.find('.menu');
   var _hasChildMobile = _sidebarMenu.find('.hasChild>a');
-
 
   // 行動版側欄，顯示／隱藏
   // --------------------------------------------------------------- //
@@ -88,31 +89,27 @@ $(function(){
       _sidebarCtrl.trigger('focus');
     }
   })
-
-
   // --------------------------------------------------------------- //
 
 
 
-  // 窄版側欄「主選單」開合
+  // 行動版側欄「主選單」開合
   // --------------------------------------------------------------- //
-  _hasChildMobile.on( 'click', 
-    function(e){
-      e.preventDefault();
+  _hasChildMobile.on( 'click', function(e){
+    e.preventDefault();
+    
+    let _this = $(this);
+    let _subMenu = _this.next('ul');
 
-      let _this = $(this);
-      let _subMenu = _this.next('ul');
-
-      if (_subMenu.is(':hidden')) {
-        _subMenu.stop(true, false).slideDown();
-        _this.parent().addClass('closeIt').siblings().removeClass('closeIt').find('ul:visible').slideUp().parent().removeClass('closeIt');
-      } else {
-        _subMenu.stop(true, false).slideUp().find('ul:visible').slideUp();
-        _subMenu.find('.closeIt').removeClass('closeIt');
-        _this.parent().removeClass('closeIt');
-      }
+    if (_subMenu.is(':hidden')) {
+      _subMenu.stop(true, false).slideDown();
+      _this.attr('aria-expanded', true).parent().addClass('closeIt').siblings().removeClass('closeIt').find('ul:visible').slideUp().parent().removeClass('closeIt').children('a').attr('aria-expanded', false);
+    } else {
+      _subMenu.stop(true, false).slideUp().find('ul:visible').slideUp();
+      _subMenu.find('.closeIt').removeClass('closeIt').children('a').attr('aria-expanded', false);
+      _this.attr('aria-expanded', false).parent().removeClass('closeIt');
     }
-  )
+  })
   // --------------------------------------------------------------- //
 
 
@@ -121,8 +118,8 @@ $(function(){
   // 寬版「主選單」
   // --------------------------------------------------------------- //
   var _topItem = _menu.children('ul').children('li'); // 第一層選單項
-  var _hasChild = _menu.find('.hasChild');
-  var _hasChildA = _hasChild.children('a');
+  // var _hasChild = _menu.find('.hasChild');
+  var _hasChildA = _menu.find('.hasChild').children('a');
   var liA = _menu.find('li>a');
 
   _hasChildA.each( function(){
@@ -140,6 +137,7 @@ $(function(){
       let dd = 0;
       let dy = 0; // 次選單超出視窗的高度
   
+      _this.attr('aria-expanded', true);
       _thisParentLi.addClass('here'); // 為已展開的次選單上層li加樣式
 
       _thisSubMenu.stop(true, false).slideDown(speed, function(){
@@ -215,7 +213,7 @@ $(function(){
     })
 
     _thisParentLi.on('mouseleave' , function(){
-      _this.blur();
+      _this.attr('aria-expanded', false).blur();
       _thisParentLi.removeClass('turn here').find('button').remove();
       _thisSubMenu.stop(true, false).slideUp(speed, function(){
         _thisSubMenu.removeAttr('style');
@@ -225,7 +223,8 @@ $(function(){
   });
 
   liA.on( 'focus', function(){
-    $(this).parent('li').siblings().removeClass('here turn').find('ul').hide();
+    $(this).parent('li').siblings().removeClass('here turn').find('ul').hide().end().filter('.hasChild').children('a').attr('aria-expanded', false);
+    // $(this).parent('li').siblings().filter('.hasChild').children('a').attr('aria-expanded', false);
   })
 
 
@@ -234,6 +233,7 @@ $(function(){
   $('*').on( 'focus', function(){
     if( $(this).parents('.menu').length == 0 ){
       _menu.find('.hasChild').removeClass('here').find('ul').removeAttr('style');
+      _menu.find('.hasChild').children('a').attr('aria-expanded', false);
     }
   })
 
@@ -421,22 +421,27 @@ $(function(){
   // --------------------------------------------------------------- //
   var _fatFootCtrl = $('.fatFootCtrl');
   var _footSiteTree = $('.fatFooter').find('.siteTree>ul>li>ul');
-  const text1 = _fatFootCtrl.text(); // 收合
-  const text2 = _fatFootCtrl.attr('data-altText'); // 開啟
+  // const text1 = _fatFootCtrl.text(); // 收合
+  // const text2 = _fatFootCtrl.attr('data-altText'); // 開啟
 
-  if ( _footSiteTree.is(':hidden')) {
-    _fatFootCtrl.addClass('closed').text(text2);
-  } else {
-    _fatFootCtrl.removeClass('closed').text(text1);
-  }
+  _fatFootCtrl.attr('aria-label', '導覽選單').removeAttr('data-alttext');
+
+  _footSiteTree.is(':hidden') ? _fatFootCtrl.addClass('closed').attr('aria-expanded', false) :  _fatFootCtrl.removeClass('closed').attr('aria-expanded', true);
+
+  // if ( _footSiteTree.is(':hidden') ) {
+  //   _fatFootCtrl.addClass('closed').attr('aria-expanded', false);
+  // } else {
+  //   _fatFootCtrl.removeClass('closed').attr('aria-expanded', true);
+  // }
   
   _fatFootCtrl.on( 'click', function(){
-    if ( _footSiteTree.is(':visible')) {
-      _footSiteTree.slideUp();
-      $(this).addClass('closed').text(text2);
+    if ( _footSiteTree.is(':visible') ) {
+      _footSiteTree.slideUp(400, function(){
+        _fatFootCtrl.addClass('closed').attr('aria-expanded', false);
+      });
     } else {
       _footSiteTree.slideDown();
-      $(this).removeClass('closed').text(text1);
+      _fatFootCtrl.removeClass('closed').attr('aria-expanded', true);
     }
   })
   // --------------------------------------------------------------- //
@@ -580,6 +585,14 @@ $(function(){
     })
   })
 
+  // 查詢區表單元件根據前方 td 加 aria-label
+  var _searchItem = $('.searchOnLp').find('.layout').find('td:nth-child(even)').children('input:only-child, select:only-child');
+  _searchItem.each(function(){
+    $(this).attr( 'aria-label' , $(this).parent('td').prev().text());
+  })
+
+  // 日期區間 duration input 加 aria-label
+  $('.duration').find('input').first().attr('aria-label', '起始日期').end().last().attr('aria-label', '結束日期');
   // --------------------------------------------------------------- //
 
   
