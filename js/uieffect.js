@@ -33,9 +33,9 @@ $(function(){
   var _sidebarCtrl = $('.sidebarCtrl');
 
   // 找出_menu中有次選單的li 
-  _menu.find('li').has('ul').addClass('hasChild');
-  var _hasChildA = _menu.find('.hasChild').children('a').attr('role', 'button').attr('aria-expanded', false);
-
+  var _hasChildA = _menu.find('.hasChild').children('a');
+  _hasChildA.attr('role', 'button').attr('aria-expanded', false);
+  
   // 行動版「主選單」 
   // --------------------------------------------------------------- //
   _menu.clone().prependTo(_sidebar);  // 複製「主選單」到側欄給行動版用
@@ -263,11 +263,7 @@ $(function(){
 
     // goTop button 顯示、隱藏
     // ----------------------------------------------- //
-    if (_window.scrollTop() > 200) {
-      _goTop.addClass('show');
-    } else {
-      _goTop.removeClass('show');
-    }
+    _window.scrollTop() > 200 ? _goTop.addClass('show') :  _goTop.removeClass('show');
   })
   _window.trigger('scroll');
   // --------------------------------------------------------------- //
@@ -624,8 +620,6 @@ $(function(){
     let _showHideItems = $(this).children('ul').children('li');
     let _ctrlBtn = _showHideItems.find('.ctrlBtn');
     let _answer = _showHideItems.find('.a');
-    const textOpen = "展開";
-    const textClose = "收合";
 
     _ctrlBtn.click(function () {
       let _this = $(this);
@@ -633,18 +627,18 @@ $(function(){
       let _thisA = _thisQ.next();
       if ( _thisA.is(':visible')) {
         _thisA.slideUp(400);
-        _this.removeClass('closeIt').text(textOpen);
+        _this.removeClass('closeIt').attr('aria-expanded', false);
       } else {
-        _ctrlBtn.removeClass('closeIt').text(textOpen);
+        _ctrlBtn.removeClass('closeIt');
         _answer.not(_thisA).slideUp(400);
         _thisA.slideDown(400);
-        _this.addClass('closeIt').text(textClose);
+        _this.addClass('closeIt').attr('aria-expanded', true);
       }
     });
   });
   // --------------------------------------------------------------- //
 
-    // 燈箱 
+  // 燈箱 
   // --------------------------------------------------------------- //
   var _lightbox = $('.lightbox');
   var _hideLightbox = _lightbox.find('.closeThis');
