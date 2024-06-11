@@ -1,17 +1,3 @@
-// ------------------------------------------------------ //
-// %epWidth {
-//   width: $mobileWidth; margin: 0 auto;
-//   @media screen and (min-width: $wwNormal){
-//     width: $normalWidth;
-//   }
-//   @media screen and (min-width: $wwMaximum){
-//     width: $wwMaximum * .9;
-//   }
-// }
-// ------------------------------------------------------ //
-
-
-// ------------------------------------------------------ //
 .epaper{
   // --primary: #00ADA9;
   --primary: #00ACA8;
@@ -23,11 +9,7 @@
   --white: #fff;
   
   color: var(--font);
-
-  max-width: 920px; margin: 0 auto;
-
-  outline: 1px dashed #f005;
-  outline-offset: -1px;
+  max-width: 920px; margin: 0 auto 50px;
 
   h3, h4{line-height: 1.5; margin: 0; padding: 0; font-weight: normal;}
 
@@ -38,7 +20,12 @@
     }
   }
 
+
+
+
+
   // epaper 版頭
+  // ------------------------------------------------------ //
   header{
     margin: 0 auto;
     h2{
@@ -46,21 +33,61 @@
       img{ display: block; width: 100%;}
     }
     ul{
-      list-style: none;margin: 0; padding: 18px 2.5%;
-      overflow: hidden;
-      line-height: 1.1; font-weight: bold;
-      background-color:var(--bg1) ; color: var(--primary);
+      position: relative;
+      list-style: none;margin: 0; padding: 30px 2% 25px;
+      line-height: 1;color: var(--font);overflow: hidden;
       li{
         margin: 0;padding: 0;
-        &:first-child{font-size: 2em; float: left;}
-        &:last-child{font-size: 1.2em;float: right; margin-top: .35em;}
+        &:first-child{font-size: 1.5em; float: left;}
+        &:last-child{font-size: 1.25em;float: right; margin-top: .35em; margin-top: 1px; color: #707070;}
+        time {font-family: inherit;}
+      }
+      &::after {
+        content: '';
+        position: absolute; top: 50%; left: 7.2em; right: 8.2em;
+        height: 2px; background-color: var(--primary);
       }
     }
   }
+  // ------------------------------------------------------ //
+
+
+
+
 
   // epaper 頁腳
+  // ------------------------------------------------------ //
   footer{
     a{ color: var(--font);}
+
+    // 分享到社群
+    .share{
+      padding:70px 40px;
+      .heading{ 
+        color: #000; margin: 0 auto 30px; text-align: center;
+        font-size: 1.4em;
+      }
+      ul{list-style: none; margin: 0 auto; padding: 0; text-align: center;}
+      li{
+        display: inline-block; margin: 0 10px; padding: 0;
+        a{
+          display: block; width: 66px; height: 66px; overflow: hidden;
+          border-radius: 50%;
+          box-shadow: var(--secondary) 0 0 0 3px;
+          background-color: var(--white);
+          transition: .2s;
+          img{ display: block; width: 100%; height: 100%; transition: .2s;}
+          &:hover, &:focus {
+            background-color: var(--secondary);
+            img{ filter: brightness(5);}
+          }
+          &:focus{
+            box-shadow: var(--bg1) 0 0 0 1px, var(--secondary) 0 0 0 5px;
+          }
+        }
+      }
+    }
+
 
     // footer中段：文字連結與訂閱檔案樂活情報
     .middle{ 
@@ -68,17 +95,19 @@
       background-color: var(--bg1);
       ul{ list-style: none; margin: 0;padding: 0;}
 
+      // xxx 期專區、資訊專區
       ul.linkList{ 
-        padding: 50px 10%; line-height: 1.3;
         display: flex; justify-content: space-between;
+        padding: 50px 10%; 
+        line-height: 1.3;font-weight: 300;
         background-color: var(--primary); color: #fff;
-        font-weight: 300;
-        a{text-decoration: none; color: #fff;}
+        
+        a{text-decoration: none; color: var(--white);}
         &>li{
           flex: 0 0 44%; margin:0; padding: 3px;
           &>ul{
             padding-top: 1em; margin-top: 1.3em;
-            border-top: 1px solid #fff;
+            border-top: 1px solid var(--white);
           }
           li{
             margin: .7em 0; white-space: nowrap;
@@ -90,11 +119,12 @@
         }
       }
 
+      // 訂閱樂活報
       .subscribeHere{
-        padding: 50px 10%;text-align: center;
+        padding: 50px 10%; text-align: center;
         p{ 
           width: 9em;margin: 0 auto .6em;
-          font-size: 1.1em; color: #222; line-height: 1.8;
+          font-size: 1.1em; line-height: 1.8; color: #000;
           text-align: left;
         }
         input[type="email"], input[type="text"]{ 
@@ -102,16 +132,14 @@
           background-color: transparent; border: none;
           box-shadow: var(--font) 0 2px 0 -1px;
           color: var(--font);
-          &:hover, &:focus{
-            box-shadow: var(--font) 0 4px 0 -1px;
-          }
+          &:hover, &:focus{ box-shadow: var(--font) 0 4px 0 -1px; }
         }
         input[type="button"], input[type="submit"]{
           background-color: var(--primary);
           border: none;
           padding: 0 2.5em; margin: 0; border-radius: 1.5em;
           &:hover, &:focus{
-            background-color: var(--secondary); color: #fff;
+            background-color: var(--secondary); color: var(--white);
           }
           &:focus{ box-shadow:var(--bg1) 0 0 0 1px, var(--secondary) 0 0 0 4px;}
         }
@@ -122,7 +150,6 @@
     // footer 的最底部
     .base{
       padding:50px 20px; text-align: center;
-      // background-color: var(--primary);
       a{
         color: #be4d24;
         &:hover, &:focus{ text-decoration: none;}
@@ -138,40 +165,26 @@
       }
     }
   }
+  // ------------------------------------------------------ //
 
-  .share{
-    padding:60px 40px 40px;
-    .heading{ 
-      color: #000; margin: 0 auto 30px; text-align: center;
-      font-size: 1.4em;
-    }
-    ul{list-style: none; margin: 0 auto; padding: 0; text-align: center;}
-    li{
-      display: inline-block; margin: 0 8px; padding: 0;
-      a{
-        display: block; width: 64px; height: 64px; overflow: hidden;
-        border-radius: 50%;
-        box-shadow: var(--secondary) 0 0 0 3px;
-        background-color: var(--secondary);
-        img{ 
-          display: block; width: 100%; height: 100%;
-        }
-      }
-    }
-  }
+
+
+
 
   // 閱讀更多
   // ------------------------------------------------------ //
   .readMore{
-    margin: 20px 0 0; line-height: 1; font-size: 1em;
+    margin: 18px 0 0; line-height: 1; font-size: 1em;
     display: inline-block; 
-    padding:0 32px; height: 2.4em; line-height: 2.45;
+    padding:0 32px; height: 2.4em; line-height: 2.5;
     border-radius: 2em; text-decoration: none;
-    color: #fff;
+    color: var(--white);
   }
   // ------------------------------------------------------ //
 
 }
+
+
 
 
 
@@ -187,11 +200,11 @@
   }
 
   article{
-    padding: 40px 4% 50px;
+    padding: 35px 4%;
     line-height: 1.8;
-    background: url(../images/landing-icon.svg) no-repeat right 10% bottom 0;
-    background-color: var(--primary); color: #fff;
-    background-size: 110px auto;
+    background: url(../images/landing-icon.svg) no-repeat right 6% bottom -1px;
+    background-color: var(--primary); color: var(--white);
+    background-size: 120px auto;
     transition:background .2s;
 
     h3{ 
@@ -205,11 +218,12 @@
   }
 
   .readMore{
+    margin:10px 0 0;
     box-shadow: rgb(255 255 255 / .4) 0 0 0 1px;
   }
 
   &>a{ 
-    display: block; text-decoration: none; color: #fff;
+    display: block; text-decoration: none; color: var(--white);
     transition: .2s;
     &:hover, &:focus{
       article{background-color: var(--secondary);}
@@ -224,6 +238,8 @@
 
   @media screen and (min-width: 920px){
     article{
+      padding-right: 25%;
+      background-size: 140px auto;
       h3{ margin-left: -36px; padding-left: 36px;}
     }
   }
@@ -238,15 +254,15 @@
 // 圖文區：檔案知識+
 // ------------------------------------------------------ //
 .epaper .knowledge {
-  margin: 60px auto 30px;
+  margin: 70px auto 40px;
   h3 {
     width: 100%; height: 85vw;
     padding: 50px 0 0; margin: 0;
     text-align: center;  font-size: 1.5em;
-    color: #fff;
+    color: var(--white);
     background: var(--primary) url(../images/knowledge-icon.svg) no-repeat center bottom -1px;
     background-size: 72% auto;
-    .plus{vertical-align: 25%;}
+    sup{font-size: 1.05em;}
   }
   article{
     line-height: 1.8; padding: 0;
@@ -262,18 +278,18 @@
       transition: background .2s, box-shadow .2s;
     }
 
-    a{
-      display: block;padding: 45px 4% 40px;
+    &>a{
+      display: block;padding: 45px 4% 50px;
       width: 100%; height: 100%;
       text-decoration: none; color: #000;
-      .readMore {color: #fff; }
+      .readMore {color: var(--white); }
 
       &:hover, &:focus {
         .readMore{ background-color: var(--secondary);}
       }
       &:focus{
         text-decoration: underline;
-        .readMore{ box-shadow:var(--bg1) 0 0 0 1px, var(--primary) 0 0 0 3px; }
+        .readMore{ box-shadow:var(--bg1) 0 0 0 1px, var(--secondary) 0 0 0 4px; }
       }
     }
   }
@@ -283,11 +299,11 @@
     h3{ flex: 0 0 50%; width: auto; height: auto;}
     article { 
       flex: 0 0 50%; min-height: 50vw;
-      a{padding: 60px 15% 40px;}
+      a{padding: 60px 15%;}
     }
   }
   @media screen and (min-width: 920px){
-    article { min-height: 460px; }
+    article { min-height: 450px; }
   }
 
 }
@@ -351,7 +367,9 @@
     margin-left: calc( 460px -  50vw);
     margin-right: calc( 460px -  50vw);
     li{
-      .type{ display: inline-block; width: 7em; vertical-align: top;}
+      margin-bottom: 8px;
+      a{padding-top:16px;}
+      .type{ display: inline-block; width: 7em; vertical-align: top; margin-top: 2px;}
     }
   }
 
@@ -369,7 +387,7 @@
 
 // 推薦閱讀
 // ------------------------------------------------------ //
-.epRecommend{
+.epaper .epRecommend{
   margin: 0 auto; padding: 80px 0 40px;
 
   h3 {text-align: center;margin: 0 auto 30px; color: #000; font-size: 1.5em; }
@@ -397,20 +415,19 @@
         &::after {
           content: ''; 
           position: absolute; left: 0; top: 0; right: 0; bottom: 0;
-          // box-shadow: var(--primary) 0 0 0 0 inset, #fff 0 0 0 0 inset;
           transition: .2s;
         }
         &:hover, &:focus {
           color: #000;
           &::after {
             z-index: 9; 
-            box-shadow: var(--primary) 0 0 0 1px inset, #fff 0 0 0 4px inset;
+            box-shadow: var(--primary) 0 0 0 1px inset, var(--white) 0 0 0 4px inset;
           }
           img{ scale:1.08; filter: contrast(1.25);}
         }
         &:focus{
           &::after{
-            box-shadow: var(--primary) 0 0 0 2px inset, #fff 0 0 0 5px inset;
+            box-shadow: var(--primary) 0 0 0 2px inset, var(--white) 0 0 0 5px inset;
           }
         }
       }
@@ -447,18 +464,27 @@
 
 
 
-
 // 推薦展覽&活動（橫幅廣告圖）
 // ------------------------------------------------------ //
-.epPoster{
+.epaper .epPoster{
   margin: 50px auto 0; padding: 0;
   h3{ text-align: center; font-size: 1.5em; margin: 0 0 20px;}
   a{ 
-    display: block;
+    position: relative; display: block; 
+    &::before { 
+      content: ''; position: absolute; left: 0;top: 0;right: 0;bottom: 0;
+      transition: .2s;
+    }
     img{display: block; width: 100%;}
-    &:hover, &:focus{
-      outline: 2px solid var(--hilight);
-      outline-offset: -2px;
+    &:hover{
+      &::before{
+        box-shadow:var(--white) 0 0 0 3px inset,  var(--primary) 0 0 0 1px;
+      }
+    }
+    &:focus{
+      &::before{
+        box-shadow:var(--white) 0 0 0 1px inset,  var(--primary) 0 0 0 3px;
+      }
     }
   }
 }
