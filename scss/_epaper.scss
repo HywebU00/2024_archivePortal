@@ -1,13 +1,14 @@
 .epaper{
   // --primary: #00ADA9;
   --primary: #00ACA8;
-  --secondary:#3E3A39;
+  --secondary:#383a3a;
   --assistant:#A88563;
   --hilight: #FE5E3E;
-  --font: #3E3A39;
+  --font: #383a3a;
   --bg1: #e8e8e8;
   --white: #fff;
-  
+  --black: #000;
+
   color: var(--font);
   max-width: 920px; margin: 0 auto 50px;
 
@@ -64,7 +65,7 @@
     .share{
       padding:70px 40px;
       .heading{ 
-        color: #000; margin: 0 auto 30px; text-align: center;
+        color: var(--black); margin: 0 auto 30px; text-align: center;
         font-size: 1.4em;
       }
       ul{list-style: none; margin: 0 auto; padding: 0; text-align: center;}
@@ -88,7 +89,6 @@
       }
     }
 
-
     // footer中段：文字連結與訂閱檔案樂活情報
     .middle{ 
       padding: 0;
@@ -100,7 +100,7 @@
         display: flex; justify-content: space-between;
         padding: 50px 10%; 
         line-height: 1.3;font-weight: 300;
-        background-color: var(--primary); color: #fff;
+        background-color: var(--primary); color: var(--white);
         
         a{text-decoration: none; color: var(--white);}
         &>li{
@@ -124,7 +124,7 @@
         padding: 50px 10%; text-align: center;
         p{ 
           width: 9em;margin: 0 auto .6em;
-          font-size: 1.1em; line-height: 1.8; color: #000;
+          font-size: 1.1em; line-height: 1.8; color: var(--black);
           text-align: left;
         }
         input[type="email"], input[type="text"]{ 
@@ -188,7 +188,6 @@
 
 
 
-
 // 圖文區：檔案瑰寶
 // ------------------------------------------------------ //
 .epaper .treasure{
@@ -209,17 +208,12 @@
 
     h3{ 
       display: inline-block; 
-      font-size: 1.1em; line-height: 1; 
       margin: 0 0 20px -4%; padding: 7px 2px 6px 4%;
+      font-size: 1.1em; line-height: 1; 
       border-bottom: 3px solid var(--hilight);
     }
     h4{ font-size: 1.5em;}
   
-  }
-
-  .readMore{
-    margin:10px 0 0;
-    box-shadow: rgb(255 255 255 / .4) 0 0 0 1px;
   }
 
   &>a{ 
@@ -235,6 +229,13 @@
       .readMore{ box-shadow: rgb(255 255 255 / 1 ) 0 0 0 2px;}
     }
   }
+
+
+  .readMore{
+    margin:10px 0 0;
+    box-shadow: rgb(255 255 255 / .4) 0 0 0 1px;
+  }
+
 
   @media screen and (min-width: 920px){
     article{
@@ -266,7 +267,7 @@
   }
   article{
     line-height: 1.8; padding: 0;
-    background-color: var(--bg1); color: #000;
+    background-color: var(--bg1); color: var(--black);
     h4{
       padding: 0 0 20px; margin-bottom: 24px;
       font-size: 1.5em; line-height: 1.5; text-align: center;
@@ -281,7 +282,7 @@
     &>a{
       display: block;padding: 45px 4% 50px;
       width: 100%; height: 100%;
-      text-decoration: none; color: #000;
+      text-decoration: none; color: var(--black);
       .readMore {color: var(--white); }
 
       &:hover, &:focus {
@@ -320,7 +321,7 @@
   h3, &>ul { width: 92%;}
   h3{ 
     margin: 0 auto 30px; padding: 0 0 20px;
-    text-align: center; 
+    text-align: center; color: var(--black);
     border-bottom: 2px solid var(--primary);
   }
   ul{list-style: none; margin: 0 auto;padding: 0;}
@@ -338,7 +339,7 @@
       }
 
       &:hover, &:focus{
-        color: #000;
+        color: var(--black);
         padding-left: 8px; padding-right: 0;
         border-bottom-color: var(--primary);
         &::before{ width: 4px;}
@@ -390,7 +391,7 @@
 .epaper .epRecommend{
   margin: 0 auto; padding: 80px 0 40px;
 
-  h3 {text-align: center;margin: 0 auto 30px; color: #000; font-size: 1.5em; }
+  h3 {text-align: center;margin: 0 auto 30px; color: var(--black); font-size: 1.5em; }
 
   &>ul{
     list-style: none; margin: 0 auto; padding: 0;
@@ -418,7 +419,7 @@
           transition: .2s;
         }
         &:hover, &:focus {
-          color: #000;
+          color: var(--black);
           &::after {
             z-index: 9; 
             box-shadow: var(--primary) 0 0 0 1px inset, var(--white) 0 0 0 4px inset;
@@ -434,7 +435,7 @@
     }
   }
 
-  @media screen and (min-width: $wwMedium){
+  @media screen and (min-width:800px){
     &>ul{
       display: flex; flex-flow: row wrap; justify-content: space-between;
       &>li{
@@ -445,7 +446,7 @@
     }
   }
 
-  @media screen and (min-width: 920px){
+  @media screen and (min-width: 920px ){
     &>ul{
       flex-wrap: nowrap;
       &>li{
@@ -468,7 +469,7 @@
 // ------------------------------------------------------ //
 .epaper .epPoster{
   margin: 50px auto 0; padding: 0;
-  h3{ text-align: center; font-size: 1.5em; margin: 0 0 20px;}
+  h3{ text-align: center; font-size: 1.5em; margin: 0 0 20px; color: var(--black);}
   a{ 
     position: relative; display: block; 
     &::before { 
