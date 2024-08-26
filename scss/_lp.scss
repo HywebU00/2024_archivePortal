@@ -49,6 +49,15 @@
   
   }
 
+  // 修正 google 查詢結果頁排版錯誤 20240826
+  .gsc-control-cse{ 
+    *{box-sizing: content-box;}
+    .gsc-search-box{padding: 0; margin: 0;}
+
+    button.gsc-search-button{ height: 16px; padding-left: 16px; padding-right: 16px;}
+    td.gsib_a{padding: 0;}
+    input.gsc-input{ height: 1.8em !important;}
+  }
 
   @media screen and (min-width: $wwNormal){
     ul.list{
@@ -56,6 +65,11 @@
         a {padding-right: 7em;}
         time {float: none; position: absolute; right: 16px; top: 1em;}
       }
+    }
+
+    // 修正 google 查詢結果頁排版錯誤 20240826
+    .gsc-control-cse{
+      button.gsc-search-button{ width: 36px;}
     }
   }
 

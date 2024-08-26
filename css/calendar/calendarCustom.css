@@ -1,0 +1,30 @@
+.calendarbg-grey {
+    background: #efefef;
+}
+.dhx_timepicker-input {
+	width:80px;
+	height:48px;
+}
+.dhx_widget {
+	z-index: 999;
+}
+.dhx_button {
+	color:#000 !important;
+}
+.highlight-date {
+  color: #fff;
+}
+.highlight-date:after {
+  background-color: #4c35a0;
+  opacity: 1;
+  z-index: -3;
+}
+
+.dhx_calendar-day--weekend-disabled {
+    pointer-events: none;
+    color: #fff;
+}
+.dhx_calendar-day--weekend-disabled:after {
+    background-color: #999;
+    opacity: 1;
+}

@@ -21,6 +21,7 @@
 		"liveSassCompile.settings.showOutputWindowOn": "Warning",
 		"liveSassCompile.settings.autoprefix": [
 		
-		]
+		],
+		"liveSassCompile.settings.generateMap": false
 	}
 }
