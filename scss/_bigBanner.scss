@@ -83,7 +83,11 @@
       background: url(../images/bbannerLeft.jpg) no-repeat center top;
       background-size: cover;
 
-      .flowItem{margin: 4vw; font-size: 4vw;}
+      .flowItem{
+        // margin: 4vw; font-size: 4vw;
+        margin: 4vw 2vw; font-size: 3.4vw; letter-spacing: .1vw;
+        text-align: center;
+      }
 
       .slick-arrow{ 
         bottom: 50px; left:auto; 
@@ -114,8 +118,10 @@
     // 標題區
     .bbTitles{
       width: 31vw;
-
-      .flowItem{margin: 7vw 7.5vw; font-size: 3.8vw;}
+      .flowItem{
+        // margin: 7vw 7.5vw; font-size: 3.8vw;
+        margin: 7vw 5vw; font-size: 3.4vw;
+      }
 
       .slick-arrow{ 
         bottom: 60px; width: 100px;
@@ -145,8 +151,8 @@
     .bbTitles{
       width: calc($wwMaximum * .31);
       .flowItem{
-        font-size: $wwMaximum*.038;
-        margin: $wwMaximum*.07 $wwMaximum*.075;
+        font-size: $wwMaximum*.034; letter-spacing: $wwMaximum*.001 ;
+        margin: $wwMaximum*.07 $wwMaximum*.05;
       }
 
       .slick-arrow {

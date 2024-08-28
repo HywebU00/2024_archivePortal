@@ -9,10 +9,11 @@
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / .3);
 
     ul{ 
-      list-style: none; margin: 0 auto; padding:2px 0 16px; 
+      list-style: none; margin: 0 auto; padding:2px 0 25px; 
       line-height: 1.2; width: 50px;
       li{
         margin: 24px auto 0;padding: 0;
+        // &:last-child{margin-bottom: 11px;}
         img{display: block; margin: 0 auto;}
         a {
           display: block; margin: 0 auto;
@@ -33,11 +34,12 @@
         }
         &.text{
           margin-top: 20px;
+          line-height: 1.8;
           a{ 
-            width: 2em; padding: 14px .5em 12px;
+            width: 50px; padding: 3px calc(25px - 1em) 0;
             &:hover, &:focus {
               background-color: $primaryColor; color: $white;
-              box-shadow: $primaryColor 0 0 0 6px;
+              box-shadow: $primaryColor 0 0 0 12px;
             }
           }
         }
