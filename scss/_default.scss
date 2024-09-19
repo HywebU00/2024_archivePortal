@@ -1,11 +1,13 @@
 :root{
   font-size: 1.125em; // 18px
+
+  --bodyBg: #ECF5FF;
 }
 body{
   margin: 0; padding: 0;
   font-family: Arial, Helvetica, "Microsoft JhengHei", "微軟正黑體", sans-serif;
   color: $fontColor;
-  background-color: #ECF5FF;
+  background-color: var(--bodyBg);
   
   *{box-sizing: border-box;}
   a{ outline: none;}

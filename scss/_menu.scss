@@ -17,7 +17,7 @@
   @media screen and (min-width: $wwNormal){
 
     display: block;
-    width: 69%; padding-left: 1.6vw; margin-right: 8px; margin-top: 3.4em;
+    width: 69%; padding-left: 1.6vw; margin-right: 8px; margin-top: calc(2rem + 15px);
 
       
     // 第一層 ul
@@ -28,7 +28,7 @@
       a{color: $primaryColor;}
       // 第一層 li
       &>li{
-        flex: 1 1 18%;  margin: 0; padding: 0;
+        flex: 1 1 20%;  margin: 0; padding: 0;
         transition: .2s;
         &>a{
           padding:.85em 1vw .7em; white-space: nowrap;
