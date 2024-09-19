@@ -30,14 +30,14 @@
       a{color: $primaryColor;}
       // 第一層 li
       &>li{
-        flex: 0 0 24%;  margin: 0; padding: 0;
+        flex: 1 1 min-content;
+        margin: 0; padding: 0;
         transition: .2s;
         &:nth-child(4){flex-grow: 1;}
         &>a{
           padding:.85em 1vw .7em; 
           white-space: nowrap;
           transition: .2s;
-          // outline: 1px dotted #cdd8;
           &:focus, &:hover {background-color: $assistant1;}
         }
 
