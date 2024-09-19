@@ -5,13 +5,14 @@
 
   // 快速鍵定義
   .keyboardGuide{
-    background-color: $grayLight;
     padding:1em 1.2em 2em;
+    background-color: $white;
   }
   .modifierKeys{
     padding: 0 1.2em; margin: 0 0 1em;
-    background-color: rgb(255 255 255 / .75);
+    // background-color: rgb(255 255 255 / .75);
     border: 1px dashed $borderColor;
+    background-color: $grayLight;
     .platform{
       padding: 1.5em 0;
       p{ margin: 0 0 .5em; font-weight: bold;}
@@ -28,8 +29,9 @@
   line-height: 1.8;
   .accesskeyDefine{
     padding: 1.5em 1.2em 1.2em; margin: 1.5em 0;
-    background-color: rgb(255 255 255 / .75);
+    // background-color: rgb(255 255 255 / .75);
     border: 1px dashed $borderColor;
+    background-color: $grayLight;
   }
   li+li{margin-top: .5em;}
   
@@ -124,7 +126,7 @@
 
   @media screen and (min-width: $wwNormal){
     .keyboardGuide{
-      background-color: $grayLight;
+      // background-color: $grayLight;
       padding:1.5em 2em 3em;
     }
     .modifierKeys{

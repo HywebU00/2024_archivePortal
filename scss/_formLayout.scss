@@ -3,6 +3,7 @@
   
   padding: 24px 12px;
   box-shadow: $shadow1 0 0 15px;
+  background-color: $white;
 
   table.layout{ 
     tr{border-bottom: 1px solid $borderColor;}
@@ -376,6 +377,7 @@ table.layout {
   @extend %primSecWidth;
   padding: 40px 3vw;
   box-shadow: $shadow1 0 0 15px;
+  background-color: $white;
 
   .legent {
     position: relative;

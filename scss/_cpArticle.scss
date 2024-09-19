@@ -146,7 +146,7 @@
 // 內容頁表格
 // ------------------------------------------------------ //
 .tbStyle1, .tbStyle2{
-  --tdbg: #f2f2f2;
+  --tdbg: #{$grayLight};
 
   margin: 50px auto; width: 100%;
   border-collapse: collapse; line-height: 1.5;

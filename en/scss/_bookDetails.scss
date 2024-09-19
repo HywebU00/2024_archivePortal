@@ -3,6 +3,7 @@
   .coverAndPages{
     position: relative; width: 100%; margin: 0 auto 30px; padding-bottom: 5px;
     box-shadow: $borderColor 0 0 0 1px;
+    background-color: $white;
     .image{
       img{width: 100%; height: $mobileWidthVW; object-fit: contain;}
     }
@@ -14,14 +15,12 @@
     .slick-dots{ text-align: center;}
   }
   .metaTable{
+    background-color: $white;
     tr:last-child{ border-bottom: 1px solid $borderColor;}
     th, td:first-child{width: 29%;}
   }
 
   @media screen and (min-width: $wwMedium){
-    // overflow: hidden;
-    // &+*{clear: both;}
-
     display: flex; justify-content: space-between;
     align-items: flex-start;
     &>.left{ flex: 0 0 44%; width: 44%;}
@@ -39,16 +38,7 @@
     }
 
     // 文字資料區
-    .metaTable{flex: 0 0 54%; margin: 0;
-      // display: block;
-      // tr{display: block; padding: .5em 0;}
-      // th, td{ display: inline-block; padding: 3px 0;}
-      // th{ width: auto; padding-right: 12px;
-      //   &::after{content: ':'; background-color: transparent; position: static;}
-      // }
-    }
-
-
+    .metaTable{flex: 0 0 54%; margin: 0;}
   }
 
   @media screen and (min-width: $wwNormal){
@@ -58,7 +48,6 @@
       .image{
         img{ height: $normalWidthVW*.38;}
       }
-
       .slick-arrow{top: calc($normalWidthVW*.19 - 16px);}
     }
     .metaTable{ flex-basis: 60%;}
@@ -71,7 +60,6 @@
       }
       .slick-arrow{top: calc($maximumWidth*.19 - 16px);}
     }
-
   }
 
 }
@@ -82,14 +70,12 @@
 // ------------------------------------------------------ //
 
 .lightbox.bigImages{
-
   .coverAndPages{
     position: relative;
     width: 100%;
     .image{
       img{ width: 100%;height: $mobileWidthVW; object-fit: contain;}
     }
-
 
     .slick-arrow{
       top: calc($mobileWidthVW*.5 - 16px);
@@ -101,30 +87,23 @@
   @media screen and (min-width: $wwNormal){
     .coverAndPages{
       .image {
-        border: 1px solid red;
         img{ height: calc($normalWidthVW - 50px); }
       }
-
       .slick-arrow{
         top: calc($normalWidthVW*.5 - 16px);
       }
     }
-
-
   }
 
   @media screen and (min-width: $wwMaximum){
-    // height: calc($maximumWidth - 50px);
     .coverAndPages{
       .image {
         img{ height: calc($maximumWidth - 50px); }
       }
-
       .slick-arrow{
         top: calc($maximumWidth*.5 - 16px - 50px);
       }
     }
   }
-
 
 }

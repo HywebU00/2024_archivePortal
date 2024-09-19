@@ -27,6 +27,7 @@
     font-size: 1.11em;
     border-top: 2px solid $borderColor;
     border-bottom: 1px solid $borderColor;
+    background-color: $white;
     &>li{
       border-bottom: 1px solid $borderColor;
       &>a {
@@ -84,6 +85,7 @@
 .lp > table.list { 
   border-collapse: collapse; line-height: 1.6; 
   width: calc(100% - 10px); margin:0 5px;
+  background-color: $white;
   caption{
     padding: 0 0 .4em;
     font-size: 1.15em; font-weight: normal;
@@ -97,7 +99,7 @@
   // 固定表頭
   &.stickyHead {
     thead{ 
-      position: sticky; top: 96px; z-index: 9;
+      position: sticky; top: 60px; z-index: 9;
       tr{ border-bottom: none;}
     }
   }
@@ -258,7 +260,7 @@
         display: block; text-decoration: none;
         padding: .7em 16px .6em 22px; height: 100%;
         box-shadow: $borderColor 0 0 0 1px;
-        color: $primaryColor;
+        color: $primaryColor; background-color: $white;
         transition: .2s;
         &:hover, &:focus {
           box-shadow: $white 0 0 0 1px, $primaryColor 0 0 0 3px;

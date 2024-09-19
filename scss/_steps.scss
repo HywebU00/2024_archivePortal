@@ -67,7 +67,7 @@
           &::before{ background-image: none;}
         }
         &:last-child{
-          &::before{background-color: $gray;}
+          &::before{background-color: $borderColor;}
         }
       }
     }
