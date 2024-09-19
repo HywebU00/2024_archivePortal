@@ -8,7 +8,7 @@
     a {
       position: relative; display: block; margin:0 auto;
       max-width: 420px;max-height: 700px;
-      height: calc((100vw - 48px)*1.8); 
+      height: calc((100vw - 48px)*1.2); 
       text-decoration: none; color: $primaryColor;
       transition: .4s;
       &::before{
@@ -61,7 +61,7 @@
 
   @media screen and (min-width: $wwMedium){
     .flowItem{ // 顯示兩個
-      a{ height: calc((100vw - 72px)/2 * 1.8); }
+      a{ height: calc((100vw - 72px)/2 * 1.3); }
     }
   }
 
@@ -73,7 +73,7 @@
       margin:10px 15px 20px; 
       transition: .2s;
       a{ 
-        height: calc( (100vw - 120px)/3 * 1.8); 
+        height: calc( (100vw - 120px)/3 * 1.5); 
       }
     }
 
@@ -86,9 +86,9 @@
 
   @media screen and (min-width: 1360px ){
 
-    .flowItem { // 4 items
+    .flowItem { // 顯示4個
       margin:10px 16px 20px;
-      a{ height: 600px; } // width = 300px
+      a{ height: 480px; } // width = 300px
     }
     .flow{ width: 1328px; margin-left: auto; margin-right: auto;}
 

@@ -3,7 +3,6 @@
 .webHeader {
   position: relative; z-index: 810; 
   height: 60px; margin: 0 auto;
-  // background-color: $white;
   h1{ 
     margin: 0 60px; padding: 5px 0; text-align: center;
     font-size: 1.5em; line-height: 50px;
@@ -31,7 +30,6 @@
     &:focus {
       box-shadow: $primaryColor 0 0 0 4px;
     }
-    
   }
 
   &.fixed{
@@ -44,7 +42,10 @@
     height: auto; 
     display: flex; align-items: flex-start;
     h1 {
-      flex: 0 0 31%;padding: 60px 0; margin: 0;
+      flex: 0 0 31%;
+      // padding: 60px 0;
+      padding: calc(1rem + 15px) 0 12px;
+      margin: 0;
       font-size: 1.6em;
       background: linear-gradient(180deg, rgba(226, 226, 226, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
       a{ height: 100%; background: none;}

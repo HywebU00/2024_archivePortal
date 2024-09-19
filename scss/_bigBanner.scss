@@ -53,8 +53,8 @@
   .bbImages{
     .flowItem{
       width: 100vw; 
-      height: 50vw; // w:h = 2:1
-      // height: 66.67vw; // w:h = 3:2  20240918
+      height: 50vw; // w:h = 2:1 20240918 added
+      // height: 66.67vw; // w:h = 3:2  20240918 removed
       a{ 
         position: relative; display: block;width: 100%; height: 100%;
         &::before{

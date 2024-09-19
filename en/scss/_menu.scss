@@ -17,7 +17,9 @@
   @media screen and (min-width: $wwNormal){
 
     display: block;
-    width: 69%; padding-left: 1.6vw; margin-right: 8px; margin-top: 3.4em;
+    width: 69%; padding-left: 1.6vw; margin-right: 8px;
+    // margin-top: 3.4em;
+    margin-top: calc(2rem + 15px);
 
       
     // 第一層 ul
