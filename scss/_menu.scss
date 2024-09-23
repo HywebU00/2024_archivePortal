@@ -49,11 +49,10 @@
 
         // 第二層及其之後
         ul{
-          display: none; position: absolute;  width: 12rem; 
+          display: none; position: absolute;  width: 12rem; z-index: 99;
           text-align: left;font-size: 1rem;
           background-color: $white; color: $black;
           box-shadow: rgba(0, 0, 0, 0.3) 0 5px 20px;
-          z-index: 99;
           li{
             position: relative;
             a{
