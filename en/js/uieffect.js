@@ -228,7 +228,6 @@ $(function(){
   });
 
   liA.on( 'focus', function(){
-    // $(this).parent('li').siblings().removeClass('here turn').find('ul').hide();
     $(this).parent('li').siblings().removeClass('here turn').find('ul').hide().end().filter('.hasChild').children('a').attr('aria-expanded', false);
   })
 

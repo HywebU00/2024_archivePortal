@@ -33,6 +33,7 @@ $(function(){
   var _sidebarCtrl = $('.sidebarCtrl');
 
   // 找出_menu中有次選單的li 
+  _menu.find('li').has('ul').addClass('hasChild');
   var _hasChildA = _menu.find('.hasChild').children('a');
   _hasChildA.attr('role', 'button').attr('aria-expanded', false);
   
@@ -118,8 +119,8 @@ $(function(){
   // 寬版「主選單」
   // --------------------------------------------------------------- //
   var _topItem = _menu.children('ul').children('li'); // 第一層選單項
-  // var _hasChild = _menu.find('.hasChild');
-  var _hasChildA = _menu.find('.hasChild').children('a');
+  var _hasChild = _menu.find('.hasChild');
+  var _hasChildA = _hasChild.children('a');
   var liA = _menu.find('li>a');
 
   _hasChildA.each( function(){
@@ -224,7 +225,6 @@ $(function(){
 
   liA.on( 'focus', function(){
     $(this).parent('li').siblings().removeClass('here turn').find('ul').hide().end().filter('.hasChild').children('a').attr('aria-expanded', false);
-    // $(this).parent('li').siblings().filter('.hasChild').children('a').attr('aria-expanded', false);
   })
 
 
