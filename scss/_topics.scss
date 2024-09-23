@@ -85,6 +85,7 @@
           &.title{padding: 50px 18px 0; height: calc(3em + 50px);}
           &:last-child{ 
             padding: 32px 2vw 4vw; margin-top: 40px;
+            font-size: 2.44vw;
             &::before {left: calc(50% - 12px); top: 0;}
           }
         }
@@ -130,7 +131,11 @@
 
         p{
           &.title { font-size: calc(3.33vw - 7.2px);}
-          &:last-child{margin-top: 80px;}
+          &:last-child {
+            margin-top: 80px;
+            padding-left: 1.2vw;padding-right: 1.2vw;
+            font-size: 1.18vw;
+          }
         }
       }
     }
@@ -142,7 +147,11 @@
       &>li{
         p{
           &.title { font-size: 2.24rem;}
-          &:last-child{padding: 32px $wwMaximum*.024 $wwMaximum*.04; }
+          &:last-child {
+            padding-left: $wwMaximum*.012;padding-right: $wwMaximum*.012;
+            padding-bottom: $wwMaximum*.04;
+            font-size: $wwMaximum * .0118;
+          }
         }
       }
     }
