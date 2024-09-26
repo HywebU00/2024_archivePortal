@@ -217,6 +217,9 @@ button.sidebarCtrl{
       --bg: #{$primaryColor};
       box-shadow: none;
     }
+    &:focus { 
+      box-shadow:$primaryColor 0 0 0 4px;
+    }
   }
   
 

@@ -85,7 +85,7 @@ $(function(){
   })
 
   _sidebarA_last.on('keydown', function(e){
-    if ( e.which === 9 && !e.shiftKey ) {
+    if ( e.code === 'Tab' && !e.shiftKey ) {
       e.preventDefault();
       _sidebarCtrl.trigger('focus');
     }
