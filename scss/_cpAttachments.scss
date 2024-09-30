@@ -95,10 +95,11 @@
   .fileName{ display: block;}
 
   .downloadFiles{
-    float: right; overflow: hidden; font-size: .82em;
+    overflow: hidden; font-size: .82em;
     li{
       display: inline-block;
       margin:0 0 0 8px; padding:3px 0;
+      &:first-child{margin-left: 0;}
     }
     a{
       padding: 5px;display: block;
@@ -114,7 +115,14 @@
   @media screen and (min-width: $wwNormal){
 
     .fileName{ display: inline-block; padding-top: .3em; }
-    .downloadFiles{ padding-left: 1em;}
+    .downloadFiles{ 
+      float: right; margin-left: 20px;
+      width: calc(124px + 17.4em + 18px);
+      li{
+        float: left;
+        width: calc(42px + 5.8em);
+      }
+    }
   }
 
 }
