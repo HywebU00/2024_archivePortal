@@ -369,8 +369,18 @@
     margin-right: calc( 460px -  50vw);
     li{
       margin-bottom: 8px;
-      a{padding-top:16px;}
-      .type{ display: inline-block; width: 7em; vertical-align: top; margin-top: 2px;}
+      a{ 
+        padding-top:16px;padding-left: 7em;
+        &:hover, &:focus{
+          padding-left: calc(7em + 8px); 
+          .type{ left: 8px;}
+        }
+      }
+      .type{ 
+        position: absolute; left: 0; top:auto;
+        width: 7em; margin-top: 2px;
+        transition: .2s;
+      }
     }
   }
 
