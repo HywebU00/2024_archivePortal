@@ -18,6 +18,7 @@
 		"liveSassCompile.settings.showOutputWindowOn": "Warning",
 		"liveSassCompile.settings.autoprefix": [
 		
-		]
+		],
+		"liveServer.settings.port": 5502
 	}
 }
