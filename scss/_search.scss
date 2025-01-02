@@ -62,8 +62,8 @@
   .skip{background: none;}
 
   @media screen and (min-width: $wwNormal){
-    display: none; 
-    left: auto; right: 110px; top: 226px;
+    display: none; z-index: 99;
+    left: auto; right: 0; top: 54px;
     width: auto; min-width: 24em;
     box-shadow: rgb(0 0 0 / .5) 0 10px 30px;
 

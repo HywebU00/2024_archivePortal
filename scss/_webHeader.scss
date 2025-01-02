@@ -52,8 +52,12 @@
     }
     .menu{ flex: 1 1 69%;}
 
-    .sidebarCtrl, .searchCtrl{ display: none;}
+    // .sidebarCtrl, .searchCtrl{ display: none;}
+    .sidebarCtrl{ display: none;}
 
+    .searchCtrl{
+      top: 2px; right: 2px;
+    }
 
     // 固定版頭
     &.fixed {
