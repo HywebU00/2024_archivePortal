@@ -15,7 +15,8 @@
     
     @media screen and (min-width: $wwNormal){
       display: block;
-      position: absolute; top: 15px; right: 5px;
+      position: absolute; top: 15px; 
+      // right: 5px;
       right: 58px;
 
       &>ul{

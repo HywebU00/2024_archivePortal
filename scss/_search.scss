@@ -72,8 +72,8 @@
     }
   }
 
-  @media screen and (min-width: calc($wwMaximum + 200px)){
-    right: calc(50% - $wwMaximum*.5 + 10px);
+  @media screen and (min-width: $wwMaximum ){
+    right: calc(50% - $wwMaximum*.5);
 
   }
 

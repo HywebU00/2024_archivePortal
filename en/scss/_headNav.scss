@@ -15,10 +15,8 @@
     
     @media screen and (min-width: $wwNormal){
       display: block;
-      position: absolute; top: 15px; right: 5px;
+      position: absolute; top: 15px; right: 58px;
       
-      // border: 1px dashed pink;
-
       &>ul{
         overflow: hidden; line-height: 1.1; padding-bottom: 3px;
         &>li{

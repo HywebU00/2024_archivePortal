@@ -43,7 +43,6 @@
     display: flex; align-items: flex-start;
     h1 {
       flex: 0 0 31%;
-      // padding: 60px 0;
       padding: calc(1rem + 15px) 0 12px;
       margin: 0;
       font-size: 1.6em;
@@ -53,7 +52,10 @@
     }
     .menu{ flex: 1 1 69%;}
 
-    .sidebarCtrl, .searchCtrl{ display: none;}
+    .sidebarCtrl { display: none;}
+    .searchCtrl { top: 4px; right: 4px;
+      background: #0cc;
+    }
 
 
     // 固定版頭
@@ -82,7 +84,7 @@
           }
         }
       }
-      .headNav { display: none; }
+      .headNav, .searchCtrl , .search{ display: none; }
     }
   }
 
