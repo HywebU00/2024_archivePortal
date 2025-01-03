@@ -4,7 +4,7 @@
   @media screen and (min-width: $wwNormal){
     display: block;
     position: fixed; top: 226px; right: 0; z-index: 90;
-    top: 152px;
+    top: 151px;
     width: 100px;
     background-color: $white;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / .3);
@@ -63,7 +63,7 @@
   }
 
   @media screen and (min-width: calc($wwMaximum + 200px)){
-    top: 152px; right: calc(50% - $wwMaximum*.5 - 100px);
+    top: 151px; right: calc(50% - $wwMaximum*.5 - 100px);
   }
 
 }
