@@ -18,18 +18,19 @@
 
   .sidebarCtrl, .searchCtrl {position: absolute; top: 5px; }
   .sidebarCtrl { left: 5px; }
-  .searchCtrl { right: 5px;background-color: transparent;
-    &.closeIt {
-      background-color: $assistant1;
-      box-shadow: $assistant1 0 0 0 4px;
-    }
+  .searchCtrl { 
+    right: 5px;
+    // &.closeIt {
+    //   background-color: $assistant1;
+    //   box-shadow: $assistant1 0 0 0 4px;
+    // }
     &:hover, &:focus{
-      background-color: $primaryColor;
-      box-shadow: none;
-      &::before{ filter: brightness(16);}
+      // background-color: $primaryColor;
+      // box-shadow: none;
+      // &::before{ filter: brightness(16);}
     }
     &:focus {
-      box-shadow: $primaryColor 0 0 0 4px;
+      // box-shadow: $primaryColor 0 0 0 4px;
     }
     
   }
@@ -55,15 +56,11 @@
     // .sidebarCtrl, .searchCtrl{ display: none;}
     .sidebarCtrl{ display: none;}
 
-    .searchCtrl{
-      top: 2px; right: 2px;
-    }
+    .searchCtrl{top: 2px; right: 8px;}
 
     // 固定版頭
     &.fixed {
-      z-index: 980;
-      padding:5px;
-      align-items: center;
+      padding:5px;align-items: center;z-index: 980;
       box-shadow: rgb(0 0 0 / .5) 0 2px 6px;
       animation: fixHeadAni .5s 1 ease-out;
       h1{ 

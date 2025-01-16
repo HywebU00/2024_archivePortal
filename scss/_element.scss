@@ -229,22 +229,38 @@ button.sidebarCtrl{
 
 // 查詢區開關圖示 
 // --------------------------------------------------------------- //
-.searchCtrl{
+button.searchCtrl{
+  position: absolute;
   margin: 0; padding: 0; border: none;
+  background-color: transparent; box-shadow: none;
 
-  &::before , &::after{ content: ''; }
+  &::before , &::after{ content: '';  position: absolute;}
 
   &::before{
-    display: block; margin: 0 auto;
+    left: 4px; top: 4px;
     width: 42px; height: 42px;
-    background: url(../images/icon_search.svg) no-repeat 0 0;
-    background-size: 100%;
+    background:transparent url(../images/icon_search.svg) no-repeat 0 0;
   }
 
-  &.closeIt{}
+  &:hover, &:focus{ 
+    background: $primaryColor; box-shadow: $primaryColor 0 0 0 3px; 
+    &::before{filter: brightness(20);}
+  }
+
+  &.closeIt{
+    background: $primaryColor;
+    &::before , &::after{
+      position: absolute; top: calc(50% - 2px); left: calc(50% - 14px);
+      width: 28px; height: 4px; border-radius: 1px;
+      background: $assistant1; 
+      filter:none;
+    }
+    &::before {rotate: 45deg; }
+    &::after {rotate: -45deg;}
+
+    &:hover, &:focus { background: $primaryColor; }
+  }
   
-  &:hover { background-clip: $secondaryColor;}
-  &:focus{ box-shadow: var(--bg) 0 0 0 4px; }
 
   @media screen and (min-width: $wwNormal){
   }

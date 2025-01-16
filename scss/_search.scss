@@ -63,7 +63,7 @@
 
   @media screen and (min-width: $wwNormal){
     display: none; z-index: 99;
-    left: auto; right: 0; top: 54px;
+    left: auto; right: 8px; top: 54px;
     width: auto; min-width: 24em;
     box-shadow: rgb(0 0 0 / .5) 0 10px 30px;
 
@@ -73,7 +73,7 @@
   }
 
   @media screen and (min-width: $wwMaximum ){
-    right: calc(50% - $wwMaximum*.5);
+    right: calc(50% - $wwMaximum*.5 + 8px);
 
   }
 

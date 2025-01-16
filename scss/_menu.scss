@@ -34,7 +34,6 @@
         &>a{
           padding:.85em 1vw .7em; white-space: nowrap;
           transition: .2s;
-          // outline: 1px dotted #cdd8;
           &:focus, &:hover {background-color: $assistant1;}
         }
 
