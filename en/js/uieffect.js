@@ -275,37 +275,46 @@ $(function(){
 
 
 
-  // 版頭查詢區開合（手機版）
+  // 版頭查詢區開合
   // --------------------------------------------------------------- //
   var _searchCtrl = $('.searchCtrl');
   var _search = $('.search');
-  _search.append('<button class="skip" type="button">jump to open/close controller</button>');
-  var _skipSearch = _search.find('.skip');
-  const srSpeed = 320;
-
-  if (_search.is(':hidden')) {
-    _searchCtrl.removeClass('closeIt').attr('aria-expanded', false);
-  } else {
-    _searchCtrl.addClass('closeIt').attr('aria-expanded', true);
-  }
+  const srSpeed = 310;
 
   _searchCtrl.on( 'click', function(){
-    if( _search.hasClass('reveal')) {
-      _search.slideUp(srSpeed, function(){
-        _search.removeClass('reveal').hide();
-      })
+    if( _search.is(':visible')) {
       _searchCtrl.removeClass('closeIt').attr('aria-expanded', false);
+      _search.slideUp(srSpeed);
     } else {
       _search.slideDown(srSpeed, function(){
-        _search.addClass('reveal').find('input[type="text"]').trigger('focus');
         _searchCtrl.addClass('closeIt').attr('aria-expanded', true);
+        _search.find('input[type="text"]').trigger('focus');
       });
     }
   })
 
-  // skip, 回到查詢控制開關
-  _skipSearch.on( 'focus', function(){
-    _searchCtrl.trigger('focus');
+  _body.on('keydown', function(e){
+    if( e.code == 'KeyS' && e.altKey && _search.is(':hidden') ) {
+      _search.slideDown(srSpeed, function(){
+        _searchCtrl.addClass('closeIt').attr('aria-expanded', true);
+        _search.addClass('reveal').find('input[type="text"]').trigger('focus');
+      });
+    }
+  })
+
+  _search.on('keydown', function(e){
+    if( e.code == 'Escape' ) {
+      _search.slideUp(srSpeed);
+      _searchCtrl.removeClass('closeIt');
+    }
+  })
+
+  // 焦點離開 _search 後隱藏 _search
+  $('*').not(_searchCtrl).focus(function(){
+    if( !$(this).parents().is(_search) && _search.is(':visible')){
+      _search.slideUp(srSpeed);
+      _searchCtrl.removeClass('closeIt');
+    }
   })
   // --------------------------------------------------------------- //
 

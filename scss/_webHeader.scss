@@ -3,7 +3,6 @@
 .webHeader {
   position: relative; z-index: 810; 
   height: 60px; margin: 0 auto;
-  // background-color: $white;
   h1{ 
     margin: 0 60px; padding: 5px 0; text-align: center;
     font-size: 1.5em; line-height: 50px;
@@ -18,22 +17,7 @@
 
   .sidebarCtrl, .searchCtrl {position: absolute; top: 5px; }
   .sidebarCtrl { left: 5px; }
-  .searchCtrl { 
-    right: 5px;
-    // &.closeIt {
-    //   background-color: $assistant1;
-    //   box-shadow: $assistant1 0 0 0 4px;
-    // }
-    &:hover, &:focus{
-      // background-color: $primaryColor;
-      // box-shadow: none;
-      // &::before{ filter: brightness(16);}
-    }
-    &:focus {
-      // box-shadow: $primaryColor 0 0 0 4px;
-    }
-    
-  }
+  .searchCtrl { right: 5px; }
 
   &.fixed{
     position: fixed; left: 0; top: 0;right: 0;
@@ -53,9 +37,7 @@
     }
     .menu{ flex: 1 1 69%;}
 
-    // .sidebarCtrl, .searchCtrl{ display: none;}
     .sidebarCtrl{ display: none;}
-
     .searchCtrl{top: 2px; right: 8px;}
 
     // 固定版頭
