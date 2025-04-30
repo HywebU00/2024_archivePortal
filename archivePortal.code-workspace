@@ -1,11 +1,10 @@
 {
 	"folders": [
 		{
-			"path": "../2024_archivePortal"
+			"path": "../archivePortal"
 		}
 	],
 	"settings": {
-		"liveServer.settings.port": 5505,
 		"liveSassCompile.settings.formats": [
 			{
 				"format": "compressed",
@@ -16,7 +15,7 @@
 		"liveSassCompile.settings.includeItems": [
 			"/scss/style.scss",
 			// "/scss/pageNotFound.scss"
-			"/en/scss/style.scss"
+			// "/en/scss/style.scss"
 		],
 		"liveSassCompile.settings.showOutputWindowOn": "Warning",
 		"liveSassCompile.settings.autoprefix": [
