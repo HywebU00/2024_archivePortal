@@ -10,9 +10,9 @@
   overflow: hidden; overflow-y: scroll;
   background-color: var(--sidebarBg);
 
-  position: fixed; z-index: 998;
+  position: fixed; z-index: 991;
   width: $sideBarWidth; height: 100vh;
-  top: 0; left: $sideBarWidth * (-1); overflow: auto;
+  top: 0; left: $sideBarWidth * (-1);
   transition: .5s;
 
   &.reveal{ left:0;}

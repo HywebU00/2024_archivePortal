@@ -1,8 +1,8 @@
 $(function(){
 
-  var _html = $('html');
-  var _body = $('body');
-  var _window = $(window);
+  const _html = $('html');
+  const _body = $('body');
+  const _window = $(window);
 
   var ww = _window.width();
   var wwNew = ww;
@@ -12,9 +12,9 @@ $(function(){
   const wwNormal = 1000; //此值以上是電腦
   const wwMaximum = 1440; // 最大寬度
 
-  var _webHeader = $('.webHeader');
-  var _menu = _webHeader.find('.menu'); // 寬版主選單
-  var _goTop = $('.goTop');
+  const _webHeader = $('.webHeader');
+  const _menu = _webHeader.find('.menu'); // 寬版主選單
+  const _goTop = $('.goTop');
 
   // _html.removeClass('no-js');
 
@@ -22,15 +22,15 @@ $(function(){
   // 製作側欄選單遮罩
   // --------------------------------------------------------------- //
   _body.append('<div class="sidebarMask"></div>');
-  var _sidebarMask = $('.sidebarMask');
+  const _sidebarMask = $('.sidebarMask');
   // --------------------------------------------------------------- //
 
 
 
   // 行動版側欄
   // --------------------------------------------------------------- //
-  var _sidebar = $('.sidebar');
-  var _sidebarCtrl = $('.sidebarCtrl');
+  const _sidebar = $('.sidebar');
+  const _sidebarCtrl = $('.sidebarCtrl');
 
   // 找出_menu中有次選單的li 
   _menu.find('li').has('ul').addClass('hasChild');
@@ -42,19 +42,18 @@ $(function(){
   _menu.clone().prependTo(_sidebar);  // 複製「主選單」到側欄給行動版用
   $('.headNav').clone().appendTo(_sidebar);  // 複製「topLinks」到側欄給行動版用
 
-  var _sidebarMenu = _sidebar.find('.menu');
+  const _sidebarMenu = _sidebar.find('.menu');
   var _hasChildMobile = _sidebarMenu.find('.hasChild>a');
 
   // 行動版側欄，顯示／隱藏
   // --------------------------------------------------------------- //
   var _sidebarA = _sidebar.find('a, button');
-  const sbA_lastIndex = _sidebarA.length - 1;
-  var _sidebarA_first = _sidebarA.eq(0);
-  var _sidebarA_last = _sidebarA.eq(sbA_lastIndex);
+  const _sidebarA_first = _sidebarA.eq(0);
+  const _sidebarA_last = _sidebarA.eq(_sidebarA.length - 1);
 
   // 點擊漢堡圖示
   _sidebarCtrl.on('click' ,function(){
-    if (_sidebar.hasClass('reveal')) {
+    if (_sidebar.is(':visible')) {
       _sidebar.removeClass('reveal');
       _sidebarCtrl.removeClass('closeIt');
       _sidebarMask.fadeOut(500, function(){
@@ -65,7 +64,6 @@ $(function(){
       _sidebar.css('top', _webHeader.innerHeight()).show(10, 
         function(){ 
           _sidebar.addClass('reveal');
-          // _sidebarA_first.trigger('focus');
         } 
       );
       _sidebarCtrl.addClass('closeIt');
@@ -84,8 +82,27 @@ $(function(){
     });
   })
 
+  // 鍵盤 Tab
+  _sidebarCtrl.on('keydown', function(e){
+    if ( e.code == 'Tab' && _sidebar.is(':visible') ) {      
+      if(!e.shiftKey) {
+        e.preventDefault();
+        _sidebarA_first.trigger('focus');
+      } else {
+        e.preventDefault();
+      }
+    }
+  })
+
   _sidebarA_last.on('keydown', function(e){
-    if ( e.code === 'Tab' && !e.shiftKey ) {
+    if ( e.code == 'Tab' && !e.shiftKey ) {
+      e.preventDefault();
+      _sidebarCtrl.trigger('focus');
+    }
+  })
+
+  _sidebarA_first.on('keydown', function(e){
+    if ( e.code == 'Tab' && e.shiftKey ) {
       e.preventDefault();
       _sidebarCtrl.trigger('focus');
     }
@@ -271,83 +288,49 @@ $(function(){
 
   // 版頭查詢區開合
   // --------------------------------------------------------------- //
-  var _searchCtrl = $('.searchCtrl');
-  var _search = $('.search');
-  const srSpeed = 310;
+  const _searchCtrl = $('.searchCtrl');
+  const _search = $('.search');
+  const _searchLastA = _search.find('a, input, button').last();
+  const srSpeed = 250;
 
   _searchCtrl.on( 'click', function(){
-    if( _search.is(':visible')) {
-      _searchCtrl.removeClass('closeIt').attr('aria-expanded', false);
-      _search.slideUp(srSpeed);
-    } else {
-      _search.slideDown(srSpeed, function(){
-        _searchCtrl.addClass('closeIt').attr('aria-expanded', true);
-        _search.find('input[type="text"]').trigger('focus');
-      });
-    }
+    _search.is(':hidden') ? openSearch() : closeSearch();    
   })
 
   _body.on('keydown', function(e){
+    // 按 alt+S 鍵要開啟 search
     if( e.code == 'KeyS' && e.altKey && _search.is(':hidden') ) {
-      _search.slideDown(srSpeed, function(){
-        _searchCtrl.addClass('closeIt').attr('aria-expanded', true);
-        _search.addClass('reveal').find('input[type="text"]').trigger('focus');
-      });
+      openSearch();
+    }
+    // 按 esc 鍵要關閉 search
+    if( e.code == 'Escape' && _search.is(':visible') ) {
+      closeSearch();
     }
   })
 
-  _search.on('keydown', function(e){
-    if( e.code == 'Escape' ) {
-      _search.slideUp(srSpeed);
-      _searchCtrl.removeClass('closeIt');
+  // 離開最後一個可聚焦元件要回到控制元件
+  _searchLastA.on('keydown', function(e){
+    if( e.code == 'Tab' && !e.shiftKey) {
+      e.preventDefault();
+      closeSearch();
     }
   })
 
-  // 焦點離開 _search 後隱藏 _search
-  $('*').not(_searchCtrl).focus(function(){
-    if( !$(this).parents().is(_search) && _search.is(':visible')){
-      _search.slideUp(srSpeed);
-      _searchCtrl.removeClass('closeIt');
-    }
-  })
+  // 開啟 search
+  function openSearch(){
+    _search.slideDown(srSpeed, function(){
+      _searchCtrl.addClass('closeIt').attr('aria-expanded', true);
+      _search.addClass('reveal').find('input[type="text"]').trigger('focus');
+    });
+  }
+
+  // 關閉 search
+  function closeSearch(){
+    _searchCtrl.removeClass('closeIt').attr('aria-expanded', false).trigger('focus');
+    _search.slideUp(srSpeed);
+  }
+
   // --------------------------------------------------------------- //
-
-
-  // // 版頭查詢區開合（手機版） --- 20250116 removed ---
-  // // --------------------------------------------------------------- //
-  // var _searchCtrl = $('.searchCtrl');
-  // var _search = $('.search');
-  // _search.append('<button class="skip" type="button">回到控制開關</button>');
-  // var _skipSearch = _search.find('.skip');
-  // const srSpeed = 320;
-
-  // if (_search.is(':hidden')) {
-  //   _searchCtrl.removeClass('closeIt').attr('aria-expanded', false);
-  // } else {
-  //   _searchCtrl.addClass('closeIt').attr('aria-expanded', true);
-  // }
-
-  // _searchCtrl.on( 'click', function(){
-  //   if( _search.hasClass('reveal')) {
-  //     _search.slideUp(srSpeed, function(){
-  //       _search.removeClass('reveal').hide();
-  //     })
-  //     _searchCtrl.removeClass('closeIt').attr('aria-expanded', false);
-  //   } else {
-  //     _search.slideDown(srSpeed, function(){
-  //       _search.addClass('reveal').find('input[type="text"]').trigger('focus');
-  //       _searchCtrl.addClass('closeIt').attr('aria-expanded', true);
-  //     });
-  //   }
-  // })
-
-  // // skip, 回到查詢控制開關
-  // _skipSearch.on( 'focus', function(){
-  //   _searchCtrl.trigger('focus');
-  // })
-  // // --------------------------------------------------------------- //
-
-
 
 
   // 點擊展開的功能圖示

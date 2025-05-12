@@ -268,7 +268,7 @@ button.searchCtrl{
 // 側欄遮罩 
 // --------------------------------------------------------------- //
 .sidebarMask {
-  display: none;z-index: 800;
+  display: none; z-index: 999;
   position: fixed;left: 0;right: 0;top: 0;bottom: 0;
   background-color: rgba(100,100,100,.75);
 }
