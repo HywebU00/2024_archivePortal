@@ -3,7 +3,7 @@
 $wwSlim: 400px;
 $wwMedium: 700px;
 $wwNormal: 1000px;
-$wwMaximum: 1440px;
+$wwMaximum: 1280px;
 // ---------------------------------------------------------------- //
 
 
@@ -11,15 +11,15 @@ $wwMaximum: 1440px;
 // ---------------------------------------------------------------- //
 $sideBarWidth: 300px;  // 窄版側欄選單
 $mobileWidth: 94%; // 窄螢幕寬度 moduals width in mobile
-$normalWidth: 90%; // 寬螢幕寬度
+$normalWidth: 94%; // 寬螢幕寬度
 $mobileWidthVW: 94vw; // 窄螢幕寬度 moduals width in mobile
-$normalWidthVW: 90vw; // 寬螢幕寬度
-$maximumWidth: $wwMaximum*.9; // 內容區最大寬度
+$normalWidthVW: 94vw; // 寬螢幕寬度
+$maximumWidth: $wwMaximum*.94; // 內容區最大寬度
 
 // 文件邊界寬度
-$marginDoc: 5%;
+$marginDoc: 3%;
 $marginDocMob: 3%;
-$marginDocMax: calc(50% - $wwMaximum*.45);
+$marginDocMax: calc(50% - $wwMaximum*.47);
 
 $bigRadius: 32px; // 圓角半徑
 $radius: 16px; // 圓角半徑
@@ -45,14 +45,14 @@ $radius: 16px; // 圓角半徑
 // 顏色變數
 // ---------------------------------------------------------------- //
 // $primaryColor:#0F3D5F;
-$primaryColor:#910f0d;
-$secondaryColor: #E2E2E2;
+$primaryColor:#a2231c;
+$secondaryColor: #edebe8;
 $assistant1: #fff4b7;
 $hilight : #ef460e;
 $warning: #ca0956;
 $hover: #ebf2f3;
 
-$fontColor: #2a4f5d;
+$fontColor: #000;
 $fontColorLight: #666;
 $fontColorPale: #888;
 $fontColorDark: #000;

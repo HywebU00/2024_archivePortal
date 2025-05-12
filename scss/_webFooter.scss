@@ -5,44 +5,53 @@
 // 開關
 .fatFootCtrl{
   --ting: #fff;
-  --bg: #{$primaryColor};
+  --bg: #000;
   --size: 56px;
-  --arrowSize: 12px;
+  --arrowSize: 22px;
 
   position: absolute; z-index: 9; 
-  left: calc(50% - var(--size)/2); 
-  top: -1px; 
-  width: var(--size); height: 52px; 
+  top: 0; right: $marginDoc;
+  height: var(--size); aspect-ratio: 2;
   padding: 0; margin:0;
-  text-indent: -10em; overflow: hidden;
+  text-indent: -20em; overflow: hidden;
   border: none; box-shadow: none;
   background-color: var(--bg);
-  border-radius: 0 0 4px 4px;
 
+  &::before, &::after {content: ''; position: absolute;}
+  &::after {
+    width: 2px; height: 28px;
+    background-color: #fff;
+    left: calc(50% - 2px); top: 14px;
+  }
   &::before {
-    content: ''; position: absolute; 
     width: var(--arrowSize);height: var(--arrowSize);
-    left: calc( var(--size)/2 - var(--arrowSize)/2 - 1px); 
-    top: calc( var(--size)/2 - var(--arrowSize)/2);
-    transform: rotate(45deg);
-    border: 2px solid var(--ting);
-    border-right: none; border-bottom: none;
-    transition: .3s;
+    left: calc( var(--size) - var(--arrowSize)/2 - 1px); 
+    top: calc( 50% - var(--arrowSize)/2 );
+    rotate: 45deg;
+    border-width: 2px;
+    border-style: solid;
+    border-right-color: transparent; border-bottom-color: transparent;
+    border-left-color: var(--ting); border-top-color: var(--ting);
+    transition: .25s;
   }
 
   &:hover, &:focus {
-    --bg:#{$assistant1};
-    box-shadow: none; 
-    &::before{ border-color: $primaryColor;}
+    --bg: #{$primaryColor};
+
+    box-shadow: none;
+    background-color: var(--bg);
   }
 
 
   &.closed{
     &::before{
-      top: calc( var(--size)/2 - var(--arrowSize) - 2px );
-      // border-color: var(--ting);
-      transform: rotate(225deg);
+      border-left-color: transparent; border-top-color: transparent;
+      border-right-color: var(--ting); border-bottom-color: var(--ting);
     }
+  }
+
+  @media screen and (min-width: $wwMaximum){
+    right: $marginDocMax;
   }
 }
 
@@ -51,36 +60,39 @@
 // 可開合區
 .fatFooter {
   position: relative; padding: 100px 0 40px;
-  background-color: $white;
+  background-color: $secondaryColor;
 }
 
 // 頁腳選單
 .siteTree{
   margin: 0 auto; width: $mobileWidth;
-  ul{ list-style: none; margin: 0 auto; padding: 0; line-height: 1.3; }
+  ul {
+    list-style: none;margin: 0;padding: 0;
+    line-height: 1.3;
+  }
   li{ 
     margin: 0;padding: 0;
-    a{display: block; color: $primaryColor; text-decoration: none;}
+    a{display: block; color: $fontColor; text-decoration: none;}
   }
 
   &>ul{
-    margin: 0 -10px;
+    margin: 0 auto; 
     display: flex; flex-flow: row wrap;
+    gap: 20px;
 
     &>li{
-      flex: 0 0 calc(50% - 20px);
-      margin: 20px 10px 1em; padding: 0;
+      flex: 0 0 calc(50% - 10px);
+      margin: 0 0 20px; padding: 0;
       &>a{
         position: relative; 
-        padding: 0 0 3px;
-        font-weight: bold; font-size: 1.22em;
+        padding: 0 0 4px;
         &::after{
           content: ''; position: absolute; left: 0; right: 0; bottom: 0;
           height: 0; background-color: $primaryColor;
-          transition: .2s;
+          transition: .1s;
         }
         &:hover, &:focus{
-          &::after { height: 3px;}
+          &::after { height: 4px;}
           &+ul{border-top-color: $primaryColor;}
         }
       }
@@ -88,24 +100,24 @@
       &>ul{
         display: none;
         margin-bottom: 3em; padding-top: .5em;
-        font-weight: normal;
+        font-size: .83em;
         
         &>li{
           margin: .4em 0;
           &>a{
             position: relative;
-            padding: .5em 12px .1em 0;
+            padding: .5em 0 .1em;
             border-bottom: 1px solid transparent;
             transition: .2s;
-            &::before {
-              content: ''; position: absolute; top: 1.05em; left: 1px;
-              width: 0; height: 4px;
+            &::after {
+              content: ''; position: absolute; bottom: 0; left: 0; right: 100%;
+              height: 2px;
               background-color: $primaryColor;
               transition: .2s;
             }
             &:hover, &:focus{
-              padding-left: 12px; padding-right: 0;
-              &::before{ width: 8px;}
+              // padding-left: 12px; padding-right: 0;
+              &::after{right: 0;}
             }
             &:focus{border-bottom-color: $primaryColor;}
           }
@@ -117,10 +129,10 @@
     }
   }
 
-  @media screen and (min-width: calc($wwSlim + 100px)){
+  @media screen and (min-width: calc($wwSlim + 160px)){
     &>ul{
       &>li{
-        flex-basis: calc(33.33% - 20px);
+        flex-basis: calc(25% - 15px);
       }
     }
   }
@@ -128,15 +140,19 @@
   @media screen and (min-width: $wwMedium){
     &>ul{
       &>li{
-        flex-basis: calc(25% - 20px);
+        flex-basis: calc(20% - 16px);
       }
     }
   }
  
   @media screen and (min-width: $wwNormal){
     &>ul{
+      gap: 15px;
+      justify-content: space-between;
+      flex-wrap: nowrap;
       &>li{
-        flex-basis: calc(20% - 20px);
+        flex:1 1 calc(10% - 13px);
+        margin-top: 0;
       }
     }
   }
@@ -145,7 +161,7 @@
     width: $maximumWidth;
     &>ul{
       &>li{
-        flex-basis: calc(16.66% - 20px);
+        // flex-basis: calc(16.66% - 20px);
       }
     }
   }
@@ -160,143 +176,133 @@
 // --------------------------------------------------------------- //
 .webFooter {
   position: relative;
-  border-top: 1px solid $secondaryColor;
-  background: #005e8d url(../images/footerBg.png) no-repeat center bottom;
-  background-size: 100% auto;
-  color: $white;
 
   .middle, .base {
-    width: 90%; margin: 0 auto;padding: 24px 0; 
+    width: $mobileWidth; margin: 0 auto;
+   
   }
 
   .middle{
-    display: flex; flex-wrap: wrap;
-    padding-top: 56px;
-    a {display: block; color: $white;text-decoration: none; }
-    ul{ list-style: none; margin: 0; padding: 0; line-height: 1; }
-    
-    .logo {
-      flex: 0 0 100%; width: 100%; margin:0 0 22px;
-      img{ height: 100px;}
+    padding: 50px 0 20px;
+    img.logo {
+      display: block;width: 400px; height: 32px;
     }
+  }
 
-    .iconLinks {
-      flex: 0 1 88px;
-      li{
-        margin: 2px 0 10px; padding: 0;
-        a{ 
-          padding: 8px; width: 36px; height: 36px; margin: 0 auto;
-           border-radius: 26px;
-          box-sizing: content-box;
-          transition: .2s;
-          &:hover, &:focus{background-color: rgb(0 0 0 / .3);}
-          &:focus { box-shadow: $white 0 0 0 2px;}
+
+  .base{
+    line-height: 1.3; font-size: .83em;
+    padding: 0 0 40px;
+    ul, p{ line-height: inherit;}
+
+    &>.column{
+      overflow: hidden;
+      margin-bottom: 20px;
+
+      
+      &:nth-child(1) {
+        
+      }
+      &:nth-child(2) {
+        padding: 5px 0;
+        p{ 
+          margin:0;
+          &+p{ margin-top: 6px;}
         }
-        img{ display: block;width: 100%; height: 100%;  object-fit: contain;}
+      }
+      &:nth-child(3) {
       }
     }
-    .textLinks {
-      flex: 1 1 auto; width: calc(90% - 90px);
-      padding-left: 16px; line-height: 1.4;
-      border-left: 1px solid rgb(255 255 255 / .4);
-      li{
-        margin: 10px 0 18px;
-        a{
-          position: relative; padding: 3px 1px 1px;
-          &::before{
-            content: ''; 
-            position: absolute; left: 0;right: 0; bottom: 0;
-            height: 0;
-            transition: .1s;
-          }
-          &:hover, &:focus { 
-            &::before{ height: 2px;background-color: $white;}
-          }
-          &:focus-visible {
-            box-shadow: $white 0 0 0 2px;
-            &::before{height: 0;}
-          }
+  }
+
+  .iconLinks {
+    // flex: 0 1 88px;
+    outline: 1px dashed #f008;
+    outline-offset: -1px;
+    list-style: none;
+    margin: 0;padding: 0;
+    li{
+      float: left;
+      margin: 4px; padding: 4px;
+      a{ 
+        display: block;
+        width: 46px; height: 46px; border-radius: 50%;
+        overflow: hidden;
+        transition: .2s;
+        box-shadow: $primaryColor 0 0 0 3px;
+
+        img{ 
+          display: block; margin:10% auto 0;
+          width: 80%; height: 80%;  object-fit: contain;
+          border-radius: 50%;
+          outline: 1px dotted #f008;
+          outline-offset: -1px;
         }
+        &:hover, &:focus{}
+        &:focus {}
       }
     }
   }
 
 
-  .base {
-    padding-bottom: 64px;
-    line-height: 1.4;
-    a {
-      text-decoration: none; color: $white;
-      &:hover, &:focus{ text-decoration: underline;}
-      &:focus-visible {box-shadow: $white 0 0 0 1px;text-decoration:none;}
-    }
-
-    ul{
-      list-style: none; margin:2.5em 0 0; padding: 0;line-height: 1.4; 
-      li{
-        display: inline-block; margin: 0 0 .4em;padding: 0;
+  .textLinks {
+    list-style: none; margin:20px 0;padding: 0;
+    overflow: hidden;
+    &+.update{ clear: both;}
+    li{
+      position: relative;
+      margin: 0 .55em 12px 0; padding: 0 .6em 0 0;
+      float: left;
+      &::after {
+        content: ''; position: absolute;
+        right: 0; top: 0; height: 1.2em; width: 1px;
+        background-color: $fontColorLight;
       }
-    }
-    .contact{
-      li{ 
-        margin-right: 1em;
-        &:first-child{ width: 100%; margin-right: 0;}
-        &:last-child{margin-right: 0;}
-        &>a{
-          display: block; position: relative;text-decoration: none; 
-          padding: 3px 1px 1px;
-          &::after{
-            content: ''; 
-            position: absolute; left: 0;right: 0; bottom: 0;height: 0;
-            transition: .1s;
-          }
-          &:focus, &:hover{
-            &::after{ height: 2px; background-color: $white;}
-          }
-          &:focus-visible {
-            box-shadow: $white 0 0 0 2px;
-            &::after{display: none;}
-          }
-
+      &:last-child {
+        margin-right: 0; padding-right: 0;
+        &::after {display: none;}
+      }
+      a{
+        display: block;position: relative;
+        text-decoration: none;
+        &::after {
+          content: ''; 
+          position: absolute; left: 0; bottom: 0; right: 0;
+          height: 2px; 
+          transition: .2s;
+        }
+        &:hover, &:focus { 
+          &::after{background-color: $primaryColor;}
+        }
+        &:focus-visible {
+          box-shadow: $primaryColor 0 0 0 1px inset;
+          // &::after{height: 0;}
         }
       }
     }
-    .update {
-      li {
-        margin-right: 1em;
-        &:last-child {margin-right: 0; }
-      }
-    }
-    .pics {
-      li{ margin-left: 15px;
-        &:first-child {margin-left: 0;}
-        img{ display: block; height: 74px; transition: .15s;}
-        a{
-          display: block; 
-          &:hover, &:focus {
-            img{
-              box-shadow: #005e8d 0 0 0 1px, $white 0 0 0 4px;
-            }
-          }
-        }
-      }
+  }
+
+  .logoArchives{
+    display: inline-block;
+    img{ display: block; width: 186px;}
+  }
+  .badge{
+    width: 120px; float: right;
+    img{ display: block; width: 100%; height: auto;}
+  }
+
+  .update{
+    list-style: none; margin: 0;padding: 0;line-height: 1.1;
+    li{ display: inline-block;
+      &+li{ margin-left: 30px;}
     }
   }
   
  
   @media screen and (min-width: $wwNormal){
     .middle{
-      flex-wrap: nowrap;justify-content: flex-end;
+      // flex-wrap: nowrap;justify-content: flex-end;
 
-    
-      .logo {flex: 1 0 340px;}
-      .iconLinks {
-        flex:1 1 10%; min-width: 120px; text-align: right; white-space: nowrap;
-        li{
-          display: inline-block; margin: 0 0 0 6px; padding: 0;
-          a{ margin: 0;}
-        }
-      }
       .textLinks {
         flex: 0 1 calc(90% - 360px);
         max-width: 37em;
@@ -321,23 +327,34 @@
     }
   
     .base{
-      padding-right: 360px;
-      position: relative;
-
-      .contact{
-        li:first-child { width: auto; margin-right: 1em;}
-        
-      }
-      .update { margin-top: .74em;}
-      .pics {
-        position: absolute; right: 0; top: 30px; 
-        li{ display: inline-block; vertical-align: top; margin:0 0 0 16px;
-          &.badge{ img{height: 50px;} }
-          // &.qrcode{ img{} height: 74px;}
-          
+      display: flex; justify-content: space-between;
+      gap: 3vw;
+      &>.column{
+        padding: 5px 0 0;
+        &:nth-child(1){
+          flex: 0 0 190px;
+        }
+        &:nth-child(2){
+          flex: 1 1 60%;
+        }
+        &:nth-child(3){
         }
       }
+
     }
+
+    .logoArchives { display: block;}
+
+    .badge{
+      float: none; display: block;
+      margin: 20px 0 0;
+    }
+
+    .textLinks {
+      margin:18px 0 6px;
+      li{ margin-bottom: 0; }
+    }
+    .update{ margin: 0; }
   }
 
   @media screen and (min-width: $wwMaximum){

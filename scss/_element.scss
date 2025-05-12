@@ -237,9 +237,10 @@ button.searchCtrl{
   &::before , &::after{ content: '';  position: absolute;}
 
   &::before{
-    left: 4px; top: 4px;
-    width: 42px; height: 42px;
+    width: 20px; height: 20px;
+    left: calc(50% - 10px); top: calc(50% - 10px);
     background:transparent url(../images/icon_search.svg) no-repeat 0 0;
+    background-size: contain;
   }
 
   &:hover, &:focus{ 
@@ -259,6 +260,11 @@ button.searchCtrl{
     &::after {rotate: -45deg;}
 
     &:hover, &:focus { background: $primaryColor; }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    width: 92px; height: 92px; 
+    background-color: $primaryColor;
   }
 }
 // --------------------------------------------------------------- //

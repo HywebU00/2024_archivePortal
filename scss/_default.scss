@@ -1,7 +1,7 @@
 :root{
   font-size: 1.125em; // 18px
 
-  --bodyBg: #ECF5FF;
+  --bodyBg: #fff;
 }
 body{
   margin: 0; padding: 0;
@@ -9,14 +9,14 @@ body{
   color: $fontColor;
   background-color: var(--bodyBg);
   
-  *{box-sizing: border-box;}
-  a{ outline: none;}
+  *, *::before, *::after{box-sizing: border-box;}
+  a{ outline: none; color: #000;}
   figure{ display: block; margin: 0;}
 
   &.noScroll{ overflow: hidden; overflow-y:hidden; }
 
-  &.smallFont .main{ font-size: .85em;}
-  &.largeFont .main{ font-size: 1.33em;}
+  &.smallFont .main{ font-size: .83rem;}
+  &.largeFont .main{ font-size: 1.33rem;}
 
 }
 

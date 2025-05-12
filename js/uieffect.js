@@ -10,7 +10,7 @@ $(function(){
   const wwSlim= 400; //更窄螢幕
   const wwMedium = 700; //此值以下是手機
   const wwNormal = 1000; //此值以上是電腦
-  const wwMaximum = 1440; // 最大寬度
+  const wwMaximum = 1280; // 最大寬度
 
   const _webHeader = $('.webHeader');
   const _menu = _webHeader.find('.menu'); // 寬版主選單

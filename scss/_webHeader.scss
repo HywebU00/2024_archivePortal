@@ -2,23 +2,27 @@
 // --------------------------------------------------------------- //
 .webHeader {
   position: relative; z-index: 991; 
-  height: 60px; margin: 0 auto;
+  height: 58px; margin: 0 auto;
   background-color: #fff;
   h1{ 
-    margin: 0 60px; padding: 5px 0; text-align: center;
+    margin: 0 auto; padding: 4px 0; text-align: center;
+    width: calc(100% - 120px);
     font-size: 1.5em; line-height: 50px;
     a{
-      text-decoration: none; display: block; height: 50px;
-      background: url(../images/h1_mobile.png) no-repeat center center;
-      background-size: contain;
+      text-decoration: none; display: block;
+      // background: url(../images/h1_mobile.png) no-repeat center center;
+      // background-size: contain;
       &:focus{ outline: 1px solid $primaryColor;}
     }
-    img{ display: none;}
+    img{ 
+      display: block; margin: 0 auto;
+      height: 50px; width: 90%; object-fit: contain;
+    }
   }
 
-  .sidebarCtrl, .searchCtrl {position: absolute; top: 5px; }
-  .sidebarCtrl { left: 5px; }
-  .searchCtrl { right: 5px; }
+  .sidebarCtrl, .searchCtrl {position: absolute; top: 4px; }
+  .sidebarCtrl { left: 4px; }
+  .searchCtrl { right: 4px; }
 
   &.fixed{
     position: fixed; left: 0; top: 0;right: 0;
@@ -26,21 +30,33 @@
     box-shadow: rgb(0 0 0 / 0.3) 0 0 16px;
   }
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   @media screen and (min-width: $wwNormal){
     height: auto; 
-    display: flex; align-items: flex-start;
     h1 {
-      flex: 0 0 31%;padding: calc(1rem + 15px) 0 12px; margin: 0;
-      font-size: 1.6em;
-      background: linear-gradient(180deg, rgba(226, 226, 226, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
+      margin: 0 50% 0 0; padding: 30px 0 14px 40px;
+      min-width: 596px;
+      font-size: 1.5em;
       a{ height: 100%; background: none;}
-      img{ display: block;width: 79%; margin: 0 auto; }
+      img{ display: block;margin: 0;width: 556px;}
     }
-    .menu{ flex: 1 1 69%;}
+    .menu{ }
 
     .sidebarCtrl{ display: none;}
-    .searchCtrl{top: 2px; right: 8px;}
-
+    .searchCtrl{top: 0; right: 0;}
     // 固定版頭
     &.fixed {
       padding:5px;align-items: center;
@@ -72,13 +88,13 @@
   @media screen and (min-width: $wwMaximum){
     width: $wwMaximum;
     h1 {
-      img{width: 352px;}
+      img{}
     }
     
     // 固定版頭
     &.fixed{ 
       width: 100%;
-      h1{margin-left: calc( 50% - $wwMaximum*.5);}
+      // h1{margin-left: calc( 50% - $wwMaximum*.5);}
       .menu{
         margin-right: calc( 50% - $wwMaximum*.5);
         margin-left: 30px;
