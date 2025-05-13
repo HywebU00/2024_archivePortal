@@ -304,15 +304,16 @@ button.searchCtrl{
 
   // 點點或數字
   .slick-dots { 
-    --tinge: #e2e2e2;
-
-    list-style: none; margin:15px 6% 10px 0;padding: 0;
-    font-size: 1rem; line-height: 1; text-align: right;
+    --tinge: #ccc;
+    --dotSize: 10px;
+    --tingeActive: #{$primaryColor};
+    list-style: none; margin:0 auto;padding: 0;
+    font-size: 0; text-align: center;
     li { 
       display: inline-block; 
-      margin: 0 2px; padding: 4px;
-      button { 
-        width: 10px; height: 10px; border-radius: 5px;
+      margin: 0 2px; padding: 2px;
+      button, span { 
+        width: var(--dotSize); height: var(--dotSize); border-radius: 50%;
         overflow: hidden; box-shadow: none;
         background: var(--tinge);
         &:hover, &:focus{--tinge: #{$primaryColor};}
@@ -321,8 +322,8 @@ button.searchCtrl{
 
       &.slick-active{
         --tinge: #{$primaryColor};
-        button{ 
-          width: 46px;
+        button, span{ 
+
           &:focus{ box-shadow:$white 0 0 0 1px, $primaryColor 0 0 0 3px;}
          
         }
@@ -333,28 +334,49 @@ button.searchCtrl{
 
   // 左右箭頭
   button.slick-arrow {
+    --buttonSize: 68px;
+    --bgc: transparent;
+    --tinge: #333;
  
     position: absolute; z-index: 9; 
+    text-indent: -20em; overflow: hidden;font-size: 0;
+    height: var(--buttonSize);width: var(--buttonSize); 
+    border-radius: 50%;
+    background-color: var(--bgc);
+    box-shadow: var(--tinge) 0 0 0 2px;
 
-    height: 16px;width: 60px; padding:8px 12px;
-    box-sizing: content-box;
-    text-indent: -12em; overflow: hidden;
-    border-radius: 0;box-shadow: none;background:none;
-
-    &::before{
-      content: ''; display: block; margin: 0 auto;
-      width: 60px; height: 16px;
-      background: url(../images/slickArrow.svg) no-repeat 0 center;
+    &::before, &::after {
+      content: ''; position: absolute;
     }
-
+    &::before {
+      top: calc(50% - 5px);
+      width: 10px; height: 10px;
+      border: 2px solid var(--tinge);
+      rotate: 45deg;
+    }
+    &::after {
+      top: calc(50% - 1px); left: calc(50% - 7px);
+      width: 14px;height: 2px;
+      background-color: var(--tinge);
+    }
+    &.slick-prev {
+      &::before{
+        border-right: none; border-top: none;
+        left: calc(50% - 7px);
+      }
+    }
     &.slick-next {
       &::before{
-        transform: scaleX((-100%));
+        border-left: none; border-bottom: none;
+        right: calc(50% - 7px);
       }
     }
 
     &:hover, &:focus{
-      background-color: $assistant1;
+      --bgc: #{$primaryColor};
+    }
+    &:focus{
+      box-shadow: var(--bgc) 0 0 0 2px, var(--tinge) 0 0 0 5px;
     }
   }
 }

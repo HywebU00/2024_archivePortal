@@ -1025,33 +1025,23 @@ $(function(){
   // 首頁大圖輪播
   // --------------------------------------------------------------- //
   var _bbImages = $('.bigBanner').find('.bbImages');
-  var _bbTitles = $('.bigBanner').children('.bbTitles');
 
   _bbImages.slick({
     slidesToShow: 1,
     slidesToScroll: 1,
-    asNavFor: _bbTitles,
-    arrows: false,
-    dots: false,
+    autoplaySpeed: 5000,
+    speed: 1000,
+    autoplay: false,
+    arrows: true,
+    dots: true,
     fade: true,
     infinite: true,
     zIndex:8
   });
   
-  _bbTitles.slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    asNavFor: _bbImages,
-    autoplaySpeed: 5000,
-    speed: 800,
-    autoplay: true,
-    arrows: true,
-    dots: true,
-    fade: true
-  });
 
   // 把向右箭頭搬移到向左箭頭之後（移到 .slick-list 之前）
-  _bbTitles.find('.slick-arrow.slick-next').insertAfter( _bbTitles.find('.slick-arrow.slick-prev') );
+  // _bbTitles.find('.slick-arrow.slick-next').insertAfter( _bbTitles.find('.slick-arrow.slick-prev') );
   // --------------------------------------------------------------- //
 
 
@@ -1063,7 +1053,7 @@ $(function(){
     slidesToScroll: 1,
     autoplaySpeed: 5000,
     speed: 800,
-    autoplay: true,
+    autoplay: false,
     arrows: true,
     dots: true,
     fade: false,
