@@ -2,10 +2,10 @@
 // --------------------------------------------------------------- //
 .webHeader {
   position: relative; z-index: 991; 
-  height: 58px; margin: 0 auto;
-  background-color: #fff;
+  height: 56px; margin: 0 auto;
+  background-color: $secondaryColor;
   h1{ 
-    margin: 0 auto; padding: 4px 0; text-align: center;
+    margin: 0 auto; padding: 5px 0 0; text-align: center;
     width: calc(100% - 120px);
     font-size: 1.5em; line-height: 50px;
     a{
@@ -16,70 +16,41 @@
     }
     img{ 
       display: block; margin: 0 auto;
-      height: 50px; width: 90%; object-fit: contain;
+      height: 46px; width: 90%; object-fit: contain;
     }
   }
 
-  .sidebarCtrl, .searchCtrl {position: absolute; top: 4px; }
-  .sidebarCtrl { left: 4px; }
-  .searchCtrl { right: 4px; }
+  .sidebarCtrl, .searchCtrl {position: absolute; top: 0; }
+  .sidebarCtrl { left: 0; }
+  .searchCtrl { right: 0; background-color: $primaryColor; }
 
   &.fixed{
     position: fixed; left: 0; top: 0;right: 0;
-    background-color: #fff;
     box-shadow: rgb(0 0 0 / 0.3) 0 0 16px;
+    .searchCtrl { display: block;}
   }
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   @media screen and (min-width: $wwNormal){
     height: auto; 
+    background-color: $white;
     h1 {
-      margin: 0 50% 0 0; padding: 30px 0 14px 40px;
-      min-width: 596px;
+      margin: 0 50% 0 $marginDoc; padding: 30px 0 14px;
+      width: 55%; min-width: 556px;
       font-size: 1.5em;
-      a{ height: 100%; background: none;}
+      a{ height: 100%;}
       img{ display: block;margin: 0;width: 556px;}
     }
-    .menu{ }
 
     .sidebarCtrl{ display: none;}
     .searchCtrl{top: 0; right: 0;}
+
     // 固定版頭
     &.fixed {
-      padding:5px;align-items: center;
-      // z-index: 980;
-      box-shadow: rgb(0 0 0 / .5) 0 2px 6px;
+      box-shadow: rgb(0 0 0 / .4) 0 2px 12px;
       animation: fixHeadAni .5s 1 ease-out;
       h1{ 
-        flex-basis: 230px; height: 50px; padding: 0;
-        background: $white url(../images/h1_mobile.png) no-repeat 12px 0;
-        background-size: auto 50px;
-        img{display: none;}
-      }
-      .menu{ 
-        flex: 1 1 auto;width: auto;  padding-left: 0;
-        margin-top: 0;margin-left: 1.5%;
-        &>ul{
-          font-size: 1rem;
-          display: flex; flex-flow: row wrap;
-          &>li{
-            flex: 0 1 20%;
-            &>a{ padding: .6em 1vw .5em; }
-          }
-        }
+        padding: 6px 0 0 $marginDoc;
+        img{ width: 360px; height: auto;}
       }
       .headNav, .searchCtrl , .search{ display: none; }
     }
@@ -94,14 +65,7 @@
     // 固定版頭
     &.fixed{ 
       width: 100%;
-      // h1{margin-left: calc( 50% - $wwMaximum*.5);}
-      .menu{
-        margin-right: calc( 50% - $wwMaximum*.5);
-        margin-left: 30px;
-        &>ul>li>a{
-          padding-left: 16px; padding-right: 16px;
-        }
-      }
+      h1{ margin-left: $marginDocMax; padding-left: 0;}
     }
   }
 

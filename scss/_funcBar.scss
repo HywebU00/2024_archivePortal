@@ -37,6 +37,8 @@
         &:hover, &:focus{
           border-color: white;
           box-shadow: var(--tinge) 0 0 0 3px;
+          background-color: $primaryColor;
+          color: $white;
           &::before{
             opacity: 1;transform: translateY(-120%);
           }

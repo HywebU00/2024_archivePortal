@@ -153,7 +153,7 @@ kbd {
 // --------------------------------------------------------------- //
 .sidebarCtrl, .searchCtrl {
   position: absolute;
-  width: 50px; height: 50px; 
+  width: 56px; height: 56px; 
   margin: 0; padding: 0; border-radius: 0;
   border: none; box-shadow: none; outline: none;
   text-indent: -20em; overflow: hidden;
@@ -164,43 +164,37 @@ kbd {
 // --------------------------------------------------------------- //
 button.sidebarCtrl{
   --tinge : #{$primaryColor};
-  // --bg: #{$white};
   --bg: transparent;
   
   background-color: var(--bg);
+  box-shadow: none;
   transition: .4s;
-
   &::before, &::after{
-    content: ''; width: 28px; height: 3px;
-    position: absolute; top: calc(50% - 1px); left: calc(50% - 14px);
+    content: ''; width: 24px; height: 2px;
+    position: absolute; top: calc(50% - 1px); left: calc(50% - 12px);
     background: var(--tinge); 
     transition: .2s;
   }
   &::before{
-    box-shadow: var(--tinge) 0 -9px 0, var(--tinge) 0 9px 0;
+    box-shadow: var(--tinge) 0 -7px 0, var(--tinge) 0 7px 0;
   }
   &::after {opacity: 0;}
 
   &:hover, &:focus {
     --tinge : #{$white};
     --bg: #{$primaryColor};
+
     background-color: var(--bg);
-    // box-shadow: none;
   }
-  &:focus{
-    // --tinge : #{$white};
-    // --bg: #{$primaryColor};
-    box-shadow: var(--bg) 0 0 0 4px;
-  }
+  &:focus{ box-shadow: $primaryColor 0 0 0 3px inset, var(--tinge) 0 0 0 5px inset;}
+
 
   &.closeIt{
-    --bg: #{$assistant1};
-    --tinge : #{$primaryColor};
-    box-shadow: var(--bg) 0 0 0 4px;
-    // box-shadow: none;
+    --bg: #{$primaryColor};
+    --tinge : #{$white};
 
     &::before, &::after{
-      width: 32px;left: calc(50% - 16px);
+      width: 26px;left: calc(50% - 13px);
       background-color: var(--tinge); 
     }
     &::before{ 
@@ -211,14 +205,9 @@ button.sidebarCtrl{
       opacity: 1;
       transform: rotate(-45deg);
     }
-
     &:hover {
       --tinge : #{$white};
       --bg: #{$primaryColor};
-      box-shadow: none;
-    }
-    &:focus { 
-      box-shadow:$primaryColor 0 0 0 4px;
     }
   }
   
@@ -232,7 +221,8 @@ button.sidebarCtrl{
 button.searchCtrl{
   position: absolute;
   margin: 0; padding: 0; border: none;
-  background-color: transparent; box-shadow: none;
+  background-color: $primaryColor;
+  //  box-shadow: none;
 
   &::before , &::after{ content: '';  position: absolute;}
 
@@ -242,24 +232,18 @@ button.searchCtrl{
     background:transparent url(../images/icon_search.svg) no-repeat 0 0;
     background-size: contain;
   }
-
-  &:hover, &:focus{ 
-    background: $primaryColor; box-shadow: $primaryColor 0 0 0 3px; 
-    &::before{filter: brightness(20);}
-  }
+  &:hover{ box-shadow: $primaryColor 0 0 0 2px inset, #fff 0 0 0 3px inset;}
+  &:focus{ box-shadow: $primaryColor 0 0 0 3px inset, #fff 0 0 0 5px inset;}
 
   &.closeIt{
-    background: $primaryColor;
     &::before , &::after{
-      position: absolute; top: calc(50% - 2px); left: calc(50% - 14px);
-      width: 28px; height: 4px; border-radius: 1px;
-      background: $assistant1; 
+      position: absolute; top: calc(50% - 1px); left: calc(50% - 12px);
+      width: 24px; height: 2px; border-radius: 1px;
+      background: $white; 
       filter:none;
     }
     &::before {rotate: 45deg; }
     &::after {rotate: -45deg;}
-
-    &:hover, &:focus { background: $primaryColor; }
   }
 
   @media screen and (min-width: $wwNormal){

@@ -2,10 +2,10 @@
 // ------------------------------------------------------ //
 .search{
   display: none;
-  position: fixed; left: 0;width: 100%; top: auto;
-  padding:20px;
+  position: fixed; left: 0;width: 100%; top: 56px;
+  padding:20px $marginDoc;
   background-color: $primaryColor; color: $white;
-  box-shadow: rgb(0 0 0 / .65) 0 30px 40px;
+  box-shadow: rgb(0 0 0 / .6) 0 15px 30px;
 
   a{ color: $white;}
 
@@ -20,22 +20,22 @@
     flex: 1 1 80%; margin: 0;
     background-color: $white;
     &:hover {box-shadow:$white 0 0 0 2px;}
-    &:focus{ box-shadow:$primaryColor 0 0 0 1px, $white 0 0 0 3px;}
+    &:focus {box-shadow:$primaryColor 0 0 0 1px, $white 0 0 0 3px;}
   }
   //送出查詢按鈕
   button, input[type="button"], input[type="submit"] {
     flex: 1 1 2em; margin: 0 0 0 6px;
     color: $primaryColor;
-    background-color: $assistant1;
-    &:hover { box-shadow:$assistant1 0 0 0 2px; }
-    &:focus{ box-shadow: $primaryColor 0 0 0 1px, $assistant1 0 0 0 3px;}
+    background-color: $secondaryColor;
+    &:hover { box-shadow:$secondaryColor 0 0 0 2px; }
+    &:focus{ box-shadow: $primaryColor 0 0 0 1px, $secondaryColor 0 0 0 3px;}
 
   }
 
   .hotKeywords{
     margin: 12px auto 0;
     .label{
-      background-color: transparent; color: $white;
+      background-color: transparent; color: $secondaryColor;
       padding: 0;
       &::after{content: '：';}
     }
@@ -44,11 +44,11 @@
       display: inline-block; margin: 0 .5em 0 0; 
       a{
         position: relative; display: block;text-decoration: none;
-        color: $assistant1;
+        color: $white;
         &::after{
           content: ''; position: absolute; left: 50%; right: 50%;
           bottom: 0; height: 2px;
-          background-color: $assistant1;
+          background-color: $white;
           transition: .25s;
         }
         &:hover, &:focus { 
@@ -56,14 +56,11 @@
         }
       }
     }
-
   }
-
-  .skip{background: none;}
 
   @media screen and (min-width: $wwNormal){
     display: none; z-index: 99;
-    left: auto; right: 8px; top: 54px;
+    left: auto; right: 0; top: 92px;
     width: auto; min-width: 24em;
     box-shadow: rgb(0 0 0 / .5) 0 10px 30px;
 
@@ -73,8 +70,7 @@
   }
 
   @media screen and (min-width: $wwMaximum ){
-    right: calc(50% - $wwMaximum*.5 + 8px);
-
+    right: calc(50% - $wwMaximum*.5);
   }
 
 

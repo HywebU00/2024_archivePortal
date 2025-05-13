@@ -153,17 +153,13 @@
       &>li{
         flex:1 1 calc(10% - 13px);
         margin-top: 0;
+        &>ul>li{margin-bottom: .8em;}
       }
     }
   }
 
   @media screen and (min-width: $wwMaximum){
     width: $maximumWidth;
-    &>ul{
-      &>li{
-        // flex-basis: calc(16.66% - 20px);
-      }
-    }
   }
 
 }
