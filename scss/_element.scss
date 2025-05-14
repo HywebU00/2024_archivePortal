@@ -272,38 +272,36 @@ button.searchCtrl{
 // --------------------------------------------------------------- //
 .more{
   position: relative;
-  margin: 10px 0;
+  margin: 10px 0; padding: 0;
   text-align: center;
-  background-color: $primaryColor;
-  display: inline-block;
+  &::before, &::after {
+    content: ''; position: absolute; 
+    transition: .3s;
+  }
   &::before {
-    content: ''; position: absolute;
-    left: 16px; top: 0;
-    width: 72px; height: 72px;
-    border-radius: 50%;
-    box-shadow: $white 0 0 0 2px inset;
-    z-index: 8;
+    top: 31px;left: 50px;
+    width: 10px; height: 10px;
+    border: 2px solid $white;
+    border-left: none; border-bottom: none;
+    rotate: 45deg;
+  }
+  &::after {
+    width: 12px;top: 35px; left: 47px;
+    border-top: 2px solid $white;
   }
   a{
-    display: inline-block; position: relative;
-    text-decoration: none; outline: none;
-    height: 72px; line-height: 72px; padding: 0 24px 0 100px;
+    display: block;
+    min-height: 72px; line-height: 72px;
+    padding: 0 24px 0 100px;
+    text-decoration: none; outline: none; white-space: nowrap;
     color: $white;
+    background-color: $primaryColor;
     transition: .2s;
-    &::before, &::after {
-      content: ''; position: absolute; 
-      transition: .3s;
-    }
     &::before {
-      top: 31px;left: 50px;
-      width: 10px; height: 10px;
-      border: 2px solid $white;
-      border-left: none; border-bottom: none;
-      rotate: 45deg;
-    }
-    &::after {
-      width: 12px;top: 35px; left: 47px;
-      border-top: 2px solid $white;
+      content: '';position: absolute; top: 0; left: 18px;
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      box-shadow: $white 0 0 0 2px inset;
     }
     &:hover {
       box-shadow: $primaryColor 0 0 0 3px;
@@ -350,9 +348,7 @@ button.searchCtrl{
       &.slick-active{
         --tinge: #{$primaryColor};
         button, span{ 
-
           &:focus{ box-shadow:$white 0 0 0 1px, $primaryColor 0 0 0 3px;}
-         
         }
       }
 
@@ -370,7 +366,7 @@ button.searchCtrl{
     height: var(--buttonSize);width: var(--buttonSize); 
     border-radius: 50%;
     background-color: var(--bgc);
-    box-shadow: var(--tinge) 0 0 0 2px;
+    box-shadow: #333 0 0 0 2px;
 
     &::before, &::after {
       content: ''; position: absolute;
@@ -401,9 +397,12 @@ button.searchCtrl{
 
     &:hover, &:focus{
       --bgc: #{$primaryColor};
+      --tinge: #fff;
+
+      box-shadow: var(--bgc) 0 0 0 2px;
     }
     &:focus{
-      box-shadow: var(--bgc) 0 0 0 2px, var(--tinge) 0 0 0 5px;
+      box-shadow: var(--tinge) 0 0 0 2px, var(--bgc) 0 0 0 5px;
     }
   }
 }
