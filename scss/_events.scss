@@ -1,47 +1,53 @@
 // 首頁：近期活動
-// .main>section:not(.events) { display: none;}
-// .main>section.explore {display: block;}
+.main>section:not(.events) { display: none;}
+.main>section.explore {display: block;}
 
 .events{
+  display: flex; flex-flow: row wrap;
   position: relative;
-  padding: 70px 0; margin: 0;
-  background-color: #f8f8f8;
-  &::after{content: ''; display: block; clear: both;}
-
-  .blockHeader{ width: $mobileWidth; margin: 0 auto 30px; position: relative;}
+  padding: 20px 0; margin: 50px 0 50px 3vw;
+  .blockHeader{ 
+    flex : 0 0 100%;
+    margin: 0 auto 40px; 
+  }
 
   // 文字區
   .titles{
-    float: left; width: 38vw;
-    margin: 50px 0 0 3vw; padding: 20px 0 10px;
-    time{ font-size: 3.8vw; line-height: 1.6;}
+    flex: 0 0 37vw; width: 37vw;
+    margin: 0; padding: 30px 15px 30px 0;
+    time{ font-size: min(3.2vw, 1.2em); line-height: 1.6; color: $fontColor;}
     p{
-      margin: 25px 0 0; line-height: 1.6;
-      font-weight: bold; font-size: calc( 38vw/8 );
-      display: -webkit-box; -webkit-box-orient: vertical;
+      margin: 25px 0 0; width: 35vw;
+      font-size: min(calc((35vw - 15px)/8), 1.5em);
+      font-weight: bold; 
+      line-height: 1.6;
+      display: -webkit-box; 
+      -webkit-box-orient: vertical;
       -webkit-line-clamp: 6;
       overflow: hidden;
+    }
+
+    .slick-arrow {
+      bottom: 10px;
+      &.slick-prev { left: 0;}
+      &.slick-next { translate: 130% 0;}
     }
   }
 
   // 海報區
   .images{
-    float: right;width: 55vw; margin: 0; padding-top: 50px; 
-    .slick-arrow {
-      top: 0; left: auto; right: 3%;
-      &.slick-prev { transform: translateX(calc(-100% - 6px));}
-    }
-
+    position: relative;
+    flex: 0 0 60vw; width: 60vw;
+    margin: 0; padding-bottom: 50px; 
     .flowItem{
       margin:0; 
-      width: 55vw; height: 77vw; 
-      //w:h = 5:7, ratio = 1.4
+      aspect-ratio: .7;
+      height: auto;
       a {
         position: relative;
         display: block; width: 100%; height: 100%;
         text-decoration: none; color: $fontColor;
         transition: .2s;
-
         &::before{
           content: ''; 
           position: absolute; left: 0; right: 0; top: 0;bottom: 0;
@@ -55,72 +61,82 @@
         transition: .2s;
       }
     }
+
+    .slick-dots{
+      margin: 30px auto 10px;
+    }
   }
 
-  .more{clear: both; padding: 40px 0 0;}
+  .more{
+    margin: 30px auto 10px 50%;
+    translate: -50% 0;
+  }
 
 
   @media screen and (min-width: $wwMedium){
-    
-    &::before { // 右邊漸層底色
-      content: ''; position: absolute; left: 35%; right: 0; top: 0; bottom: 0;
-      background: linear-gradient(180deg, #E2E2E2 0%, #FFFFFF 100%);
-    }
+    overflow: hidden;
 
     .titles {
-      width: 25vw;
-      p{font-size:calc(25vw / 8);}
-      time{font-size: 1em;}
+      flex-basis: 27vw; width: 27vw;
+      p{ font-size: 1.5em; width:98%;}
+      time{font-size: 1.1em;}
     }
 
     .images{
-      width: 68vw;
+      flex-basis: 74vw; width: 74vw;
+      margin-right: -4vw;
       .flowItem{
-        width: 35.5vw; height: 49.7vw;transform: scale(.82);
+        transform-origin: bottom;
         transition: .4s;
-        &.slick-current {transform: scale(1);}
+        &:not(.slick-current) {scale: .82;}
       }
     }
   }
 
   @media screen and (min-width: $wwNormal){
-
-    .blockHeader{ width: $normalWidth; }
+    overflow: hidden;
 
     .titles {
-      width: 23vw; margin-left: 5vw;
-      p{font-size:calc(23vw / 8);}
+      flex-basis: 23vw;width: 23vw;
       time{ font-size: 1.2em;}
     }
 
     .images{
-      padding-top: 60px; width: 70vw;
+      flex-basis: 76vw;  width: 76vw; margin-right: -2vw;
       .flowItem{
-        width: 25vw; height: 35vw;
-        &.slick-current +.flowItem { margin-right: -2.8vw;}
+        &.slick-current +.flowItem{ translate: 1.3vw 0;}
       }
+      .slick-dots{ text-align: right; margin-right:5vw;}
     }
   }
 
 
   @media screen and (min-width: $wwMaximum){
 
-    &::before{ left:  calc($wwMaximum*.29 + $marginDocMax); }
-
-    .blockHeader{ width: $wwMaximum*.9;}
+    width: $wwMaximum;
+    margin-left: auto;
+    margin-right: auto;
 
     .titles { 
-      width: $wwMaximum*.22; margin-left: $marginDocMax;
-      p{ font-size: 2.1em;}
+      flex-basis: $wwMaximum*.23;
+      width: $wwMaximum*.23; 
+      margin-left: $wwMaximum*.03;
+      p{ font-size: 1.5em;}
+
+      .slick-arrow {
+        &.slick-prev { left:0;}
+      }
     }
 
     .images{
-      width: $wwMaximum*.71;
-      margin-right: calc(50vw - $wwMaximum*.5); 
+      flex-basis: $wwMaximum*.76;
+      width: $wwMaximum*.76;
+      margin-right: $wwMaximum*(-0.02);
+
       .flowItem{
-        width: $wwMaximum*.25; height: $wwMaximum *.35;
-        &.slick-current +.flowItem { margin-right: -.024*$wwMaximum;}
+        &.slick-current +.flowItem{ translate: $wwMaximum*.013 0;}
       }
+      .slick-dots{ text-align: right; margin-right: $wwMaximum*.05;}
     }
 
   }

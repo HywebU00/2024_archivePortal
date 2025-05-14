@@ -1101,7 +1101,7 @@ $(function(){
     asNavFor: _eventTitle,
     speed: 800,
     autoplay: false,
-    arrows: true,
+    arrows: false,
     dots: true,
     fade: false,
     infinite: true,
@@ -1130,13 +1130,13 @@ $(function(){
     slidesToScroll: 1,
     asNavFor: _eventPoster,
     autoplay: false,
-    arrows: false,
+    arrows: true,
     dots: false,
     fade: true
   })
 
-  // 把向右箭頭搬移到向左箭頭之後（移到 .slick-list 之前）
-  _eventPoster.find('.slick-arrow.slick-next').insertAfter( _eventPoster.find('.slick-arrow.slick-prev'));
+  // 把向左箭頭搬移到向右箭頭之前（移到 .slick-list 之後）
+  _eventTitle.find('.slick-arrow.slick-prev').insertBefore( _eventTitle.find('.slick-arrow.slick-next'));
   // --------------------------------------------------------------- //
 
 
