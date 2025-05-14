@@ -271,19 +271,46 @@ button.searchCtrl{
 // MORE
 // --------------------------------------------------------------- //
 .more{
-  margin: 10px 0; padding: 10px;
+  position: relative;
+  margin: 10px 0;
   text-align: center;
+  background-color: $primaryColor;
+  display: inline-block;
+  &::before {
+    content: ''; position: absolute;
+    left: 16px; top: 0;
+    width: 72px; height: 72px;
+    border-radius: 50%;
+    box-shadow: $white 0 0 0 2px inset;
+    z-index: 8;
+  }
   a{
     display: inline-block; position: relative;
     text-decoration: none; outline: none;
-    height: 2.8em; line-height: 2.8; padding: 0 32px;
-    color: $primaryColor;
-    box-shadow: $primaryColor 0 0 0 1px inset;
+    height: 72px; line-height: 72px; padding: 0 24px 0 100px;
+    color: $white;
     transition: .2s;
-    &:hover, &:focus{
-      box-shadow: $primaryColor 0 0 0 1px inset,  $primaryColor 0 0 0 1px;
+    &::before, &::after {
+      content: ''; position: absolute; 
+      transition: .3s;
     }
-    &:focus{background-color: $primaryColor; color: $white;}
+    &::before {
+      top: 31px;left: 50px;
+      width: 10px; height: 10px;
+      border: 2px solid $white;
+      border-left: none; border-bottom: none;
+      rotate: 45deg;
+    }
+    &::after {
+      width: 12px;top: 35px; left: 47px;
+      border-top: 2px solid $white;
+    }
+    &:hover {
+      box-shadow: $primaryColor 0 0 0 3px;
+    }
+    &:focus {
+      box-shadow:$primaryColor 0 0 0 2px, $white 0 0 0 3px, $primaryColor 0 0 0 6px;
+    }
   }
 
 }

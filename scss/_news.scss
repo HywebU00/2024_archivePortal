@@ -20,7 +20,6 @@
   }
   .tabContent{display: none;}
 
-
   // 訊息條列
   .newsList{
     list-style: none; margin:24px 0 0; padding: 0;
@@ -61,6 +60,12 @@
       p{ margin: .5em 0 0;}
       time{ display: inline-block; white-space: nowrap; color: $primaryColor; font-weight: bold;}
     }
+  }
+
+  .more{
+    margin-top: 40px;
+    margin-left: 50%;
+    translate: -50% 0;
   }
 
   @media screen and (min-width: $wwMedium){
