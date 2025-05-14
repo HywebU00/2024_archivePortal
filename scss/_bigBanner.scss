@@ -1,19 +1,18 @@
-// 首頁：典藏國家百年記憶（大圖輪播）
+// 首頁：大圖輪播
 // .main>section:not(.bigBanner) { display: none;}
 
 .bigBanner{
 
-  // 圖片區
+  // 輪播圖片區
   .bbImages{
     width: 100%;aspect-ratio: 2; overflow: hidden;
     .flowItem{
       a{ 
-        display: block;
-        position: relative; 
+        display: block;position: relative; 
         &::before{
           content: ''; z-index: -1;
           position: absolute;left: 0;right: 0;top: 0;bottom: 0;
-          box-shadow: $linkColor 0 0 0 3px inset;
+          box-shadow: $linkColor 0 0 0 1px inset;
         }
         &:hover, &:focus{
           &::before{ z-index: 5;}
@@ -36,23 +35,18 @@
   }
 
   .slick-dots {
-    margin: 0 90px;
-    z-index: 99;
-    translate: 0 -200%;
-  }
-
-
-  @media screen and (min-width: $wwMedium){
+    display: inline-block; z-index: 99;
+    margin: 0 auto 0 50%;
+    translate: -50% calc(-100% - 20px);
   }
 
   @media screen and (min-width: $wwNormal ){
     button.slick-arrow{
       opacity: 0;
+      &:focus { opacity: 1;}
     }
     &:hover{
-      button.slick-arrow{
-        opacity: 1;
-      }
+      button.slick-arrow{opacity: 1;}
     }
   }
 
