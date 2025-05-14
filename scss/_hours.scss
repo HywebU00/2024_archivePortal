@@ -1,0 +1,79 @@
+
+// 開館時間
+.hours {
+  display: flex; flex-flow: row wrap;
+
+  box-shadow: rgb(0 0 0 / .2) 0 8px 12px;
+  h2{
+    flex: 0 1 50%;
+    margin: 0; padding: 15px 10px;
+    font-size: 1.4em;
+    
+    display: flex; flex-wrap: nowrap;
+    align-items: center; justify-content: center;
+    color:$primaryColor;
+    background-color: $secondaryColor;
+    img { width: calc(50vw - 4em - 50px); max-width: 109px;}
+    .title{ margin-left: 10px;white-space: nowrap;}
+  }
+
+  .data{
+    flex: 0 0 50%;
+    padding: 20px;
+    line-height: 1.5; font-size: 1.125em;
+    background-color: $primaryColor;
+    color: $fontInvert;
+  }
+
+  .moreInfo{
+    flex: 0 0 100%;
+    display: flex; flex-flow: row nowrap;
+    list-style: none; margin: 0; padding: 0;
+    font-size: 1.125em; line-height: 1.3;
+    li{ 
+      flex: 1 1 max-content;
+      margin: 0; padding: 24px 12px;
+      text-align: center;
+      a{
+        display: inline-block; 
+        position: relative; padding: 3px 0;
+        text-decoration: none;
+        &::after {
+          content: ''; 
+          position: absolute; left: 0; right: 0; bottom: 0;
+          height: 3px; transition: .2s;
+        }
+        &:hover, &:focus{
+          &::after { bottom: 3px; background-color: $linkColor; }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    flex-wrap: nowrap; align-items: stretch;
+    max-width: $wwMaximum; margin: 0 auto;
+    h2{
+      flex: 0 0 23%;
+      padding: 20px 0 20px min(3vw, $wwMaximum*.03);
+      font-size: 1.5em; text-align: left;
+      background-color: transparent;
+      .title{margin: 0 20px;}
+    }
+    .data{ flex: 0 0 22%; padding: 30px;}
+    .moreInfo {
+      flex: 0 0 55%;
+      justify-content: center;
+      align-items: center;
+      padding: 0 min(3vw, $wwMaximum*.03) 0 0; margin: 0;
+      li{
+        flex: 0 0 auto;
+        padding: 0 32px;margin: 0;
+        border-left: 1px solid $fontColor;
+        &:first-child {border: none; padding-left: 0;}
+        &:last-child { padding-right: 0;}
+      }
+    }
+  }
+
+}

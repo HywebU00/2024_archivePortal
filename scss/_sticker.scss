@@ -2,7 +2,7 @@
 .sticker{
   display: none;
   @media screen and (min-width: $wwNormal){
-    display: block;
+    // display: block;
     position: fixed; top: 250px; right: 0; z-index: 90;
     padding: 8px 12px;
     background-color: rgb(255 255 255 / .8);

@@ -9,7 +9,7 @@
       padding: 1.2em .3em 1em; margin:0;
       border: none; box-shadow: none; font-weight: bold;
       background-color: transparent; color: $fontColor;
-      &:hover, &:focus{ background-color: $secondaryColor;}
+      &:hover { background-color: $secondaryColor;}
       &:focus-visible{box-shadow: $primaryColor 0 0 0 2px inset;}
       &.active{
         background-color: $primaryColor; color: $fontInvert;
