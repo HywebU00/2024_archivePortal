@@ -1024,8 +1024,7 @@ $(function(){
 
   // 首頁大圖輪播
   // --------------------------------------------------------------- //
-  var _bbImages = $('.bigBanner').find('.bbImages');
-
+  const _bbImages = $('.bigBanner').find('.bbImages');
   _bbImages.slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -1038,17 +1037,15 @@ $(function(){
     infinite: true,
     zIndex:8
   });
-  
 
-  // 把向右箭頭搬移到向左箭頭之後（移到 .slick-list 之前）
-  // _bbTitles.find('.slick-arrow.slick-next').insertAfter( _bbTitles.find('.slick-arrow.slick-prev') );
   // --------------------------------------------------------------- //
 
 
 
   // 探索國家故事
   // --------------------------------------------------------------- //
-  $('.explore').find('.flow').slick({
+  const _exploreFlow = $('.explore').find('.flow');
+  _exploreFlow.slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplaySpeed: 5000,
@@ -1059,40 +1056,39 @@ $(function(){
     fade: false,
     infinite: true,
     mobileFirst: true,
-    vertical: false,
     responsive: [
       {
         breakpoint: 700,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 2.35
         }
       },
       {
         breakpoint: 1000,
         settings: {
-          slidesToShow: 3,
-          centerMode: true,
-          centerPadding: '0'
+          slidesToShow: 3.5
         }
       },
       {
-        breakpoint: 1300,
+        breakpoint: 1280,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 4.01
         }
       }
     ]
   });
-  // 把向右箭頭搬移到向左箭頭之後（移到 .slick-list 之前）
-  $('.explore').find('.slick-arrow.slick-next').insertAfter($('.explore').find('.slick-arrow.slick-prev'));
+
+  // 把向左箭頭搬移到向右箭頭之前（移到 .slick-list 之後）
+  _exploreFlow.find('.slick-arrow.slick-prev').insertBefore( _exploreFlow.find('.slick-arrow.slick-next'));
+
   // --------------------------------------------------------------- //
 
 
 
   // 近期活動 EVENTS
   // --------------------------------------------------------------- //
-  var _eventPoster = $('.events').find('.images');
-  var _eventTitle = $('.events').find('.titles');
+  const _eventPoster = $('.events').find('.images');
+  const _eventTitle = $('.events').find('.titles');
   
   // 海報區
   _eventPoster.slick({
@@ -1122,7 +1118,6 @@ $(function(){
       }
     ]
   });
-
 
   // 文字區
   _eventTitle.slick({

@@ -1,16 +1,17 @@
 // 首頁：探索國家故事
-.explore{
-  padding: 50px 0;
-  background-color: #f6f6f6;
+// .main>section:not(.explore) { display: none;}
 
-  .blockHeader {padding-left: 40px; }
+.explore{
+  margin: 50px auto;
+
+  .blockHeader{ margin-bottom: 15px;}
 
   .flowItem{
-    padding:15px 0; margin: 6px 0 6px 6px;
+    padding:0; margin: 0;
+    aspect-ratio: .75;
     a {
       position: relative; 
-      display: block; margin:0;
-      height: calc((100vw - 40px)*1.28);
+      display: block;height: 100%;
       text-decoration: none;color: $white;
       transition: .4s;
       &::before{
@@ -28,14 +29,14 @@
     img{
       display: block; 
       width: 100%; height: 100%; object-fit: cover;
-      filter: brightness(.6) saturate(.2);
+      filter: brightness(.5) saturate(.1);
       transition: .4s;
     }
     p{
       position: absolute; left: 0; right: 0; bottom: 0; 
       margin: 0; padding: 60px 22px 22px;
       line-height: 1.2; font-size: 1.6em; font-weight: bold;
-      background: linear-gradient(180deg, rgb(0 0 0 /0) 0%, rgb(0 0 0 / .75) 85%);
+      background: linear-gradient(180deg, rgb(0 0 0 /0) 0%, rgb(0 0 0 / .9) 85%);
       text-shadow: rgb(0 0 0 / .7) 1px 1px 5px;
     }
 
@@ -45,79 +46,70 @@
   }
 
   .flow{
-    margin-left: 40px; padding-top: 40px;
-    .slick-arrow {
-      top: 0; left: auto; right: 6%;
-      &.slick-prev { transform: translateX(calc(-100% - 6px));}
+    width: $normalWidth;
+    padding: 0 0 10px; margin: 0 auto;
+    .slick-list {
+      padding-top: 30px;padding-bottom: 30px;
     }
+  }
+
+  .slick-arrow {
+    bottom: 10px;
+    &.slick-prev { left: 0;}
+    &.slick-next { translate: calc(100% + 24px) 0;}
+  }
+
+  .slick-dots{
+    text-align: right;
+    margin: 60px 10px 10px 170px;
   }
 
 
   @media screen and (min-width: $wwMedium){
+
     .flowItem{ // 顯示兩個
-      a{height: calc((100vw - 40px)/2 * 1.28);}
-
+      // a{height: calc((100vw - 40px)/2 * 1.28);}
+      margin: 0 8px;
+      transform-origin: bottom;
+      transition: .4s;
       &.slick-current{
-        a{
-          margin: -15px 0;
-          height: calc((100vw - 40px)/2 * 1.28 + 30px);          
-        }
+        box-shadow:#fff 0 0 0 4px, rgb(0 0 0 / .3) 0 0 25px 4px;
       }
-    }
-  }
-
-
-  @media screen and (min-width: $wwNormal){
-    margin: 0 auto; padding: 100px 0;
-    background: url(../images/exploreBg.jpg) no-repeat center top;
-    background-size: cover;
-  
-    .blockHeader{ padding-left: 80px;}
-
-    .flowItem { //顯示三個
-      a{height: calc( (100vw - 80px)/3 * 1.28); }
-      &.slick-current{
-        a{
-          margin: -15px 0;
-          height: calc( (100vw - 80px)/3 * 1.28 + 30px);
-        }
+      &:not(.slick-current) {
+        scale:1 .88;
       }
     }
 
     .flow{
-      margin-left: 80px; padding-top: 60px;
-      .slick-arrow {
-        top: 0; left: auto; right: 6%;
-        &.slick-prev { transform: translateX(calc(-100% - 6px)); }
-      }
+      // margin-left: auto; margin-right: 0; width: 97%;
+      width: 100%;
     }
+    .slick-arrow {
+      &.slick-prev { left: 3vw;}
+      &.slick-next { left: 3vw; }
+    }
+    .slick-dots{ margin-right: 3vw; margin-left: calc(3vw + 184px);}
+
   }
 
-  @media screen and (min-width: calc($wwNormal + 300px)){
 
-    .flowItem { //顯示四個
-      a{height: calc( (100vw - 80px)/4 * 1.28);}
-      &.slick-current{
-        a{height: calc( (100vw - 80px)/4 * 1.28 + 30px);}
-      }
-    }
+  @media screen and (min-width: $wwNormal){
+
+    .blockHeader{ padding-left: 80px;}
 
   }
+
   
   @media screen and (min-width: $wwMaximum){
 
-    .blockHeader{width: $wwMaximum; margin-left: auto; margin-right: auto;}
-
     .flowItem{
-      a{ height: calc( ($wwMaximum - 80px)/4 * 1.28);}
       &.slick-current{
-        a{  height: calc( ($wwMaximum - 80px)/4 * 1.28 + 30px);}
       }
     }
 
     .flow {
-      width: ($wwMaximum - 80px);
-      margin-left: calc(50% - $wwMaximum*.5  + 80px);
+      width: $wwMaximum;
+      .slick-list { margin-left: 50px; }
     }
   }
   
