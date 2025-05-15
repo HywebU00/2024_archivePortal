@@ -68,22 +68,17 @@
   @media screen and (min-width: $wwMedium){
 
     .flowItem{ // 顯示兩個
-      // a{height: calc((100vw - 40px)/2 * 1.28);}
       margin: 0 8px;
       transform-origin: bottom;
       transition: .4s;
       &.slick-current{
-        box-shadow:#fff 0 0 0 4px, rgb(0 0 0 / .3) 0 0 25px 4px;
+        box-shadow:$white 0 0 0 4px, rgb(0 0 0 / .3) 0 0 25px 4px;
       }
-      &:not(.slick-current) {
-        scale:1 .88;
-      }
+      &:not(.slick-current) {scale:1 .88;}
     }
 
-    .flow{
-      // margin-left: auto; margin-right: 0; width: 97%;
-      width: 100%;
-    }
+    .flow{width: 100%;}
+
     .slick-arrow {
       &.slick-prev { left: 3vw;}
       &.slick-next { left: 3vw; }
@@ -101,12 +96,6 @@
 
   
   @media screen and (min-width: $wwMaximum){
-
-    .flowItem{
-      &.slick-current{
-      }
-    }
-
     .flow {
       width: $wwMaximum;
       .slick-list { margin-left: 50px; }
