@@ -974,6 +974,55 @@ $(function(){
   // --------------------------------------------------------------- //
 
 
+  // 當期電子報蓋版訊息
+  // --------------------------------------------------------------- //
+  if ($('.popover').length) {
+    const _popover = $('.popover');
+    const _closePop = _popover.find('.closeThis');
+    _popover.before('<div class="backdrop"></div>');
+    const _popBackdrop = _popover.prev('.backdrop');
+    const _popLastFocusableEle = _popover.find('.body').find('a, button, input').last();
+
+    // 顯示對話框
+    _popover.fadeIn(400, function(){
+      _closePop.trigger('focus');
+      _body.addClass('noScroll');
+    });
+    _popBackdrop.fadeIn(100);
+
+    // 離開最後一個可聚焦元件要回到 button.closeThis
+    if (_popLastFocusableEle.length) {
+      _popLastFocusableEle.on('keydown', function(e){
+        if( e.code == 'Tab' && !e.shiftKey) {
+          e.preventDefault();
+          _closePop.trigger('focus');
+        }
+      })
+    } else {
+      console.log(_popLastFocusableEle.length);
+      _closePop.on('keydown', function(e){
+        if( e.code == 'Tab') {
+          e.preventDefault();
+        }
+      })
+    }
+
+    // 關閉對話框
+    _closePop.add(_popBackdrop).on('click', function(){
+      _popover.add(_popBackdrop).fadeOut(400);
+      _body.removeClass('noScroll');
+    })
+
+    // 按下 esc 關閉對話框
+    _popover.on('keydown', function(e){
+      if ( e.key === 'Escape') {
+        _closePop.trigger('click');
+      }
+    })
+  }
+  // --------------------------------------------------------------- //
+
+
 
   // 內頁錨點
   // --------------------------------------------------------------- //

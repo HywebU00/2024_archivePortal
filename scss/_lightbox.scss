@@ -39,8 +39,9 @@
 
 
 // ---------- 燈箱遮罩
-.coverAll{ 
+.coverAll, .backdrop{
   display: none; z-index: 995;
   position: fixed; left: 0;right: 0;top: 0;bottom: 0;
   background: rgba(0,0,0,.6);
 }
+.coverAll{ display: none;}

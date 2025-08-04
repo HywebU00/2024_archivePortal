@@ -1,0 +1,49 @@
+// 當期電子報蓋版視窗訊息(pop-up block)
+.popover {
+	display: none;
+	position:fixed;z-index:999;
+	width: 90vw; height: calc(100vh - 104px);
+	top: 72px;left: 50%;
+	translate: -50% 0;
+	max-width: 800px;
+  padding:50px 0 0; margin:0 auto; overflow-y: auto;
+  background-color: $white;
+  box-shadow:rgba(0,0,0,.6) 0 0 28px;
+
+	.closeThis {
+		position: absolute; right:3px; top: 3px; z-index:99;
+	}
+
+	.head {
+		padding: 0 0 .8em; margin: 10px 4% 1em;
+		font-size: 1.4em; font-weight: bold;
+		text-align: center; line-height: 1.4;
+		color: $primaryColor;
+		border-bottom: 2px solid $borderColor;
+	}
+
+	.body{
+		margin: 0 4%;
+		line-height: 1.8;
+		.topic{
+			margin: 0 0 .6em;
+			font-size: 1.2em; font-weight: bold;
+		}
+		&>article{
+			line-height: inherit;
+			p{margin: 1em 0;}
+		}
+		a{
+			color: $linkColor; text-decoration: underline;
+			&:hover, &:focus{
+				text-decoration: none;
+			}
+			&:focus {outline: 2px solid $linkColor;}
+		}
+	}
+
+	@media screen and (min-width: $wwNormal){
+		top: 90px;height: calc(100vh - 120px);
+	}
+
+}
